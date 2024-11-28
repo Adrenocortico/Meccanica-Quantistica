@@ -1,0 +1,138 @@
+%\documentclass[a4paper,11pt,twoside,openany]{book}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%\usepackage{braket}
+%\usepackage{amsthm}
+%\usepackage{graphicx}
+
+%\raggedbottom
+%\theoremstyle{definition}
+%\newtheorem{definizione}{Definizione}
+%\theoremstyle{plain}
+%\newtheorem{teorema}{Teorema}
+%\theoremstyle{plain}
+%\newtheorem{lemma}{Lemma}
+%\theoremstyle{definition}
+%\newtheorem{esempio}{Esempio}
+
+%\author{Linda~Ravazzano}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{11/10/2013}
+
+%\begin{document}
+%\maketitle{Rappresentazioni}
+\section{Rappresentazioni} %Rappresentazioni
+\begin{flushleft}
+Vogliamo estendere la rappresentazione di vettori e di operatori nello spazio di Hilbert al caso continuo, partiamo quindi dalla trasformata di Fourier.\\
+La trasformata di Fourier della $\psi \left(x\right)$ è:
+\begin{equation}\begin{split}
+\psi \left(x\right)=\int_{-\infty }^{+\infty }{e^{ikx}\phi\left(k\right) \frac{\textrm{d}k}{\sqrt{2\pi}}}
+\end{split}\end{equation}
+e l'antitrasformata è:
+\begin{equation}\begin{split}
+\phi \left(k\right)=\int^{+\infty }_{-\infty }{e^{-ikx}\psi \left(x\right) \frac{\textrm{d}x}{\sqrt{2\pi}}}
+\end{split}\end{equation}\\
+Si ha inoltre:\\
+\begin{equation}\begin{split}
+\phi \left(k\right)
+=\int^{+\infty }_{-\infty } {e^{-ikx}\frac{dx}{\sqrt{2\pi}}}
+\int^{+\infty }_{-\infty }{e^{ik'x}\dfrac{dk'}{\sqrt{2\pi}}} \phi \left(k'\right)=\\
+\\
+=\int^{+\infty }_{-\infty }{dk'}\int^{+\infty }_{-\infty } \dfrac{dx}{2\pi}{e^{i\left(k'-k\right)x}}\phi\left(k'\right)
+\end{split}\end{equation}
+Sapendo che: 
+\begin{equation}\begin{split}
+\int^{+\infty }_{-\infty }\frac{dx}{2\pi}{e^{i\left(k'-k\right)x}}=
+\delta\left(k'-k\right)
+\end{split}\end{equation}
+ottengo
+\begin{equation}\begin{split}
+\phi \left(k\right)= \int^{+\infty }_{-\infty }{dk'} \delta\left(k'-k\right)\phi \left(k'\right)
+\end{split}\end{equation} 
+Rivediamo quanto detto in termini di:\\
+- rappresentazione x\\
+- rappresentazione k (oppure p)\\
+Dobbiamo vedere la $\psi\left(x\right)$ come un vettore espresso nella rappresentazione della posizione.\\
+\begin{equation}\begin{split}
+\psi\left(x\right)=\left\langle x|\psi\right\rangle
+\end{split}\end{equation}
+Dove $\left\langle x\right|$ è un funzionale generalmente non limitato. Quindi questo oggetto non è in corrispondenza con un vettore nello spazio di Hilbert.
+\begin{equation}\begin{split}
+\phi \left(k\right)=\left\langle k|\psi\right\rangle
+\end{split}\end{equation}
+Dove $\left\langle k\right|$ è anch'esso un funzionale generalmente non limitato.\\
+Quindi fare la trasformata di Fourier equivale ad un cambio di rappresentazione.
+\begin{equation}\begin{split}
+\left\langle x|\psi\right\rangle=\psi\left(x\right)=\int_{-\infty }^{+\infty }{e^{ikx}\phi\left(k\right) \frac{\textrm{d}k}{\sqrt{2\pi}}}=\int^{+\infty }_{-\infty } dk \left\langle x|k\right\rangle \left\langle k|\psi\right\rangle
+\end{split}\end{equation}
+Ho inserito la completezza $\int^{+\infty }_{-\infty } {dk \left|k\right\rangle \left\langle k\right|}$ per il set di vettori $\left|k\right\rangle$,\\ non normalizzabili in senso ordinario.\\
+Si passa da una rappresentazione ad un'altra attraverso un operatore unitario.\\
+Ad esempio se abbiamo la rappresentazione f, e vogliamo passare alla rappresentazione e, si ha:\\
+\begin{equation}\begin{split}
+\left\langle f_{n}|\psi\right\rangle=\sum_{m}\left\langle f_{n}|e_{m}\right\rangle \left\langle e_{m}|\psi\right\rangle=\sum_{m}U_{nm}\left\langle e_{m}|\psi\right\rangle
+\end{split}\end{equation}
+Allora, considerando l'equazione (8), si nota che 
+\begin{equation}\begin{split}
+\frac{e^{ikx}}{\sqrt{2\pi}}=\left\langle x|k\right\rangle
+\end{split}\end{equation} è il kernel di un operatore unitario, poichè la trasformata di Fourier è essa stessa una trasformazione unitaria.\\
+Anziché avere delle somme, si hanno degli integrali(indici continui).
+Si hanno delle funzioni $u_{k}\left(x\right)=\left\langle x|k\right\rangle$ che sono la valutazione del vettore non normalizzabile $\left|k\right\rangle$ nel punto x, e che sono ortogonali in senso generalizzato, infatti:\\
+\begin{equation}\begin{split}
+\left\langle k|k'\right\rangle=\int^{+\infty }_{-\infty } {dx \left\langle k|x\right\rangle \left\langle x|k'\right\rangle}=
+\int^{+\infty }_{-\infty } {\frac{dx}{2\pi} e^{i\left(k'-k\right)x}}=\delta\left(k'-k\right)
+\end{split}\end{equation}
+Abbiamo quindi una base continua, ortonormale alla Dirac.\\ 
+Vediamo ora come cambia la rappresentazione degli operatori.\\
+Abbiamo un operatore che agisce su di un vettore, noi ne facciamo la rappresentazione x.\\
+\begin{equation}\begin{split}
+\left\langle x|\left(A|\psi\right\rangle\right)=\left\langle x|A|\psi\right\rangle= A\left(x,\partial_x\right) \psi\left(x\right)= A\left(x,\partial_x\right)\left\langle x|\psi\right\rangle
+\end{split}\end{equation}\\
+Ad esempio, qual è la rappresentazione x dell'operatore momento p, applicato al vettore $\psi$?
+$\left\langle x|p|\psi\right\rangle=-i\hbar\partial_x\psi\left(x\right)$, allora $p=-i\hbar\partial_x$ è la rappresentazione x dell'operatore momento.\\
+Scriviamo ora la rappresentazione k dell'operatore momento, dove per fare il cambio di rappresentazione, introduciamo la completezza.\\
+\begin{equation}\begin{split}\left\langle k|p|\psi\right\rangle=\int^{+\infty }_{-\infty } {dx \left\langle k|x\right\rangle \left\langle x|p|\psi\right\rangle}=\int^{+\infty }_{-\infty } {\frac{dx}{\sqrt{2\pi}} e^{-ikx}\left(-i\hbar\partial_x\right)\psi\left(x\right)}
+\end{split}\end{equation}\\
+integrando per parti otteniamo due termini $\frac{e^{-ikx}}{\sqrt{2\pi}}\psi\left(x\right)$ che valutato tra $+\infty$ \\e $-\infty$ va a zero ed il secondo termine \\
+\begin{equation}\begin{split}
+\int^{+\infty }_{-\infty } {dx\left(\frac{i\hbar\partial_x e^{-ikx}}{\sqrt{2\pi}}\right)\psi\left(x\right)}=\hbar k\int^{+\infty }_{-\infty }{e^{-ikx}\psi \left(x\right) \frac{\textrm{d}x}{\sqrt{2\pi}}}=\hbar k\phi \left(k\right)
+\end{split}\end{equation}\\
+Allora $p=\hbar k$ è la rappresentazione k dell'operatore momento.\\
+Nella rappresentazione x l'operatore momento è differenziale, nella rappresentazione k l'operatore momento è invece moltiplicativo.\\
+Adesso andiamo a vedere cosa succede per l'operatore x, che abbiamo sempre visto come moltiplicativo.
+$$\left\langle x|x|\psi\right\rangle=x\left\langle x|\psi\right\rangle$$
+\begin{equation}\begin{split}
+\left\langle k|x|\psi\right\rangle=\int^{+\infty }_{-\infty } {dx \left\langle k|x\right\rangle \left\langle x|x|\psi\right\rangle}=\int^{+\infty }_{-\infty }{\frac{dx}{\sqrt{2\pi}} e^{-ikx}x\psi\left(x\right)}=
+\\=\int^{+\infty }_{-\infty }{\frac{dx}{\sqrt{2\pi}}\left(i\partial_k e^{-ikx}\right)\psi\left(x\right)}=
+i\partial_k \int^{+\infty }_{-\infty }{\frac{dx}{\sqrt{2\pi}}e^{-ikx}\psi\left(x\right)}=\\
+=i\partial_k\phi \left(k\right)=i\partial_k\left\langle k|\psi\right\rangle
+\end{split}\end{equation}
+Allora $x=i\partial_k$ è la rappresentazione k dell'operatore x. Siccome, sempre nella rappresentazione k,  $p=\hbar k$, allora $x=i\hbar\partial_p$ è la rappresentazione p dell'operatore posizione.
+Attenzione, però, se facciamo\\
+$\int^{+\infty }_{-\infty } dk |\phi\left(k\right)|^2=\int^{+\infty }_{-\infty } \frac{dp}{\hbar}|\phi\left(k\right)|^2=\int^{+\infty }_{-\infty } dp |\phi\left(p\right)|^2$, allora\\
+dobbiamo avere che $\phi\left(p\right)=\hbar^{-1/2}\phi\left(k\right)$. Il cambio di variabile implica una costante nella $\phi$ altrimenti si perderebbe la normalizzazione.\\
+Se andassimo in tre dimensioni avremmo $\phi\left(\vec{p}\right)=\hbar^{-3/2}\phi\left(\vec{k}\right)$.\\
+In pratica la rappresentazione k e la rappresentazione p sono la stessa cosa, a meno di una costante $\hbar$ a cui bisogna prestare attenzione.\\
+Se vogliamo rappresentare un generico operatore A associato ad un'osservabile, rispettivamente nella rappresentazione x e nella rappresentazione k, abbiamo:\\
+rappresentazione x  $A\longrightarrow A\left(x,\partial_x\right)$\\ 
+rappresentazione k  $A\longrightarrow A\left(\partial_k,k\right)$\\
+Ad esempio l'hamiltoniana H nella rappresentazione p diventa $H=\frac{p^2}{2m}+V\left(i\hbar\partial_p\right)$,\\
+poiché il potenziale dipende da x.\\ Se avessimo, nell'espressione dell'operatore, $x^2$,passando alla rappresentazione p corrisponderebbe alla derivata seconda rispetto a p, e cosi via.
+I ragionamenti qui svolti valgono per qualunque rappresentazione.
+\end{flushleft}
+%\end{document}
+

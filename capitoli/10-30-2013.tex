@@ -1,0 +1,176 @@
+\section{Notazione doppio ket} %Notazione doppio ket
+
+Sia $A=\sum{A_{n,m}\left |n \right\rangle\left\langle m\right |}$ con $A_{n,m}=\left\langle n|A|m \right\rangle \in M_{N,M}\left(\mathbb{C} \right)$. $\left |m \right\rangle \in$ spazio delle colonne $\mathbb{C} ^M$ e $\left\langle n\right | \in$ spazio delle righe $\mathbb{C} ^N$ $\Longrightarrow $ $A\in B\left(\mathbb{C} ^M,\mathbb{C} ^N\right)\equiv A_{N,M}\left(\mathbb{C} \right)$.
+
+Si definisce il \textbf{doppio ket} il valore:
+\begin{equation}\begin{split}
+\left.\left | \right\rangle\right\rangle=\sum_{n,m}{A_{n,m}\left |n \right\rangle\otimes \left |m \right\rangle}\in \mathbb{C} ^N\otimes \mathbb{C} ^M
+\end{split}\end{equation}
+
+Si chiama \textbf{operatore di Hilbert-Smith}:
+\begin{equation}\begin{split}
+\left\langle \left \langle A|B \right\rangle\right\rangle=Tr\left[A^{\dag} B\right]\\
+\left\langle \left \langle A|A \right\rangle\right\rangle=Tr\left[A^{\dag} A\right]
+\end{split}\end{equation}
+
+
+Sia $\left(A\otimes B\right)\left |C \right\rangle\rangle=\left |ACB^t \right\rangle\rangle$:
+\begin{equation}\begin{split}
+\sum_{i,j,l,k,m,n}{A_{i,j}B_{l,m}C_{k,n}\left(\left |i \right\rangle\left\langle j\right |\otimes \left |l \right\rangle\left\langle m\right |\right)}\left |k \right\rangle\otimes \left |n \right\rangle=\\
+=\sum_{i,l}{ACB^t}_{i,l}\left |i \right\rangle\otimes \left |l \right\rangle
+\end{split}\end{equation}
+
+Si definisce il doppio ket della matrice identità:
+\begin{equation}\begin{split}
+\left |\mathbb{I} \right\rangle\rangle=\sum_{n}{\left |n \right\rangle\otimes \left |n \right\rangle}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+Tr_2\left[\left |\mathbb{I} \right\rangle\rangle\left\langle \langle \mathbb{I}\right |\right]=\\
+=\sum_l{\mathbb{I}\otimes \left\langle l\right |}\sum_{n,m}{\left |n \right\rangle\left |n \right\rangle\left\langle m\right |\left\langle m\right |\left(\mathbb{I} \otimes \left |l \right\rangle\right)}=\\
+=\sum_l{\left |l \right\rangle\left\langle l\right |}=\\
+=\mathbb{I}
+\end{split}\end{equation}
+
+\section{Stati entangled} %Stati entangled
+\begin{equation}\begin{split}
+\left |\psi  \right\rangle\rangle=\sum_{i,j}{\psi _{i,j}\left |i \right\rangle\otimes \left\langle j\right |}
+\end{split}\end{equation}
+Lo stato marginale per il sistema $1$ è:
+\begin{equation}\begin{split}
+\rho=\\
+=Tr_2\left[\left |\Psi  \right\rangle\rangle\left\langle \langle \Psi \right |\right]=\\
+=\Psi \Psi ^{\dag}
+\end{split}\end{equation}
+considerando $Tr_2\left[\left |A \right\rangle\rangle\left\langle \langle A \right |\right]=ATr_2\left[\left |\mathbb{I} \right\rangle\rangle \left\langle \langle \mathbb{I}\right |\right]A^{\dag}=AA^{\dag}$.
+
+Per ogni stato mistura $\rho$ c'è uno stato puro $\left |\Psi \right\rangle\rangle$er il quale $\rho$ è marginale.
+
+\begin{itemize}
+\item $\rho \rightarrow \left |\Psi \right\rangle\rangle$ purificazione
+\item $\left |\Psi \right\rangle \rightarrow $ marginalizzazione
+\end{itemize}
+
+Se $\rho=\Psi\Psi^{\dag}$ si ha $\Psi=\rho^{\frac{1}{2}}$ e quindi:
+\begin{equation}\begin{split}
+\left.\left |\rho^{\frac{1}{2}} \right\rangle\right\rangle
+\end{split}\end{equation}
+considerando $\rho=\sum_n{\lambda_n\left |\lambda_n \right\rangle\left\langle \lambda_n\right |}\in T\left(\mathcal{H}\right)$ e $\rho^{\frac{1}{2}}=\sum_n{\lambda_n^{\frac{1}{2}}\left |\lambda_n \right\rangle\left\langle \lambda_n\right |}$.
+
+\begin{equation}\begin{split}
+V^{\dag}V=\mathbb{I}
+\end{split}\end{equation}
+con $V=\left(\mathcal{H},\mathfrak{K}\right)$ considerando $\dim\left(\mathfrak{K}\right)\ge \dim\left(\mathcal{H}\right)$.
+
+\begin{equation}\begin{split}
+\Psi V^{\dag}\left(\Psi V^{\dag}\right)^{\dag}=\Psi V^{\dag} V \Psi^{\dag}=\Psi \Psi^{\dag}=\rho
+\end{split}\end{equation}
+
+\section{Addizione di momenti angolari} %Addizione di momenti angolari
+\subsection{Addizione di due spin} %Addizione di due spin
+\begin{equation}\begin{split}
+S=\frac{\hbar }{2}\bar \sigma
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+S_{tot}=S_1+S_2
+\end{split}\end{equation}
+con $S_1=S\otimes \mathbb{I}$ e $S_2=\mathbb{I}\otimes S$.
+
+Sia ora
+\begin{equation}\begin{split}
+\left |\chi \right\rangle\in \left\{\left |\uparrow \right\rangle,\left |\downarrow \right\rangle\right\}
+\end{split}\end{equation}
+con $\left |\uparrow \right\rangle$= e $\sigma_z=$.
+
+\begin{equation}\begin{split}
+S_z\left |\chi_1 \right\rangle\otimes \left |\chi_2 \right\rangle=\\
+=\left(S_{1,z}+S_{2,z}\right)\left |\chi_1 \right\rangle\otimes \left |\chi_2 \right\rangle=\\
+= =\\
+=\frac{\hbar }{2}\left(m_1+m_2\right)\left |\chi_1 \right\rangle\otimes \left |\chi_2 \right\rangle
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left |\chi_1 \right\rangle\otimes \left |\chi_2 \right\rangle\in \left\{\left |\uparrow \uparrow \right\rangle, \left |\uparrow \downarrow \right\rangle, \left |\downarrow \uparrow \right\rangle, \left |\downarrow \downarrow \right\rangle\right\}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+S_{\pm}=S_{1,\pm}+S_{2,\pm}
+\end{split}\end{equation}
+
+Siano ora i casi:
+\begin{itemize}
+\item 
+\begin{equation}\begin{split}
+S_+\left |\uparrow \uparrow \right\rangle=\left(S_{1,+}\left |\uparrow \right\rangle\otimes \left |\uparrow \right\rangle\right)+\left |\uparrow \right\rangle\otimes S_{2,+}\left |\uparrow \right\rangle=0
+\end{split}\end{equation}
+\item 
+\begin{equation}\begin{split}
+S_-\left |\downarrow \downarrow \right\rangle=0
+\end{split}\end{equation}
+\item 
+\begin{equation}\begin{split}
+S_-\left |\uparrow \uparrow \right\rangle=\\
+= =\\
+= =\\
+=\hbar \sqrt{2}\frac{1}{\sqrt{2}}\left(\left |\downarrow \uparrow \right\rangle +\left |\uparrow \downarrow \right\rangle\right)
+\end{split}\end{equation}
+\item 
+\begin{equation}\begin{split}
+S_-\frac{1}{\sqrt{2}}\left(\left |\downarrow \uparrow \right\rangle +\left |\uparrow \downarrow \right\rangle\right)=\\
+=\frac{1}{\sqrt{2}}\hbar \left(\left |\downarrow \downarrow \right\rangle+\left |\downarrow \downarrow \right\rangle\right)=\\
+=\hbar \sqrt{2}\left |\downarrow \downarrow \right\rangle
+\end{split}\end{equation}
+\end{itemize}
+
+\begin{equation}\begin{split}
+\begin{cases}
+S_z\left |\uparrow \uparrow \right\rangle=\hbar \left |\uparrow \uparrow \right\rangle, & m=1 \\
+S_z\frac{1}{\sqrt{2}}\left(\left |\uparrow \downarrow \right\rangle+\left |\downarrow \uparrow \right\rangle\right)=0, & m=0 \\
+S_z\left |\downarrow \downarrow \right\rangle=-\hbar \left |\downarrow \downarrow \right\rangle, & m=-1
+\end{cases}
+\end{split}\end{equation}
+
+Sia
+\begin{equation}\begin{split}
+S^2=S_z^2+\frac{1}{2}\left(S_+S_-+S_-S_+\right)
+\end{split}\end{equation}
+si hanno quindi:
+\begin{itemize}
+\item 
+\begin{equation}\begin{split}
+S^2\left |\uparrow \uparrow \right\rangle=\\
+=\left[S_z^2+\frac{1}{2}\left(S_+S_-+S_-S_+\right)\right]\left |\uparrow \uparrow \right\rangle=\\
+=\hbar ^2\left[\left |\uparrow \uparrow \right\rangle+\frac{1}{2}\left(2\right)\left |\uparrow \right\rangle\right]=\\
+=\hbar ^22\left |\uparrow \uparrow \right\rangle=\\
+=\hbar ^2l\left(l+1\right)\left |\uparrow\uparrow \right\rangle
+\end{split}\end{equation}
+\item 
+\begin{equation}\begin{split}
+S^2\left |\downarrow \downarrow \right\rangle=\hbar ^22\left |\downarrow \downarrow \right\rangle
+\end{split}\end{equation}
+\item Per $l=1$
+\begin{equation}\begin{split}
+S^2\frac{1}{\sqrt{2}}\left(\left |\uparrow \downarrow \right\rangle+\left |\downarrow \uparrow \right\rangle\right)=\hbar l\left(l+1\right)\frac{1}{\sqrt{2}}\left(\left |\uparrow \downarrow \right\rangle+\left |\downarrow \uparrow \right\rangle\right)
+\end{split}\end{equation}
+\item 
+\begin{equation}\begin{split}
+S^2\frac{1}{\sqrt{2}}\left(\left |\uparrow \downarrow \right\rangle-\left |\downarrow \uparrow \right\rangle\right)=0
+\end{split}\end{equation}
+\end{itemize}
+
+%MANCA DIMOSTRAZIONE DELL'ULTIMO
+
+\subsection{Tripletto} %Tripletto
+Si ha con $l=1$
+\begin{equation}\begin{split}
+\begin{cases}
+\left |\uparrow \uparrow \right\rangle, & m=1\\
+\frac{1}{\sqrt{2}}\left(\left |\uparrow \downarrow \right\rangle+\left |\downarrow \uparrow \right\rangle\right), & m=0\\
+\left |\downarrow \downarrow \right\rangle, & m=-1
+\end{cases}
+\end{split}\end{equation}
+
+\subsection{Singoletto} %Singoletto
+Si ha con $l=0$
+\begin{equation}\begin{split}
+\frac{1}{\sqrt{2}}\left(\left |\uparrow \downarrow \right\rangle-\left |\downarrow \uparrow \right\rangle\right) \quad m=0
+\end{split}\end{equation}

@@ -1,0 +1,181 @@
+\section{Oscillatore armonico - metodo analitico} %Oscillatore armonico - metodo analitico
+Si cambia la variabile dell'equazione differenziale: $\xi =\sqrt{\frac{m\omega }{\hbar }}x$.
+Si ottiene perciò:
+\begin{equation}\begin{split}
+\frac{d\psi ^2}{dx^2}=\left(\xi ^2 -k\right)\psi (x)\\
+k=\frac{2E}{\hbar \omega }
+\end{split}\end{equation}
+
+Si considera il comportamento asintotico per $\xi \gg 1$. Si ha quindi:
+\begin{equation}\begin{split}
+\frac{d^2\psi }{dx^2}\sim \xi^2\psi 
+\end{split}\end{equation}
+che ha come soluzione:
+\begin{equation}\begin{split}
+\psi \left(x\right)\simeq Ae^{-\frac{\xi^2}{2}}+Be^{\frac{\xi^2}{2}}=Ae^{-\frac{\xi^2}{2}}
+\end{split}\end{equation}
+Passando al logaritmo:
+\begin{equation}\begin{split}
+\psi \left(\xi\right)=\ln\left(\xi\right)e^{-\frac{\xi^2}{2}}
+\end{split}\end{equation}
+Derivando due volte:
+\begin{equation}\begin{split}
+\frac{d^2\psi }{d\xi^2}=\left(\frac{d^2h}{d\xi^2}-2\xi \frac{dh}{d\xi}+\left(\xi^2 -1\right)h\right)e^{-\frac{\xi^2}{2}}
+\end{split}\end{equation}
+con $h$ si intende un polinomio.
+
+Si suppone che $h$ abbia uno sviluppo di Taylor, centrato su $0$. Sostituendo nell'equazione di Schrödinger:
+\begin{equation}\begin{split}
+\frac{d^2h}{d\xi^2}-2\xi\frac{dh}{d\xi}+\left(k-1\right)h=0
+\end{split}\end{equation}
+Risolvendo in $h$ si ottiene:
+\begin{equation}\begin{split}
+h\left(\xi\right)=\sum_{j=0}^{\infty }a_j\xi^j \\
+\frac{dh}{d\xi}=\sum_{j=1}^{\infty }ja_j\xi^{j-1}=\sum_{j=0}^{\infty }\left(j-1\right)a_{j+1}\xi^j \\
+\frac{d^2h}{d\xi^2}=\sum_{j=0}^{\infty }\left(j+1\right)\left(j+2\right)a_{j+2}\xi^j
+\end{split}\end{equation}
+
+Sostituendo si nota che in:
+\begin{equation}\begin{split}
+\sum_{j=0}^{\infty }\left[\left(j+1\right)\left(j+2\right)a_{j+2}-2ja_j+\left(k-1\right)a_j\right]\xi^j=0
+\end{split}\end{equation}
+la parte nella paremtesi $\left[ \quad \right]$ è nulla $\forall j$.
+
+$a_{j+2}=\frac{2j+1-k}{\left(j+1\right)\left(j+2\right)}$ per grandi $j$ va come:
+\begin{equation}\begin{split}
+\frac{2}{j}a_j=\frac{1}{\frac{j}{2}}a_j\simeq\frac{1}{\left(\frac{j}{2}\right)!}a_0
+\end{split}\end{equation}
+$h\left(\xi\right)$ va come:
+\begin{equation}\begin{split}
+\sum_{j}^{}\frac{\xi}{\left(\frac{j}{2}\right)!}
+\end{split}\end{equation}
+che asintoticamente vale:
+\begin{equation}\begin{split}
+\sum_{j}^{}\frac{\xi^{2j}}{j!}
+\end{split}\end{equation}
+
+Bisogna troncare la serie: $k$ deve essere dispari $\rightarrow$ $k=2n+1$.
+\begin{equation}\begin{split}
+E=\hbar \omega \left(n+\frac{1}{2}\right)
+\end{split}\end{equation}
+Tutti i termini dispari sono nulli e quelli pari si troncano.
+
+\begin{equation}\begin{split}
+a_{j+2}=\frac{-2\left(n-j\right)}{\left(j+1\right)\left(j+2\right)}a_j
+\end{split}\end{equation}
+\begin{itemize}
+\item $n=0$: $a_2=a_4=\dots=0$, $a_0=h_0\left(\xi\right)$, $\psi _0\left(\xi\right)=a_0e^{-\frac{\xi^2}{2}}$
+\item $n=1$: $a_1\neq 0$, $\ln\left(\xi\right)=a_1\xi$, $\psi _1\left(\xi\right)=a_1\xi e^{-\frac{\xi^2}{2}}$
+\end{itemize}
+
+In generale:
+\begin{equation}\begin{split}
+H_n\left(\xi\right)=\left(-\right)^ne^{\xi^2}\left(\frac{d}{d\xi}\right)^ne^{-\xi^n}
+\end{split}\end{equation}
+con $H_n$ \textbf{polinomio di Hermitte o formula di Rodriguez}. \\
+Si usano funzioni ortonormali per scrivere la ricorrenza tra polinomi:
+\begin{equation}\begin{split}
+e^{-z^2+2z\xi}=\sum_{n=0}^{\infty}{H_n\left(\xi\right)\frac{z_n}{n!}}
+\end{split}\end{equation}
+Essa deve essere:
+\begin{equation}\begin{split}
+H_{n+1}\left(\xi\right)=2\xi H_n\left(\xi\right)-2nH_{n-1}\left(\xi\right).
+\end{split}\end{equation}
+Si ottiene quindi un set completo:
+\begin{equation}\begin{split}
+\psi _n\left(\xi\right)=\left(\frac{m\omega }{\pi \hbar }\right)^{\frac{1}{4}}\frac{1}{\sqrt{2^nn!}}H_n\left(\xi\right) e^{-\frac{\xi^2}{2}}
+\end{split}\end{equation}
+
+\section{Particella libera} %Particella libera
+La particella libera è un insieme continuo di funzioni non normalizzabili che risolvono le equazioni agli autovalori dell'equazione:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{d^2\psi }{dx^2}=E\psi 
+\end{split}\end{equation}
+Si consideri: $\frac{d^2\psi }{dx^2}=-k^2\psi $ con $k=\frac{\sqrt{2mE}}{\hbar }$.
+
+La sua equazione di Schrödinger è:
+\begin{equation}\begin{split}
+\psi \left(\bar x,t\right)=Ae^{ik\left(x-\frac{\hbar k}{2m}\right)t}+Be^{-ik\left(x+\frac{\hbar k}{2m}\right)t}
+\end{split}\end{equation}
+che risulta:
+\begin{equation}\begin{split}
+\psi \left(\bar x,t\right)=Ae^{i\left(kx-\frac{\hbar k^2}{2m}\right)t}
+\end{split}\end{equation}
+imponendo $p=\hbar k$, $E=\frac{\hbar ^2k^2}{2m}$, $k=\pm \frac{\sqrt{2mE}}{\hbar }$. \\
+Si ha quindi anche 
+\begin{equation}\begin{split}
+v_p=\frac{\hbar k}{2m}\\
+v_g=\frac{\hbar k}{m}.
+\end{split}\end{equation}
+
+La $\psi(x)$ non è normalizzabile $\Longrightarrow$ la particella libera non può esistere in uno stato stazionario, ma può esistere in un pacchetto d'onda.
+
+La trasformata di Fourier è:
+\begin{equation}\begin{split}
+\psi \left(\bar x,t\right)=\int_{-\infty }^{+\infty }{\phi\left(k\right)e^{i\left(kx-\frac{\hbar k^2}{2m}\right)t} \frac{\textrm{d}k}{\sqrt{2\pi }}}.
+\end{split}\end{equation}
+Al tempo $0$:
+\begin{equation}\begin{split}
+\psi \left(x,0\right)=\int_{-\infty }^{+\infty }{\phi\left(k\right)e^{ikx} \frac{\textrm{d}k}{\sqrt{2\pi }}}.
+\end{split}\end{equation}
+Può essere normalizzabile: $e^{-\frac{i}{\hbar}Et}=e^{-i\omega _1t}$
+
+Utilizzando la formula di Plancherel:
+\begin{equation}\begin{split}
+f\left(x\right)=\int{e^{ikx}F\left(k\right) \frac{\textrm{d}k}{\sqrt{2\pi}}} \Longrightarrow \\
+F\left(k\right)=\int{e^{-ikx}f\left(x\right) \frac{\textrm{d}x}{\sqrt{2\pi}}}
+\end{split}\end{equation}
+si ricava quindi in analogia di come si sono ricavati i $c_n$:
+\begin{equation}\begin{split}
+\phi\left(k\right)=\int_{-\infty }^{+\infty }{\phi\left(x,0\right)e^{-ikx} \frac{\textrm{d}k}{\sqrt{2\pi }}}
+\end{split}\end{equation}
+ricordando la delta di Dirac: $\int_{}^{}{e^{-ikx}e^{ik'x} \frac{\textrm{d}k}{2\pi }}=\delta \left(x-x'\right)$.
+
+\subsection{Caso particolare} %Caso particolare
+\begin{equation}\begin{split}
+\psi \left(x,0\right)=\begin{cases}
+\frac{1}{\sqrt{2a}} & -a\le x\le a \\
+0 & \textrm{altrimenti}
+\end{cases}
+\end{split}\end{equation}
+Si ottiene quindi:
+\begin{equation}\begin{split}
+\phi \left(k\right)=\frac{1}{\sqrt{2\pi}}\int_{-a}^{+a}{e^{-ikx} \frac{\textrm{d}k}{\sqrt{2\pi}}}=\sqrt{\frac{a}{\pi}}sinc\left(ka\right)
+\end{split}\end{equation}
+intendendo $sinc\left(x\right)=\frac{\sin{\left(x\right)}}{x}$.
+
+Essendo $\psi\left(\bar x, t\right)$ un pacchetto d'onda si ha:
+\begin{equation}\begin{split}
+\psi \left(x,t\right)=\frac{1}{\pi}\sqrt{\frac{a}{2}}\int_{-\infty }^{+\infty }{sinc\left(ka\right)e^{i\left(kx-\frac{\hbar k^2}{2m}t\right)} \textrm{d}k}.
+\end{split}\end{equation}
+
+Prendo un pacchetto attorno al valore $k_0$ ($k\simeq k_0$), $\omega \left(k\right)=\omega _0+\omega '_0\left(k-k_0\right)=\omega _0+\omega '_0s=\omega _0+v_gs$.
+\begin{equation}\begin{split}
+\psi \left(x,t\right)=\\
+\frac{1}{\sqrt{2\pi }}\int_{-\infty }^{+\infty }{\phi\left(k_0+s\right) e^{i\left(k_0+s\right)x-i\left(\omega _0+\omega '_0s \right)t} \textrm{d}s}=\\
+\frac{1}{\sqrt{2\pi }}e^{i\left(-\omega _0t+\omega '_0k_0t\right)}\int_{}^{}{\phi\left(k_0+s\right)e^{i\left(k_0+s\right)\left(x-\omega '_0s\right)t} \textrm{d}s}.
+\end{split}\end{equation}
+Risulta che il pacchetto trasla con velocità $v_g$.
+
+Tra il caso continuo e discreto si sceglie il caso con $k$ discreto: al posto che usare l'integrale si usa la somma $\sum_{-a}^{a}$.
+\\ Se E è discreto $\Longrightarrow $ $k$ è discreto come nel caso della buca di potenziale e si ha:
+\begin{equation}\begin{split}
+f\left(x\right)=\sum_{n=-\infty}^{+\infty}{f\left(k_n\right)e^{ik_nx}\Delta k\frac{1}{\sqrt{2\pi}}}=\sum_{n=-\infty}^{+\infty}{c_ne^{ik_nx}\Delta k\frac{1}{\sqrt{2\pi}}}\\
+\Longrightarrow \Delta k \to 0 \Longrightarrow \int{f\left(k\right)e^{ikx}\frac{\textrm{d}k}{\sqrt{2\pi}}}.
+\end{split}\end{equation}
+
+Le autofunzioni di $H$ che non sono normalizzabili, non sono stati fisici. Si possono espandere gli stati ($\psi \left(x\right)$ nromalizzabile) su particolari autofunzioni.
+
+\subsection{Effetto tunnel} %Effetto tunnel
+L'effetto tunnel è un effetto quanto-meccanico che permette una transizione ad uno stato impedito dalla meccanica classica.
+
+Nella meccanica classica, la legge di conservazione dell'energia impone che una particella non possa superare un ostacolo (barriera) se non ha l'energia necessaria per farlo. Questo corrisponde al fatto intuitivo che, per far risalire un dislivello ad un corpo, è necessario imprimergli una certa velocità, ovvero cedergli dell'energia.
+
+La meccanica quantistica, invece, prevede che una particella abbia una probabilità diversa da zero di attraversare spontaneamente una barriera arbitrariamente alta.\\
+Infatti, applicando i postulati della meccanica quantistica al caso di una barriera di potenziale in una dimensione, si ottiene che la soluzione dell'equazione di Schrödinger all'interno della barriera è rappresentata da una funzione esponenziale decrescente. Dato che le funzioni esponenziali non raggiungono mai il valore $0$, si ottiene che esiste una piccola probabilità che la particella si trovi dall'altra parte della barriera dopo un certo tempo $t$.
+
+Si ha una regola:
+\begin{itemize}
+\item $E<\min{\left(V\left(-\infty \right),V\left(+\infty \right)\right)}$ $\Longrightarrow $ stato stazionario, spettro discreto, stato di scattering
+\item $E>\min{\left(V\left(-\infty \right),V\left(+\infty \right)\right)}$ $\Longrightarrow $ autofunzioni non normalizzabili, spettro continuo, stato di bound
+\end{itemize}

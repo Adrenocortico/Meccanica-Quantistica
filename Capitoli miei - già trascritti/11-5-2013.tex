@@ -1,0 +1,81 @@
+\paragraph{Caso canonico} %Caso canonico
+Si prenda la funzione di partizione $Z=\sum_{\psi }{e^{-\beta E_\psi }}$ con $\beta=\frac{1}{k_BT}$. Derivandola si ottiene l'energia:
+\begin{equation}\begin{split}
+-\frac{\partial \ln{\left(Z\right)}}{\partial \beta}=\frac{\sum_{\psi }{e^{-\beta E_\psi }E_\psi }}{Z}=\left\langle H \right\rangle=Tr\left[\rho H\right]=U
+\end{split}\end{equation}
+
+Si ha però che $U=U\left(T,V,N\right)$ non è una descrizione termodinamica completa. Per ovviare al problema si fa la trasformata di Legendre e si ottiene l'\textbf{energia libera di Helmoltz}:
+\begin{equation}\begin{split}
+U\left(S,V,N\right)\longrightarrow U\left[T\right]=U-S\frac{\partial U}{\partial S}=U-TS=A\left(T,V,N\right)
+\end{split}\end{equation}
+considerando $T=\frac{\partial U}{\partial S}$.
+
+Facendo l'antitrasformata si ha:
+\begin{equation}\begin{split}
+A=U+T\frac{\partial A}{\partial T} \longrightarrow -S=\frac{\partial A}{\partial T}
+\end{split}\end{equation}
+
+L'energia libera di Helmoltz si può vedere anche:
+\begin{equation}\begin{split}
+A=-\frac{\partial \ln{\left(Z\right)}}{\partial \beta}-\beta\frac{\partial A}{\partial \beta} \Longrightarrow A=-\frac{1}{\beta}\ln{\left(Z\right)}.
+\end{split}\end{equation}
+Per il controllo:
+\begin{equation}\begin{split}
+A+\beta\frac{\partial A}{\partial \beta}=-\frac{\partial \ln{\left(Z\right)}}{\beta} \\
+-\frac{1}{\beta}\ln{\left(Z\right)}+\beta\left(\frac{1}{\beta^2}\ln{\left(Z\right)}-\frac{1}{\beta}\frac{\partial \ln{\left(Z\right)}}{\partial \beta}\right)=-\frac{\partial \ln{\left(Z\right)}}{\beta}
+\end{split}\end{equation}
+
+\paragraph{Caso gran canonico} %Caso gran canonico
+Si consideri $\mu=\frac{\partial U}{\partial N}$, $-P=\frac{\partial U}{\partial V}$ e $T=\frac{\partial U}{\partial S}$. Si compia una doppia trasformata di Legendre e si ottiene il \textbf{potenziale gran canonico}:
+\begin{equation}\begin{split}
+U\longrightarrow U\left[T,\mu\right]=U-S\frac{\partial U}{\partial S}-N\frac{\partial U}{\partial N}=U-TS-\mu N=-PV\left(T,V,\mu\right)=\Omega \left(T,V,\mu\right)
+\end{split}\end{equation}
+
+Si cerca la relazione con la funzione di gran partizione:
+\begin{equation}\begin{split}
+\frac{1}{\beta}\frac{\partial \ln{\left(\mathcal{Z}\right)}}{\partial \mu}=\frac{\sum_{\psi }{e^{-\beta \left(E_\psi -\mu N_\psi \right)}N_\psi }}{\mathcal{Z}}=\left\langle N_\psi  \right\rangle=N
+\end{split}\end{equation}
+
+Compiendo l'antitrasformata si ha:
+\begin{equation}\begin{split}
+\frac{\partial \Omega}{\partial \mu}=N \Longrightarrow \frac{\Omega}{k_BT}=\ln{\left(\mathcal{Z}\right)}
+\end{split}\end{equation}
+
+\subsection{Classificazione degli stati} %Classificazione degli stati
+Sia il gruppo di numeri quantici che classificano lo stato il valore
+\begin{equation}\begin{split}
+k=\left(n,l,m,m_s\right)
+\end{split}\end{equation}
+
+Nel caso dei fermioni si ha che il numero di particelle che possono avere il numero $k$, per il principio di esclusione di Pauli, è:
+\begin{equation}\begin{split}
+n_k=0,1
+\end{split}\end{equation}
+Nel caso dei bosoni si ha che il numero di particelle che possono avere il numero $k$ è:
+\begin{equation}\begin{split}
+n_k=0,1,2,\dots,\infty 
+\end{split}\end{equation}
+
+I numeri $n_k$ vengono chiamati numeri di occupazione.
+
+L'energia è:
+\begin{equation}\begin{split}
+E_\psi =E=\sum_k{\epsilon_kn_k}
+\end{split}\end{equation}
+
+\subsection{Gas perfetti - particelle indistinguibili} %Gas perfetti - particelle indistinguibili
+Viene definita la \textbf{fugacità}:
+\begin{equation}\begin{split}
+\lambda=e^{\beta \mu}
+\end{split}\end{equation}
+
+Si ha la relazione tra la funzione di partizione e quella di gran partizione:
+\begin{equation}\begin{split}
+\mathcal{Z}\left(\beta,\mu,V\right)=\sum_{N=0}^{\infty }{\lambda^NZ\left(\beta,N,V\right)}
+\end{split}\end{equation}
+
+Si consideri un gas formato o da soli bosoni o da soli fermioni e ci si pone nel caso gran canonico:
+\begin{equation}\begin{split}
+\mathcal{Z}\left(\beta,\mu,V\right)=\sum_{N=0}^{\infty }{e^{\beta\mu N}}\sum_{\left\{n_k\right\}}{\delta\left(\sum_k{n_k-N}\right)e^{-\beta \sum_k{\epsilon_kn_k}}}
+\end{split}\end{equation}
+considerando lo stato $\psi $ classificato come $\psi \equiv \left\{n_k\right\}$ $\forall k$.

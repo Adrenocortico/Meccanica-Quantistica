@@ -1,0 +1,123 @@
+\begin{equation}\begin{split}
+\left |u_3 \right\rangle=\left\{1+\left(\sqrt{1+\left(\frac{\varepsilon}{2E}\right)^2}+\frac{\varepsilon}{2E}\right)^2\right\}^{-\frac{3}{2}}\left(\begin{matrix}1\\-\sqrt{1+\left(\frac{\varepsilon}{2E}\right)^2}-\frac{\varepsilon}{2E}\\0\end{matrix}\right)
+\end{split}\end{equation}
+
+Per $\varepsilon \rightarrow 0$ si ha $\lambda=E+\frac{\varepsilon}{2}$; normalizzando:
+\begin{equation}\begin{split}
+a
+\end{split}\end{equation}
+si ha:
+\begin{equation}\begin{split}
+\left |u_2 \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1+\frac{\varepsilon}{4E}\\1-\frac{\varepsilon}{4E}\\0\end{matrix}\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |u_3 \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1-\frac{\varepsilon}{4E}\\-1-\frac{\varepsilon}{4E}\\0\end{matrix}\right)
+\end{split}\end{equation}
+
+\subsection{Soluzione con metodo perturbativo} %Soluzione con metodo perturbativo
+Si impone che $\textrm{det}\left(H_0-\lambda\mathbb{I}\right)=0$:
+\begin{equation}\begin{split}
+\left|\begin{matrix}-\lambda & E & 0\\E & -\lambda & 0\\0 & 0 & E-\lambda \end{matrix}\right|=0
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si ottiene il sistema di equazioni:
+\begin{equation}\begin{split}
+\begin{cases}
+-\lambda x+Ey=0\\
+Ex -\lambda y=0\\
+\left(E-\lambda\right)z=0
+\end{cases}
+\end{split}\end{equation}
+Si hanno quindi:
+\begin{equation}\begin{split}
+\begin{cases}
+\lambda=-E\\
+x=-y\\
+2z=0
+\end{cases}\\
+\left(\begin{matrix}x\\-x\\0\end{matrix}\right) \Longrightarrow \left |u_3^{\left(0\right)} \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\-1\\0\end{matrix}\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+x=y\\
+0z=0
+\end{cases}\\
+\left(\begin{matrix}x\\x\\z\end{matrix}\right) \Longrightarrow \left |u_2^{\left(0\right)} \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\1\\0\end{matrix}\right) 
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |u_1^{\left(0\right)} \right\rangle=\left(\begin{matrix}0\\0\\1\end{matrix}\right)
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+V_{\lambda,j}=\left\langle U_{\lambda}^{\left(0\right)}\right |V\left |U_j^{\left(0\right)} \right\rangle
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+V_{1,1}=1
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+V_{2,1}=V_{1,2}=\frac{1}{\sqrt{2}}\left(\begin{matrix}1&1&0\end{matrix}\right)\left(\begin{matrix}1&0&0\\0&0&0\\0&0&-1\end{matrix}\right)\left(\begin{matrix}0\\0\\1\end{matrix}\right)=0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+V_{2,2}=\frac{1}{\sqrt{2}}\left(\begin{matrix}1&1&0\end{matrix}\right)\left(\begin{matrix}1&0&0\\0&0&0\\0&0&-1\end{matrix}\right)\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\1\\0\end{matrix}\right)=\frac{1}{2}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+\left|\begin{matrix}-\frac{1}{2}-\lambda & \frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}&-lambda\end{matrix}\right|=0\\
+\Longrightarrow  \lambda_1=-1, \quad \lambda_2=\frac{1}{2} \\
+\Longrightarrow \lambda_1=-\varepsilon, \quad \lambda_2=\frac{\varepsilon}{2} 
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left(\begin{matrix}-\frac{1}{2}-\lambda & \frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}&-lambda\end{matrix}\right)\left(\begin{matrix}x\\y\end{matrix}\right)=0
+\end{split}\end{equation}
+Per $\lambda=\frac{1}{2}$:
+\begin{equation}\begin{split}
+x=\frac{1}{\sqrt{2}}y \Longrightarrow \left(\begin{matrix}\frac{1}{\sqrt{2}y}\\y\end{matrix}\right) \Longrightarrow \textrm{normalizzando } \frac{1}{\sqrt{3}}\left(\begin{matrix}1\\\sqrt{2}\end{matrix}\right)
+\end{split}\end{equation}
+Per $\lambda=-1$:
+\begin{equation}\begin{split}
+\frac{1}{2}x=-\frac{1}{\sqrt{2}}y \Longrightarrow \left(\begin{matrix}-\sqrt{2}y\\y\end{matrix}\right) \Longrightarrow  \textrm{normalizzando } \frac{1}{\sqrt{3}}\left(\begin{matrix}-\sqrt{2}\\1\end{matrix}\right)
+\end{split}\end{equation}
+
+La matrice di trasformazione $S$ è:
+\begin{equation}\begin{split}
+S=\frac{1}{\sqrt{3}}\left(\begin{matrix}-\sqrt{2}&1\\1&\sqrt{2}\end{matrix}\right)
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si calcolano gli autovettori corretti all'ordine 0:
+
+%MANCA UNA PARTE
+
+Per la correzione al 1º ordine si ha:
+\begin{equation}\begin{split}
+\left |\delta u_j \right\rangle=\sum_{i\neq j}{\frac{\left\langle U_i^{\left(0\right)}\right |\varepsilon V\left |U_j^{\left(0\right)} \right\rangle}{E_j^{\left(0\right)}-E_i^{\left(0\right)}}\left |U_i^{\left(0\right)} \right\rangle}
+\end{split}\end{equation}
+con $i$ nel livello non degenere.
+
+Quindi:
+\begin{equation}\begin{split}
+\left |\delta u_1 \right\rangle=0 \\
+\Longrightarrow \left |u_1^{\left(0\right)} \right\rangle+0=\left(\begin{matrix}0\\0\\1\end{matrix}\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |\delta u_2 \right\rangle=\frac{\varepsilon}{2}\cdot \frac{1}{2E}\cdot \frac{1}{\sqrt{2}}\left(\begin{matrix}1\\-1\\0\end{matrix}\right)\\
+\Longrightarrow \left |u_2^{\left(0\right)} \right\rangle+\left |\delta u_2 \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1+\frac{\varepsilon}{4E}\\1-\frac{\varepsilon}{4E}\\0\end{matrix}\right)
+\end{split}\end{equation}
+Per il livello non degenere (il 3º) si ha:
+\begin{equation}\begin{split}
+\delta E_3=\left\langle U_3^{\left(0\right)}\right |\varepsilon V\left |U_3^{\left(0\right)} \right\rangle=\frac{\varepsilon}{2}\\
+\Longrightarrow E_3^{\left(0\right)}+\delta E_3=-E+\frac{\varepsilon}{2}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |\delta u_3 \right\rangle=-\frac{1}{2E}\cdot \frac{\varepsilon}{2}\cdot \frac{1}{\sqrt{2}}\left(\begin{matrix}1\\1\\0\end{matrix}\right)\\
+\Longrightarrow \left |u_3^{\left(0\right)} \right\rangle+\left |\delta u_3 \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1-\frac{\varepsilon}{4}\\-1-\frac{\varepsilon}{4E}\\0\end{matrix}\right)
+\end{split}\end{equation}

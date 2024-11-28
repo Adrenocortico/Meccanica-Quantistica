@@ -1,0 +1,97 @@
+\subsection{Effetto tunnel} %Effetto tunnel
+Si prende $E>0$ e si hanno stati di scattering:
+\begin{equation}\begin{split}
+\frac{d\psi ^2}{dx^2}=-\frac{2mE}{\hbar ^2}\psi =-k^2\psi 
+\end{split}\end{equation}
+con $k=\frac{\sqrt{2mE}}{\hbar }$.
+
+\begin{itemize}
+\item $x>0$
+\begin{equation}\begin{split}
+\psi \left(x\right)=Fe^{ikx}+Ge^{-ikx}
+\end{split}\end{equation}
+\item $x<0$
+\begin{equation}\begin{split}
+\psi \left(x\right)=Ae^{ikx}+Be^{-ikx}
+\end{split}\end{equation}
+\end{itemize}
+
+La continuità in $x=0$ si ha per $A+B=F+G$:
+\begin{equation}\begin{split}
+\left.\frac{d\psi }{dx}\right |_{0^+}=ik\left(F-G\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left.\frac{d\psi }{dx}\right |_{0^-}=ik\left(A-B\right)
+\end{split}\end{equation}
+Si ha quindi:
+\begin{equation}\begin{split}
+\Delta \left(\frac{d\psi }{dx}\right)=ik\left(F-G-A+B\right)=-\frac{2m\alpha}{\hbar ^2}\left(A+B\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left(F-G\right)=A\left(1+2i\beta\right)-B\left(1+2i\beta\right)
+\end{split}\end{equation}
+con $\beta =\frac{mk}{\hbar ^2k}$.
+
+Si considera un caso particolare di una particella libera stazionaria guardando la diffisione a sinistra, ponendo $G=0$ $\Longrightarrow $ $F=A+B$ (con $A$ onda incidente, $B$ onda riflessa e $F$ onda trasmessa) e le relazioni:
+\begin{equation}\begin{split}
+B=\frac{i\beta}{1-i\beta}A
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+F=\frac{1}{1-i\beta}A
+\end{split}\end{equation}
+Si definisce il \textbf{coefficiente di riflessione}:
+\begin{equation}\begin{split}
+R=\frac{|B|^2}{|A|^2}=\frac{\beta^2}{1+\beta^2}
+\end{split}\end{equation}
+e il \textbf{coefficiente di trasmissione}:
+\begin{equation}\begin{split}
+T=\frac{|F|^2}{|A|^2}=\frac{1}{1+\beta^2}=\frac{1}{1+\frac{m\alpha^2}{2\hbar ^2E}}
+\end{split}\end{equation}
+ricordando che $R+T=1$ conserva la continuità.
+
+La particella passa attraverso il potenziale, effetto tunnel, probabilistico, ma diverso dalla meccanica classica.
+
+\subsection{Matrice di scattering} %Matrice di scattering
+Si ha un caso particolare con potenziale definito in questo modo:
+\begin{equation}\begin{split}
+\begin{cases}
+V_1, & -\infty \\
+\textrm{non interessa}, & a<x<b \\
+V_2, & +\infty 
+\end{cases}
+\end{split}\end{equation}
+Si ha dalle condizioni di raccordo:
+\begin{equation}\begin{split}
+\begin{cases}
+\psi \left(x\right)=Ae^{ikx}+Be^{-ikx}, & -\infty \\
+\psi \left(x\right)=Fe^{ikx}+Ge^{-ikx}, & +\infty 
+\end{cases}
+\end{split}\end{equation}
+Unendo la 1ª e la 2ª, e la 2ª e la 3ª si ha una matrice, utile a cercare B ed F in funzione di A e G:
+\begin{equation}\begin{split}
+{B\choose F} =\left(\begin{matrix} {S_{11}} & {S_{12}}\\{S_{21}} & {S_{22}}\end{matrix}\right){{A}\choose{G}}
+\end{split}\end{equation}
+con al matrice centrale chiamata \textbf{matrice S} di scattering.
+
+Si hanno quindi i due casi:
+\begin{itemize}
+\item $G=0$ scattering, onda che viene da sinistra:
+\begin{equation}\begin{split}
+R_{sx}=|S_{11}|^2 \\
+T_{sx}=|S_{21}|^2
+\end{split}\end{equation}
+\item $A=0$ scattering, onda che viene da destra:
+\begin{equation}\begin{split}
+R_{dx}=|S_{22}|^2 \\
+T_{dx}=|S_{12}|^2
+\end{split}\end{equation}
+\end{itemize}
+i coefficienti diagonali sono quelli di riflessione, quelli non diagonali sono quelli di trasmissione. \\
+
+\textbf{La matrice $S$ è unitaria}. Questo spiega in ottica lo sfasamento dell'onda nella riflessione e nella trasmissione.
+
+\subsection{Matrice di trasferimento} %Matrice di trasferimento
+Viene definita un'altra matrice: la \textbf{matrice di trasferimento}.
+\begin{equation}\begin{split}
+{F\choose G} =\left(\begin{matrix} {M_{11}} & {M_{12}}\\{M_{21}} & {M_{22}}\end{matrix}\right){{A}\choose{B}}
+\end{split}\end{equation}

@@ -1,0 +1,41 @@
+\begin{equation}\begin{split}
+c_b\left(t\right)=\\
+=-\frac{i}{\hbar }V_{b,a}\int_0^t{e^{i\omega _0t'}\cos{\left(\omega t'\right)}\textrm{d}t}=\\
+=-\frac{iV_{b,a}}{2\hbar }\int_0^t{\left[e^{i\left(\omega _0+\omega \right)t'}+e^{i\left(\omega _0-\omega \right)t'}\right]\textrm{d}t'}=\\
+=-\frac{V_{b,a}}{2\hbar }\left[\frac{e^{i\left(\omega _0+\omega \right)t}-1}{\omega _0+\omega }+\frac{e^{i\left(\omega _0-\omega \right)t}-1}{\omega _0-\omega }\right]\simeq \\
+\simeq -\frac{V_{b,a}}{2\hbar }\left[\frac{1}{\omega _0}+t\right]\\
+\Longrightarrow c_b\left(t\right)\simeq-\frac{V_{b,a}}{2\hbar }\frac{e^{i\left(\omega _0-\omega \right)\frac{t}{2}}-e^{-i\left(\omega _0-\omega \right)\frac{t}{2}}}{2i\left(\omega _0-\omega \right)}e^{i\left(\omega _0-\omega \right)\frac{t}{2}}=\\
+=-\frac{iV_{b,a}}{\hbar }e^{i\left(\omega _0-\omega \right)\frac{t}{2}}\frac{\sin{\left[\left(\omega _0-\omega \right)\frac{t}{2}\right]}}{\omega _0-\omega }
+\end{split}\end{equation}
+
+Si ha perciò la probabilità di transizione:
+\begin{equation}\begin{split}
+P_{a\to b}\left(t\right)=\frac{|V_{b,a}|^2}{\hbar ^2}\frac{\sin^2{\left[\left(\omega _0-\omega \right)\frac{t}{2}\right]}}{\left(\omega _0-\omega \right)^2}
+\end{split}\end{equation}
+Per $\omega $ fissato, in funzione del tempo, si ha una sinusoide; per $t$ fissato, in funzione di omega, si ha un picco simile alla risonanza.
+
+Chiamando $\frac{a}{\pi}\frac{\sin^2{\left(\frac{x}{a}\right)}}{x^2}\equiv \hat \delta_a\left(x\right)$ si ottiene:
+\begin{equation}\begin{split}
+P_{a\to b}\left(t\right)=\frac{|V_{b,a}|^2}{\hbar ^2}\frac{\pi t}{2}\hat \delta_{\frac{t}{2}}\left(\omega _0-\omega \right)
+\end{split}\end{equation}
+
+Ricordando la definizione di $V_{b,a}=-\frac{q}{m}A_0\left\langle \psi _b|\bar n\cdot \bar p|\psi _a \right\rangle$ si ha nel sistema di riferimento per cui la direzione di propagazione della luce coincide con l'asse $z$:
+\begin{equation}\begin{split}
+V_{b,a}=-\frac{q}{m}A_0\left\langle \psi _b|\hat p_z|\psi _a \right\rangle
+\end{split}\end{equation}
+
+Considerando $H_0=\frac{p_x^2+p_y^2+p_z^2}{2m}+V\left(\bar x\right)$ si ricava il commutatore
+\begin{equation}\begin{split}
+\left[z,H_0\right]=\frac{1}{2m}\left[z,p_z^2\right]=\frac{1}{2m}\left\{p_z\left[z,p_z\right]+\left[z,p_z\right]p_z\right\}=\frac{i\hbar }{2m}p_z\\
+\Longrightarrow p_z=-\frac{im}{\hbar }\left[z,H_0\right]
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+V_{b,a}=\\
+=-\frac{q}{m}A_0\frac{m}{\hbar }\left\langle \psi _b\left|\left[z,H_0\right]\right|\psi _a \right\rangle=\\
+=\frac{iq}{\hbar }A_0\left[E_a\left\langle \psi _b|z|\psi _a \right\rangle-E_b\left\langle \psi _b|z|\psi _a \right\rangle\right]=\\
+=-\frac{iq}{\hbar }A_0\left(E_b-E_a\right)\left\langle \psi _b|z|\psi _a \right\rangle=\\
+=-iA_0\omega _0\left\langle \psi _b|qz|\psi _a \right\rangle=\\
+=-i\omega A_0\omega \frac{\omega _0}{\omega }\left\langle \psi _b|qz|\psi _a \right\rangle=\\
+=-iE_0\frac{\omega _0}{\omega }\left\langle \psi _b|qz|\psi _a \right\rangle
+\end{split}\end{equation}
+considerando $\bar A=\bar nA_0\cos{\left(\omega t\right)}$, $\bar E=-\frac{\partial \bar A}{\partial t}$, $\bar E=\bar nA_0\omega \sin{\left(\omega t\right)}$.

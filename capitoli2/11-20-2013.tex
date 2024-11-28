@@ -1,0 +1,79 @@
+\chapter{Perturbazioni non dipendenti dal tempo} %Perturbazioni non dipendenti dal tempo
+\section{Hamiltoniana di una particella in un campo elettromagnetico} %Hamiltoniana particella in campo elettromagnetico
+Si sa che $\bar F=q\left(\bar E+\bar v\times\bar B\right)$ e che $\begin{cases}
+\bar E=-\bar \nabla -\frac{\partial \bar A}{\partial t} \\
+\bar B=\bar \nabla \times\bar A 
+\end{cases}
+$ e considerando l'hamiltoniana come:
+\begin{equation}\begin{split}
+H=\frac{1}{2m}\left(\bar p-q\bar A\right)^2+qV+U
+\end{split}\end{equation}
+
+Si ha quindi:
+\begin{equation}\begin{split}
+\begin{cases}
+\dot p_i=-\frac{\partial H}{\partial x_i}=-\frac{1}{m}\left(\bar p-qA\right)\left(-q\right)\cdot \frac{\partial \bar A}{\partial x_i}-q\frac{\partial V}{\partial x_i}=\frac{q}{m}\left(\bar p- q\bar A\right)\cdot \frac{\partial A}{\partial x_i}-q\frac{\partial V}{\partial x_i} \\
+\dot x_i=\frac{1}{m}\left(\bar p-q\bar A\right)_i
+\end{cases}
+\end{split}\end{equation}
+Passando alle accelerazioni si ha:
+\begin{equation}\begin{split}
+\ddot x_i=\frac{1}{m}\left(\dot p_i-q\frac{\partial A_i}{\partial t}\right) \\
+\Longrightarrow m\ddot x_i+q\frac{\partial A_i}{\partial t}=\dot p_i=\frac{q}{m}\left(\bar p- q\bar A\right)\cdot \frac{\partial A}{\partial x_i}-q\frac{\partial V}{\partial x_i} \\
+\Longrightarrow m\ddot x_i=-q\left(\frac{\partial A_i}{\partial t}+\sum_j{\frac{\partial A_i}{\partial x_j}v_j}\right)+q\sum_j{\frac{\partial A_j}{\partial x_i}v_j}-q\frac{\partial V}{\partial x_i}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+m\ddot x_i=qE_i+q\sum_j{v_j\left(\frac{\partial A_j}{\partial x_i}-\frac{\partial A_i}{\partial x_j}\right)}=\\
+=qE_x+q\left\{v_x\left(\frac{\partial A_x}{\partial x}-\frac{\partial A_x}{\partial x}\right)+v_y\left(\frac{\partial A_y}{\partial x}-\frac{\partial A_x}{\partial y}\right)+v_z\left(\frac{\partial A_z}{\partial x}-\frac{\partial A_x}{\partial z}\right)\right\}=\\
+=qE_x+q\left(v_yB_z-v_zB_y\right)=\\
+=q\left[E_x+\left(\bar v\times \bar B\right)_x\right]
+\end{split}\end{equation}
+da questo si vuole passare al corrispondente quantistico.
+
+Si calcola il commutatore tra $p$ ed $A$:
+\begin{equation}\begin{split}
+\left(\hat p\cdot \hat A-\hat A\cdot \hat p\right)f=\left(\hat p\cdot \hat A\right)+\hat A\left(\hat pf\right)-\hat A\left(\hat pf\right)\\
+\Longrightarrow \left[\hat p, \hat A\right]=\hat p\cdot \hat A=-i\hbar \left(\bar \nabla \cdot A\right)
+\end{split}\end{equation}
+si riscrive l'operatore hamiltoniano:
+\begin{equation}\begin{split}
+H=\\
+=\frac{1}{2m}\left(\hat p^2+q^2\hat A^2-q\hat p\cdot \hat A-q\hat A\cdot hat p\right)+qV \\
+\frac{1}{2m}\left[\hat p^2+q^2\hat A^2-q\left(\hat A\cdot \hat p-i\hbar \bar \nabla \cdot \bar A\right)-q\hat A\cdot \hat p\right]+qV
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+H=\frac{\hat p^2}{2m}+\frac{q^2}{2m}\hat A^2-\frac{q}{m}\hat A\cdot \hat p+\frac{i\hbar q}{2m}\left(\bar \nabla \cdot \bar A\right)+qV
+\end{split}\end{equation}
+
+\subsection{Campo elettrico costante e uniforme} %Campo elettrico costante e uniforme
+\begin{equation}\begin{split}
+\begin{cases}
+\bar E=0 \\
+\bar B=\bar B\left(x,t\right)=\bar B_0
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+V=0 \\
+\bar A=\frac{1}{2}\bar B_0\times \bar x
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+A_x=\frac{1}{2}\left(B_{0,y}z-B_{0,z}y\right) \\
+A_y=\frac{1}{2}\left(B_{0,z}x-B_{0,x}z\right) \\
+A_z=\frac{1}{2}\left(B_{0,x}y-B_{0,y}x\right)
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\bar \nabla \cdot \bar A=0
+\end{split}\end{equation}
+
+Riscrivendo l'hamiltoniana generale si ha:
+\begin{equation}\begin{split}
+H=\\
+\frac{p^2}{2m}+\frac{q^2}{8m}\left(\bar B_x\times \bar x\right)^2-\frac{q}{2m}\bar B_0\times \hat x\cdot \hat p=\\
+\frac{p^2}{2m}+\frac{e}{2m}\bar B_0\cdot \hat L=\\
+\frac{p^2}{2m}+\frac{e\hbar }{2m}\bar B_0\cdot \hat l
+\end{split}\end{equation}
+considerando $\bar B_0\times \hat x\cdot \hat p=\bar B_0\cdot \hat L$ e $\mu_B=\frac{e\hbar }{2m}$ il magnetone di Bohr e $\hat l$ il momento angolare considerato in $\hbar $.

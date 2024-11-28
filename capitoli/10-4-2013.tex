@@ -1,0 +1,148 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage{lmodern}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+
+%\renewcommand{\vec}{\bm}
+
+%\author{Mariacristina~Lo Presti}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{10-4-2013}
+
+\section{Stati stazionari} %Stati stazionari
+Si consideri una funzione nello spazio delle fasi $Q\left(\bar x,t \right)$ che si possa sostituire con una funzione funzione degli operatori, cioè $Q\left(\bar x,-i\hbar\bar\nabla \right)$
+In particolare l'hamiltoniana è:
+\begin{equation}\begin{split}
+H\left(\bar x,t\right)=\frac{-\hbar\nabla ^2}{2m}+V\left(\bar x\right)=\frac{\bar p^2}{2m}+V\left(\bar x\right)
+\end{split}\end{equation}
+Si nota che l'hamiltoniana coincide con la sua formulazione classica, quindi l'espressione del momento come operatore risulta consistente.
+
+Ora moltiplichiamo la funzione d'onda per una fase che non dipende da x: $\Psi\left(\bar x,t\right)e^{-i\phi}$, ciò che osserviamo è che di sicuro le aspettazioni non dipendono da questa fase, cioè la fase risulta irrilevante per la fisica.
+\begin{equation}\begin{split}
+\langle Q\left(\bar x,\bar p \right)\rangle =\int_{}^{}{\Psi*\left(\bar x,t\right)Q\left(\bar x,t \right)\Psi\left(\bar x,t \right)e^{-i\phi}e^{i\phi}\textrm{d}\bar x}
+\end{split}\end{equation}
+
+Si risolve ora l'equazione di Schrödinger supponendo che il potenziale V non dipenda dal tempo, in questo caso possiamo risolverla con il metodo della separazione delle variabili. Con tale metodo siamo in grado di esprimere la funzione d'onda come prodotto di due funzioni dipendenti l'una dalla sola variabile spaziale e l'altra solo da quella temporale:
+\begin{equation}\begin{split}
+\Psi\left(\bar x t\right)=\varphi\left(\bar x\right)f\left(t\right)
+\end{split}\end{equation}
+Per cui riscriviamo l'equazione di Schrödinger e dividiamo da entrambi i lati per $\varphi f$ e otteniamo:
+\begin{equation}\begin{split}
+i\hbar\frac{1}{f}\frac{df}{dt}=-\frac{\hbar^2}{2m}\frac{1}{\varphi}\frac{d^2 \varphi}{dx^2}+V
+\end{split}\end{equation}
+Dato che i due membri dell'equazione dipendono da due variabili diverse allora essi devono essere uguali ad una costante affinché l'equazione valga. Chiamiamo questa costante E.
+Allora avremo:
+\begin{equation}\begin{split}
+i\hbar\frac{1}{f}\frac{df}{dt}=E
+\end{split}\end{equation}
+con soluzione
+\begin{equation}\begin{split}
+f(x)=e^{\frac{-itE}{\hbar}}
+\end{split}\end{equation}
+(in cui si è omessa una costante di integrazione poichè irrelavante) e:
+\begin{equation}\begin{split}
+H\left(\bar x,\bar p \right)\varphi\left(\bar x\right)=E\varphi\left(\bar x\right)
+\end{split}\end{equation}
+Quest'ultima ha la stessa forma di una equazione agli autovalori con la differenza di avere un operatore applicato ad una funzione anziché una matrice applicata ad un vettore. Sappiamo che l'insieme delle soluzioni di questa funzione è uno spazio vettoriale perché l'equazione è lineare, quindi possiamo scrivere una base per questo spazio vettoriale che è lo spazio di Hilbert, richiedendo che questa base sia numerabile, questo restringerà gli spazi di Hilbert ad essere spazi separabili, cioè che abbiano una base ortonormale.
+
+Avremo infine l'equazione che rappresenta gli stati stazionari:
+\begin{equation}\begin{split}
+\Psi\left(\bar x,t\right)=\varphi\left(\bar x\right)e^{\frac{-itE}{\hbar}}
+\end{split}\end{equation}
+
+Una delle cose che possiamo osservare è che il modulo quadro di $\Psi$, cioè la densità di probabilità, non dipende dal tempo.
+\begin{equation}\begin{split}
+|\Psi\left(\bar x,t\right)|^2=\Psi*\Psi=\varphi e^{\frac{+itE}{\hbar}}\varphi e^{\frac{-itE}{\hbar}}=|\varphi\left(\bar x\right)|^2=\textrm{costante}
+\end{split}\end{equation}
+
+Di conseguenza anche tutti i valori di aspettazione di tutte le variabili dinamiche sono costanti dato che le fasi (che contengono la variabile temporale) si elidono.
+\begin{equation}\begin{split}
+\langle Q\left(\bar x,\bar p\right)\rangle=\int_{}^{}{\varphi*\left(\bar x\right) Q\left(\bar x,\bar p \right)\varphi\left(\bar x\right)\textrm{d}\bar x}
+\end{split}\end{equation}
+(Si pensi in particolare al fatto che se $\langle x\rangle$ è costante, allora $\langle p\rangle =0$ $\rightarrow$ in uno stato stazionario non "accade" niente).
+
+Un'altra cosa da osservare è il calcolo dell'aspettazione dell'hamiltoniana
+\begin{equation}\begin{split}
+\langle H\left(\bar x,\bar p\right)\rangle=\int_{}^{}{\varphi*\left(\bar x\right)H\left(\bar x,\bar p\right)\varphi\left(\bar x\right)\textrm{d}\bar x}=\\
+=E\int_{}^{}{|\varphi\left(\bar x\right)|^2\textrm{d}\bar x}=E
+\end{split}\end{equation}
+In cui si è fatto uso dell'equazione agli autovalori.
+Si noti inoltre che la normalizzazione della $\Psi$ implica anche quella della $\varphi$.
+Inoltre 
+\begin{equation}\begin{split}
+H^2\varphi=H(H\varphi)=H(E\varphi)=E(H\varphi)=E^2\varphi
+\end{split}\end{equation}
+da cui 
+\begin{equation}\begin{split}
+\langle H^2 \rangle=\int_{}^{}{\varphi*\left(\bar x\right)H^2\left(\bar x,\bar p\right)\varphi\left(\bar x\right)\textrm{d}\bar x}=\\
+=E^2\int_{}^{}{|\varphi\left(\bar x\right)|^2\textrm{d}\bar x}=E^2\\
+\Longrightarrow \\
+\langle \Delta H^2 \rangle =E^2-E^2=0
+\end{split}\end{equation}
+Il ciò significa che gli stati stazionari sono ad energia ben definita.
+
+Se volessimo scrivere le soluzioni generali, esse saranno della forma 
+\begin{equation}\begin{split}
+\Psi\left(\bar x,t\right)=\sum c_n \varphi_n \left(\bar x\right)e^{\frac{-itE_n}{\hbar}}
+\end{split}\end{equation}
+Dove $c_n$ sono costanti che devono essere determinate dalle condizioni iniziali.
+La soluzione risulta essere una combinazione lineare generalmente infinita (numerabile) di soluzioni.
+Si ha una diversa funzione d'onda per ogni valore permesso dell'energia.
+
+Proviamo ora a propagare la nostra funzione d'onda partendo da un istante iniziale $t=0$ e studiamone l'evoluzione. Supponiamo di risolvere il problema agli autovalori:
+\begin{equation}\begin{split}
+H\varphi_n \left(\bar x\right)=E_n\varphi_n \left(\bar x\right)
+\end{split}\end{equation}
+Lo spettro di H è sia discreto che continuo ed anzi talvolta presenta delle degenerazioni(ci possono essere parecchie soluzioni linearmente indipendenti per lo stesso autovalore), comunque generalmente noi troveremo uno spettro discreto. Quindi supponendo che lo spettro sia discreto e che l'insieme delle soluzioni $\{\varphi_n \left(\bar x\right)\}$ sia un set ortonormale completo, scriviamo la combinazione lineare delle soluzioni del tipo $\Psi\left(\bar x,0\right)$, cioè all'istante iniziale che abbiamo scelto.
+\begin{equation}\begin{split}
+\Psi\left(\bar x,0\right)=\sum_n c_n \varphi_n \left(\bar x\right)
+\end{split}\end{equation}
+
+Una volta scelte le costanti $c_n$ è sempre possibile riprodurre lo stato iniziale negli istanti successivi semplicemente aggiungendo a ciascun termine la sua dipendenza temporale caratteristica, $e^{\frac{-itE_n}{\hbar}}$:
+\begin{equation}\begin{split}
+\Psi\left(\bar x,t\right)=\sum_n c_n \varphi_n \left(\bar x\right)e^{\frac{-itE_n}{\hbar}}=\sum_n c_n \Psi_n \left(\bar x,t\right).
+\end{split}\end{equation}
+
+Se abbiamo detto che $\Psi_n \left(\bar x,t\right)$ sono stati stazionari non possiamo dire lo stesso della soluzione generale $\Psi\left(\bar x,t\right)$: le energie dei vari stati stazionari sono diverse e le fasi degli esponenziali non si elidono quando si calcola $|\Psi|^2$.
+
+\subsection{Esempio 2.1 Griffiths} %Esempio 2.1 Griffiths
+Si supponga che una particella si trovi in uno stato iniziale combinazione lineare di due soli stati stazionari con costanti $c_1$ e $c_2$ e si vuole conoscere l'evoluzione della funzione d'onda negli istanti successivi, la densità di probabilità e il moto della particella.
+
+Evoluzione temporale:
+\begin{equation}\begin{split}
+\Psi\left(\bar x,t\right)=c_1 \varphi_1 \left(\bar x\right)e^{\frac{-itE_1}{\hbar}}+c_2 \varphi_2 \left(\bar x\right)e^{\frac{-itE_2}{\hbar}}
+\end{split}\end{equation}
+
+Densità di probabilità:
+\begin{equation}\begin{split}
+|\Psi\left(\bar x,t\right)|^2=|c_1 \varphi_1 \left(\bar x\right)e^{\frac{-itE_1}{\hbar}}+c_2 \varphi_2 \left(\bar x\right)e^{\frac{-itE_2}{\hbar}}|^2=\\
+=|c_1|^2 + |c_2|^2 +2Re\left(c*_1 c_2 e^{\frac{it\left(E_2 -E_1\right)}{\hbar}}\right)
+\end{split}\end{equation}
+Quindi la dipendenza temporale di un sistema a due livelli conterrà un'oscillazione alla frequenza $\omega=\frac{\Delta E}{\hbar}$. Se avessimo avuto più livelli avremmo avuto più frequenze dovute alle distanze fra i vari livelli di energia, se invece avessimo avuto una funzione che è già un autostato non avremmo ovviamente alcuna oscillazione.
+
+\subsection{Problema 2.1 Griffiths} %Problema 2.1 Griffiths
+\begin{enumerate}
+\item Per avere soluzioni normalizzabili la costante E deve essere reale. Il concetto è che se non fosse reale la normalizzazione della funzione d'onda cambierebbe, non si conserverebbe.
+
+\item Se $\varphi\left(\bar x\right)$ è stato stazionario per $E \longrightarrow$ anche $\varphi*\left(\bar x\right)$ è stato stazionario per E.
+
+Ciò non significa dire che ogni soluzione non dipendente dal tempo sia reale, ma che se se ne ottiene una che non è reale la si può sempre esprimere con una combinazione lineare di soluzioni che lo sono, con la stessa energia. Possiamo dire che ci si può sempre limitare a delle $\varphi$ reali.
+
+\item Se $V\left(\bar x \right)$ è pari allora $\varphi\left(\bar  x \right)$ può essere presa o pari o dispari. Infatti se $\bar x$ è una soluzione anche $\bar -x$ lo è allora possiamo prendere $\varphi\left(\bar x \right)=\pm \varphi\left(\bar  x \right)$. In sostanza si ha un potenziale invariante per inversioni e quindi anche un hamiltoniano invariante per inversioni e verifichiamo che le soluzioni si possono sempre scegliere pari o dispari.
+
+\end{enumerate}

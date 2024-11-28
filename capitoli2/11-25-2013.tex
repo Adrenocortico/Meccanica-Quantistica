@@ -1,0 +1,168 @@
+\section{Correzione di H} %Correzione di H
+Hamiltoniana relativistica
+\begin{equation}\begin{split}
+H_p=-\frac{1}{8}\frac{\hat p^{4}}{m^3c^2}=\frac{1}{2}\frac{E_k^2}{mc^2}
+\end{split}\end{equation}
+
+Hamiltoniana interazione spin-orbita:
+\begin{equation}\begin{split}
+H_{so}=\frac{e^2}{8\pi r_0}\frac{1}{m^2c^2r^3}\bar s\cdot \bar L
+\end{split}\end{equation}
+
+Hamiltoniana iperfine
+\begin{equation}\begin{split}
+H_{hf}=\frac{\mu_0\rho_0e^2}{8\pi m_pm_e}\frac{1}{\hbar ^2}\left[3\left(\bar s_p\cdot \hat r\right)\left(\bar s_e\cdot \hat r\right)-\bar s_p\cdot \bar s_e\right]+\frac{\mu_0\rho_0e^2}{3m_pm_e}\bar s_p\cdot \bar s_e\delta\left(\bar r\right)
+\end{split}\end{equation}
+
+Viene definita la costante di struttura fine:
+\begin{equation}\begin{split}
+\alpha=\frac{e^2}{4\pi\varepsilon_0\hbar c}\sim \frac{1}{137}
+\end{split}\end{equation}
+e l'energia:
+\begin{equation}\begin{split}
+E_1=\frac{m}{2\hbar ^2}\left(\frac{e^2}{4\pi\varepsilon_0}\right)^2
+\end{split}\end{equation}
+
+Quindi:
+\begin{equation}\begin{split}
+H_0+H_r+H_{so}\rightarrow E_1\left(1+o\left(\alpha^2\right)\right)
+\end{split}\end{equation}
+ricordando $\mu_0\varepsilon_0=\frac{1}{c^2}$
+
+\subsection{Correzione relativistica} %Correzione relativistica
+\begin{equation}\begin{split}
+H_r\sim E_1\frac{E_1}{mc^2}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\frac{E_1}{mc^2}=\\
+\frac{m}{2\hbar ^2}\left(\frac{e^2}{4\pi\varepsilon_0}\right)^2\frac{1}{mc^2}\simeq \\
+\simeq \alpha^2
+\end{split}\end{equation}
+
+\subsection{Correzione spin-orbita} %Correzione spin-orbita
+Considerando lo spin-orbita:
+\begin{equation}\begin{split}
+\frac{\left\langle H_{so} \right\rangle}{E_1}=\\
+=\frac{e^2}{8\pi \varepsilon_0}\frac{\hbar ^2}{m^2c^2}\frac{1}{a^3}\frac{2\hbar ^2}{m}\left(\frac{4\pi\varepsilon_0}{e^2}\right)^2=\\
+=\frac{e^2}{8\pi \varepsilon_0}\frac{\hbar ^2}{m^2c^2}\frac{m^3e^6}{\left(4\pi\varepsilon_0\right)^3\hbar ^6}\frac{2\hbar ^2}{m}\left(\frac{4\pi\varepsilon_0}{e^2}\right)^2=\\
+=\frac{e^4}{\hbar ^2c^2\left(4\pi\varepsilon_0\right)^2}=\\
+=\alpha^2
+\end{split}\end{equation}
+con $\frac{1}{a}$ si considera il raggio di Bohr.
+
+\subsection{Correzione iperfine} %Correzione iperfine
+Si calcola prima quanto vale l'iperfine sullo spin-orbita:
+\begin{equation}\begin{split}
+\frac{\left\langle H_{hf} \right\rangle}{\left\langle H_{so} \right\rangle}=\\
+=\frac{\mu_0\rho_pe^2\hbar ^2}{8\pi m_pm_ea^3}\frac{8\pi \varepsilon_0m_e^2c^2a^3}{e^2\hbar ^2}=\\
+=\frac{\rho_pm_e}{m_p}O\left(10^{-3}\right)
+\end{split}\end{equation}
+
+Guardando il secondo termine si ha:
+\begin{equation}\begin{split}
+\frac{\mu_0\rho_0e^2\hbar ^2}{3m_pm_e}|\psi \left(0\right)|^2\frac{8\pi \varepsilon_0 m_e^2c^2a^3}{e^2\hbar ^2}=\\
+=\rho_0\frac{m_e}{m_p}
+\end{split}\end{equation}
+
+\chapter{Perturbazioni tempo dipendenti} %Perturbazioni tempo dipendenti
+Sia $H\left(t\right)=H_0+H_1\left(t\right)$. Si vogliono separare i due addendi (dando per certa la $H_0$):
+\begin{equation}\begin{split}
+u\left(t\right)=v\left(t\right)w\left(t\right)
+\end{split}\end{equation}
+con
+\begin{equation}\begin{split}
+v\left(t\right)=\exp{\left(-\frac{i}{\hbar }H_0t\right)} \\
+\Longrightarrow i\hbar \frac{dv}{dt}=H_0v
+\end{split}\end{equation}
+e
+\begin{equation}\begin{split}
+w\left(t\right)=T\left\{\exp{\left[-\frac{i}{\hbar }\int_0^t{H_{1,I}\left(t'\right)\textrm{d}t'}\right]}\right\}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si espande al primo ordine $w\left(t\right)$:
+\begin{equation}\begin{split}
+w\left(t\right)=\mathbb{I}\left\{\left[-\frac{i}{\hbar }\int_0^t{H_{1,I}\left(t'\right)\textrm{d}t'}\right]\right\}
+\end{split}\end{equation}
+
+Compondendo qundi si ha:
+\begin{equation}\begin{split}
+u\left(t\right)=v\left(t\right)-\frac{i}{\hbar }\int_0^t{v^{\dag}\left(t'\right)H_1\left(t'\right)v\left(t'\right)\textrm{d}t'}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left\langle \omega _{n'}^{\left(0\right)}\left|u\left(t\right)\right|\omega _n^{\left(0\right)} \right\rangle=\\
+\left\langle \omega _{n'}^{\left(0\right)}\left|\exp{\left(-\frac{i}{\hbar }H_0t\right)}\right|\omega _n^{\left(0\right)} \right\rangle+\\
+-\frac{i}{\hbar }\left\langle \omega _{n'}^{\left(0\right)}\left|\exp{\left(-\frac{i}{\hbar }H_0t\right)}\int_0^t{\exp{\left(\frac{i}{\hbar }H_0t'\right)}H_1\left(t'\right)\exp{\left(-\frac{i}{\hbar }H_0t'\right)}}\right|\omega _n^{\left(0\right)} \right\rangle=\\
+=e^{-i\hbar \omega _n^{\left(0\right)}t}\delta_{n,n'}+\\
+-\frac{i}{\hbar }e^{-i\hbar \omega _{n'}^{\left(0\right)}}\int_0^t{e^{i\omega _{n'}^{\left(0\right)}t'}\left\langle \omega _{n'}^{\left(0\right)}\left|H_1\left(t'\right)\right|\omega _n^{\left(0\right)} \right\rangle e^{-i\omega _n^{\left(0\right)}t'}\textrm{d}t'}
+\end{split}\end{equation}
+
+Si hanno due casi:
+\begin{itemize}
+\item $n'=n$:
+\begin{equation}\begin{split}
+\left\langle \omega _{n'}^{\left(0\right)}|u\left(t\right)|\omega _n^{\left(0\right)} \right\rangle=\\
+=e^{-i\omega _n^{\left(0\right)}t}\left\{1-\frac{i}{\hbar }\int_0^t{\left\langle \omega _{n'}^{\left(0\right)}\left|H_1\left(t\right)\right|\omega _n^{\left(0\right)} \right\rangle\textrm{d}t'}\right\}
+\end{split}\end{equation}
+
+\item $n'\neq n$:
+\begin{equation}\begin{split}
+\left\langle \omega _{n'}^{\left(0\right)}|u\left(t\right)|\omega _n^{\left(0\right)} \right\rangle=\\
+=-\frac{i}{\hbar }e^{-i\omega _{n'}^{\left(0\right)}t}\int_0^t{\left\langle \omega _{n'}^{\left(0\right)}|H_1\left(t'\right)|\omega _n^{\left(0\right)} \right\rangle e^{i\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)t}\textrm{d}t'}
+\end{split}\end{equation}
+\end{itemize}
+
+Si calcola la probabilità in generale:
+\begin{equation}\begin{split}
+\left |\psi \left(t\right) \right\rangle=\\
+=u\left(t\right)\left |\psi \left(t\right) \right\rangle=\\
+=\sum_m{\left |\omega _m^{\left(0\right)} \right\rangle\left\langle \omega _{m}^{\left(0\right)}|u\left(t\right)|\omega _i^{\left(0\right)} \right\rangle}=\\
+=\sum_m{\left\langle \omega _{m}^{\left(0\right)}|u\left(t\right)|\omega _i^{\left(0\right)} \right\rangle\left |\omega _m^{\left(0\right)} \right\rangle}
+\end{split}\end{equation}
+
+In generale si ha anche:
+\begin{equation}\begin{split}
+P_{i\to n}\left(t;\left |\psi  \right\rangle=\left |\omega _n^{\left(0\right)} \right\rangle\right)=\left|\left\langle \omega _{n}^{\left(0\right)}|u\left(t\right)|\omega _i^{\left(0\right)} \right\rangle\right|^2
+\end{split}\end{equation}
+
+Supponendo $n\neq i$ e $n=f$ si ha:
+\begin{equation}\begin{split}
+P_{i\to f}=\frac{1}{\hbar ^2}\left|\int_0^t{\left\langle \omega _{f}^{\left(0\right)}|H_1\left(t'\right)|\omega _i^{\left(0\right)} \right\rangle e^{i\left(\omega _f^{\left(0\right)}-\omega _i^{\left(0\right)}\right)t'}\textrm{d}t'} \right|^2
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+E si ha quindi:
+\begin{equation}\begin{split}
+P_{i\to i}+\sum_{n\neq i}{P_{i\to n}}=1.
+\end{split}\end{equation}
+
+\subsection{Esempio di calcolo} %Esempio di calcolo
+Si pone $H_1=\textrm{const}$:
+\begin{equation}\begin{split}
+\left\langle \omega _{n'}^{\left(0\right)}|u\left(t\right)|\omega _n^{\left(0\right)} \right\rangle=\\
+=-\frac{i}{\hbar }e^{-i\omega _{n'}^{\left(0\right)}t}\left\langle \omega _{n'}^{\left(0\right)}|H_1\left(t\right)|\omega _n^{\left(0\right)} \right\rangle\int_0^t{e^{i\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)t'}\textrm{d}t'}=\\
+=-\frac{i}{\hbar }e^{-i\omega _{n'}^{\left(0\right)}t}\left(H_1\right)_{n',n}\left.\frac{e^{i\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)t'}}{i\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)}\right|_0^t=\\
+=-\frac{2i}{\hbar }e^{-i\omega _{n'}^{\left(0\right)}t}\left(H_1\right)_{n',n}e^{i\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)\frac{t}{2}}\frac{\sin{\left[{\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)\frac{t}{2}}\right]}}{\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}}
+\end{split}\end{equation}
+
+Per avere la probabilità si ha:
+\begin{equation}\begin{split}
+P_{n\to n'}=\\
+=\frac{4}{\hbar ^2}\left|\left\langle\omega _{n'}^{\left(0\right)} \left|H_1\right| \omega _n^{\left(0\right)}\right\rangle\right|\frac{\sin^2{\left[{\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)\frac{t}{2}}\right]}}{\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)^2}=\\
+=\frac{4}{\hbar ^2}\left|\left\langle\omega _{n'}^{\left(0\right)} \left|H_1\right| \omega _n^{\left(0\right)}\right\rangle\right|\frac{\sin^2{\left[{\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)\frac{t}{2}}\right]}}{\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)^2}\frac{2}{\pi t}\frac{\pi t}{2}=\\
+=\frac{2\pi t}{\hbar ^2}\left|\left\langle\omega _{n'}^{\left(0\right)} \left|H_1\right| \omega _n^{\left(0\right)}\right\rangle\right|\hat\delta_{\frac{2}{t}}\left(\omega _{n'}^{\left(0\right)}-\omega _n^{\left(0\right)}\right)=\\
+=\frac{2\pi t}{\hbar}\left|\left\langle\omega _{n'}^{\left(0\right)} \left|H_1\right| \omega _n^{\left(0\right)}\right\rangle\right|\hat\delta\left(E _{n'}^{\left(0\right)}-E _n^{\left(0\right)}\right)
+\end{split}\end{equation}
+
+Si ha quindi il rate di transizione:
+\begin{equation}\begin{split}
+\frac{\textrm{d}P}{\textrm{d}t}=\\
+=R_{n\to n'}=\\
+=\frac{2\pi}{\hbar }\left|\left\langle H \right\rangle\right|^2\hat\delta\left(E _{n'}^{\left(0\right)}-E _n^{\left(0\right)}\right)=\\
+=\frac{2\pi}{\hbar }\left|\left\langle H \right\rangle\right|^2\rho\left(E_n^{\left(0\right)}\right)
+\end{split}\end{equation}
+con l'ultimo passaggio chiamato \textbf{regola d'oro di Fermi}.

@@ -1,0 +1,250 @@
+\section{Momento angolare orbitale} %Momento angolare orbitale
+\begin{equation}\begin{split}
+Y_{l,m}\left(\theta,\phi\right)=\epsilon\sqrt{\frac{\left(2l+1\right)}{4\pi}\frac{\left(l-|m|\right)!}{\left(l+|m|\right)!}}e^{im\phi}P^m_l\left(\cos{\left(\theta\right)}\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+\left(-\right)^m, & m\ge 0 \\
+1, & m\le 0
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+Y_{l,-m}=\left(-\right)^mY_{l,m}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\int_{0}^{\pi}{\sin{\left(\theta\right)} \textrm{d}\theta}\int_{0}^{2\pi}{Y_{l,m}^*\left(\theta,\phi\right)Y_{l,m}\left(\theta,\phi\right)\textrm{d}\phi}=\delta_{l,l'}\delta_{m,m'}
+\end{split}\end{equation}
+
+Si hanno i casi:
+\begin{equation}\begin{split}
+Y_{0,0}=\left(\frac{1}{4\pi}\right)^{\frac{1}{2}} \\
+Y_{1,0}=\left(\frac{3}{4\pi}\right)^{\frac{1}{2}}\cos{\left(\theta\right)} =\left(\frac{3}{4\pi}\right)^{\frac{1}{2}}\frac{z}{r} \\
+Y_{1,\pm 1}=\pm\left(\frac{3}{4\pi}\right)^{\frac{1}{2}}\sin{\left(\theta\right)}e^{\pm i\phi} =\pm\left(\frac{3}{8\pi}\right)^{\frac{1}{2}}\frac{x\pm iy}{r} \\
+Y_{2,0}=\left(\frac{5}{16\pi}\right)^{\frac{1}{2}}\left(3\cos{\left(\theta\right)}^2-1\right) \\
+Y_{2,\pm 1}=\pm\left(\frac{15}{8\pi}\right)^{\frac{1}{2}}\sin{\left(\theta\right)}\cos{\left(\theta\right)}e^{\pm i\phi} \\
+Y_{2,\pm 2}=\pm\left(\frac{15}{32\pi}\right)^{\frac{1}{2}}\sin{\left(\theta\right)}^2e^{\pm 2i\phi} \\
+\end{split}\end{equation}
+
+\section{Rappresentazione grafica} %Rappresentazione grafica
+
+%MANCA UNA PARTE
+
+\section{Operatore parità} %Operatore parità
+Rappresentato nella posizione esso corrisponde all'inversione. È autoaggiunto.
+\begin{equation}\begin{split}
+P\psi \left(\bar x\right)=\psi \left(-\bar x\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+P\psi \left(r,\theta,\phi\right)=\psi \left(r,\pi - \theta,\pi + \phi\right)
+\end{split}\end{equation}
+Commuta con qualsiasi componente del momento angolare:
+\begin{equation}\begin{split}
+\left[P,L_\alpha\right]=0 \quad \textrm{con} \alpha =x,y,z
+\end{split}\end{equation}
+
+Le armoniche sferiche diagonalizzano anche la parità:
+\begin{equation}\begin{split}
+PY_{l,m}\left(\theta,\phi\right)=\left(-1\right)^lY_{l,m}\left(\theta,phi\right)=Y_{l,m}\left(\pi -\theta,\phi +\pi\right)
+\end{split}\end{equation}
+
+\section{Quantizzazione del rotatore assiale} %Quantizzazione del rotatore assiale
+\begin{equation}\begin{split}
+H=\frac{L^2}{2I}
+\end{split}\end{equation}
+con $I$ il momento d'inerzia e $H$ l'hamiltoniana.
+
+I suoi autovalori sono:
+\begin{equation}\begin{split}
+E_l=\frac{\hbar ^2}{2I}l\left(l+1\right)
+\end{split}\end{equation}
+la distanza tra i diversi autovalori cresce:
+\begin{equation}\begin{split}
+E_l-E_{l+1}=\frac{\hbar ^2}{I}l
+\end{split}\end{equation}
+degenerando a $2l+1$.
+
+\chapter[Potenziale centrale]{Soluzione dell'equazione di Schrödinger in presenza di potenziale centrale} %Soluzione dell'equazione di Schrödinger in presenza di potenziale centrale
+\begin{equation}\begin{split}
+H=-\frac{\hbar ^2\nabla ^2_1}{2m_1}-\frac{\hbar ^2\nabla ^2_2}{2m_2}+V\left(|\bar x_1-\bar x_2|\right)
+\end{split}\end{equation}
+considerando due particelle con massa e vettore posizione rispettivamente $m_1;\bar x_1$ e $m_2;\bar x_2$.
+
+Si definiscono delle nuove coordinate:
+\begin{equation}\begin{split}
+\bar X=\frac{m_1\bar x_1+m_2\bar x_2}{m_1+m_2} \quad \textrm{baricentro}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\bar x=\bar x_1-\bar x_2 \quad \textrm{posizione relativa}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+M=m_1+m_2 \quad \textrm{massa totale} \\
+\mu=\frac{1}{m_1}+\frac{1}{m_2} \quad \textrm{massa ridotta}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\nabla ^2_{1,2}=\left(\frac{m_{1,2}}{m_1+m_2}\right)^2\cdot \nabla ^2_{\bar X}\pm\frac{2m_1}{m_1+m_2}\bar \nabla _{\bar X}\bar \nabla +\nabla ^2
+\end{split}\end{equation}
+
+Si ricava quindi l'hamiltoniana:
+\begin{equation}\begin{split}
+H=-\frac{\hbar ^2\nabla ^2_{\bar X}}{2M}-\frac{\hbar ^2\nabla ^2}{2\mu}+V\left(|\bar x|\right) \\
+H=T_1+T_2+V_{1,2}\\
+H=H_{\textrm{baricentro}}+H_{\textrm{relativo nel riferimento del baricentro}}=H_B+H_{\textrm{particle}}
+\end{split}\end{equation}
+Le due componenti dell'hamiltoniana commutano:
+\begin{equation}\begin{split}
+\left[H_b,H_{\textrm{particle}}\right]=0
+\end{split}\end{equation}
+
+La correzione nel caso di $H$, usando la massa ridotta, è piccola ma trascurabile.
+
+\section{Equazione di Schrödinger per l'atomo di idrogeno} %Equazione di Schrödinger per l'atomo di idrogeno
+D'ora in avanti si lavora nel sistema di riferimento baricentrale.
+
+Equazione agli stati stazionari:
+\begin{equation}\begin{split}
+\left(-\frac{\hbar ^2\nabla ^2}{2\mu}+V\left(r\right)\right)\psi \left(\bar r\right)=E\psi \left(\bar r\right)
+\end{split}\end{equation}
+La funzione d'onda è:
+\begin{equation}\begin{split}
+\psi \left(\bar r\right)=\psi \left(r,\theta,\phi\right)
+\end{split}\end{equation}
+
+La parte cinetica è:
+\begin{equation}\begin{split}
+\nabla ^2=\frac{1}{r^2}\frac{\partial }{\partial r}\left(r^2\frac{\partial }{\partial r}\right)-\frac{L^2}{\hbar ^2r^2}
+\end{split}\end{equation}
+avendo sviluppato il $\nabla ^2$ in coordinate sferiche.
+
+E quindi si riscrive l'equazione agli stati stazionari come:
+\begin{equation}\begin{split}
+\left[-\frac{\hbar ^2}{2\mu r^2}\frac{\partial }{\partial r}\left(r^2\frac{\partial }{\partial r}\right)+V\left(r\right)-\frac{L^2}{\hbar ^2r^2}\right]\psi \left(\bar r\right)=E\psi \left(\bar r\right)
+\end{split}\end{equation}
+
+La funzione d'onda può essere scritta dividendola in una parte radiale e una di armonica sferica:
+\begin{equation}\begin{split}
+\psi _{l,m}\left(\bar r\right)=R\left(r\right)Y_{l,m}\left(\theta,\phi\right).
+\end{split}\end{equation}
+
+E quindi, infine, l'equazione di Schrödinger diventa:
+\begin{equation}\begin{split}
+\left[-\frac{\hbar ^2}{2\mu r^2}\frac{\partial }{\partial r}\left(r^2\frac{\partial }{\partial r}\right)+V\left(r\right)-\frac{l\left(l+1\right)}{r^2}\right]R\left(r\right)=ER\left(r\right)
+\end{split}\end{equation}
+Nel caso coulombiano si ha $V\left(r\right)=\frac{-Ze^2}{4\varepsilon_0r}$.
+
+\section[Equazione di Schrödinger radiale]{Equazione di Schrödinger radiale per l'atomo di idrogeno} %Equazione di Schrödinger radiale per l'atomo di idrogeno
+Si vuole rendere come equazione monodimensionale la seguente equazione di Schrödinger dell'atomo di idrogeno:
+\begin{equation}\begin{split}
+\frac{1}{r^2}\frac{\textrm{d}}{\textrm{d}r}\left(r^2\frac{\textrm{d}R}{\textrm{d}r}\right)+\frac{2\mu}{\hbar ^2}\left[E-V\left(r\right)-\frac{l\left(l+1\right)\hbar ^2}{2\mu r^2}\right]R\left(r\right)
+\end{split}\end{equation}
+
+Si cambia la variabile:
+\begin{equation}\begin{split}
+u\left(r\right):=rR\left(r\right)
+\end{split}\end{equation}
+e si ha:
+\begin{equation}\begin{split}
+\frac{\textrm{d}R}{\textrm{d}r}=\left(r\frac{\textrm{d}u}{\textrm{d}r}-u\right)\frac{1}{r^2} \\
+\Longrightarrow \frac{\textrm{d}}{\textrm{d}r}r^2\frac{\textrm{d}R}{\textrm{d}r}=r\frac{\textrm{d}^2u}{\textrm{d}r^2}
+\end{split}\end{equation}
+
+Riscrivendo:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2\mu}\frac{\textrm{d}^2u}{\textrm{d}r^2}+\left[V\left(r\right)+\frac{\hbar ^2}{2\mu}\frac{l\left(l+1\right)}{r^2}\right]u=Eu
+\end{split}\end{equation}
+
+Biaogna scriverla in modo adimensionale, perciò, considerando l'energia e lavorando anegli stati legati tali che $V\left(+\infty \right)=0$:
+\begin{equation}\begin{split}
+E<0 \Longrightarrow \mathfrak{K}:=\frac{\sqrt{-2\mu E}}{\hbar } \\
+V\left(r\right)=-\frac{e^2}{r}
+\end{split}\end{equation}
+si ricava:
+\begin{equation}\begin{split}
+\frac{1}{\mathfrak{K}}\frac{\textrm{d}^2u}{\textrm{d}r^2}=\left[1-\frac{\mu e^2}{\hbar ^2\mathfrak{K}}+\frac{l\left(l+1\right)}{\left(\mathfrak{K}r\right)^2}\right]
+\end{split}\end{equation}
+
+Si definisce:
+\begin{equation}\begin{split}
+\rho=\mathfrak{K}r \\
+\rho_0:=\frac{\mu e^2}{\hbar ^2\mathfrak{K}}
+\end{split}\end{equation}
+
+Riscrivemdo si ha infine:
+\begin{equation}\begin{split}
+\frac{\textrm{d}^2u}{\textrm{d}\rho^2}=\\
+=\left[1-\frac{\mathfrak{K}\rho_0}{\hbar }\frac{1}{\rho}+\frac{l\left(l+1\right)}{\rho^2}\right]=\\
+=u=\\
+=\left(1-\frac{\rho_0}{\rho}+\frac{l\left(l+1\right)}{\rho^2}\right)
+\end{split}\end{equation}
+
+\subsection{Soluzioni dell'equazione nei casi limite} %Soluzioni dell'equazione nei casi limite
+\begin{itemize}
+\item $\rho \rightarrow \infty $ si ha:
+\begin{equation}\begin{split}
+\frac{\textrm{d}^2u}{\textrm{d}\rho^2}=u
+\end{split}\end{equation}
+e quindi:
+\begin{equation}\begin{split}
+u\left(\rho\right)=Ae^{-\rho}+Be^{\rho}=Ae^{-\rho}
+\end{split}\end{equation}
+
+\item $\rho \rightarrow 0$ si ha:
+\begin{equation}\begin{split}
+\frac{\textrm{d}^2u}{\textrm{d}\rho^2}=\frac{l\left(l+1\right)}{\rho^2}u
+\end{split}\end{equation}
+e quindi:
+\begin{equation}\begin{split}
+u\left(\rho\right)=C\rho^{l+1}+D\rho^{-l}=C\rho^{l+1}
+\end{split}\end{equation}
+\end{itemize}
+
+\subsection{Soluzione generale} %Soluzione generale
+\begin{equation}\begin{split}
+u\left(\rho\right)=\rho^{l+1}e^{-\rho}v\left(\rho\right)
+\end{split}\end{equation}
+
+Si riscrive tutto ora in termini di $u\left(\rho\right)$ e di $v\left(\rho\right)$:
+\begin{equation}\begin{split}
+\frac{\textrm{d}u}{\textrm{d}\rho}=\rho^le^{-\rho}\left[\left(l+1-\rho\right)v+\rho\frac{dv}{d\rho}\right] \\
+\frac{\textrm{d}^2u}{\textrm{d}\rho^2}=\rho^le^{-\rho}\left\{\left[-2l-2+\rho+\frac{l\left(l+1\right)}{\rho}\right]v+2\left(l+1-\rho\right)\frac{\textrm{d}v}{\textrm{d}\rho}+\rho\frac{\textrm{d}^2v}{\textrm{d}\rho^2}\right\}
+\end{split}\end{equation}
+
+Si ha qundi l'equazione di Schrödinger:
+\begin{equation}\begin{split}
+\rho\frac{\textrm{d}^2v}{\textrm{d}\rho^2}+2\left(l+1-\rho\right)\frac{\textrm{d}v}{\textrm{d}\rho}+\left[\rho_0-2\left(l+1\right)\right]v=0
+\end{split}\end{equation}
+Si scrivono quindi in svliuppo di Taylor:
+\begin{equation}\begin{split}
+v\left(\rho\right)=\sum_{j=0}^{\infty }{a_j\rho^j} \\
+\frac{\textrm{d}v}{\textrm{d}\rho}=\sum_{j=0}^{\infty }{\left(j+1\right)a_{j+1}\rho^j} \\
+\frac{\textrm{d}^2v}{\textrm{d}\rho^2}=\sum_{j=0}^{\infty }{j\left(j+1\right)a_{j+1}\rho^{j-1}}
+\end{split}\end{equation}
+e si rivcava:
+\begin{equation}\begin{split}
+0=\sum_{j=0}^{\infty }{j\left(j+1\right)a_{j+1}\rho^{j}}+2\left(l+1\right)\sum_{j=0}^{\infty }{\left(j+1\right)a_{j+1}\rho^j}-2\sum_{j=0}^{\infty }{ja_j\rho^j}+\left[\rho_0-2\left(l+1\right)\right]\sum_{j=0}^{\infty }{ja_j\rho^j}
+\end{split}\end{equation}
+
+Si ha la ricorrenza:
+\begin{equation}\begin{split}
+0=\sum_{j=0}^{\infty }{f_j\rho^j} \quad \forall \rho \Longrightarrow f_j=0 \quad \forall j \\
+\Longrightarrow j\left(j+1\right)a_{j+1}+2\left(l+1\right)\left(j+1\right)a_{j+1}-2ja_j+\left[\rho_0-2\left(l+1\right)a_j\right]=0 \\
+\Longrightarrow a_{j+1}=\frac{2\left(j+l+1\right)-\rho_0}{\left(j+1\right)\left(j+2l+2\right)}a_j
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si tronca a $a_{j+1\max}=0$ e si ha:
+\begin{equation}\begin{split}
+2\left(j_{\max}+l+1\right)-\rho_0=0
+\Longrightarrow \rho_0=2n
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\rho_0=\frac{\mu e^2}{\hbar ^2\mathfrak{K}} \\
+\mathfrak{K}=\frac{\sqrt{-2\mu E}}{\hbar }=\frac{\mu e^2}{\hbar ^2}\frac{1}{n}=\frac{1}{an} \\
+a=\frac{\hbar ^2}{\mu l^2}=0.529\cdot 10^{-8} \textrm{ cm} \quad \textrm{raggio di Bohr}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+E=-\frac{\hbar ^2\mathfrak{K}^2}{2\mu}=-\frac{2\mu e^4}{\hbar ^2\rho_0^2} \\
+E_n=\frac{E_1}{n^2} \quad \textrm{con } E_1=-\frac{\mu e^4}{2\hbar ^2}=-13.6 \textrm{ eV} \\
+\rho=\rho_n=\frac{r}{na}
+\end{split}\end{equation}
+considerando $E_n$ gli autovalori all'energia.

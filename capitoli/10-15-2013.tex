@@ -1,0 +1,218 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\renewcommand{\vec}{\bm}
+
+%\author{Marco~Scaringi}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{15 Ottobre 2013}
+
+%-->Per concludere il discorso sui proiettori, D' Ariano ha ripreso l' argomento scrivendo i proiettori come matrici, ``disegnandoli''come tali. Non ho idea di come poter trascrivere tutto ciò con Latex(sempre che si possa fare).
+%\begin {document}
+%\maketitle
+
+
+
+
+\section{Rappresentazioni} %Rappresentazioni
+Siano $\left |n \right\rangle$ una base ortonormale dello spazio di Hilbert \textit{H} ed \textit{M} un operatore limitato, ovvero $M\in \textit{B}(H)$.
+Come già notato, la scrittura
+ \begin{equation}\begin{split}
+\left\langle n|M|m \right\rangle=M_{n,m}
+ \end{split}\end{equation} identifica una matrice nella rappresentazione scelta.
+Si ricordi inoltre che una osservabile $X$ può essere scritta 
+ \begin{equation}
+X=\sum_{n}{x_n\left |n \right\rangle\left\langle n\right |}
+ \end{equation}
+dove $\left |n \right\rangle$ è un autovettore corrispondente all'\textit{n-}esimo autovalore $x_n$. \\
+E' ora fondamentale notare che nel formalismo di Dirac ciò che gioca il ruolo di rappresentazione è il $\left\langle bra\right |$ .
+Alla luce di ciò, un qualsiasi $\psi\in H$ può essere rappresentato come
+ \begin{equation}\begin{split}
+\psi _n=\left\langle n|\psi  \right\rangle
+ \end{split}\end{equation}
+nella rappresentazione $\left\langle n\right|$. Se si applica l' operatore $M$ al vettore $\psi$  si ottiene sfruttando la completezza $\mathbb{I}=\sum_{n}{\left |n \right\rangle\left\langle n\right |}$ (caso particolare di funzione costante di un operatore, che in generale è $\textit{f}(X)=\sum_{n}{\textit{f}(x_n)\left |n \right\rangle\left\langle n\right |}$ ):
+ \begin{equation}\begin{split}
+\left\langle n|M\psi  \right\rangle=\\
+=\left\langle n|M|\psi  \right\rangle=\left\langle n|M|\sum_{m}|m \right\rangle\left\langle m|\psi  \right\rangle=\\
+=\sum_{m}\left\langle n|M|m \right\rangle\left\langle m|\psi  \right\rangle \\
+\Longrightarrow \left(m\psi \right)_n=\sum_{m}{M_{n,m}\psi _m}
+ \end{split}\end{equation}
+Tutto ciò è estendibile a qualsiasi proprietà degli operatori che si riflette sulle proprietà delle matrici ad essi associate.
+Per esempio, con l' operatore aggiunto $L$
+ \begin{equation}\begin{split}
+\left\langle n|L^{\dag}|m \right\rangle=\left\langle n|L^{\dag}m\right\rangle=\left\langle Ln|m \right\rangle=\left\langle m|Ln \right\rangle^*=L^*_{n,m}
+ \end{split}\end{equation}
+Si deduce allora che la matrice corrispondente all'aggiunto è banalmente la matrice complessa coniugata trasposta.
+Allo stesso modo, con $L$ autoaggiunto la matrice $L_{n,m}$ è hermitiana, con $U$ unitario, la matrice  $U_{n,m}$ è unitaria.\\
+Naturalmente questi discorsi sono estendibili al caso continuo.
+Fin da subito si è vista la rappresentazione x che restituisce la cosiddetta funzione d'onda:
+ \begin{equation}\begin{split}
+\left\langle x|\psi  \right\rangle=\psi \left(x\right)
+ \end{split}\end{equation}
+E' importante a tal riguardo non confondere i concetti di vettore di uno spazio di Hilbert (in corrispondenza con uno stato ) e di funzione d' onda.\textit{ La funzione d' onda  non è uno stato, bensì la rappresentazione di uno stato}: possono capitare infatti casi in cui essa descrive più stati in una determinata rappresentazione (e nulla assicura che ciò si mantenga vero per un' altra rappresentazione).\\
+Nel caso continuo l' ``elemento di matrice'' del caso discreto non è più necessariamente limitato; il concetto viene comunque mantenuto e interpretato piuttosto come \textit{kernel integrale} $\left\langle x|L|x' \right\rangle$.
+Si consideri per l' appunto un vettore $\psi\in H$ rappresentato nella posizione, e su di esso si faccia operare un operatore $M$; allora inserendo la completezza si può scrivere
+ \begin{equation}\begin{split}
+\left\langle x|M\psi  \right\rangle=\int{\left\langle x|M|x' \right\rangle\left\langle x'|\psi  \right\rangle \textrm{d}x'}
+ \end{split}\end{equation}
+il che corrisponde, utilizzando una notazione imprecisa ma chiarificatrice, a 
+ \begin{equation}
+\int{M_{xx'}\psi _{x'}\textrm{d}x'}
+ \end{equation}
+che ha il significato di ``matrice con due indici continui'' applicata ad un ``vettore con un indice continuo''.\\
+Vengono ora illustrati due modi per rappresentare la completezza.
+  \begin{enumerate}
+ \item \begin{equation}\begin{split}
+\sum_n{u_n}^*\left(x\right)u_n\left(x'\right)=\delta\left(x-x'\right) \\
+ \end{split}\end{equation}
+rappresenta la completezza del set di funzioni $u_n(x)$ per $L^2\left(\mathbb{R} ,dx\right)$ con $dx$ misura di Lebesgue.
+Infatti scrivendo la completezza del set ortonormale ed inserendo successivamente l' elemento di matrice $\left\langle x'|x \right\rangle$
+ \begin{equation}\begin{split}
+\sum_n{\left |u_n \right\rangle\left\langle u_n\right |}=\mathbb{I}
+ \end{split}\end{equation}
+\begin{equation}\begin{split}
+\sum_n{\left\langle x'|u_n \right\rangle\left\langle u_n|x \right\rangle}=\left\langle x'|x \right\rangle 
+\end{split}\end{equation}
+che è la (9)
+\item
+Si considerino le autofunzioni dell'operatore  moltiplicativo $x$ corrispondenti all'autovalore $y$ 
+ \begin{equation}
+x\left |u_y \right\rangle=y\left |u_y \right\rangle
+ \end{equation}
+Nella rappresentazione $x$
+ \begin{equation}\begin{split}
+\left\langle x|u_y \right\rangle=\delta_y\left(x\right)=\delta(x-y) \Longrightarrow u_y=\delta_y (distribuzione)
+\end{split}\end{equation}
+Allora anche questo set di autofunzioni è completo, come si può vedere equivalentemente nei due modi
+ \begin{equation}\begin{split}
+\int{u^*_y\left(x\right)u_{y'}\left(x\right)\textrm{d}x}
+=\int{\delta(y-x)\delta(y'-x)\textrm{d}x}=
+\delta\left(y-y'\right)
+ \end{split}\end{equation}
+ \begin{equation}\begin{split}
+\int{u^*_y\left(x'\right)u_{y}\left(x\right)\textrm{d}y}
+=\int{\delta(x'-y)\delta(x-y)\textrm{d}y}=
+\delta\left(x-x'\right)
+ \end{split}\end{equation}
+  \end{enumerate}
+Riprendendo il discorso della rappresentazione, si può asserire che $\delta$ è l'autofunzione della posizione, o kernel integrale della posizione.
+Si faccia ad esempio operare $\bar x$ (operatore di moltiplicazione) su $\psi\in\textit{H}$ nella rappresentazione $x$, sfruttando come sempre la completezza, ottenendo
+ \begin{equation}\begin{split}
+\left\langle x|\bar x|\psi  \right\rangle=\\
+=\int{\left\langle x|\bar x|\ x'\right\rangle \left\langle x'|\psi\right\rangle\textrm{d}x'}=\\
+=\int{\delta\left(x-x'\right)x'\psi(x')\textrm{d}x'}=\\
+=x\psi \left(x\right)\\
+\Longrightarrow \left\langle x|\bar x|x' \right\rangle=x\delta\left(x-x'\right) \quad \text{kernel integrale}\\
+ \end{split}\end{equation}
+\textit{NOTA BENE}: la variabile della rappresentazione  è la variabile  del $\left\langle bra\right |$ , \textit{non} del $\left |ket \right\rangle$.\\
+Si è visto inoltre che l' operatore momento applicato a $\psi\in H$ nella rappresentazione $x$ è
+ \begin{equation}\begin{split}
+\left\langle x|p|\psi  \right\rangle=-i\hbar \partial _x\psi \left(x\right)
+ \end{split}\end{equation}
+Si consideri allora la seguente espressione:
+ \begin{equation}\begin{split}
+\left\langle x|p|x' \right\rangle=-i\hbar \partial _x\delta\left(x-x'\right)=+i\hbar \partial _{x'}\delta\left(x-x'\right)
+ \end{split}\end{equation}
+Occorre dunque prestare attenzione alla scelta della variabile dell'operatore, che nella fattispecie è la variabile di derivazione: x' infatti è un vettore, e derivare (erroneamente) la funzione delta rispetto ad esso  fa comparire un segno opposto rispetto a ciò che capiterebbe se si derivasse rispetto alla variabile x.
+Il kernel integrale è quindi la distribuzione $-i\hslash\delta_x'$, con $\langle\delta',f\rangle=-\langle\delta,\partial f\rangle$
+
+\section{Spazi invarianti} %Spazi invarianti
+Si dice che l'operatore $A$ ha uno spazio invariante $H_{inv}$ se $\forall v\in$ $H_{inv}$ , $Av\in H_{inv}$. 
+Siano $P$ il proiettore ortogonale agente su $H_{inv}$,
+ $Q$ il proiettore ortogonale agente su $H_{inv} ^{+}$; segue immediatamente che 
+ \begin{equation}
+Q+P=\mathbb{I}
+ \end{equation}
+\begin{equation}
+QP=PQ=0 
+ \end{equation}
+Si applichi ora ad un vettore \textit{v} nell'ordine il proiettore \textit{P} e l' operatore \textit{A}. Ciò che si ottiene è un vettore appartenente allo spazio su cui ha proiettato \textit{P}, dato il comportamento di A prima descritto. Applicando infine il proiettore \textit{Q} si ottiene da (20) che \\
+ \begin{equation}
+QAP=0
+ \end{equation}
+Sfruttando questa relazione e (19) si può scrivere 
+ \begin{equation}\begin{split}
+A=\\
+=(P+Q)A(P+Q)=\\
+=PAP+QAQ+PAQ+QAP=\\
+=PAP+QAQ+PAQ
+ \end{split}\end{equation}
+Il calcolo di \textit{AP} porta a 
+ \begin{equation}
+AP=PAP
+ \end{equation}
+tenendo conto di (20) e della idempotenza del proiettore \textit{P}.
+Per le stesse ragioni risulta
+ \begin{equation}
+PA=PAP+PAQ
+ \end{equation}
+\textit{NOTA BENE:} $PAQ \neq 0$ perché $H_{inv} ^{+}$ non è necessariamente invariante.\\
+Ecco riassunti i risultati trovati:
+ \begin{equation*}\begin{split}
+AP+PAQ=PA\\
+A=QAQ+PAP+PAQ\\
+QAP=0.
+ \end{split}\end{equation*}
+Se $A$ è hermitiana, allora
+ \begin{equation}
+0=\left(QAP\right)^{\dag}=PAQ
+ \end{equation}
+ \begin{equation}
+\left(PAP\right)^{\dag}=PAP
+ \end{equation}
+La (25) dice che anche $Q$ ha uno spazio invariante, la (26) che anche la restrizione dell' aggiunto ha uno spazio invariante. \\
+Se $A$  è isometrico , sfruttando l'idempotenza di $P$ oltre alle proprietà (19) e (21), 
+ \begin{equation}\begin{split}P=\\=P\mathbb{I}P=\\=PA^{\dag}AP=PA^{\dag}(P+Q)AP=\\=PA^{\dag}PAP=\\=PA^{\dag}PPAP=\\=(PAP)^{\dag}(PAP)
+  \end{split}\end{equation}
+ovvero l' operatore PAP è isometrico sul suo supporto, cioè è isometrico sullo spazio invariante. Quando un operatore è isometrico sul suo supporto si dice che costituisce una \textit{isometria parziale}.
+
+\section{Proiettori} %Proiettori
+Si è parlato per ora di operatori diagonalizzabili con spettro discreto.
+Si è detto che in generale si può scrivere
+ \begin{equation}\begin{split}
+X=\sum_{n}x_n\left |x_n \right\rangle\left\langle x_n\right |=\sum_{l}x_lP_l
+ \end{split}\end{equation}
+raggruppando i proiettori corrispondenti ad un certo autovalore $x_l$; in altre parole $P_l$ è il proiettore che proietta sull'autospazio corrispondente all'autovalore $x_l$.\\
+\textbf{Nel caso continuo}(che ovviamente generalizza il caso discreto)si scrive
+ \begin{equation}\begin{split}
+X=\int_{S_P\left(X\right)}{E\left(\textrm{d}\lambda\right)\lambda}
+ \end{split}\end{equation}
+dove si è integrato sullo spettro di $X$ la densità spettrale(che è una misura) moltiplicata per l' autovalore.
+Prendendo un insieme $\mathfrak{X}$ sullo spazio di integrazione (considerato misurabile) ed un insieme $\Delta \subset \sigma\left(\mathfrak{X}\right)$ sigma-algebra si ha
+ \begin{equation}\begin{split}
+E\left(\Delta\right)=\int_{\Delta}{E\left(\textrm{d}\lambda\right)\lambda}=E\left(d\lambda\right)
+ \end{split}\end{equation}
+dove $E\left(\Delta\right)$ è un proiettore ortogonale rinominato per comodità $P_\Delta$.
+Detto ciò, si deduce che
+ \begin{equation}\begin{split}
+\Delta_1\cap \Delta_2=\varnothing\Longrightarrow P_{\Delta_1}P_{\Delta_2}=0
+ \end{split}\end{equation}
+cioè che i due proiettori in questione sono ortogonali fra loro. Questa situazione si verifica per esempio quando si divide l' asse reale in vari intervalli, su ciascuno dei quali si effettua la proiezione.\\
+$E\left(\Delta\right)=P_\Delta$ può essere pensata come una \textit{misura a valori proiettivi} (\emph{\textit{PVM}}).
+La sintesi della definizione è che:
+  \begin{enumerate}
+\item $P_{\mathfrak{X}}=\mathbb{I}_{H}$
+\item $P_{\varnothing}=0$
+\item $P_{\Delta_1}P_{\Delta_2}=0 \quad \text{se} \quad \Delta_1\cap\Delta_2=\varnothing$
+\item $P_{\left(\bigcup _n\Delta_n\right)}=\sum_n{P_{\Delta_n}} \quad \text{se} \quad \Delta_n\cap\Delta_m=\varnothing \quad \forall n,m$ dove la serie corrisponde alla $\sigma$-additività, convergente nella norma degli operatori.
+  \end{enumerate}
+Quanto appena visto può essere inquadrato come "\emph{versione proiettiva}'' di ciò che viene usualmente denominato con  \textit{misura}, in questo caso a valori sui proiettori anziché sui reali.\\
+Si evidenzia che i proiettori $P_\varDelta\ $appartengono a $B(H)$, sebbene non siano generalmente di classe traccia, ovvero 
+$\textit{Tr}[P_\varDelta]\leqslant\infty$; se però $\Delta$ non è un insieme contabile allora di sicuro $\textit{Tr}[P_\varDelta]=\infty$.\\
+Per concludere, si noti che la traccia del proiettore è la dimensione dello spazio(invariante) su cui proietta e che in questo contesto una generica funzione si scrive $f(x)=\int_{S_P\left(X\right)}{E\left(\textrm{d}\lambda\right)f(\lambda)}$.
+
+%\end{document}

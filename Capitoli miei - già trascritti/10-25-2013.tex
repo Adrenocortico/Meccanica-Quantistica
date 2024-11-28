@@ -1,0 +1,57 @@
+Si ha $u\left(\rho\right)=\rho^{l+1}e^{-\rho}v\left(\rho\right)$ e normalizzando la parte radiale si ha \[\int_{-\infty }^{+\infty }{r^2|R\left(r\right)|^2 \textrm{d}r}=1\]
+
+Le soluzioni generali sono quindi:
+\begin{itemize}
+\item $n=1$ $l=0$:
+\begin{equation}\begin{split}
+R_{1,0}\left(r\right)=\frac{c_n}{a}e^{\frac{r}{a}} \\
+1=\int_{0}^{\infty }{\frac{|c_0|^2}{a^2}e^{-2\frac{r}{a}}r^2 \textrm{d}r}=|c_0|^2\frac{a}{4} \\
+\Longrightarrow c_0=\frac{2}{\sqrt{a}}
+\end{split}\end{equation}
+si ha quindi infine:
+\begin{equation}\begin{split}
+Y_{0,0}\left(\theta,\phi\right)=\frac{1}{\sqrt{4\pi}} \\
+\Longrightarrow \psi _{1,0,0}\left(r,\theta,\phi\right)=\frac{1}{\sqrt{\pi a^2}}e^{\frac{r}{a}}
+\end{split}\end{equation}
+
+\item $n=2$ $l=0,1$:
+\begin{equation}\begin{split}
+R_{2,0}\left(r\right)=\frac{c_0}{2a}\left(1-\frac{r}{2a}\right)e^{-\frac{r}{2a}} \\
+R_{2,1}\left(r\right)=\frac{c_0}{4a^2}re^{-\frac{r}{2a}}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+v\left(\rho\right)=L_{n-l-1}^{2l+1}\left(2\rho\right)
+\end{split}\end{equation}
+comsiderando i polinomi ortogonali di Laguerre:
+\begin{equation}\begin{split}
+L_{q-p}^{p}\left(x\right)=\left(-\right)^p\left(\frac{\textrm{d}}{\textrm{d}x}\right)^pL_q\left(x\right) \\
+L_q\left(x\right)=e^x\left(\frac{\textrm{d}}{\textrm{d}x}\right)^q\left(e^{-x}x^q\right) \\
+L_0=1 \quad L_1=1_x \quad L_2=x^2-qx+2 \quad L_3=-x^3+3x^2-18x+2 \quad \dots \\
+L_0^0=1 \quad L_1^0=-x+1 \quad L_0^2=2 \quad L_1^2=-6x+18 \quad L_2^0=x^2-qx+2
+\end{split}\end{equation}
+si ha quindi infine:
+\begin{equation}\begin{split}
+\psi _{n,m,l}=\left(r,\theta,\phi\right)=\sqrt{\left(\frac{2}{na}\right)^3\frac{\left(n-l-1\right)!}{2n\left[\left(n+l\right)!\right]^3}}e^{-\frac{r}{na}}\left(\frac{2r}{na}\right)^lL_{n-l-1}^{2l+1}\left(\frac{2r}{na}\right)Y_{l,m}\left(\theta,\phi\right)
+\end{split}\end{equation}
+Normalizzando:
+\begin{equation}\begin{split}
+\int_{0}^{\infty }{r^2 \textrm{d}r}\int{\psi ^*_{n,m,l}\left(r,\theta,\phi\right)\psi _{n',m',l'}\left(r,\theta,\phi\right) \textrm{d}\Omega}=\delta_{n,n'}\delta_{l,l'}\delta_{m,m'}
+\end{split}\end{equation}
+\end{itemize}
+
+\begin{equation}\begin{split}
+E=E_{\textrm{iniziale}}-E_{\textrm{finale}}=-13.6 \textrm{ eV} \left(\frac{1}{n_i^2}-\frac{1}{n_f^2}\right)=h\nu \\
+\textrm{Formula di Rydberg}\quad \frac{1}{\lambda}=R\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right)
+\end{split}\end{equation}
+considerando la costante di Rydberg $R=\frac{\mu e^4}{4\pi c\hbar ^3}=1.097\cdot 10^5$ cm$^{-1}$.
+
+Si possono definire quindi le serie: \\
+\begin{tabularx}{\textwidth}{XXX}
+\toprule
+$n_f$ & Scopritore & Spettro \\
+\midrule
+$n_f=1$ & Lyman & Ultravioletto \\
+$n_f=2$ & Balmer & Visibile \\
+$n_f=3$ & Paschen & Infrarossi \\
+\bottomrule
+\end{tabularx}

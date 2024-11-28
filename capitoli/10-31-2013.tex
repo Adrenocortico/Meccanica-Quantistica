@@ -1,0 +1,405 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%\usepackage{braket}
+%\usepackage{amsthm}
+
+%\renewcommand{\vec}{\bm}
+
+%\author{Tommaso Perani}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{}
+
+%\begin{document}
+
+\chapter{Composizione di momenti angolari} %Composizione di momenti angolari
+
+\section[Generatore delle rotazioni]{Momento angolare come generatore delle rotazioni} %Momento angolare come generatore delle rotazioni
+Ricordiamo per le matrici di Pauli $\sigma_i$ ($i=x,y,z$) valgono le seguenti importanti proprietà
+\begin{subequations} \label{eqn:pauli} \begin{align}
+[\sigma_i,\sigma_j]&=2i\epsilon_{ijk}\sigma_k \\
+\sigma_i^2&=\textbf{1} \\
+\intertext{dove il simbolo $\textbf{1}$ va inteso come la matrice identità $2\times2$. Si noti, inoltre, che}
+\sigma_i^\dagger&=\sigma_i \\
+\det(\sigma_i)&=-1 \\
+\operatorname{Tr}(\sigma_i)&=0 \label{eqn:pauli tr}
+\end{align} \end{subequations}
+Le matrici di Pauli, unitamente all'identità, formano dunque una base del gruppo delle matrici hermitiane $2\times 2$ a traccia nulla, quindi possiamo scrivere un operatore autoaggiunto $A$ come combinazione lineare a coefficienti reali di queste ultime
+\begin{equation} \label{eqn:pauliautoaggiunto}
+A=a_0\textbf{1}+a_x{\sigma}_x+a_y{\sigma}_y+a_z{\sigma}_z \equiv a_0\textbf{1}+\textbf{a}\cdot\boldsymbol\sigma
+\end{equation}
+che è rappresentato dalla matrice
+\begin{equation} \label{eqn:matriceautoaggiunto}
+A\doteq
+\begin{pmatrix}
+a_0+a_z & a_x-ia_y \\
+a_z+ia_y & a_0-a_z \\
+\end{pmatrix}
+\end{equation}
+
+Ogni operatore unitario $U$, dunque, può essere scritto nella forma
+\begin{equation}
+U=e^{-iA}=e^{-ia_0}e^{-i\textbf{a}\cdot\boldsymbol\sigma}
+\end{equation}
+essendo $A$ autoaggiunto ($e^{-ia_0}$ è un fattore di fase). In particolare, scegliamo $\textbf{a}=\vartheta\hat{\textbf{n}}$ e studiamo la rappresentazione matriciale $2\times2$ dell'operatore
+\begin{equation} \label{eqn:unit rot}
+U=e^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma}
+\end{equation}
+Abbiamo dimostrato a suo tempo che vale l'identità
+\begin{equation}
+\left(\boldsymbol\sigma\cdot\textbf{a}\right)\left(\boldsymbol\sigma\cdot\textbf{b}\right)=\textbf{a}\cdot\textbf{b}+i\boldsymbol\sigma\cdot\left(\textbf{a}\wedge\textbf{b}\right)
+\end{equation}
+da cui segue, per il versore $\hat{\textbf{n}}$,
+\begin{equation}
+(\boldsymbol\sigma\cdot\hat{\textbf{n}})^n=\begin{cases}
+1 & \text{per $n$ pari} \\
+\boldsymbol\sigma\cdot\hat{\textbf{n}} & \text{per $n$ dispari}
+\end{cases}
+\end{equation}
+Facendo uso di quest'ultima relazione, possiamo scrivere 
+\begin{equation}  \label{eqn:unit matrix} \begin{split}
+e^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma}
+&= 1-i(\boldsymbol\sigma\cdot\hat{\textbf{n}})\vartheta-\frac{(\boldsymbol\sigma\cdot\hat{\textbf{n}})^2}{2!}{\left(\frac{\vartheta}{2}\right)}^2+i\frac{(\boldsymbol\sigma\cdot\hat{\textbf{n}})^3}{3!}{\left(\frac{\vartheta}{2}\right)}^3+\dots \\
+&= \left[{1-\frac{(\boldsymbol\sigma\cdot\hat{\textbf{n}})^2}{2!}{\left(\frac{\vartheta}{2}\right)}^2+\dots}\right]-i\left[{(\boldsymbol\sigma\cdot\hat{\textbf{n}})\vartheta-\frac{(\boldsymbol\sigma\cdot\hat{\textbf{n}})^3}{3!}{\left(\frac{\vartheta}{2}\right)}^3}+\dots\right] \\
+&= \textbf{1}\cos{\frac{\vartheta}{2}}-i\boldsymbol\sigma\cdot\hat{\textbf{n}}\sin{\frac{\vartheta}{2}}
+\end{split} \end{equation}
+Esplicitamente in forma matriciale abbiamo
+\begin{equation}
+e^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma} \doteq
+\begin{pmatrix}
+\cos{\frac{\vartheta}{2}}-in_z\sin{\frac{\vartheta}{2}} & (-in_x-n_y)\sin{\frac{\vartheta}{2}} \\
+(-in_x+n_y)\sin{\frac{\vartheta}{2}} & \cos{\frac{\vartheta}{2}}+in_z\sin{\frac{\vartheta}{2}}
+\end{pmatrix}
+\end{equation}
+In virtù della proprietà~\eqref{eqn:pauli tr}, si ha
+\begin{equation}
+\det(e^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma})=e^{\operatorname{Tr}{\left(-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma\right)}}=e^0=1
+\end{equation}
+Pertanto l'operatore unitario $U$ è unimodulare, cioè appartiene al \textit{gruppo unitario speciale} $SU(2)$. Le matrici di Pauli sono dette \textit{generatori del gruppo $SU(2)$}. 
+
+\medskip
+Consideriamo ora la trasformazione
+\begin{equation}
+\boldsymbol\sigma'=U \boldsymbol\sigma U^{\dagger}=e^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma} \boldsymbol\sigma e^{i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma}
+\end{equation}
+Consideriamo per semplicità il caso $\hat{\textbf{n}}=\hat{\textbf{z}}$, valutando l'azione di $U$ su $\sigma_x$. Poiché la matrice $\sigma'_x$ sarà in generale della forma data dalla~\eqref{eqn:matriceautoaggiunto}, abbiamo
+\begin{equation} \begin{split}
+\sigma_x'&= e^{-i\frac{\vartheta}{2}\sigma_z}\sigma_xe^{i\frac{\vartheta}{2}\sigma_z} \doteq 
+\begin{pmatrix}
+a_z' & a_x'-ia_y' \\
+a_x'+ia_y' & -a_z'
+\end{pmatrix}
+= \\ &=
+\begin{pmatrix}
+e^{-i\frac{\vartheta}{2}} & 0 \\
+0 & e^{i\frac{\vartheta}{2}}
+\end{pmatrix}
+\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+e^{i\frac{\vartheta}{2}} & 0 \\
+0 & e^{-i\frac{\vartheta}{2}}
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 & e^{-i\vartheta} \\
+e^{i\vartheta} & 0
+\end{pmatrix}
+\end{split} \end{equation}
+Uguagliando membro a membro gli elementi di matrice e risolvendo il sistema, otteniamo
+\begin{subequations} \begin{align}
+a_x'&=\frac{e^{i\vartheta}+e^{-i\vartheta}}{2}=\cos{\vartheta} \\
+a_y'&=\frac{e^{i\vartheta}-e^{-i\vartheta}}{2i}=\sin{\vartheta} \\
+a_z'&=0
+\end{align} \end{subequations}
+da cui segue immediatamente per la~\eqref{eqn:pauliautoaggiunto}
+\begin{subequations}
+\begin{align}
+\sigma'_x&=\cos{\vartheta}\sigma_x+\sin{\vartheta}\sigma_y \\
+\intertext{Avremmo ottenuto lo stesso risultato applicando la formula BCH. Procedendo in maniera analoga per le altre matrici di Pauli, avremo}
+\sigma'_y&=-\sin{\vartheta}\sigma_x+\cos{\vartheta}\sigma_y \\
+\sigma'_z&=\sigma_z
+\end{align}
+\end{subequations}
+Queste equazioni esprimono una rotazione di angolo finito $\vartheta$ attorno all'asse $\hat{\textbf{z}}$
+\begin{equation}
+\boldsymbol\sigma'=
+\begin{pmatrix}
+\cos{\vartheta} & \sin{\vartheta} & 0 \\
+-\sin{\vartheta} & \cos{\vartheta} & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\boldsymbol\sigma=R_{\hat{\textbf{z}}}(\vartheta)\boldsymbol\sigma
+\end{equation}
+La trasformazione unitaria con $U=\eqref{eqn:unit rot}\equiv U_{\hat{\textbf{n}}}(\vartheta)$ rappresenta dunque una \textit{rotazione del sistema di riferimento} di angolo $\vartheta$ (non $\vartheta/2$!) nella direzione del versore $\hat{\textbf{n}}$.
+
+Classicamente, una rotazione è caratterizzata da una matrice del gruppo ortogonale speciale $SO(3)$. Indifferentemente, possiamo caratterizzarla in $SU(2)$. Si potrebbe concludere che i gruppi $SO(3)$ e $SU(2)$ siano isomorfi, cioè che esista una corrispondenza uno a uno fra gli elementi di $SO(3)$ e gli elementi di $SU(2)$. Questa conclusione è falsa! Consideriamo una rotazione $\vartheta=2\pi$ e un'altra $\vartheta=4\pi$, entrambe rispetto al medesimo asse $\hat{\textbf{n}}$. Nel linguaggio di $SO(3)$, denotando un suo elemento con $Q_{\hat{\textbf{n}}}(\vartheta)$, abbiamo $Q_{\hat{\textbf{n}}}(2\pi)=Q_{\hat{\textbf{n}}}(4\pi)=\textbf{1}_{3\times3}$: le matrici che rappresentano le due rotazioni sono entrambe la matrice identità $3\times 3$. Nel linguaggio di $SU(2)$, invece, per l'eq.~\eqref{eqn:unit matrix}, abbiamo $U_{\hat{\textbf{n}}}(2\pi)=-\textbf{1}_{2\times2}$, mentre $U_{\hat{\textbf{n}}}(4\pi)=\textbf{1}_{2\times2}$. La corrispondenza è pertanto due a uno: per una $Q$ assegnata, la corrispondente $U$ ha due valori.
+
+Verifichiamo poi che la composizione di due matrici $U_{\hat{\textbf{n}}_1}(\vartheta_1)$ e $U_{\hat{\textbf{n}}_2}(\vartheta_2)$ corrisponde alla composizione delle rispettive rotazioni
+\begin{equation} \begin{split}
+U_{\hat{\textbf{n}}_2}(\vartheta_2) U_{\hat{\textbf{n}}_1}(\vartheta_1) \boldsymbol\sigma U_{\hat{\textbf{n}}_1}^\dagger(\vartheta_1) U_{\hat{\textbf{n}}_2}^\dagger(\vartheta_2)
+&= U_{\hat{\textbf{n}}_2}(\vartheta_2) R_{\hat{\textbf{n}}_1}(\vartheta_1)\boldsymbol\sigma U_{\hat{\textbf{n}}_2}^\dagger(\vartheta_2)  \\
+&= R_{\hat{\textbf{n}}_2}(\vartheta_2)R_{\hat{\textbf{n}}_1}(\vartheta_1)\boldsymbol\sigma
+\end{split} \end{equation}
+
+Consideriamo ora un sistema ortonormale $\left\{ \ket{k} \right\} $ di autostati dell'operatore $\sigma_z$, tali cioè che $\sigma_z\ket{k}=k\ket{k}$, quindi $k=\pm1$.  
+Consideriamo una rotazione di un angolo finito $\vartheta$ attorno all'asse $z$ rappresentata dall'operatore 
+\begin{equation} \begin{split}
+kU_{\hat{\textbf{n}}}(\vartheta)\ket{k}=U_{\hat{\textbf{n}}}(\vartheta)\sigma_z\ket{k}
+&=U_{\hat{\textbf{n}}}(\vartheta)\sigma_z\textbf{1}\ket{k}
+=U_{\hat{\textbf{n}}}(\vartheta)\sigma_z U_{\hat{\textbf{n}}}^\dagger(\vartheta) U_{\hat{\textbf{n}}}(\vartheta)\ket{k} \\
+&=R_{\hat{\textbf{n}}}(\vartheta)\sigma_z U_{\hat{\textbf{n}}}(\vartheta)\ket{k}=\sigma'_z U_{\hat{\textbf{n}}}(\vartheta)\ket{k}
+\end{split} \end{equation}
+L'operatore unitario $U_{\hat{\textbf{n}}}(\vartheta)$ agisce sugli autostati di $\sigma$ restituendo gli autostati di $\sigma'_z$, cioè $\sigma_z$ ruotato.
+
+\medskip
+Sappiamo che le matrici di Pauli (più precisamente, $\hbar\sigma_i/2$, per $i=x,y,z$) obbediscono alla stessa algebra di Lie dello spin 1/2. Dunque, nel caso $\dim\mathcal{H}=2$, l'eq.~\eqref{eqn:unit rot} si scrive equivalentemente
+\begin{equation}
+U_{\hat{\textbf{n}}}(\vartheta)=e^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma}=e^{-\frac{i}{\hbar}\vartheta\hat{\textbf{n}}\cdot\textbf{S}}
+\end{equation}
+Le componenti dello spin, dunque, generano le rotazioni.
+
+È di comune uso indicare l'operatore di momento angolare generico con $\textbf{J}$, riservando $\textbf{L}$ al momento angolare orbitale e $\textbf{S}$ allo spin. 
+Verifichiamo che, in modo analogo, le  componenti del momento angolare orbitale $\textbf{L}$ generano le rotazioni, in modo da generalizzare al momento angolare $\textbf{J}$. Per semplicità, ci limitiamo alla componente $L_z=-i\hbar\left(x\partial_y-y\partial_x\right)$, valutando la sua azione su $\textbf{r}=(x,y,z)$. Per la componente $x$ abbiamo
+\begin{equation}\begin{split}
+e^{-\frac{i}{\hbar}\vartheta L_z}x &= x+\frac{i\vartheta}{\hbar}(-i\hbar)(x\partial_y-y\partial_x)x+\dots = x+\vartheta y-\frac{1}{2}\vartheta^2 x-\frac{1}{3!}\vartheta^3 y+\dots \\
+&=x\cos\vartheta+y\sin\vartheta
+\end{split}\end{equation}
+e così per le altre componenti. Le relazioni che si ottengono esprimono una rotazione del sistema di coordinate di un angolo $\vartheta$ attorno all'asse $z$. Parimenti si dimostra
+\begin{equation}
+e^{-\frac{i}{\hbar}\vartheta L_z}x^2=\left(x\cos\vartheta+y\sin\vartheta\right)^2
+\end{equation}
+Più in generale, per una funzione $\psi(\textbf{r})$ (in rappresentazione di Schr\"odinger), si ha
+\begin{equation}
+\braket{\textbf{r}|e^{-\frac{i}{\hbar}\vartheta\hat{\textbf{n}}\cdot\textbf{L}}|\psi}=e^{-\frac{i}{\hbar}\vartheta\hat{\textbf{n}}\cdot\textbf{L}}\braket{\textbf{r}|\psi}=e^{-\frac{i}{\hbar}\vartheta\hat{\textbf{n}}\cdot\textbf{L}}\psi(\textbf{r})=\psi\left(R_{\hat{\textbf{n}}}(\vartheta)\textbf{r}\right)
+\end{equation}
+Formalmente, diciamo che $\hat{\textbf{n}}\cdot\textbf{L}$ è il \textit{generatore infinitesimo delle rotazioni}.
+
+Abbiamo visto qualcosa di simile in merito all'operatore $U_t=e^{-\frac{i}{\hbar}tH}$ (l'analogia risulta evidente se sostituiamo $\vartheta\to t$ e $H=\hat{\textbf{n}}\cdot\textbf{L}$), che rappresenta l'evoluzione temporale di un sistema $\ket{\psi(t)}=e^{-\frac{i}{\hbar}tH}\ket{\psi(0)}$, da cui discende immediatamente che $\ket{\psi(t+\tau)}=e^{-\frac{i}{\hbar}\tau H}\ket{\psi(t)}$. Quindi possiamo interpretare la hamiltoniana $H$ come il \textit{generatore infinitesimo delle traslazioni temporali}.
+
+Discorso analogo, infine, vale per il momento lineare $\textbf{p}=-i\hbar\nabla$. In rappresentazione di Schr\"odinger, se operiamo su sistema (per comodità, unidimensionale) descritto da $\psi(x)$ una traslazione pari ad $a$, la funzione d'onda del sistema traslato è $\psi'(x)=\psi(x-a)$. Sviluppando la funzione $\psi(x-a)$ in serie di potenze attorno al punto $x$ si ottiene
+\begin{equation}\begin{split}
+\psi(x-a)&=\sum_{n=0}^{\infty}{\frac{(-a)^n}{n!}\frac{d^n}{dx^n}}\psi(x)=\sum_{n=0}^{\infty}{\frac{1}{n!}\left(-a\frac{d}{dx}\right)^n}\psi(x) \\
+&=e^{-a\frac{d}{dx}}\psi(x)=e^{-\frac{i}{\hbar}ap}\psi(x)
+\end{split}\end{equation}
+che ha un'immediata generalizzazione al caso tridimensionale
+\begin{equation}
+\psi(\textbf{r}-\textbf{a})=e^{-\frac{i}{\hbar}\textbf{a}\cdot\textbf{p}}
+\end{equation}
+Dunque, $\textbf{a}\cdot\textbf{p}$ è il \textit{generatore infinitesimo delle traslazioni spaziali}.
+
+\begin{proof}[\textbf{Esempio}]
+Studiamo la matrice di Pauli 
+\begin{equation}
+\sigma_y=\begin{pmatrix}
+0 & -i \\
+i & 0
+\end{pmatrix}
+\end{equation}
+che è un elemento di $SU(2)$, e valutiamone l'azione sull'operatore $U_{\hat{\textbf{n}}}(\vartheta)=e^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma}$. Si controlla facilmente che $\sigma_y\sigma_x\sigma_y=-\sigma_x$, $\sigma_y\sigma_y\sigma_y=\sigma_y$ e $\sigma_y\sigma_z\sigma_y=-\sigma_z$, ovvero
+\begin{equation}
+\sigma_y\boldsymbol\sigma\sigma_y=-\boldsymbol\sigma^*
+\end{equation}
+Allora
+\begin{equation}
+\sigma_yU_{\hat{\textbf{n}}}(\vartheta)\sigma_y=\sigma_ye^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma}\sigma_y=e^{i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma^*}=\left( e^{-i\frac{\vartheta}{2}\hat{\textbf{n}}\cdot\boldsymbol\sigma}\right)^*
+\end{equation}
+Consideriamo ora lo stato di singoletto
+\begin{equation} \label{eqn:singlet}
+\ket{\psi}=\frac{1}{\sqrt{2}}\left(\ket{\uparrow\downarrow}-\ket{\downarrow\uparrow}\right)
+\end{equation}
+che, riprendendo il formalismo introdotto nelle scorse lezioni, possiamo scrivere come ket di stato bipartito
+\begin{equation}
+\ket{\psi}\rangle=\sum_{n,m}{\psi_{nm}\ket{n}\otimes\ket{m}} %=\psi_{\uparrow\uparrow}\ket{\uparrow\uparrow}+\psi_{\uparrow\downarrow}\ket{\uparrow\downarrow}+\psi_{\downarrow\uparrow}\ket{\downarrow\uparrow}+\psi_{\downarrow\downarrow}\ket{\downarrow\downarrow}
+,\qquad\bar{\bar{\psi}}=\sum_{n,m}{\psi_{nm}\ket{n}\bra{m}}\in\mathcal{M}_{nm}(\mathbb{C})
+\end{equation}
+Dal confronto con~\eqref{eqn:singlet}, gli elementi di matrice $\psi_{nm}$ sono dunque
+\begin{equation}\begin{matrix}
+\psi_{\uparrow\uparrow}=0,& \psi_{\uparrow\downarrow}=\frac{1}{\sqrt{2}},\\
+\psi_{\downarrow\uparrow}=-\frac{1}{\sqrt{2}},&
+\psi_{\downarrow\downarrow}=0
+\end{matrix}\end{equation}
+e quindi
+\begin{equation}
+\ket{\psi}\rangle=\frac{i}{\sqrt{2}}\ket{\sigma_y}\rangle
+\end{equation}
+Mostriamo ora che lo stato di singoletto è invariante per rotazioni
+\begin{equation}\begin{split}
+&\left(U_{\hat{\textbf{n}}}(\vartheta)\otimes U_{\hat{\textbf{n}}}(\vartheta)\right)\ket{\psi}\rangle
+=\frac{i}{\sqrt{2}}\ket{U_{\hat{\textbf{n}}}(\vartheta) \sigma_y U_{\hat{\textbf{n}}}^T(\vartheta)}\rangle
+=\frac{i}{\sqrt{2}}\ket{U_{\hat{\textbf{n}}}(\vartheta) \sigma_y U_{\hat{\textbf{n}}}^T(\vartheta)\textbf{1}}\rangle \\
+&\qquad =\frac{i}{\sqrt{2}}\ket{U_{\hat{\textbf{n}}}(\vartheta) \sigma_y U_{\hat{\textbf{n}}}^T(\vartheta)\sigma_y\sigma_y}\rangle
+=\frac{i}{\sqrt{2}}\ket{U_{\hat{\textbf{n}}}(\vartheta)\left( U_{\hat{\textbf{n}}}^T(\vartheta)\right)^*\sigma_y}\rangle \\
+&\qquad =\frac{i}{\sqrt{2}}\ket{U_{\hat{\textbf{n}}}(\vartheta)U_{\hat{\textbf{n}}}^\dagger(\vartheta)\sigma_y}\rangle
+=\frac{i}{\sqrt{2}}\ket{\sigma_y}\rangle
+\end{split}\end{equation}
+\end{proof}
+ 
+\section{Addizione dei momenti angolari} %Addizione dei momenti angolari
+Trattiamo ora sistemi con più di un momento angolare. Può trattarsi, ad esempio, di due particelle con spin, del momento angolare orbitale e dello spin della stessa particella, etc. Si vuole sapere quali sono i valori possibili del momento angolare totale, e qual è la relazione tra gli stati del momento angolare totale e gli stati dei momenti angolari componenti.
+
+Consideriamo due operatori di momento angolare $\textbf{J}_1$ e $\textbf{J}_2$ negli opportuni sottospazi. Le componenti di $\textbf{J}_1$ e $\textbf{J}_2$ soddisfano le usuali regole di commutazione del momento angolare
+\begin{subequations}
+\label{eqn:comm1}
+\begin{align}
+[\textbf{J}_{1i},\textbf{J}_{1j}]=i\hbar\epsilon_{ijk}\textbf{J}_{1k} \\
+[\textbf{J}_{2i},\textbf{J}_{2j}]=i\hbar\epsilon_{ijk}\textbf{J}_{2k}
+\end{align}
+\end{subequations}
+Abbiamo comunque
+\begin{equation}
+\label{eqn:comm2}
+[\textbf{J}_{1k},\textbf{J}_{2l}]=0
+\end{equation}
+per ogni coppia di operatori che agiscono in sottospazi diversi. Il \textit{momento angolare totale} è definito da
+\begin{equation}
+\textbf{J}=\textbf{J}_1\otimes\textbf{1}+\textbf{1}\otimes\textbf{J}_2\equiv\textbf{J}_1+\textbf{J}_2
+\end{equation}
+È importante notare che per \textbf{J} totale valgono le regole di commutazione del momento angolare
+come conseguenza di~\eqref{eqn:comm1} e~\eqref{eqn:comm2}. Tutto quello che abbiamo ricavato nelle lezioni precedenti, per esempio lo spettro degli autovalori di $\textbf{J}^2$ e $J_z$ e gli elementi di matrice degli operatori "a scala", vale anche per $\textbf{J}$ totale.
+
+Dati due numeri quantici $j_1$ e $j_2$ dei momenti angolari $\textbf{J}_1$ e $\textbf{J}_2$, quali sono i possibili valori del numero quantico $j$ del momento angolare totale $\textbf{J}$? Ci sono due basi naturali degli stati del momento angolare:
+
+\begin{enumerate}
+
+\item una base in cui gli operatori $\textbf{J}_1^2$, $J_{1z}$, $\textbf{J}_2^2$ e $J_{2z}$ sono diagonali, con autostati simultanei indicati da $\ket{j_1,j_2;m_1,m_2}$. Ovviamente questi quattro operatori commutano. Le equazioni agli autovalori sono
+\begin{subequations}
+\label{eqn:base1}
+\begin{align}
+\textbf{J}_1^2\ket{j_1,j_2;m_1,m_2}&=\hbar^2 j_1(j_1+1)\ket{j_1,j_2;m_1,m_2} \\
+J_{1z}\ket{j_1,j_2;m_1,m_2}&=\hbar m_1\ket{j_1,j_2;m_1,m_2} \\
+\textbf{J}_2^2\ket{j_1,j_2;m_1,m_2}&=\hbar^2 j_2(j_2+1)\ket{j_1,j_2;m_1,m_2} \\
+J_{2z}\ket{j_1,j_2;m_1,m_2}&=\hbar m_2\ket{j_1,j_2;m_1,m_2}
+\end{align}
+\end{subequations}
+\item una base in cui gli operatori $\textbf{J}_1^2$, $J_z$, $\textbf{J}_1^2$ e $\textbf{J}_2^2$ sono diagonali, con autostati simultanei denotati da $\ket{j_1,j_2;j,m}$Anche questi operatori commutano. Le equazioni agli autovalori sono
+\begin{subequations}
+\label{eqn:base2}
+\begin{align}
+\textbf{J}^2\ket{j_1,j_2;j,m}&=\hbar^2 j(j+1)\ket{j_1,j_2;j,m} \\
+J_z\ket{j_1,j_2;j,m}&=\hbar m\ket{j_1,j_2;j,m} \\
+\textbf{J}_1^2\ket{j_1,j_2;j,m}&=\hbar^2 j_1(j_1+1)\ket{j_1,j_2;j,m} \\
+\textbf{J}_2^2\ket{j_1,j_2;j,m}&=\hbar^2 j_2(j_2+1)\ket{j_1,j_2;j,m}
+\end{align}
+\end{subequations}
+
+\end{enumerate}
+Spesso $j_1,j_2$ sono sottintesi e i ket di base si scrivono semplicemente come $\ket{m_1,m_2}$ e $\ket{j,m}$. Nel seguito ci riferiremo a queste come la prima e la seconda base. \\ È importante notare inoltre che, nonostante $\textbf{J}^2$ e $J_z$ commutino, si ha
+\begin{equation}
+[\textbf{J}^2,J_{1z}]\neq0,\qquad [\textbf{J}^2,J_{2z}]\neq0
+\end{equation}
+Questo significa che non possiamo aggiungere $\textbf{J}^2$ all'insieme degli operatori della prima scelta. Analogamente, non possiamo aggiungere $J_{1z}$ e/o $J_{2z}$ all'insieme di operatori della seconda scelta.
+
+Possiamo chiederci quale sia la relazione che connette le due basi. Ciascuno stato della seconda base può essere sviluppato in termini di quelli della prima
+\begin{equation} \label{eqn:ketjm}
+\ket{j,m}=\sum_{m_1,m_2}{\ket{m_1,m_2}\braket{m_1,m_2|j,m}}
+\end{equation}
+dove abbiamo sfruttato la relazione di chiusura
+\begin{equation}
+\sum_{m_1,m_2}\ket{m_1,m_2}\bra{m_1,m_2}=\textbf{1}
+\end{equation}
+dove $\textbf{1}$ è l'operatore identità nello spazio dei ket con $j_1,j_2$ assegnati. Gli elementi di questa matrice di trasformazione $\braket{m_1,m_2|j,m}$ sono detti \textit{coefficienti di Clebsch-Gordan}. Notiamo dapprima che
+\begin{equation}
+(J_z-J_{1z}-J_{2z})\ket{j,m}=0
+\end{equation}
+Proiettando su $\bra{m_1,m_2}$ otteniamo
+\begin{equation}
+(m-m_1-m_2)\braket{m_1,m_2|j,m}=0
+\end{equation}
+Quindi i coefficienti tutti sono nulli a meno che
+\begin{equation}
+m=m_1+m_2
+\end{equation}
+Poi, i coefficienti vanno a zero a meno che
+\begin{equation}
+|j_1+j_2| \leq j \leq j_1+j_2
+\end{equation}
+Controlliamo questo risultato dimostrano che la dimensione dello spazio spannato da $\ket{j,m}$ è la stessa dello spazio spannato da $\ket{m_1,m_2}$. Valutiamo la dimensione nel caso $m_1,m_2$: abbiamo
+\begin{equation}
+N=(2j_1+1)(2j_2+1)
+\end{equation}
+in quanto per ogni $j_1$ abbiamo $2j_1+1$ valori possibili di $m_1$, e analogamente per $m_2$. Quanto alla dimensione relativa a $j,m$, notiamo che per ogni $j$ ci sono $2j+1$ stati. Dall'identità\footnote{Per le proprietà delle serie aritmetiche
+\begin{equation} \notag \begin{split}
+\sum_{n=a}^b{(2n+1)} &= 2\sum_{n=a}^b{n}+\sum_{n=a}^b{1}=2\left[\sum_{n=1}^b{n}-\sum_{n=1}^{a-1}{n}\right]+\sum_{n=a}^b{1}= \\
+&= 2\left[\frac{b(b+1)}{2}-\frac{(a-1)a}{2}\right]+(b-a+1)=(b+a)(b-a+1)+(b-a+1)= \\
+&= (b+1-a)(b+1+a)=(b+1)^2-a^2 
+\end{split}\end{equation} }
+\begin{equation}
+\sum_{n=a}^b{(2n+1)}=(b+1)^2-a^2
+\end{equation}
+assumendo senza perdita di generalità $j_2\leq j_1$, otteniamo
+\begin{equation}
+N=\sum_{j=j_1-j_2}^{j_1+j_2}{(2j+1)}=(2j_1+1)(2j_2+1)
+\end{equation}
+quindi i due conteggi forniscono lo stesso $N$.
+
+I coefficienti di Clebsch-Gordan formano una matrice unitaria. Inoltre, per convenzione, gli elementi di matrice sono assunti reali; pertanto
+\begin{equation}\begin{split}
+&\sum_{j,m}{\braket{m_1,m_2|j,m}\braket{m_1',m_2'|j,m}}=\sum_{j,m}{\braket{m_1,m_2|j,m}\braket{j,m|m_1',m_2'}}\\
+&\qquad=\delta_{m_1m'_1}\delta_{m_2m'_2}
+\end{split}\end{equation}
+data l'ortonormalità dei ${\ket{m_1,m_2}}$ e la realtà dei coefficienti di Clebsch-Gordan $\braket{m_1',m_2'|j,m}=\braket{m_1',m_2'|j,m}^\dagger=\braket{j,m|m_1',m_2'}$. Similmente vale
+\begin{equation}
+\sum_{m_1,m_2}{\braket{m_1,m_2|j,m}\braket{m_1,m_2|j',m'}=\delta_{jj'}\delta_{mm'}}
+\end{equation}
+Come caso particolare poniamo $j=j'$ e $m=m'=m_1+m_2=m_1'+m_2'$
+\begin{equation}
+\sum_{j,m}{\braket{m_1,m_2|j,m}^2}=\sum_{m_1,m_2}{\braket{m_1,m_2|j,m}^2}=1
+\end{equation}
+che non sono altro che le condizioni di normalizzazione per $\ket{m_1,m_2}$ e $\ket{j,m}$.
+
+Per $j_1$, $j_2$ e $j$ fissati, i coefficienti con diversi $m_1$ e $m_2$ sono legati fra loro da \textit{relazioni di ricorrenza}. Applicando gli operatori $J_\pm=J_{1\pm}+J_{2\pm}$ allo stato~\eqref{eqn:ketjm}, troviamo
+\begin{equation}\begin{split}
+J_\pm\ket{j,m}&=(J_{1\pm}+J_{2\pm})\sum_{m'_1,m'_2}\ket{m'_1,m'_2}\braket{m'_1,m'_2|j,m} \\
+&=\sqrt{(j\mp m)(j\pm m+1)}\ket{j,m\pm 1} \\
+&=\sum_{m'_1,m'_2}{\sqrt{(j_1 \mp m'_1)(j_1 \pm m'_1+1)}\ket{m'_1\pm 1,m'_2}\braket{m'_1,m'_2|j,m}} \\
+&+\sum_{m'_1,m'_2}{\sqrt{(j_2 \mp m'_2)(j_2 \pm m'_2+1)}\ket{m'_1,m'_2\pm 1}\braket{m'_1,m'_2|j,m}}
+\end{split}\end{equation}
+Proiettando questa relazione su $\bra{m_1,m_2}$ e sfruttando l'ortonormalità, segue che i contributi diversi da zero al membro di destra sono quelli per cui
+\begin{align}
+m_1=m'_1\pm 1, \qquad m_2=m'_2 && \text{per il primo termine} \\
+m_1=m'_1, \qquad m_2=m'_2\pm 1 && \text{per il secondo termine}
+\end{align}
+Otteniamo in questo modo le relazioni di ricorrenza desiderate
+\begin{equation} \begin{split}
+&\sqrt{(j \mp m)(j \pm m + 1)}\braket{m_1,m_2|j,m\pm1} \\
+&= \sqrt{(j_1 \mp m_1+1)(j_1 \pm m_1)}\braket{m_1 \mp 1, m_2|j,m} \\
+&+ \sqrt{(j_2 \mp m_2+1)(j_2 \pm m_2)}\braket{m_1, m_2 \mp 1|j,m}
+\end{split} \end{equation}
+
+\begin{proof}[\textbf{Esempio}]
+Un caso molto importante in pratica è l'addizione del momento angolare orbitale e quello di spin per una particella di spin 1/2. Abbiamo
+\begin{align}
+j_1&=l\text{ (intero)}, && m_1=m_l \\
+j_2&=s=\frac{1}{2}, && m_2=m_s=\pm\frac{1}{2}
+\end{align}
+Si dimostra (si invita lo studente a provarlo) che i coefficienti di Clebsch-Gordan $\braket{m_l=m-m_s,m_s|j,m}$ ad $m$ fisso sono
+
+\medskip
+\begin{tabular}{lcc}
+& $\ket{j=l+\frac{1}{2},m}$ & $\ket{j=l-\frac{1}{2},m}$ \\
+& & \\
+$\bra{m_l=m-\frac{1}{2},m_s=\frac{1}{2}}$ & $\sqrt{\dfrac{l+m+\frac{1}{2}}{2l+1}}$ & $-\sqrt{\dfrac{l-m-\frac{1}{2}}{2l+1}}$ \\
+& & \\
+$\bra{m_l=m+\frac{1}{2},m_s=-\frac{1}{2}}$ & $\sqrt{\dfrac{l-m+\frac{1}{2}}{2l+1}}$ & $\sqrt{\dfrac{l+m+\frac{1}{2}}{2l+1}}$
+\end{tabular}
+\end{proof}
+
+%\end{document}

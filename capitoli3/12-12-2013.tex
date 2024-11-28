@@ -1,0 +1,151 @@
+\section{Esercizio 1 del 30/6/1989} %Esercizio 1 del 30/6/1989
+
+\subsection{Risoluzione} %Risoluzione
+\begin{equation}\begin{split}
+H=\frac{1}{2}E\left(\begin{matrix}1&1\\1&1\end{matrix}\right)
+\end{split}\end{equation}
+Si diagonalizza:
+\begin{equation}\begin{split}
+\left(1-\lambda\right)^2-1\\
+\Longrightarrow \lambda_1=0 \quad \lambda_2=2
+\end{split}\end{equation}
+Gli autovettori sono:
+\begin{equation}\begin{split}
+\left |\psi _1 \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\-1\end{matrix}\right)
+\left |\psi _2 \right\rangle=\frac{1}{\sqrt{2}\left(\begin{matrix}1\\1\end{matrix}\right)}
+\end{split}\end{equation}
+quindi:
+\begin{equation}\begin{split}
+H_\psi =\left(\begin{matrix}0&0\\0&E\end{matrix}\right)
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+e^{-\frac{i}{\hbar }Ht}=\left(\begin{matrix}1&0\\0&e^{-\frac{i}{\hbar }Et}\end{matrix}\right)
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left |\psi _1 \right\rangle=\frac{1}{\sqrt{2}}\left(\left |\psi _1 \right\rangle+\left |\psi _2 \right\rangle\right)\\
+\left |\psi _2 \right\rangle=\frac{1}{\sqrt{2}}\left(\left |\psi _2 \right\rangle-\left |\psi _1 \right\rangle\right)
+\end{split}\end{equation}
+
+Cambiando la base:
+\begin{equation}\begin{split}
+U\left(t\right)\left |\psi \left(0\right) \right\rangle=\left(\begin{matrix}1&0\\0&e^{-\frac{i}{\hbar }Et}\end{matrix}\right)\left(\begin{matrix}\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\end{matrix}\right)-\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\e^{-\frac{i}{\hbar }Et}\end{matrix}\right)
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+U\left(t\right)=\frac{1}{2}e^{-\frac{i}{\hbar }Et}\left(\begin{matrix}1&1\\1&1\end{matrix}\right)=\frac{1}{2}e^{-\frac{i}{\hbar }Et}\left(\left |\psi _1 \right\rangle+\left |\psi _2 \right\rangle\right)
+\end{split}\end{equation}
+
+C'è un'altra strada:
+\begin{equation}\begin{split}
+U\left(t\right)=\\
+=\exp{\left(-\frac{i}{\hbar }Et\right)}\left |\psi _1 \right\rangle\left\langle \psi _1\right |+\exp{\left(-\frac{i}{\hbar }Et\right)}\left |\psi _2 \right\rangle\left\langle \psi _2\right |\\
+\Longrightarrow \left |E_1 \right\rangle\left\langle E_1\right |+\exp{\left(-\frac{i}{\hbar }Et\right)\left |E_2 \right\rangle\left\langle E_2\right |}
+\end{split}\end{equation}
+con $E_1=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\1\end{matrix}\right)$ e $E_2=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\-1\end{matrix}\right)$.
+\begin{equation}\begin{split}
+U\left(t\right)=\frac{1}{2}\left(\begin{matrix}1&-1\\-1&1\end{matrix}\right)+\exp{\left(\frac{i}{\hbar }Et\right)}\frac{1}{2}\left(\begin{matrix}1&1\\1&1\end{matrix}\right)
+\end{split}\end{equation}
+e perciò si ricava:
+\begin{equation}\begin{split}
+\left |\psi \left(t\right) \right\rangle=U\left(t\right)\left |\psi \left(0\right) \right\rangle=\frac{1}{\sqrt{2}}\left |E_1 \right\rangle+\frac{1}{\sqrt{2}}\exp{\left(-\frac{i}{\hbar }Et\right)}\left |E_2 \right\rangle
+\end{split}\end{equation}
+
+Sapendo che:
+\begin{equation}\begin{split}
+U\left(t\right)=\sum_{n=1}^{\infty }{\exp{\left(-\frac{i}{\hbar }Et\right)}\left |E_n \right\rangle\left\langle E_n\right |}\\
+H\left |E_n \right\rangle=E_n\left |E_n \right\rangle
+\end{split}\end{equation}
+diagonalizzando:
+\begin{equation}\begin{split}
+H=\frac{E}{2}\left(\begin{matrix}1&1\\1&1\end{matrix}\right)\\
+\Longrightarrow E_1=0 \Longrightarrow \left |E_1 \right\rangle\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\-1\end{matrix}\right)\\
+\Longrightarrow E_2=E \Longrightarrow \left |E_2 \right\rangle\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\1\end{matrix}\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |\psi \left(t\right) \right\rangle=\\
+=U\left(t\right)\left |\psi \left(0\right) \right\rangle=\\
+=\left |E_1 \right\rangle\left\langle E_1|\phi_1 \right\rangle+\exp{\left(-\frac{i}{\hbar }Et\right)}\left |E_2 \right\rangle\left\langle E_2|\phi_1 \right\rangle=\\
+=\frac{1}{\sqrt{2}}\left |E_1 \right\rangle+\exp{\left(-\frac{i}{\hbar }Et\right)}\frac{1}{\sqrt{2}}\left |E_2 \right\rangle
+\end{split}\end{equation}
+con $\left |\psi \left(0\right) \right\rangle=\left |\phi_1 \right\rangle$.
+
+Come controllo:
+\begin{equation}\begin{split}
+A\left |\phi_1 \right\rangle=a_1\left |\phi_1 \right\rangle\\
+A\left |\phi_2 \right\rangle=a_2\left |\phi_2 \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+P_t\left(A=a_1\right)=\left|\left\langle \phi_1|\psi \left(t\right) \right\rangle\right|^2=\frac{1}{2}\left[1+\cos{\left(\frac{E}{\hbar }t\right)}\right]\\
+P_t\left(A=a_2\right)=\left|\left\langle \phi_2|\psi \left(t\right) \right\rangle\right|^2=\frac{1}{2}\left[1-\cos{\left(\frac{E}{\hbar }t\right)}\right]
+\end{split}\end{equation}
+
+%MANCA TUTTO
+
+\chapter{Stati di singoletto e tripletto} %Stati di singoletto e tripletto
+Essendo $\bar S_{tot}=\bar s_1+\bar s_2$ e $S^2_{tot}=\hbar ^2S_{tot}\left(S_{tot}+1\right)$ si hanno:
+\begin{equation}\begin{split}
+\textrm{Tripletto: } S_{tot}=1 \Longrightarrow \left |1,1 \right\rangle, \left |1,0 \right\rangle, \left |0,1 \right\rangle\\
+\textrm{Singoletto: } S_{tot}=0 \Longrightarrow \left |0,0 \right\rangle
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+S_1^2\left |s_1m_{s1} \right\rangle\\
+S_2^2\left |s_2m_{s2} \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left[\left |s_1m_{s1} \right\rangle\left |s_2m_{s2} \right\rangle\right]\Longrightarrow \left[\left |S_{tot} \right\rangle,\left |M_{tot} \right\rangle\right]
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\section[Coefficienti di Clebsch-Gordan]{Costruzione coefficienti di Clebsch-Gordan} %Costruzione coefficienti di Clebsch-Gordan
+Siano $S_-=S_x-iS_y=S_{1-}+S_{2-}$, $S_-\left |S,M \right\rangle=\sqrt{s\left(s+1\right)-m\left(m+1\right)}\left |S,M-1 \right\rangle$:
+\begin{equation}\begin{split}
+\left |S_{tot}=1,M_{tot}=1 \right\rangle=\left |\frac{1}{2},\frac{1}{2} \right\rangle\\
+\Longrightarrow S_{1-}\left |\frac{1}{2},\frac{1}{2} \right\rangle+S_{2-}\left |\frac{1}{2},\frac{1}{2} \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |S_{tot}=1,M_{tot}=0 \right\rangle=\\
+=S_-\left |S_{tot}=1,M_{tot}=1 \right\rangle=\\
+\sqrt{2}\left |S_{tot}=1,M_{tot}=0 \right\rangle\\
+\Longrightarrow \left |S_{tot}=1,M_{tot}=0 \right\rangle=\frac{1}{\sqrt{2}}\left[\left |-\frac{1}{2},\frac{1}{2} \right\rangle+\left |\frac{1}{2},-\frac{1}{2} \right\rangle\right]
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |S_{tot}=1,M_{tot}=-1 \right\rangle\\
+\Longrightarrow S_-\left |S_{tot}=1,M_{tot}=0 \right\rangle\\
+\Longrightarrow \left |S_{tot}=1,M_{tot}=-1 \right\rangle=\left |-\frac{1}{2},-\frac{1}{2} \right\rangle
+\end{split}\end{equation}
+
+Lo stato di tripletto con $S_{tot}=1$ ha quindi:
+\begin{equation}\begin{split}
+\begin{cases}
+\left |\frac{1}{2},\frac{1}{2} \right\rangle & M_{tot}=1\\
+\frac{1}{\sqrt{2}}\left[\left |\frac{1}{2},-\frac{1}{2} \right\rangle +\left |-\frac{1}{2},\frac{1}{2} \right\rangle \right] & M_{tot}=0\\
+\left |-\frac{1}{2},-\frac{1}{2} \right\rangle & M_{tot}=-1
+\end{cases}
+\end{split}\end{equation}
+
+Per lo stato di singoletto con $S_{tot}=0$ e $M_{tot}=0$ si ha:
+\begin{equation}\begin{split}
+\frac{1}{\sqrt{2}}\left[\left |\frac{1}{2},-\frac{1}{2} \right\rangle -\left |-\frac{1}{2},\frac{1}{2} \right\rangle \right]
+\end{split}\end{equation}
+
+\begin{tabularx}{\textwidth}{XXXXX}
+\toprule
+$\left | S_{tot},M_{tot}\right\rangle$ & $\left |1,1 \right\rangle$ & $\left |1,0 \right\rangle$ & $\left |0,1 \right\rangle$ & $\left |0,0 \right\rangle$ \\
+$\left\langle M_{s1},M_{s2}\right |$ &&&&\\
+\midrule
+$\left\langle \frac{1}{2},\frac{1}{2}\right |$ & $1$ & $0$ & $0$ & $0$ \\
+$\left\langle \frac{1}{2},-\frac{1}{2}\right |$ & $0$ & $\frac{1}{\sqrt{2}}$ & $0$ & $-\frac{1}{\sqrt{2}}$ \\
+$\left\langle -\frac{1}{2},\frac{1}{2}\right |$ & $0$ & $\frac{1}{\sqrt{2}}$ & $0$ & $\frac{1}{\sqrt{2}}$ \\
+$\left\langle -\frac{1}{2},-\frac{1}{2}\right |$ & $0$ & $0$ & $1$ & $0$ \\
+\bottomrule
+\end{tabularx}
+
+\chapter{Esercizi} %Esercizi
+\section{Esercizio 1 del 28/9/2012} %Esercizio 1 del 28/9/2012
+\subsection{Risoluzione} %Risoluzione
+
+%MANCA TUTTO

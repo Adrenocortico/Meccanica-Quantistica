@@ -1,0 +1,199 @@
+\chapter{Particelle indistinguibili} %Particelle indistinguibili
+\section{Due particelle} %Due particelle
+Considerando due particelle, la funzione d'onda sarà:
+\begin{equation}\begin{split}
+\psi \left(\bar r_1,r_2\right)=\left\langle \bar r_1\right |\otimes\left\langle \bar r_1||\psi  \right\rangle\left |\psi  \right\rangle\in \mathcal{H}_1\otimes\mathcal{H}_2
+\end{split}\end{equation}
+
+Si scelgono due particelle indistinguibili in linea di principio e si scambiano tra loro:
+\begin{equation}\begin{split}
+\psi \left(\bar r_1,\bar r_2\right)\rightarrow \psi \left(\bar r_2,\bar r_1\right)=\lambda\psi \left(\bar r_1,\bar r_2\right)
+\end{split}\end{equation}
+con $|\lambda |=1$. Lo stato rimane lo stesso. Se si scambiano ancora:
+\begin{equation}\begin{split}
+\psi \left(\bar r_1,\bar r_2\right) \rightarrow \lambda^2=1
+\end{split}\end{equation}
+perciò le fasi devono essere $\lambda=\pm 1$.
+
+\section{$n$ particelle} %n particelle
+Si considerino ora $n$ particelle. Si ha:
+\begin{equation}\begin{split}
+\psi \left(\bar r_1,\dots,\bar r_n\right)=\lambda\left(\pi\right)\psi \left(\bar r_{\pi\left(1\right)},\dots,\bar r_{\pi\left(n\right)}\right) \\
+\lambda\left(\pi\sigma\right)=\lambda\left(\pi\right)\lambda\left(\sigma\right) \\
+\lambda\left(\sigma\pi\sigma^{-1}\right)=\lambda\left(\pi\right)\lambda\left(\sigma\right)\lambda\left(\sigma^{-1}\right)=\lambda\left(\pi\right) \\
+\left(rs\right)=\left(1r\right)\left(2s\right)\left(1r\right)\left(2s\right)^{-1}\left(1r\right)^{-1}
+\end{split}\end{equation}
+
+Si chiamano:
+\begin{itemize}
+\item bosoni: $\lambda=+1$
+\item fermioni: $\lambda=-1$
+\end{itemize}
+
+\subsection{Energia} %Energia
+Presa $H=H\left(\bar r_1,\dots,\bar r_n,\bar p_1,\dots,\bar p_n,\bar s_1,\dots,\bar s_n\right)$ si ha:
+\begin{equation}\begin{split}
+P_\pi H=HP_\pi
+\end{split}\end{equation}
+
+Applicando l'hamiltoniana ad uno stato si ha
+\begin{equation}\begin{split}
+P_\pi H\psi \left(\bar r_1,\dots,\bar r_n\right)=HP_\pi \psi \left(\bar r_1,\dots,\bar r_n\right)=\lambda\left(\pi\right)H\psi \left(\bar r_1,\dots,\bar r_n\right)
+\end{split}\end{equation}
+cioè non cambia il segno della permutazione.
+
+\section{Regola di superselezione} %Regola di superselezione
+\textbf{Si considerano solo sovrapposizioni simmetrizzate (\emph{bosoni}) o antisimmetrizzate (\emph{fermioni})}.
+
+\subsection{Esempio} %Esempio
+\begin{equation}\begin{split}
+\psi _1\left(\bar r_1\right)\psi _2\left(\bar r_2\right)=\psi \left(\bar r_1,\bar r_2\right) \\
+\psi _1\left(\bar r_2\right)\psi _2\left(\bar r_1\right)\neq \lambda \psi _1\left(\bar r_1\right)\psi _2\left(\bar r_2\right) \\
+\Longrightarrow \psi _1\left(\bar r_1\right)\psi _2\left(\bar r_2\right)+\psi _1\left(\bar r_2\right)\psi _2\left(\bar r_1\right) \\
+\psi _1\left(\bar r_1\right)\psi _2\left(\bar r_2\right)-\psi _1\left(\bar r_2\right)\psi _2\left(\bar r_1\right)
+\end{split}\end{equation}
+
+\subsection{$n$ particelle} %n particelle
+%MANCA UNA PARTE
+
+\textbf{Determinante di Slater}
+\begin{equation}\begin{split}
+\det{\left[\psi _i\left(\bar r_j\right)\right]}=\det{\left(\begin{matrix}\psi _1\left(\bar r_1\right) & \dots & \psi _1\left(\bar r_n\right) \\ \dots & \dots & \dots \\ \psi _n\left(\bar r_1\right) & \dots & \psi _n\left(\bar r_n\right) \end{matrix}\right)}
+\end{split}\end{equation}
+
+Vale il principio di esclusione di Pauli.
+
+\begin{equation}\begin{split}
+U_{\bar n}\left(\theta\right)=e^{-\frac{i}{\hbar }\bar n\cdot \bar J} \\
+\bar S=\frac{\hbar }{2}\bar \sigma
+\end{split}\end{equation}
+Prendendo $S=\frac{1}{2}$ si ha
+\begin{equation}\begin{split}
+U_{\bar n}\left(2\pi\right)=-\mathbb{I} \\
+U_{\bar n}^{2j+1}\left(\theta\right)=e^{-\frac{i}{\hbar }\theta \bar n\cdot \bar J} \\
+U_z^{2j+1}\left(\theta\right)=e^{-\frac{i}{\hbar }\theta J_z}=\exp{\left[-i\theta\left(\begin{matrix}j & & 0 \\ & \dots & \\ 0 & & -j\end{matrix}\right)\right]} \\
+U_z^{2j+1}\left(2\pi\right)= = \mathbb{I}
+\end{split}\end{equation}
+
+In generale, $j=\frac{n}{2}$ con $n$ dispari:
+\begin{equation}\begin{split}
+U_z^{2j+1}\left(2\pi\right)=\exp{\left[-i\pi\left(\begin{matrix}n & & 0 \\ & \dots & \\ 0 & & -n\end{matrix}\right)\right]}
+\end{split}\end{equation}
+
+La permutazione di due particelle equivale alla rotazione di $2\pi$ si una particella relativa all'altra.
+
+\begin{itemize}
+\item $S=\frac{n}{2}$ con $n$ dispari: fermioni
+\item $S=n$: bosoni
+\end{itemize}
+
+\section{Meccanica quantistica dei gas perfetti} %Meccanica quantistica dei gas perfetti
+\subsection{Termodinamica} %Termodinamica
+\textbf{Energia}:
+\begin{equation}\begin{split}
+U=U\left(S,V,N\right)
+\end{split}\end{equation}
+
+\textbf{Entropia}:
+\begin{equation}\begin{split}
+S=S\left(U,V,N\right)
+\end{split}\end{equation}
+
+Proprietà:
+\begin{equation}\begin{split}
+\frac{\partial U}{\partial S}=T \quad \frac{\partial U}{\partial T}=-P \quad \frac{\partial U}{\partial N}=\mu
+\end{split}\end{equation}
+
+Gibbs-Duhem:
+\begin{equation}\begin{split}
+U=\frac{\partial U}{\partial V}V+\frac{\partial U}{\partial N}N+\frac{\partial U}{\partial S}S=-PV+\mu N+TS \\
+S=\frac{U}{T}+\frac{PV}{T}-\frac{\mu N}{T}
+\end{split}\end{equation}
+
+Si vuole ricavare l'hamiltoniana:
+\begin{equation}\begin{split}
+H=\sum_{j=1}^{N}{h_j}
+\end{split}\end{equation}
+con $h=\frac{p^2}{2m}$.
+
+Si risolve l'equazione di Schrödinger in una scatola di volume $V$ (il quale da le condizioni al contorno). Per l'interno della scatola si utilizzano le \textbf{permutazioni di Born-von Karman}:
+\begin{equation}\begin{split}
+\bar k=\lambda\pi\left(\frac{nx}{L_x},\frac{ny}{L_y},\frac{nz}{L_z}\right)
+\end{split}\end{equation}
+con $n_{\alpha}\in \mathbb{Z}$.
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+H=\sum_{j=1}^{N}{\frac{\hbar ^2k_j^2}{2m}}\rightarrow\int{D\left(k\right)\textrm{d}k}
+\end{split}\end{equation}
+con $\frac{\hbar ^2k_j^2}{2m}$ gli autovalori che dipendono dallo stato $\psi $.
+
+\paragraph{Stato delle particelle} %Stato delle particelle
+Sia $U$ l'autovalore degenere (per lo scambio delle particelle). Sia l'\textbf{operatore densità}:
+\begin{equation}\begin{split}
+\rho=\frac{1}{N\left(U\right)}\sum_{E\left(\psi \right)=U}{\left |\psi  \right\rangle\left\langle \psi \right |}
+\end{split}\end{equation} 
+
+L'entropia è:
+\begin{equation}\begin{split}
+S\left(U\right)=k_B\ln{\left(N\left(U\right)\right)}
+\end{split}\end{equation}
+con $k_B$ costante di Boltzmann.
+\begin{itemize}
+\item Sistema isolato: $U$ determinato
+\item Scambio di energia con una riserva di energia (molto grande): $T$ temperatura
+\end{itemize}
+
+Si vuole $\rho$ ad una data temperatura:
+\begin{equation}\begin{split}
+\rho=\sum{p_\psi \left |\psi  \right\rangle\left\langle \psi \right |}
+\end{split}\end{equation}
+con $\left |\psi  \right\rangle$ autostati di energia e $p_\psi =p\left(E_\psi ,T\right)$ probabilità dello stato $\psi $. \\ Si vuole calcolare la probabilità. Si prende sistema e riserva come un sistema isolato con energia $E_0=E+E_R$ ($E\ll E_R$).
+\begin{equation}\begin{split}
+p_\psi \left(E\right)\propto N_R\left(E_0-E\right) \\
+\sum_{E}{p_\psi \left(E\right)}=1 \quad \sum{N_R\left(E_0-E\right)}=\textrm{numero totale di stati}
+\end{split}\end{equation}
+
+Essendo $E\ll E_0$ si può sviluppare:
+\begin{equation}\begin{split}
+\ln{\left(N_R\left(E_0-E\right)\right)}=\\
+=\ln{\left(N_R\left(E_0\right)\right)}-\left.\frac{\partial \ln{\left(N_R\left(x\right)\right)}}{\partial x}\right|_{x=E0}E+O\left(E^2\right)=\\
+=\ln{\left(N_R\left(E_0\right)\right)}-\frac{1}{k_BT}E
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\frac{\partial \ln{\left(N_S\left(E\right)N_R\left(E_0-E\right)\right)}}{\partial E}=\\
+=\frac{\partial \ln{\left(N_S\right)}}{\partial E}-\frac{\partial \ln{\left(N_R\right)}}{\partial E}=\\
+=\frac{1}{k_BT_S}-\frac{1}{k_BT_R}=0
+\end{split}\end{equation}
+Si è ricavata quindi la probabilità:
+\begin{equation}\begin{split}
+p_\psi \propto e^{-\frac{E_\psi }{k_BT}}=e^{-\beta E_\psi }
+\end{split}\end{equation}
+con $\beta=\frac{1}{k_BT}$.
+
+Tornando alla densità si ricava, sommando sugli stati:
+\begin{equation}\begin{split}
+\rho=\frac{\sum_{\psi }{e^{-\beta E_\psi }\left |\psi  \right\rangle\left\langle \psi \right |}}{Z\left(T,V,N\right)}=\sum{p_\psi \left |\psi  \right\rangle\left\langle \psi \right |}
+\end{split}\end{equation}
+con $Z\left(T,V,N\right)=\sum_{\psi }{e^{-\beta E_\psi }}$ \textbf{funzione di partizione}.
+
+Si hanno diversi ensamble di stati:
+\begin{itemize}
+\item Ensamble \textbf{microcanonico}
+\begin{equation}\begin{split}
+p_\psi =\frac{1}{N\left(E_\psi =U\right)}
+\end{split}\end{equation}
+
+\item Ensamble \textbf{canonico} (equilibrio con una riserva di energia):
+\begin{equation}\begin{split}
+p_\psi =\frac{e^{-\beta E_\psi }}{Z\left(T,V,N\right)}
+\end{split}\end{equation}
+con $Z=Z\left(T,V,N\right)=\sum_{\psi }{e^{-\beta E_\psi}}$ funzione di partizione.
+
+\item Ensamble \textbf{gran canonico} (equilibiro con una riserva di energia e numero di particelle):
+\begin{equation}\begin{split}
+p_\psi =\frac{e^{-\beta \left(E_\psi -\mu N_\psi \right)}}{\mathcal{Z}\left(T,V,\mu\right)}
+\end{split}\end{equation}
+con $\mathcal{Z}=\mathcal{Z}\left(T,V,\mu\right)=\sum_{\psi }{e^{-\beta\left(E_\psi -\mu N_\psi \right)}}$ funzione di gran partizione.
+\end{itemize}

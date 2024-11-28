@@ -1,0 +1,175 @@
+\chapter[Interpretazione statistica di Born]{Interpretazione statistica di Born della funzione d'onda} %Interpretazione statistica di Born della funzione d'onda
+L'equazione di Schrödinger (\ref{eq:schrodinger}) considera secondo l'interpretazione di Born $|\psi \left(\bar x,t\right)|$ come densità di probabilità.
+
+\section{Variabili casuali} %variabili casuali
+\begin{itemize}
+\item \textbf{Discreto.}\\
+La probabilità è:
+\begin{equation}
+P\left(S\right)=\sum_{n\in S}^{}p_n
+\end{equation}
+Il valore di aspettazione:
+\begin{equation}
+E\left(X\right)=\sum_{n\in S}^{}p_n x_n
+\end{equation}
+\item \textbf{Continuo.}\\
+La probabilità è:
+\begin{equation}
+P\left(S\right)=\int_{S}^{}{\textrm{d}\mu\left(\lambda\right)}
+\end{equation}
+Il valore di aspettazione:
+\begin{equation}
+E\left(X\right)=\int_{\Omega}^{}{\lambda \textrm{d}\mu(\lambda)}
+\end{equation}
+\end{itemize}
+
+\section{Normalizzazione in 1D} %Normalizzazione in 1D
+Densità di probabilità: $\Omega=\mathbb{R} \rightarrow p(x)$.
+
+$\psi \left(\bar x,t\right)$ è lineare e omogenea. $|\psi \left( x,t\right)|^2=p\left( x\right)$.
+
+La soluzione dell'equazione di Schrödinger $\psi \left(\bar x,0\right)$ è normalizzata $\rightarrow \psi \left(\bar x,t\right)$:
+\begin{equation}
+\int_{}^{}{|\psi \left(\bar x,t\right)|^2 \textrm{d}\bar x}=1
+\end{equation}
+Ci si chiede se l'equazione di Schrödinger è normalizzata:
+\begin{equation}\begin{split}
+\frac{d}{dt}\int_{-\infty}^{+\infty}{|\psi \left(\bar x,t\right)|^2 \textrm{d}x}=\\
+=\int_{-\infty}^{+\infty}{\frac{\partial }{\partial t}|\psi \left(\bar x,t\right)|^2 \textrm{d}x}=\\
+=\int_{-\infty}^{+\infty}{\frac{\partial }{\partial t}\psi ^*\left(\bar x,t\right)\psi \left(\bar x,t\right) \textrm{d}x}=\\
+=\int_{-\infty}^{+\infty}{\psi\left(\bar x,t\right) \left(-\frac{1}{i\hbar }\right)\left[-\frac{\hbar ^2\partial ^2 x}{2m}+V\left(\bar x\right)\right]\psi^*\left(\bar x,t\right)+\frac{1}{i\hbar }\psi^*\left(\bar x,t\right)\left[-\frac{\hbar ^2\partial ^2 x}{2m}+V\left(\bar x\right)\right]\psi \left(\bar x,t\right) \textrm{d}x}=\\
+=\int_{-\infty}^{+\infty}{\frac{i\hbar }{2m}\left(\psi^*\left(\bar x,t\right)\partial^2_x\psi \left(\bar x,t\right) -\psi\left(\bar x,t\right) \partial ^2_x\psi ^*\left(\bar x,t\right)\right) \textrm{d}x}=\\
+=\int_{-\infty}^{+\infty}{\frac{i\hbar }{2m}\partial _x\left(\psi^*\left(\bar x,t\right)\partial \psi\left(\bar x,t\right) -\psi\left(\bar x,t\right) \partial \psi^*\left(\bar x,t\right)\right) \textrm{d}x}=\\
+=\frac{i\hbar }{2m}\left(\psi ^*\left(\bar x,t\right)\partial \psi \left(\bar x,t\right)-\psi \left(\bar x,t\right)\partial \psi ^*\left(\bar x,t\right)\right)=\\
+=0 
+\end{split}\end{equation}
+Viene posto uguale a 0 per permettere che conservi la normalizzazione.
+
+\section{Normalizzazione in 3D} %Normalizzazione in 3D
+Densità di probabilità: $\Omega=\mathbb{R}^3 \rightarrow p(\bar x)$.
+\begin{equation}
+\frac{d}{dt}\int_{}^{}{|\psi \left(\bar x,t\right)|^2 \textrm{d}\bar x}
+\end{equation}
+si considera subito la derivata:
+\begin{equation}
+\frac{\partial }{\partial t}|\psi \left(\bar x,t\right)|^2=\psi^*\left(\bar x,t\right)\frac{\partial }{\partial t}\psi\left(\bar x,t\right) +\psi \left(\bar x,t\right)\frac{\partial }{\partial t}\psi^*\left(\bar x,t\right)
+\end{equation}
+ciò è uguale per S a:
+\begin{equation}\begin{split}
+-\frac{i}{\hbar }\psi ^*\left(\bar x,t\right)\left(-\frac{\hbar ^2\nabla ^2}{2m}+V\left(\bar x\right)\right)\psi \left(\bar x,t\right)+\frac{i}{\hbar }\psi\left(\bar x,t\right) \left(-\frac{\hbar ^2\nabla ^2}{2m}+V\left(\bar x\right)\right)\psi^*\left(\bar x,t\right)=\\
+=-\frac{i\hbar }{2m}\left(-\psi\left(\bar x,t\right) ^*\nabla ^2\psi\left(\bar x,t\right) +\psi\left(\bar x,t\right) \nabla ^2\psi ^*\left(\bar x,t\right)\right)=\\
+=-\bar \nabla \cdot \frac{i\hbar }{2m}\left(\psi ^*\left(\bar x,t\right)\bar \nabla \psi\left(\bar x,t\right) -\psi\left(\bar x,t\right) \bar \nabla \psi ^*\left(\bar x,t\right)\right).
+\end{split}\end{equation}
+Considerando quindi $\rho \left(\bar x,t\right)=|\psi|^2$ e $\bar j\left(\bar x,t\right)=-\frac{i\hbar }{2m}\left(\psi ^*\bar \nabla \psi -\psi \bar \nabla \psi ^*\right)$ si ottiene l'\textbf{equazione di continuità}:
+\begin{equation}
+\frac{\partial \rho \left(\bar x,t\right)}{\partial t}=-\bar \nabla \cdot \bar j\left(\bar x,t\right)
+\end{equation}
+
+La sua \textbf{versione integrale} è ($\partial V$ è il bordo del volume $V$; $\bar \sigma$ il flusso):
+\begin{equation}
+\frac{dN_V}{dt}=\int_{\partial V}^{}{\bar j\left(\bar x,t\right) \textrm{d}\bar \sigma }
+\end{equation}
+avendo considerato \[N_V=\int_{V}^{}{\rho \left(\bar x,t\right) \textrm{d}\bar x}\] e \[\frac{dN}{dt}=-\lim_{V\to \infty}{\int_{V}^{}{\bar j\left(\bar x,t\right) \textrm{d}\bar \sigma }}.\] C'è da notare inoltre $d\bar \sigma =d\bar \Omega $, $d\Omega =\sin{\left(\theta \right)d\theta d\phi }$ e $d\bar x=d\Omega r^2dr$.
+
+\textbf{La norma si conserva} in quanto, imponendo $\psi_{norm}=\frac{1}{\sqrt{N}}$, si ha
+\begin{equation}\begin{split}
+\lim_{V\rightarrow \infty}{\int_{\partial V}^{}{\bar j \textrm{d}\bar \sigma}}=0
+\end{split}\end{equation}
+perché $\int_{}^{}{|\psi|^2 \textrm{d}\bar x}=N_{\mathbb{R}^3}<\infty$ e $\psi\rightarrow 0$, $\nabla\psi\rightarrow 0$ per $V\rightarrow \infty$.
+
+\section{Interpretazione della probabilità} %Interpretazione della probabilità
+La probabilità di trovare una particella in una porzione di spazio:
+\begin{itemize}
+\item realista: la particella c'è
+\item la particella non c'è finché non la guardo
+\item agnostica: se non la vedo non mi interessa
+\end{itemize}
+
+\section{Linearità dell'equazione di Schrödinger} %Linearità dell'equazione di Schrödinger
+La lienarità dell'equazione di Schrödinger (\ref{eq:schrodinger}) implica che valga il principio di sovrapposizione:
+\begin{equation}
+a\psi _1\left(\bar x,t\right)+b\psi _2\left(\bar x,t\right)
+\end{equation}
+\begin{equation}
+|a\psi _1\left(\bar x,t\right)+b\psi _2\left(\bar x,t\right)|^2=|a|^2\psi _1\left(\bar x,t\right)+|b|^2\psi _2\left(\bar x,t\right)+
+\end{equation}
+
+Essendo uno spazio normato $\psi \left(\bar x,t\right)\in L^2\left(\mathbb{R} ^3\right)$:
+\begin{equation}
+||\psi \left(t\right)||^2=\int_{}^{}{|\psi |^2 \textrm{d}\bar x}
+\end{equation}
+Il prodotto scalare è:
+\begin{equation}
+\langle \psi ,\psi \rangle=:\left \langle\psi |\psi  \right\rangle=:\int_{}^{}{\psi ^*\left(\bar x,t\right)\psi \left(\bar x,t\right) \textrm{d}\bar x}
+\end{equation}
+
+Si impone la non chiusura $\rightarrow $ $L^2\left(\mathbb{R} \right)$.
+
+\subsection{Isometricità dell'equazione di Schrödinger} %Isometricità dell'equazione di Schrödinger
+\begin{equation}\begin{split}
+\frac{d}{dt}\left \langle \psi |\psi  \right\rangle=\\
+=\int_{}^{}{\bar \nabla \left(\psi ^*\left(\bar x,t\right)\bar \nabla \psi \left(\bar x,t\right)-\psi \left(\bar x,t\right)\bar \nabla \psi ^*\left(\bar x,t\right)\right) \textrm{d}\bar x}=\\
+=\lim_{V\to \infty}{\int_{}^{}{\left(\psi ^*\left(\bar x,t\right)\bar \nabla \psi \left(\bar x,t\right)-\psi\left(\bar x,t\right) \bar \nabla \psi ^*\left(\bar x,t\right)\right) \textrm{d}\bar \sigma}}.
+\end{split}\end{equation}
+
+\chapter[Regola di quantizzazione delle osservabili]{Equazione di Schrödinger dalla regola di quantizzazione delle osservabili classiche} %Equazione di Schrödinger dalla regola di quantizzazione delle osservabili classiche
+\section{Calcolo dell'aspettazione di x} %Calcolo dell'spettazione di x
+\begin{equation}
+\langle \bar x\rangle=\int_{}^{}{\bar x |\psi \left(\bar x,t\right)|^2 \textrm{d}\bar x}
+\end{equation}
+Il valore di aspettazione è quindi la velocità:
+\begin{equation}
+\frac{d\langle \bar x\rangle}{dt}=-\int_{}^{}{\bar x \bar \nabla \cdot \bar j \textrm{d}\bar x}
+\end{equation}
+
+Per risolverlo bisogna considerare:
+\begin{equation}
+\int_{V}^{}{f\bar \nabla \bar g \textrm{d}\bar x}=\int_{\partial V}^{}{f\cdot \bar g \textrm{d}\bar \sigma}-\int_{V}^{}{\bar \nabla f\cdot \bar g \textrm{d}\bar x}
+\end{equation}
+
+Perciò:
+\begin{equation}
+\frac{d\langle \bar x\rangle}{dt}=\lim_{V\to \infty}{-\int_{\partial V}^{}{\bar x\cdot \bar j \textrm{d}\bar \sigma}+\int_{}^{}{\bar \nabla \bar x\cdot \bar j \textrm{d}\bar x}}=\int_{}^{}{\bar j \textrm{d}\bar x}
+\end{equation}
+
+Integrando per parti, notando che $\nabla \bar x$ è la matrice identità e ponendo i termini al contorno tendenti a zero si ha:
+\begin{equation}
+\frac{d\langle \bar x\rangle}{dt}=-\frac{i\hbar }{2m}\int_{}^{}{\left(\psi ^*\left(\bar x,t\right)\bar \nabla \psi\left(\bar x,t\right) -\psi\left(\bar x,t\right) \bar \nabla \psi ^*\left(\bar x,t\right)\right) \textrm{d}\bar x}=\frac{1}{m}\langle \bar p\rangle
+\end{equation}
+avendo posto $P=-i\hbar\nabla$ come operatore lineare momento e l'operatore differenziale $\langle \bar p \rangle=\int_{}^{}{\psi ^*\left(\bar x,t\right)\left(-i\hbar \bar \nabla \right)\psi \left(\bar x,t\right)\textrm{d}x}=\int_{}^{}{\psi ^*\left(\bar x,t\right)P\psi \left(\bar x,t\right) \textrm{d}x}$.
+
+Si può considerare anche $\langle p^2\rangle=\langle \bar p \cdot \bar p \rangle$:
+\begin{equation}
+\langle p^2 \rangle=\int_{}^{}{\psi ^*\left(-i\hbar \bar \nabla \right)^2 \psi  \textrm{d}\bar x}
+\end{equation}
+Attravero la regola di quantizzazione $p\rightarrow -i\hbar\nabla$ e $p^2\rightarrow -\hbar^2\nabla^2$ si nota una somiglianza alla meccanica classica:
+\begin{equation}
+i\partial _t\psi \left(\bar x,t\right) =\left[\frac{P^2}{2m}+V\right]\psi \left(\bar x,t\right) =H\left(P,X\right)\psi \left(\bar x,t\right)
+\end{equation}
+e si nota: $f\left(\bar x,\bar p\right) \rightarrow f\left(X,P\right)$.
+
+Questa però non è la realtà perché $x$ e $p$ non commutano. Passando infatti al commutatore (in generale $[A,B]=AB-BA \neq 0$) dell'operatore momento:
+\begin{equation}
+\left[x_\alpha ,p_\beta \right]\psi \left(\bar x,t\right) =i\hbar \delta _{\alpha ,\beta }
+\end{equation}
+notando che quindi esso non commuta.
+
+Fortunatamente nei casi normali non si hanno questi problemi: vale la relazione $f(\bar x,p)=f(\bar x, -i\hbar\nabla)$.
+
+\section{Teorema di Ehrenfest} %Teorema di Ehrenfest
+Ci si chiede se:
+\begin{equation}
+\frac{d\langle p\rangle}{dt}=\langle -\bar \nabla V\rangle ?
+\end{equation}
+
+Dimostrazione:
+\begin{equation}\begin{split}
+\frac{d\langle p\rangle}{dt}=\\
+\int_{}^{}{\left[\psi ^*\left(\bar x,t\right)\left(-i\hbar \bar \nabla \right)\partial _t\psi\left(\bar x,t\right)+\left(\partial _t\psi ^*\left(\bar x,t\right)\right)\left(-i\hbar \bar \nabla  \right)\psi \left(\bar x,t\right)\right] \textrm{d}\bar x}=\\
+=\int_{}^{}{\psi ^*\left(\bar x,t\right)\left(\hbar ^2\frac{\nabla ^2\bar \nabla }{2m}-\bar \nabla V\right)\psi \left(\bar x,t\right) \textrm{d}\bar x}+\int_{}^{}{\left(-\frac{\hbar ^2\nabla ^2}{2m}\right)\psi ^*\left(\bar x,t\right)\bar \nabla \psi \left(\bar x,t\right) \textrm{d}\bar x}=\\
+=\int_{}^{}{\left[-\psi ^*\left(\bar x,t\right)\bar \nabla \left(V\psi \left(\bar x,t\right)\right)+V\psi ^*\left(\bar x,t\right)\bar \nabla \psi \left(\bar x,t\right) \right] \textrm{d}\bar x}=\\
+=\int_{}^{}{|\psi \left(\bar x,t\right) |^2\left(-\bar \nabla V\right)\left(\bar x\right) \textrm{d}\bar x}=\\
+\langle -\bar \nabla V\rangle
+\end{split}\end{equation}
+considerando $\partial_t=\frac{\partial}{\partial t}$.
+Si ritrova quindi che valgono le considerazioni di Newton.

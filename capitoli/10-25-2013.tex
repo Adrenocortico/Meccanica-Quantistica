@@ -1,0 +1,107 @@
+%\documentclass[a4paper]{article}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+
+%\renewcommand{\vec}{\bm\bar}
+
+%\author{Giacomo~Papotti}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{25/10/2013}
+
+%\begin{document}
+
+%\maketitle
+
+Abbiamo ricavato per $u\left(\rho\right)$ l'espressione
+\[u\left(\rho\right)=\rho^{l+1}e^{-\rho}v\left(\rho\right)\] dove il primo fattore tiene conto del comportamento per $\rho \rightarrow 0$ (domina il termine centrifugo), il termine esponenziale da il limite asintotico per $\rho \rightarrow \infty$ e $v\left(\rho\right)$ avevamo assunto poter essere espansa come serie di potenze. Riscrivendo l'equazione radiale in termini di $v\left(\rho\right)$, da questa abbiamo ricavato la formula ricorsiva per i coefficienti del polinomio. 
+Ricordando che la forma generale per la funzione d'onda dell'idrogeno è \begin{equation}
+\Psi_{nlm}\left(r,\theta,\phi\right)=R_{nl}\left(r\right)Y^m_l(\theta,\phi)
+\end{equation}
+e vediamo quindi qualche soluzione esplicita, facendo riferimento alla formula ricorsiva:
+\begin{itemize}
+\item $n=1\Longrightarrow l=0$, $j_{max}=0$:
+\begin{equation}\begin{split}
+R_{1,0}\left(r\right)=\frac{c_0}{a}e^{\frac{r}{a}} \\ 
+1=\int_{0}^{\infty }{\frac{|c_0|^2}{a^2}e^{-2\frac{r}{a}}r^2 \textrm{d}r}=|c_0|^2\frac{a}{4} \\
+\Longrightarrow c_0=\frac{2}{\sqrt{a}}.
+\end{split}\end{equation}
+Normalizzata la parte radiale e ricordando l'espressione per l'armonica sferica (già normalizzata) abbiamo infine:
+\begin{equation}\begin{split}
+Y_{0,0}\left(\theta,\phi\right)=\frac{1}{\sqrt{4\pi}} \\
+\Longrightarrow \Psi _{1,0,0}\left(r,\theta,\phi\right)=\frac{1}{\sqrt{\pi a^2}}e^{\frac{r}{a}}
+\end{split}\end{equation}
+
+\item $n=2 \Longrightarrow l=0,1$ $j_{max}=0,1$:
+\begin{equation}\begin{split}
+R_{2,0}\left(r\right)=\frac{c_0}{2a}\left(1-\frac{r}{2a}\right)e^{-\frac{r}{2a}} \\
+R_{2,1}\left(r\right)=\frac{c_0}{4a^2}re^{-\frac{r}{2a}}
+\end{split} \end{equation}
+\end{itemize}
+
+
+Ora generalizziamo per $n=1,2,3...$ \quad $l=1,2,...,n-1$ \quad $m=-l,...,l$:  $v(\rho)$ si trova avere la forma di un polinomio associato di Laguerre 
+\begin{equation}\begin{split} 
+v\left(\rho\right)=L_{n-l-1}^{2l+1}\left(2\rho\right)
+\end{split}\end{equation}
+dove
+\begin{equation}
+L_{q-p}^{p}\left(x\right)=\left(-\right)^p\left(\frac{\textrm{d}}{\textrm{d}x}\right)^pL_q\left(x\right)
+\end{equation}
+e \begin{equation}
+L_q\left(x\right)=e^x\left(\frac{\textrm{d}}{\textrm{d}x}\right)^q\left(e^{-x}x^q\right)
+\end{equation} è il polinomio di Laguerre q-esimo. Ne diamo qualche esempio:
+\begin{equation}
+L_0=1 \quad L_1=1_x \quad L_2=x^2-qx+2 \quad L_3=-x^3+3x^2-18x+2 
+\end{equation}
+\begin{equation}
+L_0^0=1 \quad L_1^0=-x+1 \quad L_0^2=2 \quad L_1^2=-6x+18 \quad L_2^0=x^2-qx+2
+\end{equation}
+Si ha quindi infine l'espressione per le funzioni d'onda dell'atomo di idrogeno:
+\begin{equation}\begin{split}
+\Psi _{n,m,l}=\left(r,\theta,\phi\right)=\sqrt{\left(\frac{2}{na}\right)^3\frac{\left(n-l-1\right)!}{2n\left[\left(n+l\right)!\right]^3}}e^{-\frac{r}{na}}\left(\frac{2r}{na}\right)^lL_{n-l-1}^{2l+1}\left(\frac{2r}{na}\right)Y^m_l\left(\theta,\phi\right)
+\end{split}\end{equation}
+Che sono ortonormalizzate:
+\begin{equation}\begin{split}
+\int_{0}^{\infty }{r^2 \textrm{d}r}\int{\Psi ^*_{n,m,l}\left(r,\theta,\phi\right)\Psi _{n',m',l'}\left(r,\theta,\phi\right) \textrm{d}\Omega}=\delta_{n,n'}\delta_{l,l'}\delta_{m,m'}
+\end{split}\end{equation}
+La struttura dello spettro a più bassa risoluzione senza tener conto della struttura fine ed iperfine da:
+\begin{equation}
+E=E_{\textrm{iniziale}}-E_{\textrm{finale}}=-13.6 \textrm{ eV} \left(\frac{1}{n_i^2}-\frac{1}{n_f^2}\right)=h\nu 
+\end{equation}
+\begin{equation}
+\textrm{Formula di Rydberg}\quad \frac{1}{\lambda}=R\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right)
+\end{equation}
+dove $R$ è la costante di Rydberg $R=\frac{\mu e^4}{4\pi c\hbar ^3}=1.097\cdot 10^5$ cm$^{-1}$.
+\newline
+\newline
+Si possono definire quindi le serie: \\
+\newline
+\newline
+\begin{tabularx}{\textwidth}{XXX}
+\toprule
+$n_f$ & Scopritore & Spettro \\
+\midrule
+$n_f=1$ & Lyman & Ultravioletto \\
+$n_f=2$ & Balmer & Visibile \\
+$n_f=3$ & Paschen & Infrarossi \\
+\bottomrule
+\end{tabularx}
+
+Le soluzioni ottenute per le funzioni d'onda dell'atomo di idrogeno corrispondono agli stati legati, ma abbiamo anche quelle per gli stati di scattering con spettro continuo. Le soluzioni dipendono ancora da $r$ , $\theta$, $\phi$ (e dai numeri quantici ovviamente). Le armoniche sferiche tengono la stessa forma, mentre la parte radiale, che non è normalizzabile, ha una dipendenza anche da $k$.
+
+%\end{document} 

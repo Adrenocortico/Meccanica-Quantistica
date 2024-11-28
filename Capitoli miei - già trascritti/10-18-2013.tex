@@ -1,0 +1,68 @@
+\section{Relazioni di incertezza} %Relazioni di incertezza
+Se $\left\langle \psi |\Delta H^2|\psi  \right\rangle=0$ allora $H\left |\psi  \right\rangle=h\left |\psi  \right\rangle$ e quindi $H$ è un'autostato. Usando la rappresentazione $H$ si ha
+\begin{equation}\begin{split}
+|\left\langle h_n|\psi  \right\rangle|^2=p_n
+\end{split}\end{equation}
+intendendo con $p_n$ la probabilità.
+
+Prendendo due autoaggiunti $A$ e $B$ si ha:
+\begin{equation}\begin{split}
+\left[A,B\right] \Longleftrightarrow \textrm{unitamente diagonalizzabili}
+\end{split}\end{equation}
+Unendoli si ha la probabilità congiunta:
+\begin{equation}\begin{split}
+|\left\langle a_n,b_n|\psi  \right\rangle|^2=p_{n,m}
+\end{split}\end{equation}
+Le due osservabili si possono misurare congiuntamente: il sistema si troverà in un autostato congiunto dopo la misura.
+
+Nella pratica non esiste un modo per misurare due osservabili che non commutano (si fa però quotidianamente ad esempio con \emph{posizione} e \emph{momento}). Si dovrebbe pensare ad un'interazione apparato-sistema e si avranno due pointer di lettura che corrispondono ai due valori misurati. Se si osservano simultaneamente due osservabili che non commutano, non hanno valori ben definiti. Misure ripetute danno valori diversi e quindi ci sono stati che hanno valori non ben definiti.
+
+Non si può definire la regola di Born più generale: servirebbe un concetto di misura più ampio e non essendo \emph{stati-sharp}, perché quando non commutano non possono esistere per ogni coppia di autovalori. Bisogna definire quindi una \emph{misura ideale}.
+
+\section{Criterio di bontà della misura} %Criterio di bontà della misura
+Si utilizza la varianza:
+\begin{equation}\begin{split}
+\sigma _A^2=\\
+=\left\langle \psi |\left(A-\left\langle A \right\rangle\right)^2|\psi  \right\rangle=\\
+=||\left(A-\left\langle A \right\rangle\right)\psi ||^2=||f_A||=\\
+=\left\langle A^2 \right\rangle-\left\langle A \right\rangle^2
+\end{split}\end{equation}
+e bisogna misurare tante volte, quindi ripreparare la particella nello stesso stato.
+
+Non si misurano congiuntamente $A$ e $B$:
+\begin{equation}\begin{split}
+\sigma_A^2\sigma_B^2=\\
+=||f_A||^2||f_B||^2\ge |\left\langle f_A|fB \right\rangle|^2\ge \left(Im\left\langle f_A|f_B \right\rangle\right)^2\\
+\textrm{usando Schwartz al contrario}\\
+\Longrightarrow \left\langle f_A|f_B \right\rangle=\left\langle \psi \left(A-\left\langle A \right\rangle\right)\left(B-\left\langle B \right\rangle\right)|\psi  \right\rangle=\\
+=\left\langle \psi |AB|\psi  \right\rangle-\left\langle A \right\rangle\left\langle B \right\rangle \\
+\Longrightarrow Im\left\langle f_A|f_B \right\rangle=\frac{1}{2i}\left(\left\langle \psi |AB|\psi  \right\rangle - \left\langle \psi |BA|\psi  \right\rangle\right)=\\
+=\frac{1}{2i}\left\langle \psi |\left[A,B\right]|\psi  \right\rangle
+\end{split}\end{equation}
+Si ha quindi la \textbf{relazione di indeterminazione di Heisenberg}:
+\begin{equation}\begin{split}
+\sigma_A^2\sigma_B^2\ge \frac{1}{4}|\left\langle \psi |\left[A,B\right]|\psi  \right\rangle|^2
+\end{split}\end{equation}
+
+\subsection{Caso posizione-momento} %Caso posizione-momento
+Nel caso ad esempio di \emph{posizione-momento}:
+\begin{equation}\begin{split}
+\sigma_x^2\sigma_p^2\ge \frac{\hbar ^2}{4} \\
+\sigma_x\sigma_p \ge \frac{\hbar }{2}
+\end{split}\end{equation}
+si ricava la complementarietà di Born. \\
+Di questo si ha la giusta interpretazione: \textbf{non esistono i due valori, non solo non li si può misurare}.
+
+\section{Derivazione di Robertson} %Derivazione di Robertson
+\begin{equation}\begin{split}
+\sigma_A^2\sigma_B^2= \\
+=||f_A||^2||f_B||^2\ge |\left\langle f_A|f_B \right\rangle |^2= \\
+=\left(Im\left\langle f_A|f_B \right\rangle\right)^2+\left(Re\left\langle f_A|f_B \right\rangle\right)^2= \\
+=\frac{1}{4}|\left\langle \psi |\left[A,B\right]|\psi  \right\rangle|^2+\left(Re\left\langle f_A|f_B \right\rangle\right)^2 \\
+\Longrightarrow \left(Re\left\langle f_A|f_B \right\rangle\right)^2=\left(Re\left\langle \psi |\left(A-\left\langle A \right\rangle\right)\left(B-\left\langle B \right\rangle\right)|\psi  \right\rangle\right)^2= \\
+=\left(\frac{1}{2}\left\langle \psi |\left[A,B\right]_+|\psi  \right\rangle-\left\langle A \right\rangle\left\langle B \right\rangle\right)^2
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\sigma_A^2\sigma_B^2\ge \frac{1}{4}|\left\langle \psi |\left[A,B\right]|\psi  \right\rangle|^2+\left(\frac{1}{2}\left\langle \psi |\left[A,B\right]_+|\psi  \right\rangle-\left\langle A \right\rangle\left\langle B \right\rangle\right)^2
+\end{split}\end{equation}
+con $\left[A,B\right]_+$ anticommutatore.

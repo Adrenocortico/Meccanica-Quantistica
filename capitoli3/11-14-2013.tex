@@ -1,0 +1,211 @@
+\chapter{Buca di potenziale rettangolare} %Buca di potenziale rettangolare
+Si è in una dimensione:
+\begin{equation}\begin{split}
+V\left(x\right)=
+\begin{cases}
+-V_0, & -b\le x\le b \\
+0, & |x|>0
+\end{cases}
+\end{split}\end{equation}
+
+\textbf{Nel caso classico} si ha:
+\begin{equation}\begin{split}
+E=-V_0\\
+-V_0<E<0
+\end{split}\end{equation}
+Per $E>0$ si ha:
+\begin{equation}\begin{split}
+\begin{cases}
+\bar p=\sqrt{2mE} x, & x\le -b, \quad x\ge b \\
+\bar p=\sqrt{m\left(E+V_0\right)}, & |b|\le b
+\end{cases}
+\end{split}\end{equation}
+
+\textbf{Nel caso quantistico} si ha:
+\begin{equation}\begin{split}
+E\le V_0 \quad \textrm{non esiste soluzione} \\
+-V_0<E<0
+\end{split}\end{equation}
+
+Si cercano ora le soluzioni:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{\textrm{d}}{\textrm{d}x^2}w\left(x\right)+V\left(x\right)w\left(x\right)=Ew\left(x\right)
+\end{split}\end{equation}
+Si definiscono:
+\begin{equation}\begin{split}
+w_{>}\left(x\right) \quad x>b\\
+w_{<}\left(x\right) \quad  x\le -b\\
+w_{u}\left(x\right) \quad x>b
+\end{split}\end{equation}
+e quindi si ha:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}w_>\left(x\right)=Ew_{>}\left(x\right) \\
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}w_<\left(x\right)=Ew_{<}\left(x\right) 
+\end{split}\end{equation}
+e
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}w_u\left(x\right)=\left(E+V_0\right)w_{u}\left(x\right)
+\end{split}\end{equation}
+
+Si ha quindi:
+\begin{equation}\begin{split}
+w_<\left(-b\right)=w_u\left(-b\right) \\
+w_>\left(b\right)=w_u\left(b\right) \\
+w_<'\left(-b\right)=w_u'\left(-b\right) \\
+w_>'\left(b\right)=w_u'\left(b\right) 
+\end{split}\end{equation}
+
+Si definiscono:
+\begin{equation}\begin{split}
+k=\frac{1}{\hbar }\sqrt{-2mE} \\
+\bar k=\frac{1}{\hbar }\sqrt{2m\left(E+V_0\right)}
+\end{split}\end{equation}
+e si hanno quindi le soluzioni:
+\begin{equation}\begin{split}
+w_<\left(x\right)=\alpha\exp{\left(kx\right)}+\beta\exp{\left(-kx\right)} \\
+w_u\left(x\right)=\gamma\exp{\left(i\bar kx\right)}+\delta\exp{\left(-i\bar kx\right)}=\bar \gamma\cos{\left(\bar kx\right)}+\bar \delta\sin{\left(\bar kx\right)} \\
+w_>\left(x\right)=\epsilon\exp{\left(kx\right)}+\theta\exp{\left(-kx\right)}
+\end{split}\end{equation}
+
+Si ha il caso limite per cui $E=0$:
+\begin{equation}\begin{split}
+w_<\left(x\right)=0
+w_u\left(x\right)=\bar \gamma\cos{\left(\bar kx\right)}+\bar \delta
+w_>\left(x\right)=0
+\end{split}\end{equation}
+Per $x=-b$
+\begin{equation}\begin{split}
+\bar \gamma-\bar \delta=\alpha+\beta=0 \\
+\Longrightarrow \bar \gamma\bar k\sin{\left(\bar kb\right)}+\bar \delta\bar k\cos{\left(\bar kb\right)}=0 \\
+\bar \gamma+\bar \delta=\epsilon+\theta=0 \\
+\Longrightarrow -\bar \gamma\bar k\sin{\left(\bar kb\right)}+\bar \delta\bar \gamma\cos{\left(\bar kb\right)}
+\end{split}\end{equation}
+La soluzione non è accettabile perché la soluzione identicamente nulla non è accettabile.
+
+Si ha il caso in cui $-V_0\le E \le V_0$. Si ha che $\beta$ e $\epsilon$ sono entrambe nulle.
+\begin{equation}\begin{split}
+\alpha\exp{\left(-kb\right)}=\bar \gamma\cos{\left(\bar kb\right)}-\bar \delta\sin{\left(\bar kb\right)} \\
+\Longrightarrow \alpha k \exp{\left(-kb\right)}=\bar \gamma\bar k\sin{\left(\bar kb\right)}+\bar \delta\cos{\left(\bar kb\right)} \\
+\bar \gamma\cos{\left(\bar kb\right)}+\bar \delta\sin{\left(\bar kb\right)}=\theta\exp{\left(-kb\right)} \\
+\Longrightarrow -\bar \gamma\bar k\sin{\left(\bar kb\right)}+\bar \delta\cos{\left(\bar kb\right)} =-\theta k\exp{\left(-kb\right)}
+\end{split}\end{equation}
+
+Si riscrivono le incognite e si sommano inzialmente la prima con la terza:
+\begin{equation}\begin{split}
+\left(\alpha+\theta\right)\exp{\left(-kb\right)}-2\bar \gamma\cos{\left(\bar kb\right)}=0
+\end{split}\end{equation}
+si sottrae la quarta alla seconda:
+\begin{equation}\begin{split}
+\left(\alpha+\theta\right)k\exp{\left(-kb\right)}-2\bar \gamma\bar k\sin{\left(\bar kb\right)}=0
+\end{split}\end{equation}
+si sottrae la terza alla prima:
+\begin{equation}\begin{split}
+\left(\alpha-\theta\right)\exp{\left(-kb\right)}+2\bar \delta\sin{\left(\bar kb\right)}=0
+\end{split}\end{equation}
+si sommano la quarta e la seconda:
+\begin{equation}\begin{split}
+\left(\alpha-\theta\right)\exp{\left(-\bar kb\right)}-2\bar \delta \bar k\cos{\left(\bar kb\right)}=0
+\end{split}\end{equation}
+Si ha quindi un sistema di equazioni omogeneo che ammette una soluzione non banale nel caso in cui il determinante della matrice:
+\begin{equation}\begin{split}
+\left|\begin{matrix}
+\left(\alpha+\theta\right)\exp{\left(-kb\right)} & -2\bar \gamma\cos{\left(\bar kb\right)} & 0 & 0 \\
+\left(\alpha+\theta\right)k\exp{\left(-kb\right)} & -2\bar \gamma\bar k\sin{\left(\bar kb\right)} & 0 & 0 \\
+0 & 0 & \left(\alpha-\theta\right)\exp{\left(-kb\right)} & +2\bar \delta\sin{\left(\bar kb\right)} \\
+0 & 0 & \left(\alpha-\theta\right)\exp{\left(-\bar kb\right)} & -2\bar \delta\bar k\cos{\left(\bar kb\right)}
+\end{matrix}\right|=0
+\end{split}\end{equation}
+e quindi si hanno le possibilità che i determinanti delle sottomatrici siano nulli che danno come risultati:
+\begin{equation}\begin{split}
+\bar k\sin{\left(\bar kb\right)}-k\cos{\left(\bar kb\right)}=0 \\
+\bar k\cos{\left(\bar kb\right)}+k\sin{\left(\bar kb\right)}=0
+\end{split}\end{equation}
+
+Si possono calcolare quindi:
+\begin{equation}\begin{split}
+\bar \gamma=\alpha\frac{\exp{\left(-kb\right)}}{\cos{\left(kb\right)}}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\bar \delta=-\alpha\frac{\exp{\left(-kb\right)}}{\sin{\left(\bar kb\right)}}
+\end{split}\end{equation}
+
+Si ha quindi:
+\begin{equation}\begin{split}
+w_<\left(x\right)=\alpha\exp{\left(kx\right)}\\
+w_u\left(x\right)=\alpha\frac{\exp{\left(-kb\right)}}{\cos{\left(\bar kb\right)}}\cos{\left(\bar kx\right)}\\
+w_>\left(x\right)=\alpha \exp{\left(-kx\right)}
+\end{split}\end{equation}
+che è una funzione pari.
+
+\begin{equation}\begin{split}
+w_<\left(x\right)=\alpha\exp{\left(kx\right)}\\
+w_u\left(x\right)=-\alpha\frac{\exp{\left(-kb\right)}}{\sin{\left(\bar kb\right)}}\sin{\left( kx\right)}\\
+w_>\left(x\right)=-\alpha \exp{\left(-kx\right)}
+\end{split}\end{equation}
+che è una funzione dispari.
+
+Si definisce $\eta=kb$ e $\xi=\bar kb$:
+\begin{equation}\begin{split}
+\bar k\tan{\left(\bar kb\right)}=k \Longrightarrow \xi\tan{\left(\xi\right)}=\eta \\
+\bar k\tan{\left(\bar kb\right)}^{-1}=-k \Longrightarrow -\xi\tan{\left(\xi\right)}^{-1}=-\eta
+\end{split}\end{equation}
+ma considerando $k$ e $\bar k$ si ricava:
+\begin{equation}\begin{split}
+\eta^2+\xi^2=\frac{b^2}{\hbar ^2}\left[-2mE+2mE+2mV_0\right]=2mV_0\frac{b^2}{\hbar ^2}
+\end{split}\end{equation}
+che è l'equazione di una circonferenza di raggio $r=\sqrt{\frac{2mV_0b^2}{\hbar ^2}}$.
+
+Portando tutto nel piano $\eta-\xi$ si hanno:
+%graficopari
+%graficodispari
+che mostrano le soluzioni pari:
+\begin{equation}\begin{split}
+\begin{cases}
+r=n\pi \rightarrow \eta=0 \rightarrow k=0 \rightarrow E=0 \rightarrow \textrm{nessuna soluzione} \\
+\left(n-1\right)\pi\le r \le n\pi \rightarrow \textrm{si hanno }$n$ \textrm{ intersezioni}
+\end{cases}
+\end{split}\end{equation}
+e le soluzioni dispari:
+\begin{equation}\begin{split}
+r=\left(m+\frac{1}{2}\right)\pi \rightarrow \textrm{nessuna soluzione}
+\end{split}\end{equation}
+
+Si ha quindi:
+\begin{equation}\begin{split}
+0\le r \le \frac{\pi}{2} \quad E_0, W_0 \textrm{ pari} \\
+\frac{\pi}{2} \le r \le \pi \quad E_0,W_0 \textrm{ } \quad \textrm{ } \\
+\pi
+\end{split}\end{equation}
+
+\subsection{Caso discreto - problema monodimensionale} %Caso discreto - problema monodimensionale
+Si hanno due funzioni d'onda distinte si ha un'unica equazione di Schrödinger: sono funzioni degeneri.
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}\psi_i\left(x\right) +V\left(x\right)\psi_i\left(x\right) =E\psi _i\left(x\right) \\
+\psi_i ''=-\frac{2m}{\hbar ^2}\left(E-V\left(x\right)\right)\psi _i\left(x\right)
+\end{split}\end{equation}
+
+Si può fare la derivata del Wrownskiano:
+\begin{equation}\begin{split}
+\frac{dW\left(x\right)}{dx}=\frac{d}{dx}\left[\psi _1\left(x\right)\psi _2'\left(x\right)-\psi _1\left(x\right)'\psi _2\left(x\right)\right]=0
+\end{split}\end{equation}
+
+Si ricava quindi che il Wrownskiano è costante e quindi si ricava:
+\begin{equation}\begin{split}
+\psi _2\left(x\right)=\textrm{const}\psi _1\left(x\right)
+\end{split}\end{equation}
+e quindi $E$ è un autovalore degenere.
+
+\begin{itemize}
+\item Prendendo $E<V_0$ si definiscono:
+\begin{equation}\begin{split}
+k=\frac{1}{\hbar }\sqrt{-2mE} \\
+\bar k=\frac{1}{\hbar }\sqrt{-2m\left(E-V_0\right)}
+\end{split}\end{equation}
+Si può risolvere come prima con la sostituzione del coseno con il coseno iperbolico e del seno con il seno iperbolico avendo i due casi:
+\begin{equation}\begin{split}
+\bar k\sinh{\left(\bar kb\right)}+k\cosh{\left(\bar kb\right)}=0\\
+\bar k\cosh{\left(\bar kb\right)}+k\sinh{\left(\bar kb\right)}=0
+\end{split}\end{equation}
+Si ricava che $k>0$ e $\bar k>0$ non è accettabile; $k>0$ e $\bar k=0$ non è accettabile.
+
+Quindi la condizione $E\le - V_0$ non è un caso possibile perchè non ammette soluzioni.

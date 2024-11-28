@@ -1,0 +1,107 @@
+\section{Operatore di momento angolare} %Operatore momento angolare
+Si scrive l'operatore $L^2\left(\bar x\times \bar p\right)^2$ nel seguente modo:
+\begin{equation}\begin{split}
+L^2=\bar x^2\bar p^2-\left(\bar x\cdot \bar p\right)^2+i\hbar \bar x\cdot \bar p
+\end{split}\end{equation}
+e, usando:
+\begin{equation}\begin{split}
+\bar x\cdot \bar p=-i\hbar r\left(\frac{\bar x}{r}\cdot \bar \nabla \right)=i\hbar r\frac{\partial }{\partial r}
+\end{split}\end{equation}
+si ricava:
+\begin{equation}\begin{split}
+L^2=\\
+=-\hbar ^2r^2\bar \nabla ^2+\left(i\hbar r\frac{\partial }{\partial r}\right)^2+\hbar ^2r\frac{\partial }{\partial r}=\\
+=-\hbar ^2\left[r^2\bar \nabla ^2-\partial _r\left(r^2\frac{\partial }{\partial r}\right)\right]
+\end{split}\end{equation}
+considerando che il laplaciano è:
+\begin{equation}\begin{split}
+\bar \nabla ^2=\\
+=\frac{1}{r^2}\frac{\partial }{\partial r}\left(r^2\frac{\partial }{\partial r}\right)-\frac{L^2}{\hbar ^2r^2}=\\
+=\frac{1}{r^2}\frac{\partial }{\partial r}\left(r^2\frac{\partial }{\partial r}\right)+\frac{1}{r^2\sin{\left(\theta\right)}}\frac{\partial }{\partial r}\left(\sin{\left(\theta\right)}\frac{\partial }{\partial \theta}\right)+\frac{1}{r^2\sin{\left(\theta\right)}^2}\frac{\partial ^2}{\partial \phi^2}
+\end{split}\end{equation}
+e quindi, in coordinate polari sferiche, si ha l'operatore $L^2$:
+\begin{equation}\begin{split}
+L^2=-\hbar ^2\left[\frac{1}{\sin{\left(\theta\right)}}\frac{\partial }{\partial r}\left(\sin{\left(\theta\right)}\frac{\partial }{\partial \theta}\right)+\frac{1}{\sin{\left(\theta\right)}^2}\frac{\partial ^2}{\partial \phi^2}\right]
+\end{split}\end{equation}
+
+Si risolve ora agli autovalori considerando $L^2v=\hbar ^2\lambda v$ con $\lambda=l\left(l+1\right)$:
+\begin{equation}\begin{split}
+v\left(\theta,\phi\right)=\Theta\left(\theta\right)\Phi\left(\phi\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\frac{\sin{\left(\theta\right)}}{\Theta}\frac{\textrm{d}}{\textrm{d}\theta}\left(\sin{\left(\theta\right)}\frac{\textrm{d}\Theta}{\textrm{d}\theta}\right)+\lambda\sin{\left(\theta\right)}^2=\\
+=-\frac{1}{\Phi}\frac{\textrm{d}^2\Phi}{\textrm{d}\phi^2}=\\
+=m^2
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+\frac{\textrm{d}\Phi}{\textrm{d}\phi}=-m^2\Phi \\
+\frac{1}{\sin{\left(\theta\right)}}\frac{\textrm{d}}{\textrm{d}\theta}\left(\sin{\left(\theta\right)}\frac{\textrm{d}\Theta}{\textrm{d}\theta}\right)+\left(\lambda-\frac{m^2}{\sin{\left(\theta\right)}^2}\right)\Theta=0
+\end{cases}
+\end{split}\end{equation}
+
+Considerando:
+\begin{equation}\begin{split}
+\Phi_m\left(\phi\right)=\frac{1}{\left(2\pi\right)^{\frac{1}{2}}}e^{im\phi} \quad \textrm{con } m=0,\pm 1, \pm 2 \dots
+\end{split}\end{equation}
+si ricava:
+\begin{equation}\begin{split}
+\int_0^{2\pi}{\Phi_m^*\left(\phi\right)\Phi_{m'}\left(\phi\right)\textrm{d}\phi}=\delta_{m,m'}
+\end{split}\end{equation}
+e infine si ha:
+\begin{equation}\begin{split}
+L_z=-i\hbar \frac{\partial }{\partial \phi} \Longrightarrow L_z\Phi_m\left(\phi\right)=\hbar m\Phi_m\left(\phi\right)
+\end{split}\end{equation}
+
+Si consideri ora $w=\cos{\left(\theta\right)}$, si ha quindi una funziona ipergeometrica :
+\begin{equation}\begin{split}
+\frac{\textrm{d}}{\textrm{d}w}\left[\left(1-w^2\right)\frac{\textrm{d}P}{\textrm{d}w}\right]+\left(\lambda-\frac{m^2}{1-w^2}\right)P=0
+\end{split}\end{equation}
+con $P\left(w\right)=\Theta\left(\theta\right)=P\left(\cos{\left(\theta\right)}\right)$. La forma stamdard di questa funzione è:
+\begin{equation}\begin{split}
+z\left(1-z\right)\frac{\textrm{d}^2f}{\textrm{d}z^2}+\left[c+\left(a+b+1\right)z\right]\frac{\textrm{d}w}{\textrm{d}z}-abw=0
+\end{split}\end{equation}
+e la sua soluzione è la serie ipergeometrica:
+\begin{equation}\begin{split}
+_2F_1\left(a,b;c;z\right)=\sum_{n=0}^{\infty }{\frac{\left(a\right)_n\left(b\right)_n}{\left(c\right)_n}\frac{z^n}{n!}} \\
+\left(q\right)_n
+\begin{cases}
+1, & n=0 \\
+q\left(q+1\right)\dots\left(q+n-1\right), & n>0
+\end{cases}
+\end{split}\end{equation}
+
+\subsection{Casi particolari} %Casi particolari
+\begin{itemize}
+\item $\ln{\left(1+z\right)}=z_2F_1\left(1,1;2;-z\right)$
+\item $\left(1-z\right)^{-a}= _2F_1\left(a,1;1;z\right)$
+\item $\arccos{\left(z\right)}=z _2F_1\left(0,1;1;z^2\right)$
+\item polinomi associati di Legendre: $_2F_1\left(a,1-a;c;z\right)=\Sigma\left(c\right)z^{\frac{1-c}{2}}\left(1-z\right)^{\frac{c-1}{2}}P_{-a}^{1-c}\left(1-2z\right)$
+\item complemento ipergeometrico %manca un pezzo
+\end{itemize}
+
+\begin{equation}\begin{split}
+\Theta\left(\theta\right)=AP_l^m\left(\cos{\left(\theta\right)}\right) \quad \textrm{polinomio di Legendre associato}
+\end{split}\end{equation}
+si ricava, come la soluzione algebrica ricavava di già:
+\begin{equation}\begin{split}
+|m|\le l
+\end{split}\end{equation}
+scrivendo il polinomio con le formule di Rodriguez:
+\begin{equation}\begin{split}
+P_l^m\left(x\right)=\left(1-x^2\right)^{\frac{|m|}{2}}\left(\frac{\textrm{d}}{\textrm{d}x}\right)^{|m|}P_l\left(x\right)\\
+P_l\left(x\right)=\frac{1}{2^ll!}\left(\frac{\textrm{d}}{\textrm{d}x}\right)^l\left(x^2-1\right)^l \quad \textrm{polinomio di Legendre}
+\end{split}\end{equation}
+che hanno le seguenti caratteristiche:
+\begin{equation}\begin{split}
+P_0\left(x\right)=1 \\
+P_1\left(x\right)=x \\
+P_1^0\left(x\right)=x \\
+P_1^{\pm 1}\left(x\right)=\left(1-x^2\right)^{\frac{1}{2}} \\
+P_2^0\left(x\right)=\frac{1}{2}\left(3x^2-1\right) \\
+P_2^1\left(x\right)=3x\sqrt{1-x^2} \\
+P_2^2\left(x\right)=3\left(1-x^2\right) \\
+P_n\left(x\right)=\frac{1}{2^n}\sum_{k=0}^{n}{{{n}\choose{k}}^2\left(x-1\right)^{n-k}\left(x+1\right)^{k}}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE

@@ -1,0 +1,320 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%\usepackage{braket}
+
+%\renewcommand{\vec}{\bm}
+
+%\author{Alessandro Bottero}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{}
+
+%\begin{document}
+%\maketitle
+
+\chapter[Interpretazione statistica]{Interpretazione statistica di Born della funzione d'onda} %Interpretazione statistica di Born della funzione d'onda
+
+\newcommand{\sch}{Schr\"odinger }
+\newcommand{\scha}{Schr\"odinger}
+
+Dopo aver ricavato l'equazione di \scha, resta da capire come vada interpretata la funzione d'onda che ne è la soluzione. L'interpretazione adottata è quella che ci è stata data, nel 1926, da Born e consiste nell'interpretare il modulo quadro della funzione d'onda, trovata risolvendo l'equazione di \sch,  $|\psi \left(\bar x,t\right)|^2$, come densità di probabilità. In particolare $|\psi \left(\bar x,t\right)|^2\textrm{d}^3x$ sarebbe la probabilità di trovare la particella nel volumetto $\bar x +\textrm{d}^3 \bar x$ al tempo $t$.
+\newline
+
+Data la natura probabilistica dell'interpretazione proposta da Born, può essere opportuno un richiamo più che sintetico dei concetti base del calcolo delle probabilità.
+
+\section{Variabili casuali} %Variabili casuali
+\begin{itemize}
+\item \textbf{Discreto.}\\
+
+Nel caso discreto quello che abbiamo è un insieme di probabilità costituito da una collezione numerabile di  eventi. In questo caso definiamo la probabilità di un evento come $P(n)$, dove \emph{n} è, appunto, un elemento dell'insieme di probabilità $\Omega$.
+Dato, poi, un qualunque sottoinsieme di $\Omega$, \emph{S}, la probabilità $P(S)$ è data da:
+\begin{equation}
+P\left(S\right)=\sum_{n\in S}P(n)
+\end{equation}
+Per quanto riguarda il valore di aspettazione di una qualsiasi variabile casuale $\emph{X}$ definita su $S$, abbiamo che:
+\begin{equation}
+E\left(X\right)=\sum_{n\in S}^{}X(n)P(n)
+\end{equation}
+\item \textbf{Continuo.}\\
+
+Nel caso continuo, invece, lo spazio di probabilità è, appunto, un continuo. In questo caso, quindi, quello che possiamo definire è una misura di probabilità. Chiamata, allora, $\lambda$ la variabile continua dello spazio di probabilità $\Omega$, definiamo la misura di probabilità su $\Omega$: $d\mu(\lambda)$, e la probabilità di un qualsiasi sottoinsieme \emph{S}, diventa:
+\begin{equation}
+P\left(S\right)=\int_{S}^{}{\textrm{d}\mu\left(\lambda\right)}
+\end{equation}
+Per il valore di aspettazione abbiamo, naturalmente, il passaggio all'integrale con la relativa misura di probabilità:
+\begin{equation}
+E\left(X\right)=\int_{S}^{}{X(\lambda) \textrm{d}\mu(\lambda)}
+\end{equation}
+In generale è, poi, frequente il caso in cui sia possibile riscrivere tali formule, per il continuo, in termini di densità di probabilità: sull'insieme S è definita la funzione densità di probabilità $p(\lambda)$ e le due formule scritte sopra diventano, rispettivamente:
+\begin{equation}
+P\left(S\right)=\int_{S}^{}{p(\lambda)\textrm{d}\lambda}
+\end{equation}
+\begin{equation}
+E\left(X\right)=\int_{S}^{}{X(\lambda)p(\lambda) \textrm{d}\lambda}
+\end{equation}
+Con $\textrm{d}\lambda$ la misura ordinaria.
+\end{itemize}
+
+Terminati i richiami, torniamo al nostro problema.
+Se decidiamo di interpretare il modulo quadro della funzione d'onda come densità di probabilità di presenza della particella, la prima questione che dobbiamo affrontare è quella della normalizzazione.
+
+Una delle proprietà fondamentali della probabilità, è, infatti, quella di essere normalizzata: la somma delle probabilità su tutto $\Omega$, nel caso discreto, deve essere 1 e la misura $\textrm{d}\mu(\lambda)$, nel caso continuo, deve essere sommabile e l'integrale su tutto lo spazio di probabilità deve essere pari ad 1:
+\begin{equation}
+\sum_{n\in \Omega}P(n)=P(\Omega)=1
+\end{equation}
+\begin{equation}
+\int_{\Omega}^{}{\textrm{d}\mu\left(\lambda\right)}=P(\Omega)=1
+\end{equation}
+Perchè sia possibile, dunque, adottare l'interpretazione probabilistica è necessario che la funzione d'onda sia normalizzabile. \`E necessario, cioè, avere soluzioni dell'equazione di \sch $\psi(\bar x,t)$ tali che $\int{\textrm{d}\bar x |\psi(\bar x,t)|^2}=1$.
+
+Il secondo problema che ci si trova ad ovver affrontare è il seguente: l'equazione di \sch conserva la normalizzazione? Cioè, trovata una soluzione normalizzabile dell'equazione di \sch e normalizzata, tale normalizzazione viene conservata nel tempo?
+
+Se questo non fosse vero, l'interpretazione probabilistica sarebbe di difficile adozione.
+
+Affrontiamo, dunque la questione. Lavoriamo prima in una dimensione, per semplicità, e poi passiamo al caso multidimensionale.
+
+\section{Conservazione della normalizzazione} %Normalizzazione in 1D
+\subsection{Caso Monodimensionale} %Caso Monodimensionale
+Supponiamo, dunque, di avere risolto l'equazione di \sch e di avere normalizzato la soluzione (abbiamo, dunque, trovato una soluzione normalizzabile):
+\begin{equation} \label{norm}
+\int_{-\infty}^{+\infty}{|\psi \left(\bar x,t\right)|^2\textrm{d}x}=1
+\end{equation}
+vediamo allora, adesso, se la normalizzazione è conservata nel tempo:
+
+\begin{equation} \label{eq1d}
+\begin{array}{l}
+\frac{d}{dt}\int_{-\infty}^{+\infty}{|\psi \left(x,t\right)|^2 \textrm{d}x}=\\ \\
+=\int_{-\infty}^{+\infty}{\frac{\partial}{\partial t}|\psi \left(x,t\right)|^2 \textrm{d}x}=\\ \\
+=\int_{-\infty}^{+\infty}{\frac{\partial}{\partial t}\left[\psi ^*\left(x,t\right)\psi \left(x,t\right)\right] \textrm{d}x}=\\ \\
+=\int_{-\infty}^{+\infty}{\psi\left(x,t\right) \left(-\frac{1}{i\hbar }\right)\left[-\frac{\hbar ^2\partial ^2 x}{2m}+V\left(x\right)\right]\psi^*\left(x,t\right)}+ \\
+\hspace{1cm}+{\frac{1}{i\hbar }\psi^*\left(x,t\right)\left[-\frac{\hbar ^2\partial ^2 x}{2m}+V\left(x\right)\right]\psi \left(x,t\right) \textrm{d}x}=\\ \\
+=\int_{-\infty}^{+\infty}{\frac{i\hbar }{2m}\left(\psi^*\left(x,t\right)\partial^2_x\psi \left(x,t\right) -\psi\left(x,t\right) \partial ^2_x\psi ^*\left(x,t\right)\right) \textrm{d}x}=\\ \\
+=\int_{-\infty}^{+\infty}{\frac{i\hbar }{2m}\partial _x\left(\psi^*\left(x,t\right)\partial_x \psi\left(x,t\right) -\psi\left(x,t\right) \partial_x \psi^*\left(x,t\right)\right) \textrm{d}x}=\\ \\
+=\frac{i\hbar }{2m}\left[\psi ^*\left(x,t\right)\partial_x \psi \left(x,t\right)-\psi \left(x,t\right)\partial_x \psi ^*\left(x,t\right)\right]^{+\infty}_{-\infty}.\\ \\
+\end{array}
+\end{equation}
+Dove $\psi^*$ è la complessa coniugata della $\psi$, e la sua derivata parziale rispetto al tempo è stata ottenuta coniugando l'equazione di \sch.
+
+Affinché la normalizzazione sia conservata, allora è necessario che all'infinito la quantità trovata nell'equazione \eqref{eq1d} sia uguale a 0 e, cioè, è necessario che l'oggetto tra parentesi si annulli in modo appropriato all'infinito.
+
+Tale condizione, però, può ritenersi soddisfatta, se, alla condizione che abbiamo per ipotesi, secondo cui il modulo quadro della $\psi(x,t)$ va a 0 adeguatamente all'infinito (perché sia soddisfatta l'equazione \eqref{norm}), aggiungiamo l'ipotesi di un buon comportamento delle derivate. 
+
+Assunte, dunque, tali condizioni di azzeramento all'infinito per la funzione d'onda e la sua complessa coniugata e le derivate, abbiamo dimostrato che se la $\psi$ è normalizzabile, allora la normalizzazione si conserva. 
+
+\subsection{Caso Tridimensionale} %Normalizzazione in 3D
+Affrontiamo, adesso, il problema in tre dimensioni:
+dobbiamo calcolare 
+\begin{equation} \label{normb}
+\frac{d}{dt}\int_{}^{}{|\psi \left(\bar x,t\right)|^2 \textrm{d}\bar x}.
+\end{equation}
+
+Procediamo in maniera più intelligente
+considerando direttamente la derivata:
+\begin{equation}
+\frac{\partial }{\partial t}|\psi \left(\bar x,t\right)|^2=\psi^*\left(\bar x,t\right)\frac{\partial }{\partial t}\psi\left(\bar x,t\right) +\psi \left(\bar x,t\right)\frac{\partial }{\partial t}\psi^*\left(\bar x,t\right)
+\end{equation}
+Sostituendo l'equazione di \scha, otteniamo:
+\begin{equation}
+\begin{array}{l}
+\frac{\partial }{\partial t}|\psi \left(\bar x,t\right)|^2= \\ \\ =-\frac{i}{\hbar }\psi ^*\left(\bar x,t\right)\left(-\frac{\hbar ^2\nabla ^2}{2m}+V\left(\bar x\right)\right)\psi \left(\bar x,t\right)+ \\
+\hspace{1cm}+\frac{i}{\hbar }\psi\left(\bar x,t\right) \left(-\frac{\hbar ^2\nabla ^2}{2m}+V\left(\bar x\right)\right)\psi^*\left(\bar x,t\right)=\\ \\
+=-\frac{i\hbar }{2m}\left(-\psi\left(\bar x,t\right) ^*\nabla ^2\psi\left(\bar x,t\right) +\psi\left(\bar x,t\right) \nabla ^2\psi ^*\left(\bar x,t\right)\right)=\\ \\
+=-\bar \nabla \cdot \frac{i\hbar }{2m}\left(\psi ^*\left(\bar x,t\right)\bar \nabla \psi\left(\bar x,t\right) -\psi\left(\bar x,t\right) \bar \nabla \psi ^*\left(\bar x,t\right)\right).
+\end{array}
+\end{equation}
+Se adesso chiamiamo il modulo quadro della $\psi$ e, cioè, la densità di probabilità, $\rho(\bar x,t)$ e chiamiamo \emph{densità di corrente di probabilità} $\bar j\left(\bar x,t\right)$ la quantità $-\frac{i\hbar }{2m}\left(-\psi\bar \nabla \psi^* -\psi^* \bar \nabla \psi \right)$, otteniamo un'\textbf{equazione di continuità}:
+\begin{equation}
+\frac{\partial \rho \left(\bar x,t\right)}{\partial t}=-\bar \nabla \cdot \bar j\left(\bar x,t\right).
+\end{equation}
+
+Scriviamo, adesso, la versione integrale dell'equazione appena trovata, così da tornare al problema da cui siamo partiti.
+Consideriamo un volume V, chiamato $N_v$ la quantità:$\int_{V}^{}{\rho \left(\bar x,t\right) \textrm{d}\bar x}$, possiamo scrivere, sfruttando il teorema di Gauss, che:
+\begin{equation}
+\frac{dN_v}{dt}=-\int_{\partial V}^{}{\bar j\left(\bar x,t\right)\cdot \textrm{d}\hat{n} }
+\end{equation}
+Ciò che otteniamo è che la derivata rispetto al tempo della quantità $N_v$ è pari al flusso sul bordo di V della corrente di densità di probabilità $\bar j(\bar x,t)$.
+
+A questo punto, dunque, possiamo pensare alla derivata rispetto al tempo della normalizzazione \eqref{normb} come al limite dell'equazione appena scritta per V che tende a più infinito:
+
+\begin{equation}
+\frac{dN}{dt}=-\lim_{V\to \infty}{\int_{V}^{}{\bar j\left(\bar x,t\right) \textrm{d}\bar \sigma }}.
+\end{equation}
+
+Per quanto riguarda il limite del flusso possiamo integrare su un volume sferico, così da poter lavorare in coordinate polari, e poi facciamo tendere il raggio a infinito. (In questo caso il $\textrm{d}\hat{n}$ diventa un $\textrm{d}\Omega$, con $\textrm{d}\Omega=sin\theta\textrm{d}\theta \textrm{d}\phi$).
+
+Se la funzione d'onda è tale da annullare $\bar j$ adeguatamente all'infinito, (valendo le medesime considerazioni fatte nel caso monodimensionale),  allora abbiamo che la normalizzazione è conservata, così come la probabilità.
+
+%\section{Interpretazione dell'interpretazione -???-} %Interpretazione della probabilità
+%La probabilità di trovare una particella in una porzione di spazio:
+%\begin{itemize}
+%\item realista: la particella c'è
+%\item la particella non c'è finché non la guardo
+%\item agnostica: se non la vedo non mi interessa
+%\end{itemize}
+
+\section[Linearità dell'equazione]{Linearità dell'equazione di Schrödinger} %Linearità dell'equazione di Schrödinger
+La lienarità dell'equazione di \sch ci autorizza, una volta trovate N soluzioni dell'equazione, ad affermare che una qualunque combinazione lineare di tali soluzioni, $\Psi=\sum_{n=1}^{N}c_n\psi_n$, con $c_n \in \mathbb{C}$, è ancora una soluzione della medesima equazione.
+
+Naturalmente, posto che le $\psi_n$ sono normalizzate, i coefficienti $c_n$ devono essere tali che la $\Psi$ sia normalizzata: $\int{|\sum_{n=1}^{N}c_n\psi_n|^2\textrm{d}\bar x} = 1$.
+\\
+
+Come caso particolare, consideriamo una sovrapposizione di due soluzioni distinte dell'equazione di \sch: 
+\begin{equation}
+\Psi=a\psi_1+b\psi_2
+\end{equation} 
+con $\psi_1$ e $\psi_2$ normalizzate.
+Calcoliamo, adesso, $|\Psi(\bar x,t)|^2$:
+
+\begin{equation}
+|\Psi|^2=|a\psi_1+b\psi_2|^2=|a|^2|\psi_1|^2+|b|^2|\psi_2|^2+2Re(a^*b\psi_1^*\psi_2)
+\end{equation}
+Vediamo che il modulo quadro della somma di $\psi_1$ e $\psi_2$ si compone di 3 parti, uno in $\psi_1$, uno in $\psi_2$ e uno misto. Quest'ultimo è quello che è chiamato \emph{termine di interferenza}.
+
+Se tale termine è uguale a 0, allora perché la $\Psi$ sia normalizzata è sufficiente imporre che $|a|^2+|b|^2$ sia pari ad 1. In caso contrario bisogna tenere conto anche del terzo termine, che è quello in cui si manifesta in maniera più evidente la natura quantistica del problema.
+\\
+
+Matematicamente, la linearità dell'equazione di \sch si traduce nel fatto che le soluzioni accettabili di tale equazione, le funzioni a quadrato sommabile su $\mathbb{R}^3$, costituiscono uno spazio vettoriale. In particolare, esse costituiscono lo spazio chiamato $L^2(\mathbb{R}^3)$.
+In questo spazio è possibile introdurre un prodotto scalare: prese due funzioni $\psi$ e $\phi$ $\in L^2(\mathbb{R}^3)$, definiamo il prodotto scalare tra $\psi$ e $\phi$, $\langle\psi, \phi\rangle$ nel seguente modo (anticipando già la notazione di Dirac, affrontata nei capitoli successivi):
+
+\begin{equation}
+\langle \psi ,\phi \rangle:=\left \langle\psi |\phi  \right\rangle:=\int_{}^{}{\psi ^*\left(\bar x,t\right)\phi \left(\bar x,t\right) \textrm{d}\bar x}
+\end{equation}
+
+Avendo introdotto un prodotto scalare, è possibile introdurre, in $L^2(\mathbb{R}^3)$, anche una norma indotta da tale prodotto scalare:
+
+\begin{equation}
+||\psi \left(t\right)||^2=\left \langle\psi |\psi  \right\rangle=\int_{}^{}{\psi ^*\left(\bar x,t\right)\psi \left(\bar x,t\right) \textrm{d}\bar x}=\int_{}^{}{|\psi(\bar x,t) |^2 \textrm{d}\bar x}
+\end{equation}
+
+E vediamo che la definizione di norma appena introdotta è coerente con quanto abbiamo detto nella sezione precedente: le funzioni d'onda che ci vanno bene sono quelle normalizzate, cioè con norma 1: $||\psi||^2=1$
+
+Riassumendo, abbiamo visto che le funzioni d'onda appartengono allo spazio $L^2(\mathbb{R}^3)$, che è uno spazio vettoriale normato dotato di prodotto scalare. \`E, inoltre, possibile dimostrare che tale spazio è anche chiuso rispetto alla norma. In definitiva, dunque, $L^2(\mathbb{R}^3)$ è uno spazio di Hilbert.
+
+\section[Isometricità]{Isometricità dell'equazione di Schrödinger} %Isometricità dell'equazione di Schrödinger
+Introdotto il prodotto scalare nella sezione precedente, possiamo adesso passare ad occuparci di un altro importante requisito dell'equazione di \scha: l'isometricità. Tale requisito è, appunto, la conservazione del prodotto scalare da parte dell'evoluzione temporale.
+
+Verifichiamo che tale proprietà sia soddisfatta:
+ 
+\begin{equation}
+\begin{array}{l}
+\frac{d}{dt}\left \langle \psi |\phi  \right\rangle=\\ \\
+=\int_{}^{}{\bar \nabla \cdot \left(\psi ^*\left(\bar x,t\right)\bar \nabla \phi \left(\bar x,t\right)-\psi \left(\bar x,t\right)\bar \nabla \phi ^*\left(\bar x,t\right)\right) \textrm{d}\bar x}=\\ \\
+=\lim_{V\to \infty}{\int_{\partial V}^{}{\left(\psi ^*\left(\bar x,t\right)\bar \nabla \phi \left(\bar x,t\right)-\psi\left(\bar x,t\right) \bar \nabla \phi ^*\left(\bar x,t\right)\right) \cdot \textrm{d}\hat n}}.
+\end{array}
+\end{equation}
+
+Invocando le stesse argomentazioni che ci hanno portato ad affermare che la norma si conserva, possiamo, adesso, affermare che anche il prodotto scalare è conservato. L'equazione di \sch è, pertanto anche isometrica.
+(Notiamo che, dato che la norma è indotta dal prodotto scalare, il fatto che l'equazione di \sch sia isometrica implica la conservazione della norma dimostrata prima.)
+
+\chapter{Teorema di Ehrenfest} %Teorema di Ehrenfest
+Adesso occupiamoci di valutare come evolvono nel tempo alcuni particolari valori di aspettazione.
+
+Vedremo come associare alla variabile classica \emph{impulso} l'operatore quantistico associato e come esso è legato al valore di aspettazione della posizione. Vedremo, poi, il legame che sussiste tra il valore medio di tale operatore e il potenziale.
+
+Queste relazioni, che andiamo a ricavare, costituiscono il ben noto \emph{Teorema di Ehrenfest}.
+
+\section[Valore di aspettazione di x]{Valore di aspettazione di $\hat x$ e operatore $\hat p$} %Calcolo dell'aspettazione di x
+Procediamo.
+
+Calcoliamo la derivata temporale del valore di aspettazione della variabile posizione $\bar x$ che, adesso, consideriamo come un'osservabile quantistica a cui, come si vedrà più avanti, è possibile associare un operatore: $\hat x$.
+
+La media dell'operatore posizione è definita come:
+\begin{equation}
+\langle \hat x\rangle=\int \psi^*(\bar x,t)\hat x \psi(\bar x,t) \textrm{d}\bar x=\int_{}^{}{\bar x |\psi \left(\bar x,t\right)|^2 \textrm{d}\bar x}
+\end{equation}
+Calcoliamo, adesso, la sua derivata temporale, sfruttando i risultati ottenuti nel capitolo precedente:
+
+\begin{equation}
+\frac{d\langle \hat x\rangle}{dt}=-\int_{}^{}{\bar x \bar \nabla \cdot \bar j \textrm{d}\bar x}
+\end{equation}
+
+Quello che ci aspettiamo di ottenere è qualcosa che sia legata alla velocità della particella.
+
+Per affrontare tale calcolo può essere utile richiamare l'identità vettoriale seguente:
+\begin{equation}
+\int_{V}^{}{f\bar \nabla \cdot \bar g \textrm{d}\bar x}=\int_{\partial V}^{}{f \bar g \cdot \textrm{d}\hat {n}}-\int_{V}^{}{\bar \nabla f\cdot \bar g \textrm{d}\bar x}
+\end{equation}
+
+Adattando tale identità al nostro singolare problema (in particolare, dato che siamo in $\mathbb{R}^3$, lavoriamo componente per componente), otteniamo, allora:
+\begin{equation}
+\frac{d\langle \hat x\rangle}{dt}=\lim_{V\to \infty}{\left[-\int_{\partial V}^{}{\bar x \bar j \cdot \textrm{d}\hat n}+\int_{V}^{}{\bar \nabla \bar x\cdot \bar j \textrm{d}\bar x}\right]}\end{equation}
+
+Per le considerazioni fatte nelle sezioni precedenti sulla densità di corrente di probabilità vediamo che il primo termine si annulla, mentre, per quanto riguarda il secondo, si nota che $\bar \nabla \bar x $ è la matrice identità. Pertanto otteniamo:
+\begin{equation} \label{memom}
+\frac{d\langle \hat x\rangle}{dt}=\int{\bar j \textrm{d}\bar x}=-\frac{i\hbar }{2m}\int_{}^{}{\left(\psi ^*\left(\bar x,t\right)\bar \nabla \psi\left(\bar x,t\right) -\psi\left(\bar x,t\right) \bar \nabla \psi ^*\left(\bar x,t\right)\right) \textrm{d}\bar x}\end{equation}
+
+Adesso, si può verificare rapidamente che l'integrando è pari a $2Re\left[-\frac{i\hbar}{2m}\left(\psi^*\bar\nabla\psi\right)\right]$:
+
+\begin{equation} \label{derx}
+\int{\bar j \textrm{d}\bar x}=2Re\left[\int{-\frac{i\hbar }{2m}\left(\psi^*\bar\nabla\psi\right)\textrm{d}\bar x}\right]
+\end{equation}
+ Se, poi, calcoliamo la parte immaginaria di $-\frac{i\hbar}{2m}\left(\psi^*\bar\nabla\psi\right)$ vediamo che questa è pari a 0 (per semplicità facciamo il conto in una dimensione, l'estensione è immediata):
+\begin{equation}
+\begin{array}{l}
+2Im\left[\int{-\frac{i\hbar }{2m}\left(\psi^*\frac{\partial}{\partial x}\psi\right)\textrm{d}x}\right]= 
+-\int{\frac{i\hbar}{2m}\left(\psi ^*\frac{\partial}{\partial x}\psi+\psi\frac{\partial}{\partial x}\psi ^*\right)}= 
+\\ \\ =\int{-\frac{i\hbar}{2m}\frac{\partial}{\partial x}|\psi|^2\textrm{d}x}=-\frac{i\hbar}{2m}\left[|\psi|^2\right]^{-\infty}_{+\infty} = 0
+\end{array}
+\end{equation}
+Pertanto possiamo togliegre la parte reale dall'equazione \eqref{derx}.
+
+Se, adesso, definiamo l'operatore \emph{Impulso} $\hat p=-i\hbar \bar\nabla$, vediamo che l'integrale che compare come ultimo membro dell'equazione \eqref{derx} non è altro che la media di tale operatore, a meno del fattore $\frac{1}{m}$:
+\begin{equation}
+\frac{d\langle \hat x\rangle}{dt}=\frac{1}{m}\int_{}^{}{\psi ^*\left(\bar x,t\right)\left(-i\hbar \bar \nabla \right)\psi \left(\bar x,t\right)\textrm{d}x}=\frac{1}{m}\langle \hat p\rangle
+\end{equation}
+Abbiamo ritrovato, dunque, per le medie degli operatori quantistici $\hat x$ e $\hat p$ una relazione identica a quella che sussiste classicamente tra le osservabili posizione e impulso.
+\\
+
+Potremmo, a questo punto, essere tentati di instaurare una corrispondenza tra meccanica classica e quantistica semplicemente sostituendo alle osservabili classiche gli operatori quantistici $\hat x$ e $\hat p$, secondo quella che è detta \emph{regola di quantizzazione}.
+
+Tale via, però, non è sempre banalmente praticabile, poiché, se è vero che in meccanica classica $\bar x$ e $\bar p$ commutano e, cioè, abbiamo che $x_\alpha  p_\beta = p_\beta x_\alpha$, con $\alpha,\beta =1,2,3$, questo non è più vero per gli operatori quantistici $\hat x$ e $\hat p$. Infatti abbiamo che:
+\begin{equation}
+(x_\alpha p_{\beta} -  p_{\beta} x_{\alpha})\psi = \left[x_\alpha,p_\beta\right]\psi = i\hbar(-x_\alpha\partial_\beta+\partial_\beta x_\alpha+x_\alpha\partial_\beta)\psi=i\hbar\delta_{\alpha \beta} \psi
+\end{equation}
+Oggetto che è uguale a 0 solo se $\alpha$ è diverso da  $\beta$.
+
+\section{Teorema di Ehrenfest} %Teorema di Ehrenfest
+Adesso ci chiediamo cosa si ottiene derivando la media dell'operatore impulso rispetto al tempo. In particolare, quello che ci chiediamo è se sussiste la relazione che ci aspettiamo:
+
+\begin{equation} \label{Ehre0}
+\frac{d\langle \hat p\rangle}{dt}=-\langle \bar \nabla V\rangle
+\end{equation}
+
+Verifichiamolo, per semplicità vediamolo per una componente, per esempio per la componente $x$:
+
+\begin{equation} \label{Ehre1}
+\frac{d}{dt} \langle p_x \rangle = -i\hbar\frac{d}{dt}
+\int{\psi^*\frac{\partial \psi}{\partial x} dx} = -i\hbar \int{\left[\frac{\partial\psi^*}{\partial t}\frac{\partial\psi}{\partial x}+\psi^*\frac{\partial}{\partial x}\frac{\partial\psi}{\partial t}\right]dx}=
+\end{equation}
+
+\begin{equation} \label{Ehre2}
+=\int{\left[-\frac{\hbar^2}{2m}\nabla^2\psi^*+\psi^*V_x\right]\frac{\partial\psi}{\partial x}dx}-\int{\psi^*\frac{\partial}{\partial x}\left[-\frac{\hbar^2}{2m}\nabla^2\psi+V_x\psi\right]dx}
+\end{equation}
+
+Dove, per passare dalla \eqref{Ehre1} alla \eqref{Ehre2}, abbiamo utilizzato l'equazione di \scha.
+
+Ora, integrando due volte per parti si osserva che i termini con il laplaciano si elidono e otteniamo:
+
+\begin{equation}
+\frac{d}{dt}\langle p_x \rangle = \int{\psi^*\left[V_x\frac{\partial\psi}{\partial x}-\frac{\partial}{\partial x}\left(V_x\psi\right)\right]dx} = -\int{\psi^*\frac{\partial V_x}{\partial x}\psi dx}
+\end{equation}
+
+E, con questo, abbiamo dimostrato la relazione \eqref{Ehre0}.
+
+Abbiamo ritrovato, quindi, la ben nota relazione della meccanica classica. Ciò che dobbiamo tenere a mente, però, è che abbiamo lavorato con una sola particella. Le cose, in generale, sono molto più complesse di quanto questo risultato non possa portare a pensare.
+%\end{document}

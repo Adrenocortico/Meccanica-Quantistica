@@ -1,0 +1,74 @@
+\chapter{Metodi non perturbativi} %Metodi non perturbativi
+Vengono utilizzati per ricavare gli stati fondamentali.
+\section{Metodo variazionale per gli stati non eccitati} %Metodo variazionale per gli stati non eccitati
+Si ha un'hmailtoniana:
+\begin{equation}\begin{split}
+\begin{cases}
+H\left |\psi _{nd} \right\rangle=E_n\left |\psi _{nd} \right\rangle & \textrm{discreto}\\
+H\left |\psi _{Ed} \right\rangle=E\left |\psi _{Ed} \right\rangle & \textrm{continuo}\\
+H\left |\psi _0 \right\rangle=E_0\left |\psi _0 \right\rangle
+\end{cases}
+\end{split}\end{equation}
+
+Nello spazio di Hilbert del sistema si prende uno stato $\left |\psi  \right\rangle$ si prende un funzionale energia e si dimostra
+\begin{equation}\begin{split}
+E\left[\psi \right]=\left\langle \psi |H|\psi  \right\rangle\ge E_0
+\end{split}\end{equation}
+\begin{proof}
+\begin{equation}\begin{split}
+\left |\psi  \right\rangle=\sum_{nd}{c_{nd}\left |\psi _{nd} \right\rangle}+\sum_d{\int_{\sigma_c}c_d\left(E\right)\left |\psi _{ed} \right\rangle\textrm{d}E}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \psi |\psi  \right\rangle=\\
+\sum_{nd}{c^*_{n'd'}c_{nd}\left\langle \psi _{n'd'}|\psi _{nd} \right\rangle}+\sum_{dd'}{\int_{\sigma_c}c^*_{d'}\left(E'\right)c_d\left(E\right)\left\langle \psi _{E'd'}|\psi _{ed} \right\rangle\textrm{d}E}\textrm{d}E'=\\
+=\sum_{nd}{|c_{nd}|^2}+\sum_d{\int_{\sigma_c}{|c_d\left(E\right)|^2\textrm{d}E}} =\\
+=1
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \psi |H|\psi  \right\rangle=\\
+=\sum_{nd}{|c_{nd}|^2E_n}+\sum_d{\int_{\sigma_c}|c_d|^2E}\equiv E\left[\psi \right]
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+E\left[\psi \right]-E_0=\sum{nd}{|c_{nd}|^2\left(E_n-E_0\right)}+\sum_{d}{\int_{\sigma_c}{|c_d|^2\left(E-E_0\right)\textrm{d}E}}\ge 0
+\end{split}\end{equation}
+\end{proof}
+
+%MANCA UNA PARTE
+
+Si consideri un generico stato $\left |\psi  \right\rangle$ normalizzato nello spazio di Hilbert e una sua variazione $\left |\delta\psi  \right\rangle$.
+\begin{equation}\begin{split}
+\delta\left\langle \psi |H|\psi  \right\rangle=\left\langle \delta\psi |H|\psi  \right\rangle+\left\langle \psi |H|\delta\psi  \right\rangle=2Re\left(\left\langle \delta\psi |H|\psi  \right\rangle\right)=0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\delta\left\langle \psi |\psi  \right\rangle=\left\langle \delta\psi |\psi  \right\rangle+\left\langle \psi |\delta\psi  \right\rangle=2Re\left(\left\langle \delta\psi |\psi  \right\rangle\right)=0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\delta\left\langle \psi |H|\psi  \right\rangle=\\
+=\left\langle i\delta\psi |H|\psi  \right\rangle+\left\langle \psi |H|i\delta\psi  \right\rangle=\\
+=-i\left\langle \delta\psi |H|\psi  \right\rangle+i\left\langle \psi |H|\delta\psi  \right\rangle=\\
+=-i\left(\left\langle \delta\psi |H|\psi  \right\rangle-\left\langle \psi |H|\delta\psi  \right\rangle\right)=\\
+=-i2iIm\left(\left\langle \delta\psi |H|\psi  \right\rangle\right)=\\
+=0
+\end{split}\end{equation}
+e analogamente per $\left\langle \psi |\psi  \right\rangle$.
+
+Perciò si ha in definitiva:
+\begin{equation}\begin{split}
+\begin{cases}
+\left\langle \delta\psi |H|\psi  \right\rangle=0\\
+\left\langle \delta\psi |\psi  \right\rangle=0
+\end{cases}
+\end{split}\end{equation}
+per permetter questo i vettori $H\left |\psi \right\rangle$ e $\left |\psi \right\rangle$ devono essere paralleli:
+\begin{equation}\begin{split}
+H\left |\psi  \right\rangle\sim \left |\psi  \right\rangle.
+\end{split}\end{equation}
+
+\section{Metodo variazionale per gli stati eccitati} %Metodo variazionale per gli stati eccitati
+Il funzionale $E\left[\psi \right]$ ha dei ounti stazionari.
+\begin{equation}\begin{split}
+H\left |\psi  \right\rangle=E\left |\psi  \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \delta\psi |H|\psi  \right\rangle=E\left\langle \delta\psi |\psi  \right\rangle.
+\end{split}\end{equation}

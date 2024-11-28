@@ -1,0 +1,72 @@
+\section{Correlazione di Einstein} %Correlazione di Einstein
+Ci si pone in una cavità al cui interno vi è un campo elettromagnetico. Si chiamano $N_{a,b}$ il numero di atomi su $a$ e $b$; $A$ la probabilità di emissione spontanea; $N_bA$ il numero di atomi che transiscono da $b$ ad $a$ per emissione spontanea nell'unità di tempo; sapendo $R_{a,b}=B_{a,b}\rho\left(\omega _0\right)$ si ha $N_bB_{b,a}\rho\left(\omega _0\right)$ il numero di atomi inizialmente sul livello $a$ che vanno sul livello $b$ per assorbimento di radiazione, quindi per emissione stimolata nell'unità di tempo. Si ha quindi:
+\begin{equation}\begin{split}
+\frac{\textrm{d}N_b}{\textrm{d}t}=-N_bA-N_bB_{b,a}\rho\left(\omega _0\right)+N_aB_{a,b}\rho\left(\omega _0\right)
+\end{split}\end{equation}
+e si è in una situazione di equilibrio. \\ Perciò:
+\begin{equation}\begin{split}
+\rho\left(\omega _0\right)=\frac{N_bA}{N_aB_{a,b}-N_bB_{b,a}}=\frac{A}{\frac{N_a}{N_b}B_{a,b}-B_{b,a}}
+\end{split}\end{equation}
+Se $A=0$ non è possibile l'equilibrio e quindi si nota che non si può avere un livello ad energia nulla.
+
+Si ricava:
+\begin{equation}\begin{split}
+N_{a,b}\propto e^{-\frac{E_{a,b}}{kT}}\\
+\Longrightarrow \frac{N_a}{N_b}=\frac{e^{-\frac{E_{a}}{kT}}}{e^{-\frac{E_{b}}{kT}}}=e^{\frac{E_b-E_a}{kT}}=e^{\frac{\hbar \omega }{kT}}
+\end{split}\end{equation}
+e quindi:
+\begin{equation}\begin{split}
+\rho\left(\omega _0\right)=\frac{A}{e^{\frac{\hbar \omega }{kT}}B_{a,b}-B_{b,a}}=\frac{\hbar \omega _0^3}{\pi^2c^3\left(e^{\frac{\hbar \omega }{kT}}-1\right)}=\frac{A}{B\left(e^{\frac{\hbar \omega }{kT}}-1\right)}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\frac{A}{B}=\frac{\hbar \omega _0^3}{\pi^2c^3}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+A=\frac{\omega _0^3}{\pi c^3}\frac{1}{3\varepsilon_0\hbar }\left|P_{a,b}\right|^2
+\end{split}\end{equation}
+
+Se ci si pone nel livello nullo si ha:
+\begin{equation}\begin{split}
+\frac{dN_b}{dt}=-N_bA \\
+\Longrightarrow \frac{dN_b}{N_b}=-Adt\\
+\Longrightarrow \textrm{integrando} \Longrightarrow -At=\ln{\left(\frac{N\left(t\right)}{N\left(0\right)}\right)}\\
+\Longrightarrow N\left(t\right)=N_0\exp{\left(-At\right)}
+\end{split}\end{equation}
+Si definisce la vita media del sistema:
+\begin{equation}\begin{split}
+\tau =\frac{1}{A}
+\end{split}\end{equation}
+
+Se si prende un livello eccitato elevato possono esistere diversi meccanismi di emissione spontanea che devono essere considerati. Si ha quind. $\tau=\frac{1}{A_a+A_2+\dots}$.
+
+\section[Vita media di un livello atomico]{Ordine di grandezza del tempo di vita media di un livello atomico} %Ordine di grandezza del tempo di vita media di un livello atomico
+Sia ora
+\begin{equation}\begin{split}
+A=\frac{\left(\hbar \omega _0\right)^3\left|\left\langle \psi _b\left|q\bar r\right|\psi _a \right\rangle\right|^2}{3\pi \varepsilon_0\hbar ^4c^3}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\alpha=\frac{e^2}{4\pi\varepsilon_0\hbar c}\\
+a_0=\frac{4\pi\varepsilon_0\hbar }{me^2}
+\end{split}\end{equation}
+
+Quindi si compiono i seguenti passaggi:
+\begin{equation}\begin{split}
+A=\frac{\left(\hbar \omega _0\right)^3e^2a_0^2}{3\pi \varepsilon_0\hbar ^4c^3}\\
+\tau=\\
+=\frac{3\pi\varepsilon_0\hbar ^4c^3}{\left(1\textrm{eV}\right)^3e^2}\frac{m^2e^4}{\left(4\pi\varepsilon_0\hbar ^2\right)4\pi\varepsilon_0\hbar \hbar }\frac{c}{c}=\\
+=\frac{\hbar m^2c^4}{\left(1\textrm{eV}\right)^3}=\\
+=\frac{10^{-2}\cdot 6.58\cdot 10^{-16}\textrm{eV s}}{\left(1\textrm{eV}\right)^3}\cdot 0.25\cdot 10^{12}\textrm{eV}^2=\\
+=\frac{1.5\cdot 10^{-4}}{\left(1\right)^3}s\simeq\\
+\simeq 10^{-7}-10^{-8} \textrm{s}
+\end{split}\end{equation}
+
+\subsection{Giustificazione dell'utilizzo dell'hamiltoniana perturbata} %Giustificazione dell'utilizzo dell'hamiltoniana perturbata
+Ci si pone in una cavità fredda con fotoni, un rilevatore di fotoni. All'interno della cavità c'è un solo atomo che decade nello stato fondamentale. $\left |\psi _0 \right\rangle\left |1 \right\rangle$ $\left |\psi _1 \right\rangle\left |0 \right\rangle$ con lo stato fondamentale $\psi _0$ e il fotone libero $\left |1 \right\rangle$.
+\begin{equation}\begin{split}
+H=H_0+H_{em}=H_0\otimes\mathbb{I}+H_{em}\otimes\mathbb{I}
+\end{split}\end{equation}
+Si fa entrare un fotone
+\begin{equation}\begin{split}
+\left |\psi _0 \right\rangle\left |0 \right\rangle\rightarrow c_a\left(t\right)\left |\psi _0 \right\rangle\left |1 \right\rangle+c_b\left(t\right)\left |\psi _1 \right\rangle\left |0 \right\rangle
+\end{split}\end{equation}
+Nel primo caso si rileva il fotone e quindi l'atomo torna nello stato fondamentale. Nel secondo caso il fotone è stato assorbito e quindi lo stato del sistema è $\left |\psi _1 \right\rangle\left |0 \right\rangle$.

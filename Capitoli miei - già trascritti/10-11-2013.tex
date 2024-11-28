@@ -1,0 +1,204 @@
+\chapter{Formalismo matematico} %Formalismo matematico
+\section{Notazione di Dirac}
+Si pensi ad un vettore $\bar v\in \mathbb{C} ^N$ con $\mathbb{C} ^N=span\{e_i\}$. In uno spazio di Hilbert separabile $\mathfrak{L}^2\left(dx, x\right)=L^2\left(x\right)$
+
+Il prodotto scalare è:
+\begin{equation}\begin{split}
+\left\langle \bar a,\bar b \right\rangle=\sum_{n=1}^{N}{a^*_nb_n}=\bar a^+\cdot \bar b
+\end{split}\end{equation}
+
+Un vettore è un mappa che va da $\mathbb{Z}_N \rightarrow \mathbb{C} $. 
+Si hanno i casi:
+\begin{equation}\begin{split}
+\mathbb{Z} \rightarrow \mathbb{C} \qquad \ell^2\left(\mathbb{Z}\right) \\
+\mathbb{N} \rightarrow \mathbb{C} \qquad \ell^2\left(\mathbb{N}\right)
+\end{split}\end{equation}
+che sono delle sequenze limitate a quadrato sommabile e
+\begin{equation}\begin{split}
+\mathbb{R} \rightarrow \mathbb{C} \qquad \ell^2\left(\mathbb{R}\right)
+\end{split}\end{equation}
+che sono delle funzioni complesse.
+
+Si definisce quindi il \textbf{prodotto scalare}:
+\begin{equation}\begin{split}
+\left\langle f,g \right\rangle=\int_{-\infty }^{+\infty }{f^*\left(x\right)g\left(x\right) \textrm{d}x}
+\end{split}\end{equation}
+la chi norma è:
+\begin{equation}\begin{split}
+||f||^2=\left\langle f,f \right\rangle=\int_{-\infty }^{+\infty }{|f\left(x\right)|^2 \textrm{d}x}
+\end{split}\end{equation}
+
+Vale la \textbf{disuguaglianza di Schwartz}:
+\begin{equation}\begin{split}
+|\left\langle f,g \right\rangle|^2\le ||f||^2||g||^2
+\end{split}\end{equation}
+che deriva dal teorema di Pitagora.
+
+Vale la \textbf{disuguaglianza di Cauchy-Schwartz}:
+\begin{equation}\begin{split}
+\ell^2\left(\mathbb{Z}\right): |\sum_{i=-\infty }^{+\infty }{x^*_iy_i}|\le \sum_{}^{}{|x_i|^2}\sum_{}^{}{|y_i|^2}
+\end{split}\end{equation}
+e analogamente per $\mathfrak{L}^2$ con gli integrali sostituiti alle sommatorie.
+
+Vale infine anche la \textbf{disuguaglianza triangolare}:
+\begin{equation}\begin{split}
+||x+y||^2=\\
+=\langle x+y,x+y \rangle=\\
+=||x||^2+||y||^2+2Re\langle x,y\rangle\le ||x||^2+||y||^2+2||x||||y||=\\
+=\left(||x||+||y||\right)^2
+\end{split}\end{equation}
+
+\subsection{Teorema di Riesz-Frachet} %Teorema di Riesz-Frachet
+$\left\langle \bar v,\cdot  \right\rangle$ funzionale lineare: se il vettore ha norma finita, il prodotto scalare è finito.
+
+\textbf{Se ci si trova in uno spazio di Hilbert $\mathcal{H}$, il suo duale è isomorfo ad $\mathcal{H}$ stesso}: \begin{equation}\begin{split}
+\mathcal{H}^V=\mathcal{H}
+\end{split}\end{equation}
+Se $v\in \mathcal{H} \rightarrow v \in \mathcal{H}^V$ e quindi: $\left\langle v \right\rangle=\left\langle v,w \right\rangle^*$
+
+\section{Notazione < bra | ket >} %Notazione bra-ket
+Si definisce una nuova notazione:
+\begin{equation}\begin{split}
+\left | \quad \right\rangle \in \mathcal{H} \quad \textrm{ket}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \quad  \right | \in \mathcal{H}^V \quad \textrm{bra}
+\end{split}\end{equation}
+E le successive notazioni:
+\begin{equation}\begin{split}
+\bar v=\left |v \right\rangle \\
+\bar w^+=\left\langle w \right | \\
+\bar w^+\cdot \bar v=\left\langle w|v \right\rangle \\
+\end{split}\end{equation}
+Si definisce $\left\langle g \right | A$ come:
+\begin{equation}\begin{split}
+\left(\left\langle g \right | A \right)\left | f \right \rangle = \left\langle g | (Af\right\rangle)=\left\langle g|A|f \right\rangle=\left\langle g|Af \right\rangle=\left\langle A^+g|f \right\rangle \Longrightarrow \\
+\left\langle g\right |A=\left\langle A^+g\right |
+\end{split}\end{equation}
+
+Si definisce \textbf{operatore di rango 1} $|h\rangle\langle k|$ che ha le seguenti proprietà:
+\begin{equation}\begin{split}
+|h\rangle\langle k| v\rangle = \left\langle k|v \right\rangle |h\rangle \\
+||v||=1 \quad |v\rangle\langle v|=P \quad \textrm{proiettore ortogonale sullo spazio}\\
+P^2=\sum_{n}|v_n\rangle\langle v_n|=P \\
+|h\rangle\langle k|=\left(|k\rangle\langle h|\right)^+ \\
+P_S=\sum |v_n\rangle\langle v_n|
+\end{split}\end{equation}
+
+Si ha la \textbf{relazione di completezza}:
+\begin{equation}\begin{split}
+\sum_{n}|e_n\rangle\langle e_n|= \mathbb{I}_H=\mathbb{I}
+\end{split}\end{equation}
+con $e_n$ una base ortonormale e $\mathbb{I}$ la matrice identità.
+
+\subsection{Matrici in notazione di Dirac} %Matrici in notazione di Dirac
+\begin{equation}\begin{split}
+\left\langle e_n|A|e_n \right\rangle=A_{n,m}
+\end{split}\end{equation}
+essendo $\left\langle e_n|\psi  \right\rangle=\psi _n$, $|\psi \rangle =\sum{\psi _n | e_n \rangle}$.
+
+\begin{equation}\begin{split}
+\left\langle e_n|A|\psi  \right\rangle=\sum\left\langle e_n|A|e_m \right\rangle\left\langle e_m|\psi  \right\rangle
+\end{split}\end{equation}
+usando la completezza.
+
+\begin{equation}\begin{split}
+\sum{A_{n,m}\psi _m}=\left(A\psi \right)_n
+\end{split}\end{equation}
+
+Per il cambiamento di base si ha per $\left\langle f_n|A|f_m \right\rangle$:
+\begin{equation}\begin{split}
+\sum_{i,j}{\left\langle f_n|e_i \right\rangle\left\langle e_i|A|e_j \right\rangle\left\langle e_j|f_m \right\rangle}= \\
+=\sum_{i,j}{U^*_{i,n}\left\langle e_i|A|e_j \right\rangle U_{j,m}}
+\end{split}\end{equation}
+Considerando $U$ come matrice unità:
+\begin{equation}\begin{split}
+\left(U^+\cdot U\right)_{n,m}=\sum{U^*_{j,n}U_{j,m}}=\sum_j\left\langle f_m|e_j \right\rangle\left\langle e_j|f_n \right\rangle=\left\langle f_n|f_m \right\rangle=\delta_{n,m}
+\end{split}\end{equation}
+
+Si usano basi che sono autostati di osservabili, per esempio stati stazionari. La rappresentazione matriciale è la rappresentazione dell'energia.
+
+Prendendo $U\left |f_n \right\rangle=\left |e_n \right\rangle$, ${\left |f_n \right\rangle}, {\left |e_n \right\rangle}$ basi ortonormali:
+\begin{equation}\begin{split}
+\left\langle f_m|U|f_n \right\rangle=\left\langle f_m|e_n \right\rangle=U_{n,m}
+\end{split}\end{equation}
+
+\section{Rappresentazioni} %Rappresentazioni
+La trasformata di Fourier della $\psi \left(x\right)$ è:
+\begin{equation}\begin{split}
+\psi \left(x\right)=\int_{-\infty }^{+\infty }{e^{ikx}\phi\left(k\right) \frac{\textrm{d}k}{\sqrt{2\pi}}}
+\end{split}\end{equation}
+e l'antitrasformata è:
+\begin{equation}\begin{split}
+\phi \left(k\right)=\int^{+\infty }_{-\infty }{e^{ikx}\psi \left(x\right) \frac{\textrm{d}x}{\sqrt{2\pi}}}=\\
+=\int^{+\infty }_{-\infty }{e^{ikx}\frac{\textrm{d}x}{\sqrt{2\pi}}}\int_{-\infty }^{+\infty }{e^{ikx}\phi\left(k\right) \frac{\textrm{d}k}{\sqrt{2\pi}}}=\\
+=\int{\textrm{d}k}\int^{+\infty }_{-\infty }{e^{i\left(k'-k\right)x}\psi \left(k'\right) \frac{\textrm{d}x}{\sqrt{2\pi}}}=\\
+=\int{\textrm{d}k}\cdot \delta\left(k'-k\right)
+\end{split}\end{equation}
+
+Imponendo quindi:
+\begin{equation}\begin{split}
+\psi \left(x\right)=\left\langle x|\psi  \right\rangle
+\end{split}\end{equation}
+con $\left\langle x\right |$ funzionale generlamente non limitato e
+\begin{equation}\begin{split}
+\phi \left(k\right)=\left\langle k|\psi  \right\rangle
+\end{split}\end{equation}
+si ha, con la nuova notazione:
+\begin{equation}\begin{split}
+\left\langle x|\psi  \right\rangle=\psi \left(x\right)=\int{e^{ikx}\psi \left(k\right)\frac{\textrm{d}k}{\sqrt{2\pi}}}=\int{\left\langle x|k \right\rangle\left\langle k|\psi  \right\rangle \textrm{d}k}
+\end{split}\end{equation}
+essendo il $\ker$ di un operatore unitario, in quanto la trasformata di Fourier è essa stessa una trasformazione unitaria, il valore:
+\begin{equation}\begin{split}
+\frac{e^{ikx}}{\sqrt{2\pi}}=\left\langle x|k \right\rangle=u_k\left(x\right)
+\end{split}\end{equation}
+è ortonormale nel senso generalizzto.
+
+Si prende un vettore e lo si vuole vedere rappresentato in $x$ con l'operatore $A$:
+\begin{equation}\begin{split}
+\left\langle x|A|\psi  \right\rangle=A\left(x,\partial _x\right)\psi \left(x\right)
+\end{split}\end{equation}
+
+L'operatore A in x $\rightarrow$ $A\left(x,\partial _x\right)$. L'operatore A in k $\rightarrow$ $A\left(\partial _k,k\right)$.
+
+\subsection{Operatore momento} %Operatore momento
+\begin{itemize}
+\item Operatore \textbf{momento p} rappresentato in \textbf{x}:
+\begin{equation}\begin{split}
+\left\langle x|p|\psi  \right\rangle=-i\hbar \partial _x\psi \left(x\right)
+\end{split}\end{equation}
+quindi:\begin{equation}\begin{split}
+p=-i\hbar k.
+\end{split}\end{equation}
+\item Operatore \textbf{momento p} rappresentato in \textbf{k}:
+\begin{equation}\begin{split}
+\left\langle k|p|\psi  \right\rangle=\int{\left\langle k|x \right\rangle\left\langle x|p|\psi  \right\rangle\textrm{d}x}=\int{\frac{e^{-ikx}}{\sqrt{2\pi}}\left(-i\hbar \partial _x\right)\psi \left(x\right)\textrm{d}x} \Longrightarrow \\
+\textrm{integrando per parti} \Longrightarrow \\
+\hbar k\int{\frac{e^{-ikx}}{\sqrt{2\pi}}\psi \left(x\right) \textrm{d}x}=\hbar k\phi
+\end{split}\end{equation}
+quindi:\begin{equation}\begin{split}
+p=\hbar k.
+\end{split}\end{equation}
+\end{itemize}
+
+\subsection{Operatore posizione} %Operatore posizione
+\begin{itemize}
+\item Operatore \textbf{posizione x} rappresentato in \textbf{x}:
+\begin{equation}\begin{split}
+\left\langle x|x|\psi  \right\rangle=x\left\langle x|\psi  \right\rangle
+\end{split}\end{equation}
+che è un autovalore moltiplicativo in $\mathcal{H}$.
+\item Operatpre \textbf{posizione x} rappresentato in \textbf{k}:
+\begin{equation}\begin{split}
+\left\langle k|x|\psi  \right\rangle=\int{\left\langle k|x \right\rangle\left\langle x|x|\psi  \right\rangle}=i\partial _k\phi\left(k\right)=i\partial _k\left\langle k|\psi  \right\rangle
+\end{split}\end{equation}
+quindi:\begin{equation}\begin{split}
+x\left(\textrm{rappresentazione k}\right)=i\partial _k=i\hbar \partial _p
+\end{split}\end{equation}
+con $p=\hbar k$. Si ha quindi:
+\begin{equation}\begin{split}
+\int{|\psi \left(k\right)|^2\textrm{d}k}=\int{\frac{|\psi \left(k\right)|^2}{\hbar }\textrm{d}p}=\int{|\psi \left(p\right)|^2\textrm{d}p} \Longrightarrow \\
+\psi \left(p\right)=\hbar ^{-\frac{1}{2}}\psi \left(k\right) \\
+\textrm{in 3D: } \psi \left(p\right)=\hbar ^{-\frac{3}{2}}\psi \left(k\right)
+\end{split}\end{equation}
+\end{itemize}

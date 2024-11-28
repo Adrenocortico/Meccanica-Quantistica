@@ -1,0 +1,122 @@
+\begin{equation}\begin{split}
+H_0=E\left(\begin{matrix}
+1&0&0\\
+0&1&0\\
+0&0&2
+\end{matrix}\right)
+\end{split}\end{equation}
+Si ha un'hamiltoniana perturbativa:
+\begin{equation}\begin{split}
+H_p=\left(\begin{matrix}
+0&\eta &\epsilon\\
+\eta &0&\epsilon\\
+\epsilon &\epsilon &0
+\end{matrix}\right)
+\end{split}\end{equation}
+con $\epsilon, \eta\ll E$.
+
+\begin{equation}\begin{split}
+\delta E_3^{\left(0\right)}=\left\langle E_3^{\left(0\right)}|H_p|E_3^{\left(0\right)} \right\rangle=0
+\end{split}\end{equation}
+
+Si ha quindi la correzione
+\begin{equation}\begin{split}
+\left |\delta E_3^{\left(1\right)} \right\rangle=\\
+=\frac{\left\langle E_1^{\left(0\right)}|H_p|E_3^{\left(0\right)} \right\rangle}{2E-E}\left |E_1^{\left(0\right)} \right\rangle+\frac{\left\langle E_2^{\left(0\right)}|H_p|E_3^{\left(0\right)} \right\rangle}{E_3^{\left(0\right)}-E_2^{\left(0\right)}}\left |E_2^{\left(0\right)} \right\rangle=\\
+=\frac{\epsilon}{E}\left(\begin{matrix}1\\0\\0\end{matrix}\right)+\frac{\epsilon}{E}\left(\begin{matrix}0\\1\\0\end{matrix}\right)=\\
+=\left(\begin{matrix}
+\frac{\epsilon}{E}\\
+\frac{\epsilon}{E}\\
+0
+\end{matrix}\right)
+\end{split}\end{equation}
+
+Gli autovettori sono:
+\begin{equation}\begin{split}
+E_3=E_3^{\left(0\right)} \rightarrow \delta E_3^{\left(1\right)}=E_3^{\left(0\right)}=2E \\
+\Longrightarrow \left |E_3 \right\rangle=\left |E_3^{\left(0\right)} \right\rangle+\left |\delta E_3^{\left(1\right)} \right\rangle
+\end{split}\end{equation}
+Il livello si splitta in due livelli.
+
+%MANCA UNA PARTE
+
+Si possono definire gli autovalori di ordine $0$:
+\begin{equation}\begin{split}
+\begin{cases}
+\left |\bar E_1^{\left(0\right)} \right\rangle=\frac{1}{\sqrt{2}}\left(\left |E_1^{\left(0\right)} \right\rangle+\left |E_2^{\left(0\right)} \right\rangle\right) \\
+\left |\bar E_2^{\left(0\right)} \right\rangle=\frac{1}{\sqrt{2}}\left(\left |E_1^{\left(0\right)} \right\rangle-\left |E_2^{\left(0\right)} \right\rangle\right) 
+\end{cases}
+\end{split}\end{equation}
+
+\subsection{Correzione degli autovettori} %Correzione degli autovettori
+\begin{equation}\begin{split}
+\left |\delta\bar E^{\left(1\right)} \right\rangle=\\
+\frac{\left\langle E_3^{\left(0\right)}|H_p|\bar E_1^{\left(0\right)} \right\rangle}{-E}\left |E_3^{\left(0\right)} \right\rangle=\\
+=-\frac{\epsilon\sqrt{2}}{E}\left(\begin{matrix}0\\0\\1\end{matrix}\right)
+\end{split}\end{equation}
+considerando $\left\langle E_3^{\left(0\right)}|H_p|\bar E_1^{\left(0\right)} \right\rangle=\frac{1}{\sqrt{2}}\left\langle E_3^{\left(0\right)}|H_p| E_1^{\left(0\right)} \right\rangle+\frac{1}{\sqrt{2}}\left\langle E_3^{\left(0\right)}|H_p| E_2^{\left(0\right)} \right\rangle$.
+
+\begin{equation}\begin{split}
+\left |\delta\bar E_2^{\left(1\right)} \right\rangle=\\
+\frac{\left\langle E_3^{\left(0\right)}|H_p|\bar E_2^{\left(0\right)} \right\rangle}{-E}\left |E_3^{\left(0\right)} \right\rangle=\\
+=0
+\end{split}\end{equation}
+considerando $\left\langle E_3^{\left(0\right)}|H_p|\bar E_2^{\left(0\right)} \right\rangle=\frac{1}{\sqrt{2}}\left\langle E_3^{\left(0\right)}|H_p| E_1^{\left(0\right)} \right\rangle-\frac{1}{\sqrt{2}}\left\langle E_3^{\left(0\right)}|H_p| E_2^{\left(0\right)} \right\rangle=0$.
+
+E si ha quindi:
+\begin{itemize}
+\item $\left |E_1 \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\1\\-2\frac{\epsilon}{E}\end{matrix}\right)$
+\item $\left |E_2 \right\rangle=\left |\bar E_2^{\left(0\right)} \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\-1\\0\end{matrix}\right)$
+\end{itemize}
+
+%MANCA UNA PARTE
+
+Sia
+\begin{equation}\begin{split}
+H=\left(\begin{matrix}
+E&\eta&\epsilon\\
+\eta&E&\epsilon\\
+\epsilon&\epsilon&2E\\
+\end{matrix}\right)
+\end{split}\end{equation}
+allora si ha:
+\begin{equation}\begin{split}
+H\left |E_1 \right\rangle=E_1\left |E_1 \right\rangle=\\
+=\left(\begin{matrix}
+E&\eta&\epsilon\\
+\eta&E&\epsilon\\
+\epsilon&\epsilon&2E\\
+\end{matrix}\right)
+\left(\begin{matrix}
+1\\1\\-2\frac{\epsilon}{E}
+\end{matrix}\right)=\left(\begin{matrix}
+E+\eta+o\left(\frac{\epsilon}{E}\right)^2\\
+\eta+E\\
+2\epsilon-4\epsilon
+\end{matrix}\right)=\\
+=\left(\begin{matrix}
+E+\eta\\E+\eta\\-2\epsilon
+\end{matrix}\right)=\left(E+\eta\right)\left(\begin{matrix}
+1\\1\\-\frac{2\epsilon}{E+\eta}
+\end{matrix}\right)=\left(E+\eta\right)\left(\begin{matrix}
+1\\1\\-2\frac{\epsilon}{E}
+\end{matrix}\right)
+\end{split}\end{equation}
+per le espansioni in serie si ha $\frac{2\epsilon}{E+\eta}=\frac{2\epsilon}{E\left(1+\frac{\epsilon}{E}\right)}\rightarrow \frac{2\epsilon}{E}\left(1-\frac{\eta}{E}\right)\simeq \frac{2\epsilon}{E}$.
+
+Se si opera sul vettore $3$ si ha:
+\begin{equation}\begin{split}
+\left(\begin{matrix}
+E&\eta&\epsilon\\
+\eta&E&\epsilon\\
+\epsilon&\epsilon&2E\\
+\end{matrix}\right)\left(\begin{matrix}
+\frac{\epsilon}{E}\\
+\frac{\epsilon}{E}\\
+1
+\end{matrix}\right)=2E\left(\begin{matrix}
+\frac{\epsilon}{E}\\
+\frac{\epsilon}{E}\\
+1
+\end{matrix}\right)
+\end{split}\end{equation}

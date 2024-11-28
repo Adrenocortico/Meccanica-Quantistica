@@ -1,0 +1,264 @@
+%\documentclass[a4paper,11pt,twoside,openany]{book}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%\usepackage{braket}
+%\usepackage{amsthm}
+%\usepackage{graphicx}
+
+%\raggedbottom
+%\theoremstyle{definition}
+%\newtheorem{definizione}{Definizione}
+%\theoremstyle{plain}
+%\newtheorem{teorema}{Teorema}
+%\theoremstyle{plain}
+%\newtheorem{lemma}{Lemma}
+%\theoremstyle{definition}
+%\newtheorem{esempio}{Esempio}
+
+
+%\author{Beatrice Lena}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{16 Ottobre 2013}
+
+%\begin{document}
+%\maketitle
+
+Gli operatori diagonalizzabili con spettro discreto possono essere scritti nella forma:
+\begin{equation*}
+X=\sum_{n}x_{n}|x_{n}\left\rangle\right\langle x_{n}|=\sum_{l}x_{l}P_{l}
+\end{equation*}
+dove $P_{l}$: proiettore ortonormale sull'autospazio corrispondente all'autovalore $x_{l}$
+Nel caso continuo,
+\begin{equation*}
+X=\int_{Sp(X)}E(d\lambda)\lambda
+\end{equation*}
+dove $Sp(X)$ indica lo spettro di X e $E(d\lambda)$ la densità spettrale.
+
+Sia $\chi$ uno spazio di misura (non necessariamente misurabile).
+Considero $\Delta\subset\sigma(\chi)$ in cui $\Delta$ è un insieme e $\sigma(\chi)$ una $\sigma$-algebra.
+Allora,se $\Delta$  è un proiettore ortonormale
+\begin {equation*}
+E(\Delta)=\int_\Delta E(d\lambda)=P_{\Delta}  \textrm{è una misura a valori proiettivi (PVM).}
+\end{equation*}
+
+Se 
+\begin{equation*}
+\Delta_{1}\cap\Delta_{2}=\emptyset \textrm{(insiemi disgiunti),}
+\end{equation*} 
+allora 
+\begin{equation*}
+P_{\Delta_{1}}P_{\Delta_{2}}=0,
+\end{equation*}
+quindi sono ortogonali tra loro.
+Ci si può ricondurre al caso discreto, semplicemente suddividendo l'asse reale in intervallini su cui ognuno proietta.
+
+\underline{Proprietà:}
+\begin{enumerate}
+\item \begin{equation*}
+P_{\chi}= I_{\mathcal{H}}
+\end{equation*}
+Il proiettore corrisponde a tutto l'insieme.
+
+\item \begin{equation*}
+P_{\emptyset}=0
+\end{equation*}
+
+\item$$
+P_{\Delta_{1}}P_{\Delta_{2}}=0 \Longleftarrow \Delta_{1}\cap\Delta_{2}=\emptyset
+$$
+
+\item$\sigma$-additività:
+$$
+P(\bigcup{n}\Delta_{n})=\sum_{n}P_{\Delta_{n}}\Longleftarrow \Delta_{n}\cap\Delta_{m}=0 \forall n,m
+$$
+dove $\sum_{n}P_{\Delta_{n}}$ converge nella norma degli operatori (versione proiettiva della misura)
+
+\textbf{Osservazione:} $P\in\textit{B}(H)$ ma generalmente $Tr[P_{\Delta}]\leq\infty$.\\
+Se $\Delta$ è continuo, $Tr[P_{\Delta}]=\infty$
+\end{enumerate}
+
+\underline{Richiami:}
+\begin{itemize}
+\item
+$$
+Tr[P]=dim(\mathcal{H'}_{inv}\in\mathcal{H}),
+$$
+\begin{center}
+dimensioni dello spazio invariante su cui proietta
+\end{center}
+\item
+$$
+f(X)=\int_{Sp(X)}E(\lambda)d\lambda
+$$
+\end{itemize}
+
+
+\section{Operazioni su operatori hermitiani} %Operazioni su operatori hermitiani
+Si considerano gli operatori hermitiani $A$ e $B$.
+
+\textit{Due operatori hermitiani sono congiuntamente diagonalizzabili se e solo se commutano.}
+
+\textbf{Teorema:}Dati $A,B\in \mathcal{H}$, $\left[A,B\right]=0$. Allora $\mathcal{H}=\oplus_{n}\mathcal{H_{n}}$ in modo tale se applico $A$ e $B$ ad un vettore $v$, $Av=a_nv$, $Bv=b_nv$ con $v\in \mathcal{H}$
+Il che equivale a:
+\begin{equation*}\begin{split}
+A=UD_AU^{\dagger} \\
+B=UD_BU^{\dagger}
+\end{split}\end{equation*}
+con $D_A$ e $D_B$ diagonali (operatori moltiplicativi) e $U$ matrice unitaria.
+I due operatori sono diagonalizzati congiuntamente dallo stesso cambiamento di base.
+
+\begin{proof}
+\begin{equation*}\begin{split}
+\left[A,B\right]=\left[UD_AU^{\dagger},UD_BU^{\dagger}\right]=U\left[D_A,D_B\right]U^{\dagger}=0
+\end{split}\end{equation*}
+in quanto le trasformazioni unitarie preservano i commutatori, dunque il commutatore dei trasformati equivale al trasformato dei commutatori.
+\end{proof}
+
+\begin{proof}
+$$
+\mathcal{H}_A=span{\left |a,l \right\rangle}
+$$
+$\left |a,l \right\rangle$ indice di molteplicità o degenerazione
+\begin{equation*}\begin{split}
+A\left |a,l \right\rangle=a\left |a,l \right\rangle \\
+AB\left |a,l \right\rangle=BA\left |a,l \right\rangle=aB\left |a,l \right\rangle \Longrightarrow B\left |a,l \right\rangle \in \mathfrak{H}_A
+\end{split}\end{equation*}
+\end{proof}
+
+Verifico ora che la restrizione dell'operatore sia diagonalizzabile.\\
+Sia $P$ un proiettore ortonormale su $\mathcal{H}_A$.
+Allora, per definizione,
+\begin{equation*}\begin{split}
+B_a:=PBP \\
+B_a^{\dagger}=B_a
+\end{split}\end{equation*}
+quindi diagonalizzabile.
+
+Posso, inoltre, notare che, se
+$$
+\left |a,b,j \right\rangle\in\mathcal{H}_a
+$$
+(un autovettore con indice di degenerazione $j$), allora
+$$
+B_a\left |a,b,j \right\rangle=b\left |a,b,j \right\rangle
+$$
+Sfruttando la proprietà per cui se proietto $B$, questo resta nello stesso spazio, ottengo
+\begin{equation*}\begin{split}
+B\left |a,b,j \right\rangle=PB\left |a,b,j \right\rangle=PBP\left |a,b,j \right\rangle=B_a\left |a.b.j \right\rangle
+\end{split}\end{equation*}
+Si è costruito un set di autovettori sia di $A$ che di $B$.
+
+Se applico $A$, ottengo autovalore a (lo stesso vale per B)
+\begin{equation*}\begin{split}
+A\left |a,b,j \right\rangle=a\left |a,b,j \right\rangle \\
+B\left |a,b,j \right\rangle=b\left |a,b,j \right\rangle
+\end{split}\end{equation*}
+
+Siccome gli autospazi di $a$ decompongono $\mathcal{H}$ ed ognuno di questi, a sua volta, è descritto come decomposizione di $b$, allora
+$$
+\mathcal{H}=\oplus_{a}\mathcal{H_{a}}=\oplus_{a}\oplus_{b}\mathcal{H_{a,b}}
+$$
+Gli spazi sono ortogonali in quanto autospazi di operatori autoaggiunti.
+
+Generalizzando, per iterazione, si ha:
+\begin{equation*}\begin{split}
+A_1\dots A_n \quad \left[A_j,A_n\right]=0 \quad \forall j,k\\
+\Longrightarrow \mathcal{H}=\oplus_{n}\mathcal{H}_n \quad A_j\mathcal{H}_n=a_n^{\left(j\right)}=\mathcal{H}_n \\
+\end{split}\end{equation*}
+oppure
+$$
+\exists!\quad U:A_j=UD_AU^{\dagger}
+$$
+
+\textbf{Osservazione:} purché due operatori che commutino siano diagonalizzabili congiuntamente, bisogna verificare che la restrizione dell'operatore sia diagonalizzabile. Questo avviene se l'operatore è hermitiano, unitario, ma anche normale.
+
+Sia $N$ l'operatore normale, allora:
+\begin{equation*}\begin{split}
+NN^{\dagger}=N^{\dagger}N\Longleftrightarrow
+N=X+iY \quad \left[X,Y\right]=0
+\end{split}\end{equation*}
+Un operatore è normale se e solo se la sua parte reale e immaginaria commutano.
+Quindi diagonalizzare l'operatore $N$ vuol dire diagonalizzare congiuntamente $X$(parte reale) e $Y$(parte immaginaria).
+
+Se si considera una funzione di due operatori $f\left(A,B\right)$ con $A$ e $B$ che commutano, essa è ben definita.
+Se, invece, si considera una funzione  $f\left(A,B\right)$, i cui operatori non commutano, bisogna specificare l'ordinamento:
+1) ordinamento normale $a^{\dagger n}a^{m}$
+2) ordinamento antinormale
+3) ordinamento simmetrico $:f(a,a^{\dagger}):$
+
+\section{Funzioni esponenziali di operatori}
+Se si ha $e^{A+B}=\sum_{n=0}^{\infty }{\frac{1}{n!}\left(A+B\right)^n}$:
+\begin{equation*}\begin{split}
+\begin{cases}
+e^Ae^B\neq e^{A+B}, & \textrm{se} \left[A,B\right]\neq 0\\
+e^{A}e^B=e^{A+B+\frac{1}{2}\left[A,B\right]+\dots}, & \textrm{formula di Baker-Campbell-Hansdorff} \\
+\end{cases}
+\end{split}\end{equation*}
+
+\underline{Caso facile:} 
+Se $\left[A,B\right]=C \quad \left[A,C\right]=0 \quad \left[B,C\right]=0$,la serie si tronca:
+$$
+e^Ae^B=e^{A+B+\frac{1}{2}\left[A,B\right]}
+$$
+
+Definisco ora un "superoperatore'', cioè qualcosa che prende un operatore e lo manda in un altro.
+\textbf{Definizione:}$(adA)B=[A,B]$
+Quindi, posso scrivere:
+$$
+e^ABe^{-A}=e^{a\textrm{d}A}B=B+\left[A,B\right]+\frac{1}{2!}\left[A,\left[A,B\right]\right]+\dots
+$$
+
+L'ultimo caso si dimostra:
+\begin{equation*}\begin{split}
+A\left(x\right)=e^{xX}Ae^{-xX}
+\end{split}\end{equation*}
+con $A,X$ operatori lineari su $\mathfrak{H}$.
+Prima di procedere definiamo la derivata di un operatore (che mantiene l'ordinamento):
+\begin{equation*}\begin{split}
+\frac{dA\left(x\right)}{dx}=Xe^{xX}Ae^{-xX}-e^{xX}Ae^{-xX}X=\\
+=\left[X,A\left(x\right)\right]=e^{xX}[X,A]e^{-xX}
+\end{split}\end{equation*}
+
+Consideriamo l'equazione differenziale:
+\begin{equation*}\begin{split}
+\frac{dA\left(x\right)}{dx}=\left(adX\right)A\left(x\right) \quad \textrm{con condizione iniziale} A\left(0\right)=A
+\end{split}\end{equation*}
+
+Dalla teoria,
+\begin{equation*}\begin{split}
+\frac{dM\left(x\right)}{dx}=NM\left(x\right) \textrm{con condizione iniziale}M(0)=M
+\end{split}\end{equation*}
+in cui N agisce linearmente su M.
+$$
+\Longrightarrow M(x)=e^{xN}M\left(0\right)
+$$
+Quindi, la soluzione dell'equazione è:
+\begin{equation*}\begin{split}
+A\left(x\right)=e^{xa\textrm{d}X}A \\
+\Longrightarrow e^ABe^{-A}=e^{a\textrm{d}A}B
+\end{split}\end{equation*}
+essendo $N$ e $M$ qualsiasi cosa (vettore, matrice $\dots$).
+
+Nella teoria dei gruppi, troviamo poi definita l'azione del gruppo su se stesso:
+\\ $gag^{-1}:=$azione aggiunta$:=Ad(g)a$
+Anche per il commutatore vale: $(adb)a\equiv[b,a]$
+Infine,
+\begin{equation*}
+e^ABe^{-A}=Ad\left(e^A\right)B=e^(adA)B
+\end{equation*}
+%\end {document}

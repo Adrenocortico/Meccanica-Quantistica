@@ -1,0 +1,136 @@
+\section{Densità dello spin - Vettore di Bloch} %Densità dello spin - Vettore di Bloch
+Si scrive una generica combinazione lineare tale che abbia traccia unitaria:
+\begin{equation}\begin{split}
+\rho=\frac{1}{2}\left(\mathbb{I}+\bar n\cdot \bar \sigma\right)
+\end{split}\end{equation}
+con $\bar n\in \mathbb{R} ^3$ essendo $\left(\mathbb{I},\bar \sigma\right)$ una base per l'operatore spazio autoaggiunto.
+
+Si diagonalizza $\rho$: la positività è:
+\begin{equation}\begin{split}
+\bar n\cdot \bar \sigma\left |\pm \right\rangle=\pm ||\bar u||\left |\pm \right\rangle \\
+\left(\mathbb{I}+\bar n\cdot \bar \sigma\right)\left |\pm \right\rangle=1\pm ||\bar u||\ge 0 \\
+\Longleftrightarrow ||\bar u||\le 1 \\
+\Longrightarrow \rho\ge 0 \Longleftrightarrow ||\bar u||\le 1
+\end{split}\end{equation}
+
+Si ha una palla $B_3$ in 3D tale che sia un set convesso con:
+\begin{itemize}
+\item Stati interni: stati misti
+\item Stati sul bordo: stati puri
+\end{itemize}
+Essendo $\rho=\frac{1}{2}\mathbb{I}$.
+
+Si vuole far evolvere $\rho$ nel tempo:
+\begin{equation}\begin{split}
+\rho\left(t\right)=\\
+\sum_n{p_n\left |\psi _n\left(t\right) \right\rangle\left\langle \psi _n\left(t\right)\right |}=\\
+=\sum_n{p_nU_t\left |\psi _n \right\rangle\left\langle \psi _n\right |U_t^{\dag}}=\\
+=U_t\rho_tU_t^{\dag}
+\end{split}\end{equation}
+essendo $U_t=e^{-\frac{it}{\hbar }H}$.
+
+I ricava l'\textbf{equazione di Liouville}:
+\begin{equation}\begin{split}
+i\hbar \partial _t\rho=i\hbar \frac{1}{i\hbar }\left(H\rho -\rho H\right)=\left[H,\rho\right]
+\end{split}\end{equation}
+
+Si possono vedere:
+\begin{itemize}
+\item Heisenberg picture:
+\begin{equation}\begin{split}
+i\hbar \frac{\textrm{d}}{\textrm{d}t}X=\left[X,H\right]
+\end{split}\end{equation}
+\item Schrödinger picture:
+\begin{equation}\begin{split}
+i\hbar \frac{\textrm{d}}{\textrm{d}t}\rho=\left[H,\rho\right]
+\end{split}\end{equation}
+\end{itemize}
+
+Si ricava quindi l'aspettazione:
+\begin{equation}\begin{split}
+\left\langle X \right\rangle_t=Tr\left[X\rho\left(t\right)\right]=Tr\left[x\left(t\right)\rho\right]
+\end{split}\end{equation}
+
+\section{Stati congiunti} %Stati congiunti
+Si ha un'osservabile $A=\sum_n{a_nP_n^A}$ con $P_n^A$ un proiettore ortonormale sull'autospazio $a_n$. \\L'aspettazione di $A$ è:
+\begin{equation}\begin{split}
+\left\langle A \right\rangle=\sum_n{p_n^Aa_n}=\sum_n{a_n\left\langle P^A_n \right\rangle}=Tr\left[\rho A\right]
+\end{split}\end{equation}
+considerando $p_n^A=Tr\left[\rho P_n^A\right]=\left[\left\langle P^A \right\rangle\right]$ la probabilità.
+
+Si riscrive la regola di Born, nel modo più generale per l'osservabile:
+\begin{equation}\begin{split}
+A=\sum_n{a_nP_n^A} \\
+\sum_n{P_n^A}=\mathbb{I} \\
+P_n^A=\left\langle P_n^A \right\rangle=Tr\left[\rho P_n^A\right]
+\end{split}\end{equation}
+
+Si hanno due osservabili in due sistemi:
+\begin{equation}\begin{split}
+\begin{cases}
+A, & \textrm{nel sistema 1}\\
+B, & \textrm{nel sistema 2}
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+A\otimes B\in \textrm{Lin}\left(\mathcal{H}_1\otimes \mathcal{H}_2\right)
+\end{split}\end{equation}
+
+La probabilità congiunta è:
+\begin{equation}\begin{split}
+p_{A,B}\left(n,m\right)=\left\langle P_n^A\otimes P_m^B \right\rangle=Tr\left[\left(P_n^A\otimes P_m^B\right)R\right]
+\end{split}\end{equation}
+con $R$ l'operatore densità per lo stato congiunto del sistema $1+2$:
+\begin{equation}\begin{split}
+R=\\
+=\left |\psi  \right\rangle\left\langle \psi \right |\otimes \left |\phi \right\rangle\left\langle \phi\right |=\\
+=\left(\left |\psi  \right\rangle\otimes \left |\phi \right\rangle\right)\left(\left\langle \psi \right |\otimes \left\langle \phi\right |\right)
+\end{split}\end{equation}
+
+La probabilità marginale è:
+\begin{equation}\begin{split}
+p_A\left(n\right)=\sum_m{p_{A,B}\left(n,m\right)}=\sum_m{\left\langle P_n^A\otimes P_m^B \right\rangle}=\left\langle P_n^A\otimes \mathbb{I}_{\mathcal{H}2} \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle A \right\rangle=\\
+=\sum_n{a_np_a\left(n\right)}=\\
+=\sum_n{a_n\left\langle P_n^A\otimes \mathbb{I}_{\mathcal{H}2} \right\rangle}=\\
+=\left\langle A\otimes \mathbb{I}_2 \right\rangle =\\
+\Longrightarrow \textrm{si ignora il sistema }2\\
+\Longrightarrow \left\langle A \right\rangle=Tr\left[R\left(A\otimes \mathbb{I}\right)\right]=\\
+=Tr\left[Tr_2\left[R\right]A\right]=\\
+=Tr\left[\rho A\right]
+\end{split}\end{equation}
+considerando $\rho=Tr_2\left[R\right]$ lo stato marginale dello stato congiunto per il sistrma $1$.
+
+\begin{equation}\begin{split}
+1=Tr\left[R\right]=Tr\left[Tr_2\left[R\right]\right]=Tr\left[\rho\right] \\
+\left\langle \psi |\rho |\psi  \right\rangle=\left\langle \psi |Tr_2\left[R\right] | \psi  \right\rangle \ge 0
+\end{split}\end{equation}
+
+Ignorare un sistema vuol dire fare la traccia parziale sull'altro.
+
+\subsection{Stato di singoletto} %Stato di singoletto
+Stato congiunto di due sistemi. Esso sta in $\mathbb{C} ^2\otimes \mathbb{C} ^2$. È uno stato puro. Esso è uno stato entangled, cioè non separabile.
+\begin{equation}\begin{split}
+\left |\psi  \right\rangle=\frac{1}{\sqrt{2}}\left(\left |0 \right\rangle\left |1 \right\rangle-\left |1 \right\rangle\left |0 \right\rangle\right)
+\end{split}\end{equation}
+
+La matrice densità è:
+\begin{equation}\begin{split}
+R=\\
+=\frac{1}{2}\left(\left |0 \right\rangle\left |1 \right\rangle - \left |1 \right\rangle\left |0 \right\rangle\right)\left(\left\langle 0\right |\left\langle 1\right |-\left\langle 1\right |\left\langle 0\right |\right)=\\
+=\frac{1}{2}\left(\left |0 \right\rangle\left\langle 0\right |\otimes \left |1 \right\rangle\left\langle 1\right |+ \left |1 \right\rangle\left\langle 1\right |\otimes \left |0 \right\rangle\left\langle 0\right | - \left |0 \right\rangle\left\langle 1\right |\otimes \left |1 \right\rangle\left\langle 0\right | -\left |1 \right\rangle\left\langle 0\right | \otimes \left |0 \right\rangle\left\langle 1\right |\right)
+\end{split}\end{equation}
+
+Si vuole calcolare la matrice densità dello stato marginale:
+\begin{equation}\begin{split}
+\rho=Tr_2\left[R\right]=\\
+= =\\
+=\frac{1}{2}\left |0 \right\rangle\left\langle 0\right |+\frac{1}{2}\left |1 \right\rangle\left\langle 1\right |=\\
+=\frac{1}{2}\mathbb{I} \quad \textrm{stato massimamente caotico}
+\end{split}\end{equation}
+
+Lo stato marginale di uno stato puro è puro. C'è una non località.
+
+%MANCA UNA PARTE

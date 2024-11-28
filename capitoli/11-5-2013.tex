@@ -1,0 +1,130 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage{lmodern}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+
+%\renewcommand{\vec}{\bm}
+
+%\author{Mariacristina~Lo Presti}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{11-5-2013}
+
+%\begin{document}
+%\maketitle
+\section{Ensemble canonico e gran canonico} %Ensemble canonico e gran canonico
+\paragraph{Caso canonico} %Caso canonico
+Mentre nell'ensemble microcanonico l'energia è definita, nel caso canonico non è così. In quest'ultimo infatti l'energia non è definita a causa degli scambi che avvengono fra sistema e riserva e lo stesso discorso vale per il numero di particelle N. Ciò che invece è definita in questo ensemble è la temperatura e per tale motivo bisogna passare alla descrizione del sistema in termini di quest'ultima facendo attenzione però a non perdere informazione.
+Innanzitutto si prenda la funzione di partizione $Z=\sum_{\psi }{e^{-\beta E_\psi }}$ ricordando che $\beta=\frac{1}{k_BT}$. Derivandone il logaritmo rispetto a $\beta$ e cambiandone il segno, si ottiene l'energia:
+\begin{equation}\begin{split}
+-\frac{\partial \ln{\left(Z\right)}}{\partial \beta}=\frac{\sum_{\psi }{e^{-\beta E_\psi }E_\psi }}{Z}=\left\langle H \right\rangle=Tr\left[\rho H\right]=U
+\end{split}\end{equation}
+
+Si osserva che la funzione di partizione Z è una funzione generatrice dell'energia.
+
+Si ha però che $U=U\left(T,V,N\right)$ non è una descrizione termodinamica completa a causa della dipendenza dalla temperatura. 
+Procediamo effettuando la trasformata di Legendre ottenendo poi la definizione di \textbf{energia libera di Helmholtz}:
+\begin{equation}\begin{split}
+U\left(S,V,N\right)\longrightarrow U\left[T\right]=U-S\frac{\partial U}{\partial S}=U-TS=A\left(T,V,N\right)
+\end{split}\end{equation}
+considerando $T=\frac{\partial U}{\partial S}$.
+
+Ora facendo l'antitrasformata si ha:
+\begin{equation}\begin{split}
+A=U+T\frac{\partial A}{\partial T} \longrightarrow -S=\frac{\partial A}{\partial T}
+\end{split}\end{equation}
+
+Troviamo ora una relazione che lega l'energia libera di Helmholtz alla funzione di partizione:
+\begin{equation}\begin{split}
+A=-\frac{\partial \ln{\left(Z\right)}}{\partial \beta}-\beta\frac{\partial A}{\partial \beta} \Longrightarrow A=-\frac{1}{\beta}\ln{\left(Z\right)}.
+\end{split}\end{equation}
+Dimostrazione:
+\begin{equation}\begin{split}
+A+\beta\frac{\partial A}{\partial \beta}=-\frac{\partial \ln{\left(Z\right)}}{\beta} \\
+-\frac{1}{\beta}\ln{\left(Z\right)}+\beta\left(\frac{1}{\beta^2}\ln{\left(Z\right)}-\frac{1}{\beta}\frac{\partial \ln{\left(Z\right)}}{\partial \beta}\right)=-\frac{\partial \ln{\left(Z\right)}}{\beta}
+\end{split}\end{equation}
+Ricapitolando: 
+\begin{equation}\begin{split}
+A=U\left[T\right]=-\frac{1}{\beta}\ln{\left(Z\right)}.
+\end{split}\end{equation}
+
+\subsection{Caso gran canonico} %Caso gran canonico
+Nel caso gran canonico bisogna passare ad una formulazione che non solo deve basarsi sulla temperatura $T$, ma anche sul potenziale chimico $\mu$.
+Si ricorda che nella così detta descrizione energetica valgono le relazioni seguenti $\mu=\frac{\partial U}{\partial N}$, $-P=\frac{\partial U}{\partial V}$ e $T=\frac{\partial U}{\partial S}$. 
+Procedendo analogamente al caso precedente, si faccia la trasformata di Legendre, che in questo caso sarà doppia. Da essa si otterrà il \textbf{potenziale gran canonico}:
+\begin{equation}\begin{split}
+U\longrightarrow U\left[T,\mu\right]=U-S\frac{\partial U}{\partial S}-N\frac{\partial U}{\partial N}=U-TS-\mu N=\frac{\partial U}{\partial S}S+\frac{\partial U}{\partial V}V+\frac{\partial U}{\partial N}N-S\frac{\partial U}{\partial S}-N\frac{\partial U}{\partial N}=-PV\left(T,V,\mu\right)=\Omega \left(T,V,\mu\right)
+\end{split}\end{equation}
+Dove si è usata la relazione di Eulero per esprimere $U$ dato che è una funzione omogenea.
+Si faccia attenzione al fatto di considerare $PV$ come una funzione e non come un semplice prodotto di variabili 
+\begin{equation}\begin{split}
+PV=PV\left(T,V,\mu\right)
+\end{split}\end{equation}
+
+Si cerca la relazione fra il potenziale gran canonico e la funzione di gran partizione, che chiamiamo L:
+Svolgiamo la derivata:
+\begin{equation}\begin{split}
+\frac{1}{\beta}\frac{\partial \ln{\left(L\right)}}{\partial \mu}=\frac{\sum_{\psi }{e^{-\beta \left(E_\psi -\mu N_\psi \right)}N_\psi }}{L}=\left\langle N_\psi  \right\rangle=N 
+\end{split}\end{equation}
+
+Compiendo l'antitrasformata si ha:
+\begin{equation}\begin{split}
+\frac{\partial \Omega}{\partial \mu}=N \Longrightarrow \frac{\Omega}{k_BT}=\ln{\left(L\right)}
+\end{split}\end{equation}
+
+\section{Classificazione degli stati} %Classificazione degli stati
+Prima di procedere è utile discutere sulla classificazione degli stati. Sia $K$ il gruppo di numeri quantici che classificano lo stato, definito come segue:
+\begin{equation}\begin{split}
+K=\left(n,l,m,m_s\right)
+\end{split}\end{equation}
+dove $n$ è il momento angolare totale, l la componente z del momento angolare, $m$ il momento magnetico di spin e $m_s$ numero quantico principale.
+
+Nel caso dei fermioni si ha che il numero di particelle che possono avere il numero $K$, per il principio di esclusione di Pauli, è:
+\begin{equation}\begin{split}
+n_k=0,1
+\end{split}\end{equation}
+Nel caso dei bosoni si ha che il numero di particelle che possono avere il numero $K$ è:
+\begin{equation}\begin{split}
+n_k=0,1,2,\dots,\infty 
+\end{split}\end{equation}
+
+I numeri $n_k$ vengono chiamati numeri di occupazione.
+
+L'energia è:
+\begin{equation}\begin{split}
+E_\psi =E=\sum_k{\epsilon_kn_k}
+\end{split}\end{equation}
+dove $\epsilon_k$ è l'autovalore dell'energia di particella singola corrispondente all'autostato che ha gruppi di numeri quantici K; $n_k$ è il numero di particelle che hanno numeri quantici $k$.
+
+\section{Gas perfetti - particelle indistinguibili} %Gas perfetti - particelle indistinguibili
+Viene definita la \textbf{fugacità}:
+\begin{equation}\begin{split}
+\lambda=e^{\beta \mu}
+\end{split}\end{equation}
+
+Si ha la relazione tra la funzione di partizione e quella di gran partizione:
+\begin{equation}\begin{split}
+L\left(\beta,\mu,V\right)=\sum_{N=0}^{\infty }{\lambda^NZ\left(\beta,N,V\right)}
+\end{split}\end{equation}
+
+Si considerino gas liberi, cioè senza interazioni, formati o da soli bosoni o da soli fermioni e ci si pone nel caso gran canonico dato che è quello che presenta meno vincoli e quindi da luogo a calcoli sostanzialmente più semplici:
+\begin{equation}\begin{split}
+L\left(\beta,\mu,V\right)=\sum_{N=0}^{\infty }{e^{\beta\mu N}}\sum_{\left\{n_k\right\}}{\delta\left(\sum_k{n_k-N}\right)e^{-\beta \sum_k{\epsilon_kn_k}}}
+\end{split}\end{equation}
+considerando lo stato $\psi $ classificato come $\psi \equiv \left\{n_k\right\}$ $\forall k$.
+
+%\end{document}

@@ -1,0 +1,83 @@
+Si hanno i risultati:
+\begin{equation}\begin{split}
+\psi =A\left[e^{ikz}+f\left(\theta\right)\frac{e^{ikr}}{r}\right]
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\psi _E\left(r,\theta\right)=A\sum_{l=0}^{\infty }{i^l\left(2l+1\right)\left[j_l\left(kr\right)+ika_lh^{\left(1\right)}_l\left(kr\right)\right]P_l\left(\cos{\left(\theta\right)}\right)}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+f\left(\theta\right)=\sum_{l=0}^{\infty }{\left(2l+1\right)a_lP_l\left(\cos{\left(\theta\right)}\right)}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\frac{d\sigma}{d\Omega}=\left|f\left(0\right)\right|^2
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\sigma=4\pi \sum_{l=0}^{\infty }{\left(2l+1\right)\left|a_l\right|^2}
+\end{split}\end{equation}
+
+\subsection{Sfasamenti} %Sfasamenti
+Si devono prendere le forme asintotiche di $j_l$ e $h_l$:
+\begin{equation}\begin{split}
+j_l\left(x\right)\rightarrow \frac{\sin{\left(x-\frac{l\pi}{2}\right)}}{x}=\frac{e^{i\left(x-l\frac{\pi}{2}\right)}-e^{-i\left(x-l\frac{\pi}{2}\right)}}{2ix}=\frac{\left(-1\right)^li^le^{il}-i^le^{-ix}}{2ix}=\frac{i^{l-1}}{2x}\left[\left(-1\right)^le^{ix}-e^{-ix}\right]
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+h^m_l\left(x\right)\rightarrow \frac{\left(-i\right)^{l+1}}{x}e^{ix}.
+\end{split}\end{equation}
+Queste vengono inserite in $\psi _E$:
+\begin{equation}\begin{split}
+\psi _E\left(r,\theta\right)=\\
+=A\sum_{l=0}^{\infty }{i^l\left(2l+1\right)\left[\frac{i^{l-1}}{2kr}\left[\left(-1\right)^le^{ikr}-e^{-ikr}\right]+ika_l\frac{\left(-i\right)^{l+1}}{kr}e^{ikr}\right]P_l\left(\cos{\left(\theta\right)}\right)}=\\
+= =\\
+=A\sum_{l=0}^{\infty }{\left[\frac{2l+1}{2ik}\frac{e^{ikr}}{r}-\frac{2l+1}{2ikr}\left(-1\right)^le^{-ikr}+\frac{a_l\left(2l+1\right)}{r}e^{ikr}\right]P_l\left(\cos{\left(\theta\right)}\right)}=\\
+=A\sum_{l=0}^{\infty }{\frac{2l+1}{2ir}\left[\left(1+2ika_l\right)\frac{e^{ikr}}{r}-\left(-1\right)^l\frac{e^{-ikr}}{r}\right]P_l\left(\cos{\left(\theta\right)}\right)}
+\end{split}\end{equation}
+
+Bisogna che sia:
+\begin{equation}\begin{split}
+\left|1+2ika_l\right|=1\quad \forall l
+\end{split}\end{equation}
+e perciò si definisce $\delta_o$:
+\begin{equation}\begin{split}
+1+2ika_l=e^{i2\delta_l}
+\end{split}\end{equation}
+e si ricava:
+\begin{equation}\begin{split}
+a_l=\frac{e^{2i\delta_l}-1}{2ik}=e^{i\delta_l}\frac{e^{i\delta_l}-e^{-i\delta_l}}{2ik}=\frac{1}{k}e^{i\delta_l}\sin{\left(\delta_l\right)}.
+\end{split}\end{equation}
+Si ha quindi:
+\begin{equation}\begin{split}
+\begin{cases}
+f\left(\theta\right)=\sum_{l=0}^{\infty }{\left(2l+1\right)\frac{1}{k}e^{i\delta_l}\sin{\left(\delta_l\right)}P_l\left(\cos{\left(\theta\right)}\right)}\\
+\sigma=\frac{4\pi}{k^2}\sum_{l=0}^{\infty }{\left(2l+1\right)\sin^2{\left(\delta_l\right)}}
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\sigma_l=\frac{4\pi}{k^2}\left(2l+1\right)\sin^2{\left(\delta_l\right)}\le \frac{4\pi}{k^2}\left(2l+1\right)
+\end{split}\end{equation}
+
+Per ricavare gli sfasamenti:
+\begin{equation}\begin{split}
+\psi\left(r,\theta\right) =\\
+=A\sum_{l=0}^{\infty }{i^l\left(2l+1\right)\left[j_l\left(kr\right)ie^{idelta_l}\sin{\left(\delta_l\right)}h^{\left(1\right)}_l\left(kr\right)\right]P_l\left(\cos{\left(\theta\right)}\right)}=\\
+= =\\
+= =\\
+=A\sum_{l=0}^{\infty }{i^l\left(2l+1\right)e^{i\delta_l}\left[\cos{\left(\delta_l\right)}j_l\left(kr\right)-\sin{\left(\delta_l\right)}n_l\left(kr\right)\right]P_l\left(\cos{\left(\theta\right)}\right)}
+\end{split}\end{equation}
+Bisogna andare ora nella regione dove il potenziale è diverso da $0$.
+
+Per esempio, se si vuole $\delta_0$:
+\begin{equation}\begin{split}
+\cos{\left(\delta_0\right)}j_0\left(ka\right)=\sin{\left(\delta_0\right)}n_0\left(ka\right)\\
+\Longrightarrow \tan{\left(\delta_0\right)}=\frac{j_0\left(ka\right)}{n_0\left(ka\right)}=-\tan{\left(ka\right)}\\
+\Longrightarrow \delta_0=-ka
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\sigma_0=\frac{4\pi}{k^2}\sin^2{\left(ka\right)}\simeq \frac{4\pi}{k^2}k^2a^2=4\pi a^2
+\end{split}\end{equation}
+
+\section{Diagramma di Argand} %Diagramma di Argand
+Considerando
+\begin{equation}\begin{split}
+ka_l=\frac{e^{2i\delta_l}-1}{2i}=\frac{1}{2}i+\frac{1}{2}e^{i\left(2\delta_l-\frac{\pi}{2}\right)}
+\end{split}\end{equation}
+si nota che $ka_l$,sta su una circonferenza con centro il punto $0,\frac{1}{2}i$ e di raggio $\frac{1}{2}$.

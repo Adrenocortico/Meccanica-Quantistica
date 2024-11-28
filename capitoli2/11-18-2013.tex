@@ -1,0 +1,121 @@
+\section{Livello doppiamente degenere} %Livello doppiamente degenere
+\begin{equation}\begin{split}
+\begin{cases}
+H_0\left |\psi _a^{\left(0\right)} \right\rangle=E^{\left(0\right)}\left |\psi _a^{\left(0\right)} \right\rangle \\
+H_0\left |\psi _b^{\left(0\right)} \right\rangle=E^{\left(0\right)}\left |\psi _b^{\left(0\right)} \right\rangle
+\end{cases}
+\end{split}\end{equation}
+Si ha:
+\begin{equation}\begin{split}
+H_0\left(\alpha\left |\psi _a ^{\left(0\right)}\right\rangle+\beta\left |\psi _b^{\left(0\right)} \right\rangle\right)=E^{\left(0\right)}\left(\alpha\left |\psi _a ^{\left(0\right)}\right\rangle\beta\left |\psi _b^{\left(0\right)} \right\rangle\right)
+\end{split}\end{equation}
+
+Sia:
+\begin{equation}\begin{split}
+H=H_0+H_P=H_0+\lambda H_0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+H\left |\psi  \right\rangle=E\left |\psi  \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+E=E^{\left(0\right)}+\lambda E^{\left(1\right)}=E^{\left(0\right)}+\delta E^{\left(1\right)} \\
+\left |\psi  \right\rangle=\left |\psi ^{\left(0\right)} \right\rangle+\lambda\left |\psi ^{\left(1\right)} \right\rangle=\left |\psi ^{\left(0\right)} \right\rangle+\left |\delta\psi ^{\left(1\right)} \right\rangle
+\end{cases}
+\end{split}\end{equation}
+
+Si ricava $\lambda$:
+\begin{equation}\begin{split}
+H_0\left |\psi ^{\left(1\right)} \right\rangle+H'\left |\psi ^{\left(0\right)} \right\rangle=E^{\left(0\right)}\left |\psi ^{\left(1\right)} \right\rangle+E^{\left(1\right)}\left |\psi ^{\left(0\right)} \right\rangle \\
+\left\langle \psi _a^{\left(0\right)}|H_0|\psi ^{\left(1\right)} \right\rangle+\left\langle \psi _a^{\left(0\right)}|H'|\psi ^{\left(0\right)} \right\rangle=E^{\left(0\right)}\left\langle \psi _a^{\left(0\right)}|\psi ^{\left(1\right)} \right\rangle+E^{\left(1\right)}\left\langle \psi _a^{\left(0\right)}|\psi ^{\left(0\right)} \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+\alpha\left\langle \psi _a^{\left(0\right)}|H'|\psi _a^{\left(0\right)} \right\rangle+\beta\left\langle \psi _a^{\left(0\right)}|H'|\psi _b^{\left(0\right)} \right\rangle=E^{\left(1\right)}\alpha \\
+\alpha\left\langle \psi _b^{\left(0\right)}|H'|\psi _a^{\left(0\right)} \right\rangle+\beta\left\langle \psi _b^{\left(0\right)}|H'|\psi _b^{\left(0\right)} \right\rangle=E^{\left(1\right)}\beta
+\end{cases}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\section{Correzione agli autovalori} %Correzione agli autovalori
+\begin{equation}\begin{split}
+\left(H_0-E^{\left(0\right)}\right)\left |\psi _i^{\left(1\right)} \right\rangle=-\left(H'-E_i^{\left(1\right)}\right)\left |\psi _i^{\left(0\right)} \right\rangle
+\end{split}\end{equation}
+Si supponga di avere $\psi _i$:
+\begin{equation}\begin{split}
+\left |\psi _i^m \right\rangle+\sum_{m \textrm{ degenere}}{\gamma_m\left |\psi _m^{\left(0\right)} \right\rangle}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+\left(H_0-E^{\left(0\right)}\right)\sum_{m\textrm{ deg}}{c_m^{\left(i\right)}\left |\psi _m^{\left(0\right)} \right\rangle}=\\
+=-\left(H'-E^{\left(1\right)}\right)\left |\psi _i^{\left(0\right)} \right\rangle=\\
+=\sum_{m\textrm{ deg}}{c_m^{\left(i\right)}\left(E_m^{\left(0\right)}-E^{\left(0\right)}\right)}\left |\psi _m^{\left(0\right)} \right\rangle
+\end{split}\end{equation}
+Con $n$ dentro al sottospazio degenere
+\begin{equation}\begin{split}
+\sum_{m\textrm{ deg}}{c_m^{\left(i\right)}\left(E_m^{\left(0\right)}-E^{\left(0\right)}\right)}\left\langle \psi _n^{\left(0\right)}|\psi _m^{\left(0\right)} \right\rangle=\\
+=-\left\langle \psi _n^{\left(0\right)}|H'-E_i^{\left(1\right)}|\psi _i^{\left(0\right)} \right\rangle=\\
+=\left\langle \psi _n^{\left(0\right)}|H'|\psi _i^{\left(0\right)} \right\rangle+E_i^{\left(0\right)}\left\langle \psi _i^{\left(0\right)}|\psi _i^{\left(0\right)} \right\rangle
+\end{split}\end{equation}
+Con $n$ dentro al sottospazio degenere
+\begin{equation}\begin{split}
+c_n^{\left(i\right)}\left(E_n^{\left(0\right)}-E^{\left(0\right)}\right)=-\left\langle \psi _0^{\left(0\right)}|H'|\psi _i^{\left(0\right)} \right\rangle \\
+\Longrightarrow c_n^{\left(i\right)}=\frac{\left\langle \psi _0^{\left(0\right)}|H'|\psi _i^{\left(0\right)} \right\rangle}{\left(E^{\left(0\right)}-E_n^{\left(0\right)}\right)}
+\end{split}\end{equation}
+
+In definitiva:
+\begin{equation}\begin{split}
+\left |\psi _i^{\left(1\right)} \right\rangle=\sum_{m\textrm{ deg}}{\frac{\left\langle \psi _0^{\left(0\right)}|H'|\psi _i^{\left(0\right)} \right\rangle}{\left(E^{\left(0\right)}-E_m^{\left(0\right)}\right)}\left |\psi _m^{\left(0\right)} \right\rangle}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\begin{teorema}
+Sia $A$ e che esso commuti con $H'$:
+\begin{equation}\begin{split}
+\left[A,H_0\right]=\left[A,H'\right]=0.
+\end{split}\end{equation}
+%MANCA U A PARTE
+\end{teorema}
+\begin{proof}
+\begin{equation}\begin{split}
+\left\langle \psi _a|\left[A,H'\right]|\psi _b \right\rangle=0 \\
+=\left\langle \psi _a|AH'|\psi _b \right\rangle-\left\langle \psi _a|H'A|\psi _b \right\rangle=
+=\mu\left\langle \psi _a|H'|\psi _b \right\rangle-\nu\left\langle \psi _a|H'|\psi _b \right\rangle=H'_{a,b}\left(\mu-\nu\right)=0
+\end{split}\end{equation}
+\end{proof}
+
+\subsection{Problemi a simmetria rettngolare} %Problemi a simmetria rettangolare
+Sia $V\left(\bar x\right)=V\left(x\right)+V\left(y\right)+V\left(z\right)$:
+\begin{equation}\begin{split}
+\left(-\frac{\hbar ^2}{2m}\nabla ^2+V\left(\bar x\right)\right)\bar \psi =E\bar \psi 
+\end{split}\end{equation}
+con $\bar \psi =\psi \left(x\right)\psi \left(y\right)\psi \left(z\right)$.
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{\partial ^2}{\partial x^2}\psi \left(x\right)\phi \left(t\right)\chi \left(z\right)+\\
+-\frac{\hbar ^2}{2m}\frac{\partial ^2}{\partial y^2}\psi \left(x\right)\phi \left(t\right)\chi \left(z\right)+\\
+-\frac{\hbar ^2}{2m}\frac{\partial ^2}{\partial z^2}\psi \left(x\right)\phi \left(t\right)\chi \left(z\right)+\\
+V\left(x\right)\psi \phi\chi+V\left(y\right)\psi \phi\chi+V\left(x\right)\psi \phi\chi=\\
+=E\psi \phi\chi
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left(-\frac{\hbar ^2}{2m}\frac{\partial ^2\psi }{\partial x^2}\frac{1}{\psi }\right)\cdot \left(-\frac{\hbar ^2}{2m}\frac{\partial ^2\phi }{\partial y^2}\frac{1}{\phi }\right)\cdot \left(-\frac{\hbar ^2}{2m}\frac{\partial ^2\chi }{\partial z^2}\frac{1}{\chi }\right)+V\left(x\right)+V\left(y\right)+V\left(z\right)=\\
+=E=\\
+E_x+E_y+E_z
+\end{split}\end{equation}
+
+\subsection{Buca di potenziale in 3D}
+\begin{esempio}[Griffiths]
+Si ha:
+\begin{equation}\begin{split}
+V\left(\bar x\right)
+\begin{cases}
+0, & 0\le x \le a, 0\le y \le a, 0\le z\le a\\
+\infty , & \textrm{altrove}
+\end{cases}
+\end{split}\end{equation}
+%MANCA UNA PARTE
+\end{esempio}

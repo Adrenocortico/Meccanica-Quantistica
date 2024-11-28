@@ -1,0 +1,172 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+
+%\renewcommand{\vec}{\bm}
+
+%\author{Ghio, Crestan, Favre}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{14 Ottobre 2013}
+
+%\begin{document}
+%\maketitle
+
+\section{Operatori} %Operatori
+Sia $B$ un operatore limitato cioè $B \in \mathcal{B}(\mathcal{H}) =\lbrace B: \mathcal{H} \rightarrow \mathcal{H} : \parallel B\psi\parallel \leq c\parallel \psi \parallel \forall \psi \in \mathcal{H} \rbrace$, ove definiamo norma di $B$:
+$$
+\parallel B \parallel := sup_{\parallel \psi \parallel \leq 1} \parallel B\psi \parallel
+$$
+$\textbf {B}(\mathcal{H})$ è un'algebra di Banach, cioè è uno spazio lineare chiuso rispetto alla combinazione lineare di operatori, rispetto alla composizione di operatori e infine chiuso in norma.
+\subsection{Operatore coniugato hermitiano}
+Consideriamo sempre operatori $L$ densamente definiti ($L$ densamente definito $\Leftrightarrow$ $D_{L}$ suo dominio denso in $\mathcal{H}$).\\
+Distinguiamo due situazioni ricorrenti complementari:\\
+Caso 1) $L$ limitato\\
+$\forall g\in \mathcal{H} ,\ \langle g \mid Lf\rangle $ definisce un funzionale lineare continuo e limitato valutato su $f$ (significa applicare l'operatore $L$ a $f$ e farne il prodotto scalare con $g$). 
+Per il teorema di Riesz-Frechét: \\
+$\exists ! \ h_{L} \in \mathcal{H} : \langle h_{L} \mid f \rangle = \langle g \mid Lf \rangle$ funzionale lineare continuo e limitato in $f$.(Dove $h_{L}$ è un vettore lineare in g). Questo definisce un operatore lineare continuo e limitato, l'aggiunto di $L$, che chiamiamo $L^{\dag}$ hermitiano coniugato di $L$, tramite la relazione:
+$$
+\langle g \mid Lf \rangle =: \langle L^{\dag} g \mid f \rangle
+$$
+Si verifica che:
+$$
+(L^{\dag})^{\dag} = L
+$$ $$
+(aL) ^{\dag} = a^{\dag} L^{\dag}
+$$ $$
+(L + M)^{\dag} = L^{\dag} + M^{\dag}
+$$ $$
+(ML)^{\dag} = L^{\dag}M^{\dag} $$
+e se $x$ operatore moltiplicativo si verifica che $x^{\dag}=x^{*}$.\\
+
+Se $\langle g \mid Sf \rangle = \langle Sg \mid f \rangle \ \forall f,g \ \in D_{S} \Rightarrow S$ è hermitiano cioè $S=S^{\dag}$. In tal caso  $\langle f \mid S \mid f \rangle = \langle f \mid Sf \rangle = \langle Sf \mid f \rangle = \langle f \mid Sf \rangle ^{*} \Rightarrow \langle f \mid S \mid f \rangle \in R$ cioè $S$ è un operatore reale (che per operatori limitati è sinonimo di hermitiano).\\
+Usando la disuguaglianza di Schwartz e la definizione di norma di un operatore (per un operatore reale): \\
+$\mid \langle g \mid Lf \rangle \mid \ \leq \ \parallel L \parallel \parallel f \parallel \parallel g \parallel \Rightarrow - \parallel L \parallel \parallel f \parallel \parallel g \parallel \leq \langle f \mid Lf \rangle \leq \parallel L \parallel \parallel f \parallel \parallel g \parallel$ \\
+
+Se $\langle f \mid S \mid f \rangle \geq 0 \forall f \in \mathcal{H} \Rightarrow S$ è un operatore positivo.
+\\ \\
+Caso 2) $L$ non limitato (sempre densamente definito) \\
+In questo caso anche estendendo l'operatore a tutto $\mathcal{H}$ in generale non vale l'implicazione $limitato \Rightarrow continuo$. \\
+$A$ chiuso (il grafo è chiuso) $\Rightarrow D_{A^{\dag}}$ denso in $\mathcal{H} \Rightarrow (A^{\dag})^{\dag}=A$\\
+In genere $(A^{\dag})^{\dag}$ estende il dominio dell'operatore.\\
+Un operatore $A$ si definisce simmetrico se $\langle v \mid Au \rangle = \langle Av \mid u \rangle \ \forall u,v \in D_{A}$ e in tal caso $A \subset A^{\dag}$ cioè $D_{A} \subset D_{A^{\dag}} \ e \ A\equiv A^{\dag}$ su $D_{A}$.\\
+Allora $A$ autoaggiunto se $D_{A} = D_{A^{\dag}}$ e $A$ è simmetrico ovvero $A=A^{\dag}$ nel senso che anche i domini sono uguali.
+Il caso non limitato è il più frequente. %24.33
+
+\subsection{Precisazioni sulla traccia} %Precisazioni sulla traccia
+La traccia è invariante per permutazioni cicliche cioè vale: $$tr[ABC]=tr[CAB]=tr[BCA]$$ e tale formula è valida anche per matrici rettangolari. In particolare se $A \in \mathcal{M}_{nm}$ e $B \in \mathcal{M}_{mn} \Rightarrow tr[AB]=tr[BA]$. In particolare di matrici con una sola riga vale $tr[vw^{\dag}] = tr[w^{\dag}v] = w^{\dag}v$ (con $v$,$w$ vettori $\in \ell_2(Z)$ da cui (in notazione di Dirac) $tr[ \vert v \rangle \langle w \vert]=tr[\langle w \mid v \rangle]= \langle w \mid v \rangle$. \\
+Per convincersi basta scrivere la traccia su una decomposizione ortogonale, cioè consideriamo una base (discreta) ortonormale dello spazio di Hilbert $\lbrace \mid n \rangle \rbrace$ e un operatore $A$ su $\mathcal{H}$ allora $tr[A]= \sum_{n} \langle n \mid A \mid n \rangle $. \\ Tornando al caso che ci interessa: \\ 
+$tr[ \mid v \rangle \langle w \mid] = \sum_{n} \langle n \mid v \rangle \langle w \mid n \rangle = \sum_{n} \langle w \mid n \rangle \langle n \mid v \rangle = \langle w \mid v \rangle$.
+
+\subsection{Identità di polarizzazione} %Identità di polarizzazione
+$$
+\mid a \rangle \langle b \mid = \dfrac{1}{4} \sum_{k=0}^{3} i^{k} \mid a+i^{k}b \rangle \langle a + i^{k}b \mid
+$$ 
+si ricava facendo vedere che:
+$$
+\langle b \mid A \mid b \rangle = \frac{1}{4} \sum_{k=0}^{3} \langle a + i^{k}b \mid A \mid a+i^{k}b \rangle \ \ \ \ \forall a,b \in D_{A}
+$$
+questo è la combinazione lineare degli elementi di matrice diagonali dell'operatore $A$.\\
+questo vuol dire che se io di un operatore conosco i valori di aspettazione su tutti i vettori, assegno l'operatore perché equivale a dare la componente su qualunque vettore dell'operatore applicato a qualunque vettore cioè sto dando l'operatore, quindi dare $\langle f \mid A \mid f \rangle \ \forall f$ è equivalente a dare $A$. se conosco gli elementi diagonali su tutti i vettori ( $\lbrace \forall f \ \langle f \vert A \vert f \rangle \rbrace \equiv A )$ conosco quelli fuori diagonale, cioè conosco tutto l'operatore.
+
+\subsection{Decomposizione cartesiana di un operatore} %Decomposizione cartesiana di un operatore
+Sia $Z$ un operatore, può sempre essere espresso come $Z= Re(Z) + iIm(Z)$ ove $Re(Z)=\dfrac{1}{2}(Z+Z^{\dag})$ e $Im(Z)=\frac{i}{2}(Z^{\dag}-Z)$. Abbiamo visto che se un operatore è limitato e reale allora è $hermitiano $, infatti se: \\ $\forall f \ \langle f \mid Z \mid f \rangle \in \mathcal{R} \Rightarrow Im(Z)=0 \Rightarrow Z=Re(Z)$ che è hermitiana per definizione.\\
+Questo non vale per gli operatori non limitati, per essi bisogna prima supporre che siano $autoaggiunti$ \\
+Sia poi $F$ un operatore tale che $\forall f \ \langle f \mid F \mid f \rangle \geq 0$ (con l'ulteriore ipotesi di essere hermitiano se non limitato), allora $F$ è positivo e si scrive $F \geq 0$. Questa condizione è una relazione di ordinamento parziale fra operatori infatti se $A-B\geq 0 \Rightarrow A\geq 0$ ma non è detto che tale relazione sussista fra ogni coppia di operatori.
+
+\subsection{Operatore di proiezione} %Operatore di proiezione
+Indichiamo con $P_{\mathcal{S}}$ l'operatore di proiezione su $\mathcal{S} \subseteq \mathcal{H}$.\\
+Sia $\mathcal{S} \subseteq \mathcal{H}$ un sottospazio di $\mathcal{H}$, allora per il teorema di decomposizione $\mathcal{H} = \mathcal{S} \oplus \mathcal{S^{\perp}}$, significa che: $\forall f \in \mathcal{H} \ \exists ! \ v \in \mathcal{S}$ e $w \in \mathcal{S^{\perp}} : f=v+w$, \\ questo definisce l'operatore $P_{\mathcal{S}}(f)=v$.\\
+Si dimostra che $P^{2}=P$, infatti: $P P f = P v = v \ \forall f \Rightarrow P^2=P$ \\
+Verifichiamo la limitatezza dell'operatore di proiezione:\\ $\parallel Pf \parallel ^{2} = \langle Pf \mid Pf \rangle = \langle f \mid P^{2}f \rangle = \langle f \mid P \mid f \rangle = $ $\langle v \mid v \rangle \ (se \ $Pf=v$) $ \\ $\langle v \mid v \rangle \leq \langle f \mid f \rangle = \ \parallel f \parallel ^{2} \Rightarrow \parallel P \parallel \leq 1$ e se $v \in \mathcal{S} \Rightarrow \parallel Pv \parallel ^{2} = \parallel v \parallel \Rightarrow \parallel P \parallel =1$. Da tali relazioni si deduce che $0 \ \leq \langle f \mid P \mid f \rangle \leq \langle f \mid f \rangle$ $\Rightarrow$ $0 \leq P \leq I$ (per l'identità di polarizzazione), cioè $P$ è positivo ed è dominato dall'identità. Inoltre essendo reale e limitato, $P$ è hermitiano. \\
+Riassunto delle proprietà dell'operatore di proiezione: \\$P$ è reale e limitato $\Rightarrow hermitiano$, \\ $0 \leq P \leq I$ ($P$ è positivo),\\ $P^{2}=P$ (idempotenza, cioè autovalori = 0 ,1  ), \\ $P^{\dag}=P$, \\ $\parallel P \parallel =1$.\\ \\
+Diagonalizzare un operatore $X$ su $\mathcal{H}$ significa decomporre lo spazio $\mathcal{H}$ nella somma diretta degli autospazi relativi agli autovalori di $X$ che sono sottospazi ortogonali di $\mathcal{H}$: $\mathcal{H} = \oplus_{n}\mathcal{H}_{n}$ ove $v \in \mathcal{H} \Rightarrow Xv=x_{n}v$.\\ 
+Diagonalizzare un operatore vuol dire decomporre $\mathcal{H}$ in una somma diretta di autospazi cioè di spazi dei quali se prendiamo un vettore questo è un autovettore che corrisponde a un determinato autovalore.
+Per la definizione di operatore di proiezione si ha $\mathcal{H} = \mathcal{S} \oplus \mathcal{S^{\perp}}$ e per la proprietà di idempotenza gli autovalori di $P$ sono: \\ $0$ se $v \in \mathcal{S^{\perp}}$ e $1$ se $v \in \mathcal{S}$.\\
+Dati due sottospazi $\mathcal{S^{'}} \subset \mathcal{S} \subset \mathcal{H}$, $P_{\mathcal{S}}P_{\mathcal{S^{'}} } = P_{\mathcal{S^{'}}} = P_{\mathcal{S^{'}} }P_{\mathcal{S}}$.\\ \\
+Ora ci chiediamo se la composizione di due proiettori su due generici sottospazi $\mathcal{S}, \mathcal{Z}$ sia ancora un proiettore ed in tal caso su quale sottospazio di $\mathcal{H}$.\\ Siano $P_{1}, P_{2}$ due generici proiettori, basta verificare che $(P_{1}P_{2})$ sia hermitiano e idempotente per verificare che sia ancora un proiettore:\\
+$(P_{1}P_{2})^{\dag} = P_{2}^{\dag}P_{1}^{\dag} = P_{2}P_{1} \neq P_{1}P_{2}$: quindi non è hermitiano a meno che $[P_{1},P_{2}]=0$\\
+$(P_{1}P_{2})^{2}=P_{1}P_{2}P_{1}P_{2} \neq P_{1}P_{1}P_{2}P_{2} = P_{1}P_{2} $ in generale a meno che $[P_{1},P_{2}]=0$\\
+Da cui $(P_{1}P_{2})$ è hermitiano e idempotente $\Leftrightarrow [P_{1},P_{2}]=0$.\\
+Riassumendo: se $P_{1},P_{2}$ commutano allora il loro prodotto è autoaggiunto ed è idempotente $\Rightarrow$ $(P_{1}P_{2})$ è un proiettore, ma è vero anche viceversa, cioè se $(P_{1}P_{2})$ è autoaggiunto e idempotente allora $P_{1},P_{2}$ commutano. Quindi il fatto che commutino è condizione necessaria e sufficiente affinché il loro prodotto sia un proiettore.\\ 
+In conclusione se $P_{\mathcal{S}}$ e $P_{\mathcal{Z}}$ commutano $\Rightarrow P_{\mathcal{S}}P_{\mathcal{Z}}=P_{\mathcal{S}\cap \mathcal{Z}}$ (l'intersezione di due sottospazi è un sottospazio, l'unione in generale no).\\ \\
+Consideriamo il caso di un operatore $P= \mid h \rangle \langle h \mid$ che è un operatore di $rankP=1$ (è rappresentato da una matrice di rango 1). Si osserva che $P$ è limitato perché $h \in \mathcal{H}$, è autoaggiunto perché $(\mid h \rangle \langle h \mid)^{\dag}=\mid h \rangle \langle h \mid$ ma in generale non idempotente perché $P^{2}= \mid h \rangle \langle h \mid \mid h \rangle \langle h \mid = \parallel h \parallel ^{2} \mid h \rangle \langle h \mid \neq \mid h \rangle \langle h \mid =P$ a meno che $\parallel h \parallel = 1$; con l'ipotesi ulteriore $\parallel h \parallel = 1$, $P$ è dunque un proiettore.\\
+Siano $w_{1}, w_{2} : \langle w_{1} \mid w_{2} \rangle = 0 \ $(con $ \ \parallel w_1 \parallel = \parallel w_2 \parallel = 1 $, cioè sono ortonormali), allora $\mid w_{1} \rangle \langle w_{1} \mid + \mid w_{2} \rangle \langle w_{2} \mid =P$ è un proiettore di $rankP=2$ ed è il proiettore $P_{\mathcal{S}}$ ove $\mathcal{S}=span\lbrace w_{1}w_{2} \rbrace$. In generale un operatore della forma $P=\sum_{n=1}^{r} \mid w_{n} \rangle \langle w_{n} \mid $, ove $\lbrace \mid w_{n} \rangle \rbrace_{n=1...r}$ è un sistema ortonormale, è un proiettore di $rankP=dim \mathcal{S}=r$.\\
+$tr[\mid w \rangle \langle w \mid] = \langle w \mid w \rangle = \parallel w \parallel^{2}$ e $trP=\sum_{n=1}^{r}1=r=rankP$. Quindi il rango del proiettore è la traccia del proiettore.\\
+Nella maggior parte dei casi tuttavia la dimensione dei sottospazi su cui si proietta non è finita, di conseguenza si hanno proiettori con traccia $\infty$ (tali operatori vengono detti $traceless$). Se $trP< \infty \Rightarrow P\in \mathcal{B}(\mathcal{H})$ ma non vale il viceversa; se $trP= \infty \Rightarrow dim\mathcal{S}=\infty$. Un operatore si dice di classe traccia se esso per il suo dagato ha traccia finita,infatti questo è un operatore positivo per cui la traccia sarà la somma di termini tutti positivi, quindi è ben definita.
+
+% fine Silvia inizio Gianluca 
+
+\subsection{Operatore isometrico} %Operatore isometrico
+
+Un operatore isometrico è un operatore che preserva la norma cioè
+\begin{center} $V$ isometrico $\Leftrightarrow \parallel Vf \parallel = \parallel f \parallel $ \end{center}
+e si dimostra che questo vale se e solo se
+\begin{center} $\langle Vf \mid Vg \rangle = \langle f \mid g \rangle$ \end{center}
+cioè se e solo se preserva il prodotto scalare. L'implicazione $\Leftarrow$ è evidente. Mostriamo che vale l'implicazione $\Rightarrow$:
+\begin{equation*}\begin{split} \parallel f+g \parallel^{2} = \langle (f+g) \mid (f+g)  \rangle = \langle V(f+g) \mid V(f+g) \rangle =\\
+=\parallel f \parallel^{2} + \parallel g \parallel^{2} +2Re(\langle f \mid g \rangle) = \parallel Vf \parallel^{2} + \parallel Vg \parallel^{2} +2Re(\langle Vf \mid Vg \rangle).
+\end{split}\end{equation*}
+Per definizione $\parallel V \parallel =1$ $\Rightarrow$ $V$ limitato. \\
+Infine $\parallel Vf \parallel^{2} =  \langle Vf \mid Vf \rangle = \langle f \mid V^{\dag}V \mid f \rangle = \langle f \mid f \rangle \Rightarrow V^{\dag}V = I$ usando l'identità di polarizzazione. Si conclude che
+\begin{center} $V$ isometrico $\Leftrightarrow V^{\dag}V=I$. \end{center}
+Non si può concludere l'invertibilità dell'operatore ma solo che ha inverso a sinistra; in generale infatti non ha inverso anche a destra. \\
+$(VV^{\dag})^{\dag} = ^{t} (VV^{\dag})^{*} =(^{t}V^{\dag *}) (^{t}V^{*}) = VV^{\dag} \Rightarrow VV^{\dag}$ è autoaggiunto. \\
+Inoltre $(VV^{\dag})^{2} = VV^{\dag}VV^{\dag} = VV^{\dag}$, allora $VV^{\dag}$ è un proiettore ortogonale su $suppV^{\dag}$ (ove $suppT=kerT^{\perp}$), cioè $VV^{\dag}=P_{suppV^{\dag}}=P_{rangeV}$. \\
+Se, come caso particolare, $VV^{\dag}=I \Rightarrow V^{\dag}=V^{-1}$ è l'inverso anche a destra $\Rightarrow$ $V$ è (invertibile e) unitario.
+
+\subsection{Operatore di shift} %Operatore di shift
+Sia $\lbrace \mid e_{n} \rangle \rbrace_{n=0... \infty}$ una base ortonormale di $\mathcal{H}$ (ad esempio si potrebbe prendere il sistema costituito  dagli autovettori dell'oscillatore armonico). Un operatore di shift $S$ è tale che $\forall n, S\mid e_{n}\rangle = \mid e_{n+1} \rangle$ e osserviamo che $\mid e_{n+1} \rangle$ esiste sempre perché abbiamo considerato un sistema infinito.
+\pagebreak
+\newpage
+Ad esempio per l'oscillatore armonico avendo definito $S=a^{\dag}(aa^{\dag})^{-1 \slash 2}$, allora:
+\begin{center} $S\mid n \rangle = a^{\dag}(a^{\dag}a+1)^{-1 \slash 2}\mid n \rangle = a^{\dag} \dfrac{\mid n \rangle}{\sqrt{n+1}}=\mid n+1 \rangle$. \end{center}
+Per verificare che l'operatore è isometrico mostriamo che:
+\begin{center} $\langle f \mid S^{\dag}S \mid f \rangle = \sum_{n,m=0}^{\infty} f_{n}^{*} f_{m} \langle e_{n+1} \mid e_{m+1} \rangle$ = \end{center}
+\begin{center} $\sum_{n=0}^{\infty} \mid f_{n} \mid ^{2} = 1  \forall f \Rightarrow S^{\dag}S=I \Leftrightarrow$ $S$  isometrico. \end{center}
+Ora mostriamo che l'operatore di shift non ha inverso a destra quindi $S$ è isometrico ma non unitario:
+\begin{center} $S=\sum_{n=0}^{\infty} \mid e_{n+1}\rangle \langle e_{n} \mid$, \end{center}
+\begin{center} $S^{\dag}=\sum_{n=0}^{\infty} \mid e_{n}\rangle \langle e_{n+1} \mid$, $\Rightarrow S^{\dag} \mid e_{0} \rangle =0 \Rightarrow kerS^{\dag}=span\lbrace e_{0} \rbrace\Rightarrow$ $S$ non invertibile.\end{center}
+$ SS^{\dag}=\sum_{n=0}^{\infty} \mid e_{n+1}\rangle \langle e_{n+1} \mid =\sum_{n=1}^{\infty} \mid e_{n}\rangle \langle e_{n} \mid = I - \mid e_{0} \rangle \langle e_{0} \mid$. Se $P_{\mathcal{S}}$ proiettore ortogonale $\Rightarrow I-P$ è il complementare ed è un proiettore su $\mathcal{H} - \mathcal{S}$.\\
+Il fatto che $S$ sia isometrico ma non unitario è un effetto della dimensione infinita infatti in dimensione finita $isometrico \Rightarrow unitario$, cioè se $dim\mathcal{H}=d<\infty$ e $V \in \mathcal{B}(\mathcal{H})$ con $V^{\dag}V=I$, $\Rightarrow kerV=0 \Rightarrow rankV=d \Rightarrow$ $V$ invertibile $\Rightarrow V^{-1}=V^{\dag}$. In dimensione infinita invece $rankV= \infty$ non ci dà alcuna informazione.
+
+
+\subsection{Teorema spettrale operatoriale} %Teorema spettrale operatoriale
+Sia $X$ un operatore autoaggiunto, $\Rightarrow$ è diagonalizzabile, se ha spettro discreto può essere rappresentato nella forma di una somma di autovalori per autovettori con n che appartiene ad un insieme numerabile (solitamente infinito), ovvero:
+\begin{center} $X=\sum_{n} x_{n} \mid e_{n} \rangle \langle e_{n} \mid$ ove $X \mid e_{n} \rangle = x_{n} \mid e_{n} \rangle$ e $\langle e_{m} \mid e_{n} \rangle=\delta_{nm}$. \end{center}
+Per un operatore $\Lambda$ nel caso continuo, si introduce la misura spettrale $dE(\lambda)$ e si integra facendo variare $\lambda$ sullo spettro degli autovalori di $\Lambda$; l'operatore $\Lambda$ può quindi essere rappresentato nella forma $\Lambda = \int_{\sigma(\Lambda)} dE(\lambda) \lambda$.\\
+In generale, nel caso autoaggiunto, abbiamo autospazi che sono ortogonali tra di loro. Dati $v_{i}$ autovalori dei rispettivi spazi $V_{i}$ e usando la proprietà dell'operatore autoaggiunto che ci permette di scrivere l'uguaglianza:
+\begin{center} $\langle V_{2} \mid X \mid V_{1} \rangle = \langle X V_{2} \mid V_{1} \rangle$ \end{center}
+\begin{center} osservando $\langle V_{2} \mid X \mid V_{1} \rangle = v_{1} \langle V_{2} \mid V_{1} \rangle$ e $\langle X V_{2} \mid V_{1} \rangle = v_{2} \langle V_{2} \mid V_{1} \rangle$ \end{center}
+\begin{center} otteniamo $\langle V_{2} \mid V_{1} \rangle (v_{2} - v_{1})=0$ \end{center}
+da cui, sapendo che $v_{2} \ne v_{1} $, concludiamo che $\langle V_{2} \mid V_{1} \rangle =0$, ovvero autospazi corrispondenti ad autovalori diversi devono essere ortogonali tra di loro.\\
+Nel caso in cui gli autospazi abbiano dimensione maggiore ad 1 si prende $\mathcal{S} \subset \mathcal{H}$ un sottospazio tale che $X\mathcal{S}=x_{k}\mathcal{S} \Rightarrow dim\mathcal{S} = degenerazione(x_{k})$. Significa che posso raggruppare gli autovalori sapendo che $x_{n}\neq x_{m}$ se $n\neq m$ in modo da scrivere l'operatore $X$ come $X=\sum_{n} x_{n}P_{n}$ $\forall n$ con $P_{n}$ proiettore sull'autospazio relativo a $x_{n}$, $\Rightarrow rankP_{n}=degenerazione(x_{n})$. Nel caso continuo un proiettore su un intervallo di possibili autovalori è rappresentato nella forma $P= \int_{a}^{b} dE(\lambda)$; tale proiettore è di rango $rankP=\infty$. Nel caso continuo pertanto il concetto di degenerazione perde di significato anche a livello infinitesimo e si utilizza la nozione di densità spettrale. Per comprendere meglio il formalismo introdotto consideriamo le seguenti relazioni formali già incontrate: $X=\int \mid x \rangle \langle x \mid x dx$, $\langle x \mid x^{'} \rangle = \delta(x-x^{'})$, $\langle x \mid x \rangle = \infty$ e vediamo $dx \mid x \rangle \langle x \mid$ come misura spettrale.\\
+Nel caso di autospazi degeneri si può trovare una base di autovettori in ogni autospazio degenere $V_{x_{i}}$ e usare la seguente notazione: $\lbrace \mid e_{j}\rangle \rbrace$ base tale che $X \mid e_{j}^{i}\rangle = x_{i} \mid e_{j}\rangle$ con $j$ che è "indice di degenerazione".\\ \\
+Ci chiediamo se un operatore isometrico $V$ ($V$ isometrico $\Leftrightarrow V^{\dag}V=I$) non autoaggiunto sia diagonalizzabile. Sappiamo che $V^{\dag}V \mid f \rangle=\mid f\rangle $. Supponiamo che  $\mid f\rangle$ è autovettore con autovalore $v$, \begin{center} $\Rightarrow$ $V\mid f\rangle = v\mid f\rangle \Rightarrow V^{\dag}V \mid f\rangle = V^{\dag}v \mid f\rangle$ \end{center}
+\begin{center} ma anche $V^{\dag}V \mid f\rangle= \mid f\rangle$ \end{center}
+\begin{center} $\Rightarrow V^{\dag}\mid f\rangle=v^{-1}\mid f\rangle$ se $v\neq 0$ perché non c'è kernel \end{center}
+\begin{center} inoltre $\langle f \mid V^{\dag}V \mid f\rangle = \mid v \mid ^{2} = 1=v^{*}v \langle f \mid f\rangle \Rightarrow v^{*}v=\mid v \mid ^{2} =1$ $\Rightarrow v^{-1}=v^{*}$ \end{center}
+\begin{center} $\Rightarrow \mid f\rangle$ autovettore di $V^{\dag}$ con autovalore $v^{*}$. \end{center}
+Anche in questo caso si verifica che gli autospazi relativi ad autovalori distinti sono ortogonali (ma la medesima dimostrazione può essere estesa al caso più generale). $\langle f_{2} \mid V \mid f_{1} \rangle = v_{1} \langle f_{2} \mid f_{1} \rangle$ ora applico l'operatore autoaggiunto a $V_{2}$ e ottengo $\langle V^{\dag}f_{2} \mid f_{1} \rangle = v_{2}\langle f_{2} \mid f_{1} \rangle$ $\Rightarrow (v_{2} -v_{1})\langle f_{2} \mid f_{1} \rangle=0 \Rightarrow \langle f_{2} \mid f_{1} \rangle=0$ se $v_{2}\neq v_{1}$. \\
+ Dunque se $V$ unitario $\Rightarrow$ diagonalizzabile e valgono le proprietà trovate.
+
+
+\subsection{Operatori unitari} %Operatori unitari
+$V$ unitario $\Leftrightarrow$ può essere rappresentato nella forma $V=e^{-iH}$ ove $H$ operatore hermitiano. Infatti $e^{iH}e^{-iH}= V^{\dag}V=e^{-iH}e^{iH}=VV^{\dag}$(poiché $H$ e $H^{\dag}=H$ commutano)$=e^{0}=I$.\\
+Si dimostra che se $H= \sum_{n} h_{n} \mid f_{n} \rangle \langle f_{n} \mid$  $\Rightarrow$ $f(H)= \sum_{n} f(h_{n}) \mid f_{n} \rangle \langle f_{n} \mid$ $\Rightarrow$ $V=\sum_{n} e^{ih_{n}} \mid f_{n} \rangle \langle f_{n} \mid$.
+
+%\end{document}

@@ -1,0 +1,245 @@
+\section{Stati di minima incertezza per posizione e momento} %Stati di minima incertezza per posizione e momento
+Essendo $f_x\propto f_p$ per Schwartz, $Re\left\langle f_A|f_B \right\rangle=0$ si ha che $f_x$ è $i$-volte $af_p$ con $a\in\mathbb{R} $. Per la minima interpretazione nella rappresentazione $x$ si ha:
+\begin{equation}\begin{split}
+ia\left(x-\left\langle x \right\rangle\right)\psi \left(x\right)=\left(-i\hbar \partial _x-\left\langle p \right\rangle\right)\psi \left(x\right)
+\end{split}\end{equation}
+considerando \[\partial _x\psi =\left(-\frac{a}{\hbar }x+\frac{a}{\hbar }\left\langle x \right\rangle+\frac{i\left\langle p \right\rangle}{\hbar }\right)\psi \] e \[\ln{\left[\psi \left(x\right)\right]}=-\frac{a}{2\hbar }x^2+\frac{a}{\hbar }\left\langle x \right\rangle x+\frac{i\left\langle p \right\rangle x}{\hbar }\] si ha infine:
+\begin{equation}\begin{split}
+\psi \left(x\right)=Ne^{-\frac{a}{2\hbar }\left(x-\left\langle x \right\rangle\right)^2}e^{\frac{i\left\langle p \right\rangle x}{\hbar }}.
+\end{split}\end{equation}
+
+\section{Operatore di t-evolution} %Operatore t-evolution
+\begin{equation}\begin{split}
+i\hbar \frac{\partial }{\partial t}\psi \left(x,t\right)=H\psi \left(x,t\right)=-\frac{\hbar ^2}{2m}\nabla ^2\psi \left(x,t\right)+V\left(x\right)\psi \left(x,t\right)
+\end{split}\end{equation}
+In rappresentazione x:
+\begin{equation}\begin{split}
+i\hbar\frac{\partial }{\partial t}\left |\psi _t \right\rangle =H\left |\psi _t \right\rangle \\
+\Longrightarrow \frac{\partial }{\partial t}\left |\psi _t \right\rangle=-\frac{iH}{\hbar }\left |\psi _t \right\rangle \\
+\Longrightarrow \left |\psi _t \right\rangle=e^{-\frac{it}{\hbar }H}\left |\psi _t \right\rangle
+\end{split}\end{equation}
+ricordando $\frac{\partial }{\partial t}f=kf$ e $f$
+\begin{equation}\begin{split}
+\left\langle x|i\hbar \frac{\partial }{\partial t}|\psi _t \right\rangle=\left\langle x|H|\psi _t \right\rangle
+\end{split}\end{equation}
+
+Si hanno quindi:
+\begin{equation}\begin{split}
+\left\langle x|\psi _t \right\rangle=\psi \left(x,t\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+e^{-\frac{it}{\hbar }H}=U_t \quad \textrm{matrice unitaria}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |\psi _t \right\rangle=U_t\left |\psi _0 \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\psi \left(x,t\right)=\left\langle x|U_t|\psi _0 \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \psi _t|X|\psi _t \right\rangle=\left\langle \psi _0|U_t^\dag XU_t|\psi _0 \right\rangle
+\end{split}\end{equation}
+
+\subsection{Schrödinger picture} %Schrödinger picture
+Evoluzione dello stato
+\begin{equation}\begin{split}
+\left |\psi _0 \right\rangle \rightarrow \left |\psi _t \right\rangle=U\left(t\right)\left |\psi _0 \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle x \right\rangle=\left\langle \psi _t|X|\psi _t \right\rangle
+\end{split}\end{equation}
+
+\subsection{Heisenberg picture} %Heisenberg picture
+Evoluzione delle osservabili
+\begin{equation}\begin{split}
+x\left(t\right)=\\
+=U^\dag\left(t\right) XU\left(t\right)=\\
+=\left(A\textrm{d}U\left(t\right)\right)X=\\
+=e^{\frac{it}{\hbar }H}Xe^{\frac{it}{\hbar }H}=e^{\frac{it}{\hbar }a\textrm{d}H}X
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+x\left(t\right)=x+\frac{it}{\hbar }\left[H,X\right]+\frac{1}{2!}\left(\frac{it}{\hbar }\right)^2\left[H,\left[H,X\right]\right]+\dots
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\psi \left(x,t\right)=\\
+=\left\langle x|\psi _t \right\rangle=\\
+=\left\langle x|e^{-\frac{it}{\hbar }H}|\psi _0 \right\rangle=\\
+=\left\langle x|e^{-\frac{it}{\hbar }H}\sum_n{\left |h_n \right\rangle\left\langle h_n\right |}|\psi _0 \right\rangle\\
+=\sum_n{e^{-\frac{it}{\hbar }E_n}\left\langle x|h_n \right\rangle\left\langle h_n|\psi _0 \right\rangle}=\\
+=\sum_n{e^{-\frac{it}{\hbar }E_n}h_n\left(x\right)\left\langle h_n|\psi _0 \right\rangle}=\\
+=\sum_n{e^{-\frac{it}{\hbar }E_n}h_n\left(x\right)c_n}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\frac{\textrm{d}x\left(t\right)}{\textrm{d}t}=\frac{\textrm{d}}{\textrm{d}t}e^{\frac{it}{\hbar }H}xe^{-\frac{it}{\hbar }H}=\frac{i}{\hbar }\left[X,x\left(t\right)\right] \\
+\Longrightarrow i\hbar \frac{\textrm{d}x\left(t\right)}{\textrm{d}t}=\left[x\left(t\right),H\right]
+\end{split}\end{equation}
+
+\section{Stati coerenti di un oscillatore armonico} %Stati coerenti di un oscillatore armonico
+Si ha l'oscillatore armonico con le caratteristiche seguenti $H=\hbar \omega \left(a^+a+\frac{1}{2}\right)$, $a^+\left |n \right\rangle=\sqrt{n+1}\left |n+1 \right\rangle$, $a\left |n \right\rangle=\sqrt{n}\left |n-1 \right\rangle$ e $\left\langle x|0 \right\rangle=$
+
+Per gli stati correnti si ha, considerando $\alpha\in\mathbb{C} $:
+\begin{equation}\begin{split}
+\left\langle 0|\Delta x^2|0 \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle 0|x|0 \right\rangle=\sqrt{\frac{\hbar }{2m\omega }}\left\langle 0|a^++a|0 \right\rangle=0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle 0|x^2|0 \right\rangle=\\
+=\frac{\hbar }{2m\omega }\left\langle 0|a^{+2}+a^2+aa^++a^+a|0 \right\rangle=\\
+=\frac{\hbar }{2m\omega }
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle 0|\Delta x^2|0 \right\rangle=\left\langle 0|x^2|0 \right\rangle\left\langle 0|x|0 \right\rangle=\frac{\hbar }{2m\omega }
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left\langle 0|p|0 \right\rangle=0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle 0|p^2|0 \right\rangle=\frac{m\hbar \omega }{2}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left\langle \Delta p^2 \right\rangle\left\langle \Delta x^2 \right\rangle=\frac{\hbar ^2}{4}
+\end{split}\end{equation}
+
+Lo stato è uno stato di minima incertezza. Per crearne altri bisogna traslarli.
+
+Si definisce un nuovo operatore: \textbf{operatore di spostamento unitario}:
+\begin{equation}\begin{split}
+D\left(\alpha\right)=e^{\alpha a^+-\alpha^*a}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+D^+\left(\alpha\right)aD\left(\alpha\right)=\\
+=e^{-\alpha a^++\alpha^*a}ae^{\alpha a^+-\alpha^*a}=\\
+=e^{-a\textrm{d}\left(\alpha a^+-\alpha^*a\right)}=\\
+=a-\left[\alpha a^+-\alpha^*a, a\right]+\dots =\\
+=a+\alpha
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+D^+\left(\alpha\right)a^+D\left(\alpha\right)=a^++\alpha^*
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+D^+\left(\alpha\right)f\left(a,a^+\right)D\left(\alpha\right)=f\left(a+\alpha,a^++\alpha^*\right) \quad \textrm{con lo stesso ordinamento}
+\end{split}\end{equation}
+
+Si definiscono gli \textbf{stati coerenti dell'oscillatore armonico}:
+\begin{equation}\begin{split}
+\left |\alpha \right\rangle:=D\left(\alpha\right)\left |0 \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \alpha|x|\alpha \right\rangle=\\
+= =\\
+\textrm{usando la Heisenberg picture}\\
+= =\\
+=\sqrt{\frac{\hbar }{2m\omega }}2Re{\alpha}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \alpha|x^2|\alpha \right\rangle=\\
+= =\\
+=\frac{\hbar }{2m\omega }\left[1+\left(2Re\alpha\right)^2\right]
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \alpha|\Delta x^2|\alpha \right\rangle=\frac{\hbar ^2}{2m\omega }\\
+\left\langle \alpha|\Delta p|\alpha \right\rangle=\frac{\hbar m\omega }{2}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\Delta p^2\Delta x^2=\frac{\hbar ^2}{4}
+\end{split}\end{equation}
+si ha quindi che gli stati coerenti sono di minima indeterminazione. Essi sono un continuo nel piano complesso.
+
+\subsection{Proprietà} %Proprietà
+\begin{equation}\begin{split}
+\left |\alpha \right\rangle=D\left(\alpha\right)\left |0 \right\rangle=\\
+=e^{-\frac{1}{2}|\alpha|^2}e^{\alpha a^+}e^{-\alpha^*a}\left |0 \right\rangle=\\
+=e^{-\frac{1}{2}|\alpha|^2}e^{\alpha a^+}\left |0 \right\rangle=\\
+=e^{\frac{1}{2}|\alpha|^2}\sum_{n=0}^{\infty }{\frac{\alpha^n}{\sqrt{n!}}\left |n \right\rangle}
+\end{split}\end{equation}
+utilizzando BCH.
+
+\begin{equation}\begin{split}
+\left\langle n|\alpha \right\rangle=e^{-\frac{1}{2}|\alpha|^2}\frac{\alpha^n}{\sqrt{n!}} \\
+\Longrightarrow \left|\left\langle n|\alpha \right\rangle \right|^2=e^{-|\alpha|^2}\frac{|\alpha|^{2n}}{n!}
+\end{split}\end{equation}
+Gli stati coerenti non sono autostati dell'energia ma hanno una distribuzione di Poisson dei valori dell'energia.
+
+\begin{equation}\begin{split}
+D^+\left(\alpha\right)f\left(f,a^+\right)D\left(\alpha\right)=f\left(a+\alpha,a^++a*\right)\\
+\Longrightarrow a\left |\alpha \right\rangle=\\
+=aD\left(\alpha\right)\left |0 \right\rangle=\\
+=D\left(\alpha\right)D^+\left(\alpha\right)D\left(\alpha\right)\left |0 \right\rangle=\\
+=D\left(\alpha\right)\left(a+\alpha\right)\left |0 \right\rangle=\\
+=D\left(\alpha\right)\alpha\left |0 \right\rangle=\\
+=\alpha\left |a \right\rangle
+\Longrightarrow \alpha\left |a \right\rangle=a\left |\alpha \right\rangle\\
+a^n\left |\alpha \right\rangle=\alpha^n\left |a \right\rangle\\
+\left\langle \alpha\right |a^{+n}=\alpha^{*m}\left\langle \alpha\right |\\
+\left\langle \alpha|a^+a|\alpha \right\rangle=|\alpha|^2
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left\langle \alpha|a^+a|\alpha \right\rangle=|\alpha|^2
+\end{split}\end{equation}
+
+\subsection{Prodotto scalare di due stati coerenti}
+\begin{equation}\begin{split}
+D\left(\alpha\right)D\left(\beta\right)=\\
+=e^{\alpha a^+-\alpha^*a}e^{\beta a^+-\beta^*a}=\\
+\textrm{usando BCH}\\
+=D\left(\alpha+\beta\right)e^{i Im{\left(\alpha\beta^*\right)}}
+\end{split}\end{equation}
+gli operatori fanno un gruppo con l'aggiunta che hanno anche una fase.
+
+Si può calcolare il prodotto scalare tra $\alpha$ e $\beta$:
+\begin{equation}\begin{split}
+\left\langle \alpha|\beta \right\rangle=\\
+=\left\langle 0|D^+\left(\alpha\right)D\left(\beta\right)|0 \right\rangle=\\
+=e^{-\frac{1}{2}|\alpha-\beta|^2}e^{i Im{\left(\alpha\beta^*\right)}}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+|\left\langle \alpha|\beta \right\rangle|^2=e^{-|\alpha-\beta|^2}
+\end{split}\end{equation}
+pur non essendo ortogonali sono un set completo:
+\begin{equation}\begin{split}
+\mathbb{I}=\int_{\mathbb{C} }{\left |\alpha \right\rangle\left\langle \alpha\right |\frac{\textrm{d}^2\alpha}{\pi }}=\\
+=2\int_{0}^{\infty }{r \textrm{d}r}\int_{0}^{2\pi }{\frac{1}{2\pi }e^{-|\alpha|^2}e^{\alpha a^+}\left |0 \right\rangle\left\langle 0\right | e^{\alpha^*a}\textrm{d}\phi }=
+= \\
+\Longrightarrow \int_{0}^{2\pi }{e^{in\phi } \frac{\textrm{d}\phi}{2\pi }}=\delta_{n0}\\
+\Longrightarrow \int_{0}^{\infty }{e^{-t}t^{\alpha} \textrm{d}t}=\Sigma\left(\alpha +1\right)\\
+\Longrightarrow \sum_{n=0}^{\infty }{\int_{0}^{\infty }{e^{-t}\frac{t^n}{n!}\left |n \right\rangle\left\langle n\right | \textrm{d}t}}=\\
+=\sum_{n=0}^{\infty }\left |n \right\rangle\left\langle n\right |=\mathbb{I}
+\end{split}\end{equation}
+con $\alpha\in\mathbb{C} $ è over-completo.
+
+\begin{equation}\begin{split}
+\psi \left(\alpha\right)=\left\langle \alpha|\psi  \right\rangle\\
+\left |\psi  \right\rangle=\int_{\mathbb{C} }{\left\langle \alpha|\psi  \right\rangle\frac{\textrm{d}^2\alpha}{\pi }}=\int_{\mathbb{C} }{C\left(\alpha,\alpha^*\right)\frac{\textrm{d}^2\alpha}{\pi }}
+\end{split}\end{equation}
+
+\subsection{Rappresentazione posizione} %Rappresentazione posizione
+\begin{equation}\begin{split}
+\left\langle x|\alpha \right\rangle=\\
+=e^{-\frac{1}{2}|\alpha|^2}\left\langle x|e^{\alpha\sqrt{\frac{m\omega }{2\pi}}\left(x-\frac{ip}{m\omega }\right)}|0 \right\rangle=\\
+=e^{-\frac{1}{2}|\alpha|^2}e^{\alpha\sqrt{\frac{m\omega }{2\pi}}\left(x-\frac{\hbar \partial _x}{m\omega }\right)}\left\langle x|0 \right\rangle=\\
+=e^{-\frac{1}{2}|\alpha|^2}e^{\alpha\sqrt{\frac{m\omega }{2\pi}}x}e^{-\frac{\hbar \partial _x}{m\omega }}e^{-\frac{1}{2}\alpha\sqrt{\frac{\hbar }{2m\omega }}}\left(\frac{m\omega }{\pi \hbar }\right)^{\frac{1}{4}}e^{-\frac{m\omega }{2\hbar }x^2}=\\
+=\left(\frac{m\omega }{\pi \hbar }\right)^{\frac{1}{4}}\exp{\left[-\frac{1}{2}|\alpha|^2-\frac{1}{4}\alpha^2+\alpha\sqrt{\frac{m\omega }{2\hbar }}x-\frac{m\omega }{2\hbar }\left(x-\alpha\sqrt{\frac{\hbar }{2m\omega }}\right)^2\right]}=\\
+=\left(\frac{m\omega }{\pi \hbar }\right)^{\frac{1}{4}}\exp{\left[\frac{1}{4}|\alpha|^2+\frac{i}{\hbar }\left\langle p \right\rangle x-\frac{m\omega }{2\hbar }\left(x-\left\langle x \right\rangle\right)^2-\frac{i}{\hbar }\left\langle p \right\rangle\left\langle x \right\rangle\right]}
+\end{split}\end{equation}
+utilizzando BCH inverso e considerando l'operatore di Taylor $e^{h\partial _x}f\left(x\right)\Longrightarrow f\left(x+h\right)$; $\left\langle x \right\rangle=\sqrt{\frac{2\hbar }{m\omega }}Re(\alpha)$ e $\left\langle p \right\rangle=\sqrt{2\hbar m\omega }Im(\alpha)$.
+
+\subsection{Come evoleve un pacchetto nello spazio delle fasi} %Come evoleve un pacchetto nello spazio delle fasi
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+U_t\left |\alpha \right\rangle=\\
+= =\\
+= =\\
+= =\\
+=e^{-\frac{i\omega }{2}t}\left |\alpha e^{i\omega t} \right\rangle
+\end{split}\end{equation}
+
+%MANCA UNA PARTE

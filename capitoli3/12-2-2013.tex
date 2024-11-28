@@ -1,0 +1,63 @@
+\chapter{Funzione di una matrice} %funzione di una matrice
+Si ha una matrice $A$, la sua funzione è:
+\begin{equation}\begin{split}
+f\left(A\right)=\left.\sum_{n=0}^{\infty }\frac{1}{n!}\left(\frac{\textrm{d}^nf\left(x\right)}{\textrm{d}x^n}\right)\right|_{x=0}A^n
+\end{split}\end{equation}
+
+Ci sono due casi: A diagonale o no. Nel primo caso si ha:
+\begin{equation}\begin{split}
+A=\left(\begin{matrix}a_1&0\\0&a_2\end{matrix}\right)\Longrightarrow f\left(A\right)=\left(\begin{matrix}f\left(a_1\right)&0\\0&f\left(a_2\right)\end{matrix}\right)
+\end{split}\end{equation}
+si sviluppa in serie di Taylor:
+\begin{equation}\begin{split}
+A^2=\left(\begin{matrix}a^2_1&0\\0&a^2_2\end{matrix}\right)\\
+A^3=\left(\begin{matrix}a^3_1&0\\0&a^3_2\end{matrix}\right)\\
+\dots A^n=\left(\begin{matrix}a^n_1&0\\0&a^n_2\end{matrix}\right)\\
+\Longrightarrow f\left(A\right)=\left(\begin{matrix}f\left(a_1\right)&0\\0&f\left(a_2\right)\end{matrix}\right)
+\end{split}\end{equation}
+
+Nel secondo caso invece si hanno tre modi:
+\begin{itemize}
+\item Cambio di base e la si fa diventare diagonale
+\item Si applica la formula
+\item Per matrici hermitiane uso la rappresentazione spettrale
+\end{itemize}
+
+Utilizzando il secondo metodo:
+\begin{equation}\begin{split}
+A=\left(\begin{matrix}0&1\\1&0\end{matrix}\right)\\
+\exp{\left(A\right)}=\sum_{n=0}^{\infty }{\frac{1}{n!}A^n}\\
+\frac{d^n\exp{\left(x\right)}}{dx^n}=\left.\exp{\left(x\right)}\right|_{x=0}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+A^2=\left(\begin{matrix}1&0\\0&1\end{matrix}\right)\\
+\dots \Longrightarrow A^{2n}=\left(A^2\right)^n=\mathbb{I} \quad A^{2n+1}=A
+\end{split}\end{equation}
+Perciò si può suddividere in due parti:
+\begin{equation}\begin{split}
+\exp{\left(A\right)}=\\
+=\sum_{n \textrm{ pari}}{\frac{1}{n!}}\mathbb{I}+\sum_{n \textrm{ dispari}}{\frac{1}{n!}}A=\\
+=\left(\begin{matrix}\sum_{n \textrm{ pari}}{\frac{1}{n!}}&0\\0&\sum_{n \textrm{ pari}}{\frac{1}{n!}}\end{matrix}\right)+\left(\begin{matrix}0&\sum_{n \textrm{ dispari}}{\frac{1}{n!}}\\\sum_{n \textrm{ dispari}}{\frac{1}{n!}}&0\end{matrix}\right)=\\
+=\left(\begin{matrix}\cosh{\left(1\right)}&\sinh{\left(1\right)}\\\sinh{\left(1\right)}&\cosh{\left(1\right)}\end{matrix}\right)
+\end{split}\end{equation}
+
+Utilizzando il terzo metodo invece si ha:
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+f\left(A\right)=\\
+=\sum_{n=0}^{\infty }{\frac{1}{n!}f^n\left(0\right)}\sum_i{a_i^n\left |a_i \right\rangle\left\langle a_i\right |}=\\
+==\\
+==\\
+=\left(\begin{matrix}f\left(a_1\right)&0\\0&f\left(a_2\right)\end{matrix}\right)
+\end{split}\end{equation}
+
+%MANCA TUTTO
+
+\begin{equation}\begin{split}
+\exp{\left(A\right)}=\\
+=\exp{\left(1\right)}\frac{1}{2}\left(\begin{matrix}1\\1\end{matrix}\right)\left(\begin{matrix}1&1\end{matrix}\right)+\exp{\left(-1\right)}\frac{1}{2}\left(\begin{matrix}1\\-1\end{matrix}\right)\left(\begin{matrix}1&-1\end{matrix}\right)=\\
+=\frac{1}{2}\exp{\left(1\right)}\left(\begin{matrix}1&1\\1&1\end{matrix}\right)+\frac{1}{2}\exp{\left(-1\right)}\left(\begin{matrix}1&-1\\-1&1\end{matrix}\right)=\\
+=\left(\begin{matrix}\cosh{\left(1\right)}&\sinh{\left(1\right)}\\\sinh{\left(1\right)}&\cosh{\left(1\right)}\end{matrix}\right)
+\end{split}\end{equation}

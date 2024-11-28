@@ -1,0 +1,301 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%
+%\renewcommand{\vec}{\bm}
+%
+%\author{Matteo~Capoferri}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{10 Ottobre 2013}
+
+%\begin{document}
+%\maketitle
+
+Giunti a questo punto, valutiamo il salto della derivata. 
+Integrando l'equazione di Schrödinger otteniamo:
+\begin{equation}\begin{split}
+\dfrac{-\hbar^2}{2m}\int_{-\varepsilon} ^{\epsilon} dx \dfrac{d^2\psi}{dx^2}-\alpha \int_{-\varepsilon} ^{\epsilon} dx \delta (x) \psi (x) = E \int_{-\varepsilon} ^{\epsilon} dx \psi (x)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\dfrac{\hbar^2}{2m} \dfrac{d\psi}{dx} | _{- \varepsilon} ^{\varepsilon} -\alpha \psi(0)=0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\Delta \left( \dfrac{d\psi}{dx}\right)=- \dfrac{2m}{\hbar^2} \alpha B
+\end{split}\end{equation}
+Eguagliando quanto trovato con il valore del salto della derivata calcolato esplicitamente si ottiene:
+\begin{equation}\begin{split}
+-2kB=- \dfrac{2m}{\hbar^2} \alpha B
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+k=\dfrac{m}{\hbar^2}\alpha \Longrightarrow E=-\dfrac{m\alpha^2}{2\hbar^2}
+\end{split}\end{equation}
+Dalla normalizzazione della funzione d'onda si ricava il valore di B:
+\begin{equation}\begin{split}
+\int _{-\infty} ^\infty dx |\psi (x,t)|^2=2\int_0 ^\infty dx |\psi (x)|^2=2|B|^2 \dfrac{1}{2k} \Longrightarrow B=e^{i\phi} \sqrt{k}
+\end{split}\end{equation}
+Trascurando la fase, la quale non ha significato fisico, otteniamo dunque \emph{un solo} stato legato
+\begin{equation}\begin{split}
+\psi (x)=\dfrac{\sqrt{m\alpha}}{\hbar} e^{-\dfrac{m\alpha}{\hbar^2}|x|}
+\end{split}\end{equation}
+
+\subsection{Stati di scattering per diffusione delta}
+Se consideriamo il caso $E>0$ otteniamo gli \emph{stati non legati} o \emph{stati di scattering}.
+\begin{equation}\begin{split}
+\frac{d\psi ^2}{dx^2}=-\frac{2mE}{\hbar ^2}\psi =-k^2\psi 
+\end{split}\end{equation}
+con $k=\frac{\sqrt{2mE}}{\hbar }$.
+
+\begin{itemize}
+\item $x>0$
+\begin{equation}\begin{split}
+\psi \left(x\right)=Fe^{ikx}+Ge^{-ikx}
+\end{split}\end{equation}
+\item $x<0$
+\begin{equation}\begin{split}
+\psi \left(x\right)=Ae^{ikx}+Be^{-ikx}
+\end{split}\end{equation}
+\end{itemize}
+
+La continuità in $x=0$ si ha per $A+B=F+G$:
+\begin{equation}\begin{split}
+\left.\frac{d\psi }{dx}\right |_{0^+}=ik\left(F-G\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left.\frac{d\psi }{dx}\right |_{0^-}=ik\left(A-B\right)
+\end{split}\end{equation}
+Eguagliando quanto appena trovato a quanto risulta dall'integrazione dell'equazione di Schroedinger, si ha quindi:
+\begin{equation}\begin{split}
+\Delta \left(\frac{d\psi }{dx}\right)=ik\left(F-G-A+B\right)=-\frac{2m\alpha}{\hbar ^2}\left(A+B\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left(F-G\right)=A\left(1+2i\beta\right)-B\left(1+2i\beta\right)
+\end{split}\end{equation}
+con $\beta =\frac{mk}{\hbar ^2k}$.
+
+Considerando lo scattering di un'onda proveniente da sinistra e viaggiante verso destra, ponendo $G=0$ $\Longrightarrow $ $F=A+B$ (con $A$ onda incidente, $B$ onda riflessa e $F$ onda trasmessa), valgono le relazioni:
+\begin{equation}\begin{split}
+B=\frac{i\beta}{1-i\beta}A
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+F=\frac{1}{1-i\beta}A
+\end{split}\end{equation}
+Si definisce il \textbf{coefficiente di riflessione}:
+\begin{equation}\begin{split}
+R=\frac{|B|^2}{|A|^2}=\frac{\beta^2}{1+\beta^2}
+\end{split}\end{equation}
+e il \textbf{coefficiente di trasmissione}:
+\begin{equation}\begin{split}
+T=\frac{|F|^2}{|A|^2}=\frac{1}{1+\beta^2}=\frac{1}{1+\frac{m\alpha^2}{2\hbar ^2E}}
+\end{split}\end{equation}
+Naturalmente la probabilità è conservata. Infatti: $R+T=1$.
+
+Nonostante non esistano stati stazionari, abbiamo utilizzato lo stesso metodo per definire quantità ben definite quali sono i coefficienti di riflessione e trasmissione.
+
+
+\subsection{Matrice di scattering} %Matrice di scattering
+Supponiamo di avere un potenziale generico che soddisfi l'unica proprietà di andare a zero all'infinito, anche solo asintoticamente.
+Possiamo pensare a tre zone: una a sinistra, zona I, dove il potenziale è zero (eventualmente meno infinito), una zona II a potenziale generico, ed infine una zona III a potenziale nullo (eventualmente più infinito).
+Nuovamente considero onde viaggianti come sovrapposizione di onde viaggianti verso sinistra e onde viaggianti verso destra.
+Nella zona I:
+\begin{equation}\begin{split}
+\psi \left(x\right)=Ae^{ikx}+Be^{-ikx}
+\end{split}\end{equation}
+Nella zona III:
+\begin{equation}\begin{split}
+\psi \left(x\right)=Fe^{ikx}+Ge^{-ikx}
+\end{split}\end{equation}
+Operando il raccordo delle funzioni d'onda nei punti dove si azzera il potenziale oppure, eventualmente, all'infinito, ottengo delle condizioni molto più complicate di quelle scritte in precedenza, che unitamente a relazioni analoghe per il raccordo delle derivate mi danno B e F in funzione di A e G:
+\begin{equation}\begin{split}
+{B\choose F} =\left(\begin{matrix} {S_{11}} & {S_{12}}\\{S_{21}} & {S_{22}}\end{matrix}\right){{A}\choose{G}}
+\end{split}\end{equation}
+La matrice di trasformazione è detta \textbf{Matrice di Scattering} o \textbf{Matrice S} (dall'inglese \emph{S-Matrix}).
+
+Gli elementi di matrice sono indipendenti dalla forma analitica del potenziale, ma dipendono solo dai coefficienti di trasmissione e riflessione
+Si hanno quindi i due casi:
+\begin{itemize}
+\item $G=0$ scattering di onda proveniente da sinistra:
+\begin{equation}\begin{split}
+R_{l}=\dfrac{|B|^2}{|A|^2}=|S_{11}|^2 \\
+T_{l}=\dfrac{|F|^2}{|A|^2}=|S_{21}|^2
+\end{split}\end{equation}
+\item $A=0$ scattering di onda proveniente da destra:
+\begin{equation}\begin{split}
+R_{r}=\dfrac{|F|^2}{|G|^2}=|S_{22}|^2 \\
+T_{r}=\dfrac{|B|^2}{|G|^2}=|S_{12}|^2
+\end{split}\end{equation}
+\end{itemize}
+La conservazione della probabilità dà:
+\begin{equation}\begin{split}
+T_l +R_l=1 \Longrightarrow |S_{11}|^2 +|S_{21}|^2=1
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+T_r +R_r=1 \Longrightarrow |S_{22}|^2+|S_{12}|^2=1
+\end{split}\end{equation}
+il che mi dice che le colonne e le righe della matrice di scattering sono vettori di norma uno. In realtà c'è una condizione in più, non evidente, ossia che la matrice S è unitaria: le righe e le colonne sono vettori \emph{ortonormali}. Tale fatto è molto più sottile perché implica che la matrice S contiene informazione sulla fase della funzione d'onda.
+
+Scrivendo la derivata rispetto alla variabile x del wronskiano otteniamo:
+\begin{equation}\begin{split}
+\dfrac{dW(\psi,\psi *)}{dx}=\psi (x) \psi ''(x)*-\psi ''(x) \psi (x)*=0
+\end{split}\end{equation}
+L'unitarietà della matrice S è dettata dall'isometricità dell'equazione di Schrödinger.
+In ottica accande una cosa analoga: lo sfasamento in trasmissione e riflessione è descritto da una matrice unitaria.
+
+\subsection{Matrice di trasferimento} %Matrice di trasferimento
+Supponiamo da ultimo di avere due potenziali diversi definiti in due regioni dello spazio e di risolvere il problema separatamente per il primo e per il secondo potenziale.
+Ciò che interessa in questo caso è:
+\begin{equation}\begin{split}
+{F\choose G} =\left(\begin{matrix} {M_{11}} & {M_{12}}\\{M_{21}} & {M_{22}}\end{matrix}\right){{A}\choose{B}}
+\end{split}\end{equation}
+La matrice M è detta \textbf{Matrice di Trasferimento}.
+Il vantaggio è dato da fatto che, una volta ricavate le matrici $M_I$ e $M_{II}$ rispettivamente per il primo e per il secondo potenziale, la matrice globale è data da
+\begin{equation}\begin{split}
+M=M_{II}M_{I}.
+\end{split}\end{equation}
+
+\chapter{Formalismo matematico} %Formalismo matematico
+\section{Notazione di Dirac} %Notazione di Dirac
+Consideriamo inizialmente ad un vettore $\bar v\in \mathbb{C} ^N$ con $\mathbb{C} ^N=span\{e_i\}$.
+
+Il prodotto scalare è definito come:
+\begin{equation}\begin{split}
+\left\langle \bar a,\bar b \right\rangle=\sum_{n=1}^{N}{a^*_nb_n}=\bar a^+\cdot \bar b
+\end{split}\end{equation}
+
+Un vettore è un mappa che va da $\mathbb{Z}_N \rightarrow \mathbb{C} $. 
+Si hanno i casi:
+\begin{equation}\begin{split}
+\mathbb{Z} \rightarrow \mathbb{C} \qquad \ell^2\left(\mathbb{Z}\right) \\
+\mathbb{N} \rightarrow \mathbb{C} \qquad \ell^2\left(\mathbb{N}\right)
+\end{split}\end{equation}
+che sono delle sequenze limitate a quadrato sommabile e
+\begin{equation}\begin{split}
+\mathbb{R} \rightarrow \mathbb{C} \qquad \ell^2\left(\mathbb{R}\right)
+\end{split}\end{equation}
+che sono delle funzioni complesse.
+
+Si definisce quindi il \textbf{prodotto scalare} su $L^2(\mathbb{R})$:
+\begin{equation}\begin{split}
+\left\langle f,g \right\rangle=\int_{-\infty }^{+\infty }{f^*\left(x\right)g\left(x\right) \textrm{d}x}
+\end{split}\end{equation}
+da cui la norma indotta:
+\begin{equation}\begin{split}
+||f||^2=\left\langle f,f \right\rangle=\int_{-\infty }^{+\infty }{|f\left(x\right)|^2 \textrm{d}x}
+\end{split}\end{equation}
+
+In uno spazio di Hilbert vale la \textbf{disuguaglianza di Schwartz}:
+\begin{equation}\begin{split}
+|\left\langle f,g \right\rangle|^2\le ||f||^2||g||^2
+\end{split}\end{equation}
+derivante dal teorema di Pitagora.
+
+In $L^2(\mathbb R)$:
+\begin{equation}\begin{split}
+\int dx f*(x) g(x) \leq \int dx |f(x)|^2 \int dx |g(x)|^2
+\end{split}\end{equation}
+
+La disuguaglianza di Schwarz implica la \textbf{disuguaglianza triangolare}:
+\begin{equation}\begin{split}
+||x+y||^2=\\
+=\langle x+y,x+y \rangle=\\
+=||x||^2+||y||^2+2Re\langle x,y\rangle\le ||x||^2+||y||^2+2||x||||y||=\\
+=\left(||x||+||y||\right)^2
+\end{split}\end{equation}
+
+
+Si definisce una nuova notazione:
+\begin{equation}\begin{split}
+\left | \quad \right\rangle \in \mathcal{H} \quad \textrm{ket}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \quad  \right | \in \mathcal{H}* \quad \textrm{bra}
+\end{split}\end{equation}
+
+Sussiste l'isomorfismo antilineare (detto \textit{isomorfismo di Dirac})
+\begin{equation}\begin{split}
+|v> \longleftrightarrow <v|
+\end{split}\end{equation}
+Vale cioè la relazione:
+\begin{equation}\begin{split}
+<av+bw|=a*<v|+b*<w|.
+\end{split}\end{equation}
+Scrivo pertanto:
+\begin{equation}\begin{split}
+\bar v=\left |v \right\rangle \\
+\bar w^+=\left\langle w \right | \\
+\bar w^+\cdot \bar v=\left\langle w|v \right\rangle \\
+\end{split}\end{equation}
+Si definisce $\left\langle g \right | A$, con $A$ operatore lineare, come:
+\begin{equation}\begin{split}
+\left(\left\langle g \right | A \right)\left | f \right \rangle = \left\langle g | (Af\right\rangle)=\left\langle g|A|f \right\rangle=\left\langle g|Af \right\rangle=\left\langle A^+g|f \right\rangle \Longrightarrow 
+\left\langle g\right |A=\left\langle A^+g\right |
+\end{split}\end{equation}
+
+Si definisce \textbf{operatore di rango 1} 
+\begin{equation}\begin{split}
+|h\rangle\langle k|
+\end{split}\end{equation} il quale ha le seguenti proprietà:
+\begin{equation}\begin{split}
+|h\rangle\langle k| v\rangle = \left\langle k|v \right\rangle |h\rangle 
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+||v||=1 \Longrightarrow \quad |v\rangle\langle v|=P \quad \textrm{proiettore ortogonale sullo spazio}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+P^2=\sum_{n}|v_n\rangle\langle v_n|=P
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+|h\rangle\langle k|=\left(|k\rangle\langle h|\right)^+ 
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+P_S=\sum |v_n\rangle\langle v_n|
+\end{split}\end{equation}
+
+Vale poi l'importantissima \textbf{relazione di completezza}:
+\begin{equation}\begin{split}
+\sum_{n}|e_n\rangle\langle e_n|= \mathbb{I}_H=\mathbb{I}
+\end{split}\end{equation}
+con $\{|e_n\rangle\}$ base ortonormale di $\mathcal{H}$: $\mathcal{H}=span\{ |e_n\rangle \}$.
+
+\subsection{Matrici in notazione di Dirac} %Matrici in notazione di Dirac
+\begin{equation}\begin{split}
+\left\langle e_n|A|e_n \right\rangle=A_{n,m}
+\end{split}\end{equation}
+essendo $\left\langle e_n|\psi  \right\rangle=\psi _n$, $|\psi \rangle =\sum{\psi _n | e_n \rangle}$.
+
+\begin{equation}\begin{split}
+\left\langle e_n|A|\psi  \right\rangle=\sum\left\langle e_n|A|e_m \right\rangle\left\langle e_m|\psi  \right\rangle
+\end{split}\end{equation}
+usando la completezza.
+
+\begin{equation}\begin{split}
+\sum{A_{n,m}\psi _m}=\left(A\psi \right)_n
+\end{split}\end{equation}
+
+Supponiamo ora di voler passare dalla rappresentazione rispetto alla base $\{|e_n\rangle \}$ a quella rispetto alla base $\{|f_n\rangle \}$ .
+Si ha:
+\begin{equation}\begin{split}
+\left\langle f_n|A|f_m \right\rangle = \sum_{i,j}{\left\langle f_n|e_i \right\rangle\left\langle e_i|A|e_j \right\rangle\left\langle e_j|f_m \right\rangle} 
+=\sum_{i,j}{U^*_{i,n}\left\langle e_i|A|e_j \right\rangle U_{j,m}}
+\end{split}\end{equation}
+La matrice $U$ di cambio di base è una matrice \emph{unitaria}. Infatti:
+\begin{equation}\begin{split}
+\left(U^+\cdot U\right)_{n,m}=\sum{U^*_{j,n}U_{j,m}}=\sum_j\left\langle f_m|e_j \right\rangle\left\langle e_j|f_n \right\rangle=\left\langle f_n|f_m \right\rangle=\delta_{n,m}
+\end{split}\end{equation}
+
+Come basi si utilizzano in genere set completi di autostati di osservabili.
+%\end{document}

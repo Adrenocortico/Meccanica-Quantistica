@@ -1,0 +1,81 @@
+\section{Teorema adiabatico} %Teorema adiabatico
+Si chiama il tempo interno $t_i$ e quello esterno $t_e$, con $t_e\gg t_i$. Prendendo un pendolo, si ha il periodo $T =2\pi\sqrt{\frac{L}{g}}$:
+\begin{equation}\begin{split}
+T\left(t\right)=2\pi\sqrt{\frac{L\left(t\right)}{g}}
+\end{split}\end{equation}
+
+Si suppomga $H^{\left(i\right)}\rightarrow H^{\left(f\right)}$, cioè che si vari lentamente l'hamiltoniana con il tempo:
+\begin{equation}\begin{split}
+H^{\left(i\right)}\left |\psi _n^{\left(i\right)} \right\rangle=E_n^{\left(i\right)}\left |\psi _n^{\left(i\right)} \right\rangle \rightarrow H^{\left(f\right)}\left |\psi _n^{\left(f\right)} \right\rangle=E_n^{\left(f\right)}\left |\psi _n^{\left(f\right)} \right\rangle
+\end{split}\end{equation}
+
+\section{Effetto Abramov-Bohm} %Effetto Abramov-Bohm
+Ci si po e nella situazione elettromagnetica:
+\begin{equation}\begin{split}
+\begin{cases}
+\bar E=-\bar \nabla \phi -\frac{\partial }{\partial t}\bar A\\
+\bar B=\bar \nabla \times \bar A
+\end{cases}
+\end{split}\end{equation}
+la cui hamiltoniana è:
+\begin{equation}\begin{split}
+H=\frac{1}{2m}\left(\frac{i}{\hbar }\bar \nabla -q\bar A\right)^2+q\phi
+\end{split}\end{equation}
+
+In un solenoide con $B=\mu_0nI$:
+\begin{equation}\begin{split}
+\begin{cases}
+\bar A=\frac{\mu_0nI}{2}r\hat \phi, & r<R\\
+\bar A=\frac{\mu_0nI}{2}\frac{R^2}{r}\hat\phi, & r>R
+\end{cases}
+\end{split}\end{equation}
+
+Prendendo una particella quantistica che arriva dall'infinito e passa vicino al solenoide, da una parte o dall'altra, si ha:
+\begin{equation}\begin{split}
+\bar A=\frac{\Phi\left(B\right)}{2\pi r}\hat\phi
+\end{split}\end{equation}
+con
+\begin{equation}\begin{split}
+\psi =e^{ig}\psi '
+\end{split}\end{equation}
+con $g=\frac{q}{\hbar }int_{\Theta}^{F}{\bar A\left(\bar r'\right)\textrm{d}^3\bar r'}=\pm\frac{q\Phi}{2\hbar }$. Si ottiene:
+\begin{equation}\begin{split}
+\Delta_{\textrm{fase}}=\frac{q\Phi}{\hbar }
+\end{split}\end{equation}
+
+\section{Paradosso EPR} %Paradosso EPR
+\subsection{Principio di realtà} %Principio di realtà
+\emph{Se senza intervenire in un sistema è possibile prevedere con certezza una grandezza fisica, a questa corrisponde una proprietà oggettiva del sistema.}
+
+\subsection{Principio di località - Einstein} %Principio di località - Einstein
+\emph{Dati due sistemi isolati, allora le evolutzioni delle proprietà fische di uno non possono essere influenzate da quelle fatte sull'altro.}
+
+\subsection{Paradosso} %Paradosso
+È un paradosso perché vengono considerati il principio di realta, il principio di località e che la meccanica quantistica sia completa.
+
+Prendendo un mesone $\pi$ che decade $\pi^0\rightarrow e^-e^+$, che mantiene lo spin 0, in quanto si conserva il momento angolare. Siamo in uno stato di si goletto di spin:
+\begin{equation}\begin{split}
+\left |\psi  \right\rangle=\\
+\frac{1}{\sqrt{2}}\left[\left |+ \right\rangle_z^{\left(-\right)}\left |- \right\rangle_z^{\left(+\right)}-\left |- \right\rangle_z^{\left(-\right)}\left |+ \right\rangle_z^{\left(+\right)}\right]=\\
+\frac{1}{\sqrt{2}}\left[\left |+ \right\rangle_x^{\left(-\right)}\left |- \right\rangle_x^{\left(+\right)}-\left |- \right\rangle_x^{\left(-\right)}\left |+ \right\rangle_x^{\left(+\right)}\right]
+\end{split}\end{equation} 
+che è uno stato entangled (esistono solo proprietà globali).
+
+Si utilizzano i proiettori:
+\begin{equation}\begin{split}
+P_{\psi }\left(A=a_i\right)=\left|\left\langle a_i|\psi  \right\rangle\right|=\left\langle \psi |a_i \right\rangle\left\langle a_i|\psi  \right\rangle=\left\langle \psi \right |P_i\left |\psi  \right\rangle
+\end{split}\end{equation}
+
+I conti sono sul \textbf{\href{http://www2.pv.infn.it/~nicrosi/paradosso/home.htm}{quadernetto}}.
+
+%MANCA UNA PARTE
+
+Per tempi successivi a $t$, valendo il principio di realtà, si sa con certezza che lo spin relativo a z in B è negativo; ma essendo impossibile modificare un sistema agendo su di un altro allora sicuramente lo spin in B era negativo già prima del tempo $t$.
+
+Si possono seguire due strade: la prima dice che analogamente a z, si ricava x, e quindi si dovrebbero sapere contemporaneamente sia lo spin di z sia quello di x. Questo è un assurdo perché per la meccanica quantistica non si devono sapere sia x sia z contemporaneamente.
+
+La seconda strada invece si basa sullo stato entangled. %MANCA UNA PARTE
+
+Entrambe le strade portano comunque a riconoscere che la meccanica quantistica è una teoria incompleta.
+
+In realtà se si esclude qualsiasi dei principi iniziali il paradosso non è più paradossale (come si esclude la completezza si potrebbe escludere sia la realtà che la località).

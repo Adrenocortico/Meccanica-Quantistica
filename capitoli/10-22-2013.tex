@@ -1,0 +1,231 @@
+%\documentclass[a4paper,11pt,twoside,openany]{book}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%\usepackage{braket}
+%\usepackage{amsthm}
+%\usepackage{graphicx}
+
+%\raggedbottom
+%\theoremstyle{definition}
+%\newtheorem{definizione}{Definizione}
+%\theoremstyle{plain}
+%\newtheorem{teorema}{Teorema}
+%\theoremstyle{plain}
+%\newtheorem{lemma}{Lemma}
+%\theoremstyle{definition}
+%\newtheorem{esempio}{Esempio}
+
+%\author{Riccardo Valente}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{22 Ottobre 2013}
+
+%\begin{document}
+%\maketitle
+\chapter{Momento angolare} %Momento angolare
+\section{Momento angolare} %Momento angolare
+Scriviamo la regola di quantizzazione $Q\left(\bar x,\bar p\right) \rightarrow Q\left(\bar x,-i\hbar \bar\nabla \right)$ che associa ad osservabili classiche operatori quantistici. Questa regola è ben definita se non ci sono problemi di ordinamento, come ad esempio avviene per il momento angolare
+\begin{equation}\begin{split}
+\bar L=\bar r\times \bar p=-i\hbar \bar x\times \bar \nabla 
+\end{split}\end{equation}
+Scriviamo la componente "x":
+\begin{equation}\begin{split}
+L_x=-i\hbar \left(y\frac{\partial }{\partial z}-z\frac{\partial }{\partial y}\right)
+\end{split}\end{equation}
+Calcoliamo il commutatore fra due componenti
+\begin{equation}\begin{split}
+[L_x,L_y]=\left(-i\hbar \right)^2\left[y\frac{\partial }{\partial z}-z\frac{\partial }{\partial y},z\frac{\partial }{\partial x}-x\frac{\partial }{\partial z}\right]=(i\hbar)^2\left(y\frac{\partial }{\partial x}-x\frac{\partial }{\partial y}\right)=i\hbar L_z
+\end{split}\end{equation}
+si ha quindi:
+\begin{equation}\begin{split}
+\left[L_x,L_y\right]=i\hbar L_z + \textrm{permutazioni cicliche}
+\end{split}\end{equation}
+
+In generale si può scrivere in forma compatta
+\begin{equation}\begin{split}
+\left[L_i,L_j\right]=i\hbar\ \varepsilon^{k}_{ij} L_k
+\end{split}\end{equation}\\
+dove si è usato il simbolo di Levi-Civita
+ \[
+ \varepsilon^{k}_{ij}=\begin{cases} 
+ 1 & \text{se $ijk$ sono permutazioni cicliche di $xyz$,}\\
+ -1 & \text{se $ijk$ sono permutazioni cicliche di $yxz$,}\\
+ 0 & \text{se ci sono indici ripetuti,}
+ \end{cases}
+\]
+Notare che il momento angolare è un operatore autoaggiunto perché prodotto vettore di due operatori che commutano.
+Si definiscono:
+\begin{equation}
+\begin{split} 
+L_\pm :=L_x\pm iL_y \\ \left(L_\pm\right)^\dagger=L_\mp \\ L_+L_-+L_-L_+=2\left(L_x^2+L_y^2\right)\end{split}
+\end{equation}
+Di seguito vengono elencate una serie di formule in funzione degli operatori $L_\pm$ da ricordare:
+\begin{equation}
+\begin{split}  \\L^2=L_x^2+L_y^2+L_z^2=\frac{1}{2}\left(L_+L_-+L_-L_+\right)+L_z^2=L_+L_-+L_z^2-\hbar L_z \\ L_+L_-=\left(L_x+iL_y\right)\left(L_x+iL_y\right)=L^2-L_z^2+\hbar L_z \\ L_-L_+=L^2-L_z^2-\hbar L_z \\ \left[L_+,L_-\right]=2\hbar L_z \\ \left[L_z,L_\pm\right]=\pm \hbar L_\pm \\ \left[L^2,L_z\right]=\left[L_x^2+L_y^2,L_z\right]=L_x\left(-i\hbar L_y\right)+\left(-i\hbar L_y\right)L_x+\dots =0 \\ \left[L^2,L_\alpha\right]=0 \quad \textrm{con }\alpha=x,y,z 
+\end{split}
+\end{equation}
+Siccome $L^2$ ed $L_z$ sono due operatori autoaggiunti che commutano, si possono diagonalizzare simultaneamente e, quindi, vengono soddisfatte entrambe le equazioni agli autovalori:
+\begin{equation}\begin{split}
+L_z\left |\alpha,\beta \right\rangle=\hbar\beta\left |\alpha,\beta \right\rangle \\
+L^2\left |\alpha,\beta \right\rangle=\hbar ^2\alpha\left |\alpha,\beta \right\rangle
+\end{split}\end{equation}
+Per andare a vedere quali sono i possibili valori assunti da $\alpha$ e da $\beta$ usiamo una tecnica frequentemente usata nella teoria delle rappresentazioni delle algebre e dei gruppi di Lie. 
+Ricordando che $L_\pm$ è autovettore dell'aggiunto di $L_z$:
+\begin{equation}\begin{split}
+L_zL_+\left |\alpha,\beta \right\rangle=L_+L_z\left |\alpha,\beta \right\rangle+\left[L_z,L_+\right]\left |\alpha,\beta \right\rangle=\\
+\hbar \beta\left |\alpha,\beta \right\rangle+\hbar L_+\left |\alpha,\beta \right\rangle=\hbar\beta L_+\left |\alpha,\beta \right\rangle+\hbar L_+\left |\alpha,\beta \right\rangle=
+\hbar \left(\beta+1\right)L_+\left |\alpha,\beta \right\rangle
+\end{split}\end{equation}
+ovvero:
+\begin{equation}\begin{split}
+L_z\left(L_+\left |\alpha,\beta \right\rangle\right)=\hbar\left(\beta+1\right) L_+\left |\alpha,\beta \right\rangle
+\end{split}\end{equation}
+e analogamente per $L_-$:
+\begin{equation}\begin{split}
+L_z\left(L_-\left |\alpha,\beta \right\rangle\right)=\left(\beta-1\right)\hbar L_-\left |\alpha,\beta \right\rangle
+\end{split}\end{equation}
+Pertanto notiamo che $L_+$ è un operatore di \textit{raising} (aumenta di uno l'autovalore $\beta$) ed $L_-$ di \textit{lowering} (diminuisce di uno l'autovalore $\beta$).
+In forma compatta si può scrivere che a meno della costante $c_\pm$ (che dipenderà da $\alpha,\beta$)
+\begin{equation}\begin{split}
+L_\pm|\alpha,\beta \rangle=c_\pm |\alpha,\beta\pm 1 \rangle
+\end{split}\end{equation}
+ 
+Osservando che la differenza dei seguenti operatori è positiva
+\begin{equation}\begin{split}
+L^2-L_z^2 \ge 0\end{split}\end{equation} 
+Allora il corrispondente valore di aspettazione sarà positivo (per ogni vettore dello spazio di Hilbert, l'elemento di matrice che giace sulla diagonale è positivo)
+\begin{equation}\begin{split}
+\left\langle \alpha,\beta|L^2-L_z^2|\alpha,\beta \right\rangle=\hbar ^2\left(\alpha-\beta^2\right)\ge 0
+\end{split}\end{equation}
+il che implica la seguente relazione:
+\begin{equation}\begin{split}
+\alpha\ge\beta^2 \qquad \alpha\ge 0\end{split}\end{equation}
+la quale dice che, ad $\alpha$ fissato, $\beta$ deve essere limitato
+ \begin{equation}\begin{split}\beta_{\min}\le\beta\le\beta_{\max}\end{split}\end{equation}
+Questo vuol dire che se applico l'operatore di \textit{raising} (\textit{lowering}) allo stato con $\beta_{\max}$ ($\beta_{\min}$) ottengo zero:
+\begin{equation}\begin{split}
+L_+\left |\alpha,\beta_{\max} \right\rangle=0 \\
+L_-\left |\alpha,\beta_{\min} \right\rangle=0
+\end{split}\end{equation}
+Fatte queste considerazioni possiamo ora provare a calcolare
+\begin{equation}\begin{split}
+0=L_-L+|\alpha,\beta_{max}\rangle=\left(L^2-L_z^2-\hbar L_z\right)\left |\alpha,\beta_{max} \right\rangle\\
+\Longrightarrow \hbar ^2\left(\alpha-\beta_{\max}^2-\beta_{\max}\right)=0 \\
+\Longrightarrow \alpha=\beta_{\max}\left(\beta_{\max}+1\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+0=L_+L_-\left |\alpha,\beta_{min} \right\rangle=\left(L^2-L_z^2+\hbar L_z\right)\left |\alpha,\beta_{\min} \right\rangle \\
+\Longrightarrow \hbar ^2\left(\alpha-\beta_{\min}^2+\beta_{\min}\right)=0 \\
+\Longrightarrow \alpha=\beta_{\min}\left(\beta_{\min}-1\right)
+\end{split}\end{equation}
+Uguagliando le relazioni di $\alpha$ trovate in (1.18) e (1.19) otteniamo
+\begin{equation}\begin{split}
+\beta_{\max}\left(\beta_{\max}+1\right)=\beta_{\min}\left(\beta_{\min}-1\right)=\alpha 
+\end{split}\end{equation}
+la cui soluzione accettabile è
+\begin{equation}\begin{split}
+ \beta_{\max}=-\beta_{\min}
+ \end{split}\end{equation} 
+ Ciò significa che $\beta_{\max}$ e $\beta_{\min}$ sono divisi da $n$ passi interi accessibili attraverso gli operatori di \textit{raising} e di \textit{lowering}
+ \begin{equation}\begin{split}
+\beta_{\max}-\beta_{\min}=n \quad n\in\mathbb{N}
+ \end{split}\end{equation}
+ e quindi
+ \begin{equation}\begin{split}
+\beta_{\max}=\frac{n}{2}=:l \quad\Longrightarrow \quad\boxed{\alpha=l\left(l+1\right)}
+\end{split}\end{equation}
+Se sostituiamo il valore di $\alpha$ trovato nelle (1.8) otteniamo due nuove equazioni agli autovalori 
+\begin{equation}\begin{split}
+L^2\left |l,m \right\rangle=\hbar ^2l\left(l+1\right)\left |l,m \right\rangle \\
+L_z\left |l,m \right\rangle=\hbar m\left |l,m \right\rangle
+\end{split}\end{equation}
+con $l$ semintero e$\quad-l\le m\le l$.\\
+L'unica cosa che ci manca è calcolare il valore dei coefficienti $c_\pm$ nella (1.12), che ora assume la forma
+\begin{equation}\begin{split}
+L_\pm\left |l,m \right\rangle=c_\pm\left |l,m\pm 1 \right\rangle
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+|c_\pm|^2=\left\langle l,m|L_\mp L_\pm|l,m \right\rangle
+=\hbar ^2\left(l\left(l+1\right)-m^2\mp m\right) \\
+\Longrightarrow\quad c_\pm=\hbar \sqrt{l\left(l+1\right)-m\left(m\pm 1\right)}=\hbar \sqrt{\left(l\pm m+1\right)\left(l\mp m\right)}
+\end{split}\end{equation}
+si è trovato uno spazio di Hilbert di autovettori congiunti di $L_z$ e $L^2$ la cui dimensione è $2l+1$ (perché vario da $-l$ a $l$).
+
+\begin{equation}\begin{split}
+L_\pm\left |l,m \right\rangle=\hbar \sqrt{\left(l\pm m+1\right)\left(l\mp m\right)}\left |l,m\pm 1 \right\rangle
+\end{split}\end{equation}
+
+\subsection{Casi particolari} %Casi particolari
+\begin{itemize}
+\item $l=1 \quad\Longrightarrow\quad -1\le m \le 1$:
+\\
+scelta la seguente base di autovettori
+\begin{equation}\begin{split}
+\left |1,1 \right\rangle=\left(\begin{matrix}1\\0\\0\end{matrix}\right) \quad \left |1,0 \right\rangle=\left(\begin{matrix}0\\1\\0\end{matrix}\right) \quad \left |1,-1 \right\rangle=\left(\begin{matrix}0\\0\\1\end{matrix}\right) 
+\end{split}\end{equation}
+andiamo a rappresentare i seguenti operatori in forma matriciale
+\begin{equation}\begin{split}
+L^2=2\hbar ^2 \left(\begin{matrix}1&0&0\\0&1&0\\0&0&1\end{matrix}\right) \\
+L_z=\hbar \left(\begin{matrix}1&0&0\\0&0&0\\0&0&-1\end{matrix}\right) \\
+L_+=\hbar \sqrt{2}\left(\begin{matrix}0&1&0\\0&0&1\\0&0&0\end{matrix}\right) \\
+L_x=\frac{1}{2}\left(L_++L_-\right)=\frac{\hbar }{\sqrt{2}} \left(\begin{matrix}0&1&0\\1&0&1\\0&1&0\end{matrix}\right) \\
+L_y=\frac{1}{2i}\left(L_+-L_-\right)=\frac{\hbar }{\sqrt{2}}\left(\begin{matrix}0&-i&0\\i&0&-i\\0&i&0\end{matrix}\right)
+\end{split}\end{equation}
+\item $l=\frac{1}{2} \quad\Longrightarrow\quad m=\pm\frac{1}{2} \quad\Longrightarrow\quad l\left(l+1\right)=\frac{3}{4}$:\\
+scelta la seguente base di autovettori
+\begin{equation}\begin{split}
+\left |\frac{1}{2},\frac{1}{2} \right\rangle=\left(\begin{matrix}1\\0\end{matrix}\right) \qquad
+\left |\frac{1}{2}, -\frac{1}{2} \right\rangle=\left(\begin{matrix}0\\1\end{matrix}\right) \\
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+L_+=\frac{\hbar}{2}\left(\begin{matrix}0&1\\0&0\end{matrix}\right) \\
+L_x=\frac{\hbar }{2}\left(\begin{matrix}0&1\\1&0\end{matrix}\right) \\
+L_y=\frac{\hbar }{2}\left(\begin{matrix}0&-i\\i&0\end{matrix}\right) \\
+L_z=\frac{\hbar }{2}\left(\begin{matrix}1&0\\0&-1\end{matrix}\right) \\
+L^2=\frac{3}{4}\hbar\left(\begin{matrix}1&0\\0&1\end{matrix}\right)
+\end{split}\end{equation}\\
+Il caso $l=\frac{1}{2}$ è molto importante in quanto da luogo alle \textbf{matrici di Pauli} (non ricordarle è letale!) che descrivono il momento angolare intrinseco di spin $l=\frac{1}{2}$ 
+\begin{equation}\begin{split}
+\boxed{\sigma_x=\left(\begin{matrix}0&1\\1&0\end{matrix}\right) \qquad
+\sigma_y=\left(\begin{matrix}0&-i\\i&0\end{matrix}\right) \qquad
+\sigma_z=\left(\begin{matrix}1&0\\0&-1\end{matrix}\right)} \\
+\end{split}\end{equation}
+è utile anche definire
+\begin{equation}\begin{split}
+\sigma_+=\left(\begin{matrix}0&1\\0&0\end{matrix}\right) \qquad
+\sigma_-=\left(\begin{matrix}0&0\\1&0\end{matrix}\right) \\
+\end{split}\end{equation}
+notare infine che le matrici di Pauli formano un gruppo:\\
+\begin{equation}\begin{split}
+\sigma_x\sigma_y=i\sigma_z \quad \textrm{permutazioni cicliche} \\
+\sigma_x^2=\mathbb{I} \qquad
+L_\alpha=\frac{\hbar }{2}\sigma_\alpha\qquad
+\vec{\sigma}\cdot\vec{a}=\left(\begin{matrix}a_z&a_x-ia_y\\a_x+ia_y&-a_z\end{matrix}\right)\\
+\left(\vec{\sigma}\cdot\vec{a}\right)\quad\left(\vec{\sigma}\cdot\vec{b}\right)=\vec{a}\cdot\vec{b}\quad\mathbb{I}+i\vec{\sigma}\times\left(\vec{a}\times\vec{b}
+\right)\\
+\left(\vec{\sigma}\cdot\vec{a}\right)^2=\vert a\vert^2\mathbb{I}\\
+e^{i\vec{a}\cdot\vec{\sigma}}=\cos a \quad\mathbb{I}+i\frac{\sin a}{a}\left(\vec{\sigma}\cdot\vec{a}\right)
+\end{split}\end{equation}
+L'ultima formula sarà utile per vedere che gli operatori momento angolare sono generatori infinitesimi del gruppo delle rotazioni. 
+Notare che tutte le matrici di Pauli (tranne la matrice identità) hanno traccia nulla.\\
+\textit{Esercizio: dimostrare che tutti i momenti angolari $L_\alpha$ hanno traccia nulla indipendentemente dalla dimensione}
+\end{itemize}
+
+%MANCA UNA PARTE
+
+%\end{document}

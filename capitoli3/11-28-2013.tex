@@ -1,0 +1,220 @@
+\chapter{Esercizi} %Esercizi
+\section{Esercizio 1 del 7/9/2001} %Esercizio 1
+Un fascio, propagantesi lungo l'asse $y$, di particelle di spin $1$ nello stato corrispondente all'autovalore $S_z=+1$, viene fatto passare attraverso un dispositivo di Stern-Gerlach orientato lungo l'asse $x$. I fasci emergenti dal dispositivo vengono fra di loro separati e ciascuno di essi viene fatto passare attraverso un ulteriore apparato di Stern-Gerlach orientato come l'asse $z$.
+
+\subsection{Risoluzione} %Risoluzione
+\begin{equation}\begin{split}
+\bar F=-\partial \left(\hat \mu\cdot \hat B\right)=-\mu x \frac{\partial B}{\partial x}\hat x
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\bar \mu=-\frac{e}{2m}\bar S
+\end{split}\end{equation}
+Per ogni dispositivo ci Stern-Gerlach escono $3$ fasci (per i valori $\pm 1, 0$): ci sono in tutto $9$ fasci da considersre.
+
+\begin{equation}\begin{split}
+\phi_1=\left(\begin{matrix}1\\0\\0\end{matrix}\right) \\
+\phi_0=\left(\begin{matrix}0\\1\\0\end{matrix}\right) \\
+\phi_{-1}=\left(\begin{matrix}0\\0\\1\end{matrix}\right) 
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+S_z=\left(\begin{matrix}1&0&0\\0&0&0\\0&0&-1\end{matrix}\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |S_x=+ 1 \right\rangle=\frac{1}{2}\left(\begin{matrix}1\\\sqrt{2}\\1\end{matrix}\right)=\frac{1}{2}\left[\phi _1+\sqrt{2}\phi_0 +\phi_{-1}\right] \\
+\left |S_x=0 1 \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\0\\-1\end{matrix}\right)=\frac{1}{\sqrt{2}}\left[\phi _1-\phi_{-1}\right] \\
+\left |S_x=- \right\rangle=\frac{1}{2}\left(\begin{matrix}1\\-\sqrt{2}\\1\end{matrix}\right)=\frac{1}{2}\left[\phi _1-\sqrt{2}\phi_0 +\phi_{-1}\right] 
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+P_1\left(S_x=+1\right)=\left|\left\langle S_x=+1|S_z=+1 \right\rangle\right|^2=\left|\frac{1}{2}\left\langle \phi_1+\sqrt{2}\phi_0+\phi_{-1}|\phi_1 \right\rangle\right|^2=\frac{1}{4}\\
+P_0\left(S_x=0\right)=\left|\left\langle S_x=0|S_z=+1 \right\rangle\right|^2=\left|\frac{1}{\sqrt{2}}\left\langle \phi_1-\phi_{-1}|\phi_1 \right\rangle\right|^2=\frac{1}{2}\\
+P_{-1}\left(S_x=-1\right)=\left|\left\langle S_x=-1|S_z=+1 \right\rangle\right|^2=\left|\frac{1}{2}\left\langle \phi_1+\sqrt{2}\phi_0-\phi_{-1}|\phi_1 \right\rangle\right|^2=\frac{1}{4}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+P'_1\left(S_z=+1\right)=\left|\left\langle S_z=+1|S_x=+1 \right\rangle\right|^2=\frac{1}{4}\\
+P'_1\left(S_z=+1\right)=\left|\left\langle S_z=0|S_x=+1 \right\rangle\right|^2=\left|\frac{1}{2}\left\langle\phi_{0} |\phi_1+\sqrt{2}\phi_0+\phi_{-1} \right\rangle\right|^2=\frac{1}{2}\\
+P'_1\left(S_z=+1\right)=\left|\left\langle S_z=+1|S_x=+1 \right\rangle\right|^2=\left|\frac{1}{2}\left\langle\phi_{-1} |\phi_1+\sqrt{2}\phi_0+\phi_{-1} \right\rangle\right|^2=\frac{1}{4}
+\end{split}\end{equation}
+
+Si ha quindi:
+\begin{equation}\begin{split}
+S_x=1 \left(P=\frac{1}{4}\right)
+\begin{cases}
+s_z=+1 \left(P=\frac{1}{4}\right)&\frac{1}{4}\cdot \frac{1}{4}=\frac{1}{16} \\
+s_z=0 \left(P=\frac{1}{2}\right)&\frac{1}{2}\cdot \frac{1}{4}=\frac{1}{8} \\
+s_z=-1 \left(P=\frac{1}{4}\right)&\frac{1}{4}\cdot \frac{1}{4}=\frac{1}{16}
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+S_x=0 \left(P=\frac{1}{2}\right)
+\begin{cases}
+s_z=+1 \left(P=\frac{1}{2}\right)&\frac{1}{2}\cdot \frac{1}{2}=\frac{1}{4}\\
+s_z=0 \left(P=0\right)&\frac{1}{2}\cdot 0=0\\
+s_z=-1 \left(P=\frac{1}{2}\right)&\frac{1}{2}\cdot \frac{1}{2}=\frac{1}{4}
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+S_x=-1 \left(P=\frac{1}{4}\right)
+\begin{cases}
+s_z=+1 \left(P=\frac{1}{4}\right)&\frac{1}{4}\cdot \frac{1}{4}=\frac{1}{16}\\
+s_z=0 \left(P=\frac{1}{2}\right)&\frac{1}{2}\cdot \frac{1}{4}=\frac{1}{8}\\
+s_z=-1 \left(P=\frac{1}{4}\right)&\frac{1}{4}\cdot \frac{1}{4}=\frac{1}{16}
+\end{cases}
+\end{split}\end{equation}
+Se si sommano tutte le probabilità si ottiene ovviamente $1$.
+
+\section{Esercizio 1 del 27/10/2000} %Esercizio 1 del 27/10/2000
+
+\subsection{Risoluzione} %Risoluzione
+Siano
+\begin{equation}\begin{split}
+L_+=L_x+iL_y \\
+L_-=L_x-iL_y
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+L_x=\frac{1}{2}\left(L_++L_-\right)\\
+L_y=\frac{1}{2}\left(L_+-L_-\right)
+\end{split}\end{equation}
+
+Utilizzando le armoniche sferiche:
+\begin{equation}\begin{split}
+L_+Y_{l,m}=\hbar \sqrt{l\left(l+1\right)-m\left(m+1\right)}Y_{l,m+1}\\
+L_-Y_{l,m}=\hbar \sqrt{l\left(l+1\right)-m\left(m-1\right)}Y_{l,m-1}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+L_+\phi_1=0\\
+L_+\phi_0=\hbar \sqrt{2}\phi_1\\
+L_+\phi_{-1}=\hbar \sqrt{2}\phi_0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+L_-\phi_1=\hbar \sqrt{2}\phi_0
+L_-\phi_0=\hbar \sqrt{2}\phi_{-1}\\
+L_-\phi_{-1}=0
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+L_x\phi_1=\frac{\hbar }{2}\left(L_++L_-\right)\phi_1=\frac{\hbar }{\sqrt{2}}\phi_0\\
+L_x\phi_0=\frac{\hbar }{\sqrt{2}}\phi_1+\frac{1}{\sqrt{2}}\phi_{-1}=\frac{\hbar }{\sqrt{2}}\left(\phi_1+\phi_{-1}\right)\\
+L_x\phi_{-1}=\frac{\hbar }{\sqrt{2}}\phi_0
+\end{split}\end{equation}
+e analogamente per $L_y$.
+
+\begin{equation}\begin{split}
+L_x\left(p\phi_1+q\phi_0+r\phi_{-1}\right)=\lambda \left(p\phi_1+q\phi_0+r\phi_{-1}\right)\\
+\frac{p\hbar }{\sqrt{2}}\phi_0+q\frac{\hbar }{\sqrt{2}}\left(\phi_1+\phi_{-1}\right)+\frac{r\hbar }{\sqrt{2}}\phi_0=\lambda\left(p\phi_1+q\phi_0+r\phi_{-1}\right)
+\end{split}\end{equation}
+considerando $\lambda=0,\pm\hbar $
+\begin{equation}\begin{split}
+\begin{cases}
+\frac{q\hbar }{\sqrt{2}}=\lambda p\\
+\frac{\hbar }{\sqrt{2}}\left(p+r\right)=\lambda q
+\frac{q\hbar }{\sqrt{2}}=\lambda r
+\end{cases}\\
+\Longrightarrow
+\begin{cases}
+\lambda=0\\
+q=0\\
+p=-2
+\end{cases},
+\begin{cases}
+\lambda=\hbar \\
+p=r\\
+q=\sqrt{2} p
+\end{cases},
+\begin{cases}
+\lambda=-\hbar \\
+p=r\\
+q=\sqrt{2}p
+\end{cases}
+\end{split}\end{equation}
+
+Se si sostituisce nella combinazione iniziale si ha:
+\begin{itemize}
+\item $\lambda=0$:
+\begin{equation}\begin{split}
+\frac{1}{\sqrt{2}}\left(\phi_1-\phi_{-1}\right)
+\end{split}\end{equation}
+\item $\lambda=\hbar $:
+\begin{equation}\begin{split}
+\frac{1}{2}\left(\phi_1+\sqrt{2}\phi_0+\phi_{-1}\right)
+\end{split}\end{equation}
+\item $\lambda=-\hbar $:
+\begin{equation}\begin{split}
+\frac{1}{2}\left(\phi_1-\sqrt{2}\phi_0+\phi_{-1}\right)
+\end{split}\end{equation}
+\end{itemize}
+
+Usando la notazione matriciale si ha:
+\begin{equation}\begin{split}
+L_x\phi_1=\frac{\hbar }{\sqrt{2}}\phi_1\\
+L_x\phi_1=\frac{\hbar }{\sqrt{2}}\left(\phi_1+\phi_{-1}\right)\\
+L_x\phi_{-1}=\frac{\hbar }{\sqrt{2}}\phi_1\\
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+L_x=\frac{\hbar }{\sqrt{2}}\left(\begin{matrix}0&1&0\\1&0&1\\0&1&0\end{matrix}\right)
+\end{split}\end{equation}
+e analogamente per $L_y$.
+
+Si possono calcolare autovalori e autovettori:
+\begin{equation}\begin{split}
+\frac{\hbar }{\sqrt{2}}\left(\begin{matrix}0&1&0\\1&0&1\\0&1&0\end{matrix}\right)\left(\begin{matrix}x\\y\\z\end{matrix}\right)=\lambda\left(\begin{matrix}x\\y\\z\end{matrix}\right)\\
+\frac{\hbar }{\sqrt{2}}\left(\begin{matrix}-\lambda&1&0\\1&-\lambda&1\\0&1&-\lambda\end{matrix}\right)\left(\begin{matrix}x\\y\\z\end{matrix}\right)=\left(\begin{matrix}0\\0\\0\end{matrix}\right)\\
+-\lambda\left|\begin{matrix}-\lambda&1\\1&-\lambda\end{matrix}\right|-1\left|\begin{matrix}1&1\\0&-\lambda\end{matrix}\right|\\
+\Longrightarrow \begin{cases}
+\lambda=0\\
+\lambda=\pm\hbar 
+\end{cases}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+\frac{\hbar }{\sqrt{2}}y=\lambda x\\
+\frac{\hbar }{\sqrt{2}}\left(x+z\right)=\lambda y\\
+\frac{\hbar }{\sqrt{2}}y=\lambda z\\
+\end{cases}
+\end{split}\end{equation}
+e si ricavano i risultati come fatto precedentemente.
+
+\section{Esercizio 1 del 29/6/2001} %Esercizio 1 del 29/6/2001
+
+\subsection{Risoluzione} %Risoluzione
+Ci si trova nello spazio $\mathcal{L}^2\left(\mathbb{R}^3\right)\otimes \mathfrak{l}$.
+\begin{equation}\begin{split}
+\left\langle \psi |\psi  \right\rangle=\\
+=1=
+\\=\int{\left[\left|\psi _+\left(r,\theta,\phi\right)\right|^2+\left|\psi _-\left(r,\theta,\phi\right)\right|^2\right]\textrm{d}^3\bar r}=\\
+=\left(\frac{4}{3}+\frac{1}{3}\right)\int{r^2|R\left(r\right)|^2\textrm{d}r}=\\
+=\left(\frac{5}{3}\right)\int{r^2|R\left(r\right)|^2\textrm{d}r}\\
+\Longrightarrow \int{r^2|R\left(r\right)|^2\textrm{d}r}=\frac{3}{5}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\int{r^2|R\left(r\right)|^2\textrm{d}r}\int{\left[Y_{0,0}^*Y_{0,0}+\frac{1}{3}Y_{1,0}^*Y_{1,0}+\frac{1}{\sqrt{3}}Y_{0,0}^*Y_{1,0}+\frac{1}{\sqrt{3}}Y_{0,0}Y_{1,0}^*\right]\textrm{d}\Omega}
+\end{split}\end{equation}
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+P\left(S_z=\frac{\hbar }{2}\right)=\\
+=\left|\left\langle S_z=\frac{\hbar }{2}|\psi  \right\rangle\right|^2=\\
+=\int{|\psi _+\left(r,\theta,\phi\right)|^2\textrm{d}^3\bar r}=\\
+=\frac{4}{3}\int{|R\left(r\right)|^2r^2\textrm{d}r}=\\
+=\frac{4}{5}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+P\left(S_z=-\frac{\hbar }{2}\right)=\frac{1}{5}
+\end{split}\end{equation}
+
+Per le altre componenti:
+\begin{equation}\begin{split}
+S_x=\frac{\hbar }{2}\left(\begin{matrix}0&1\\1&0\end{matrix}\right)\\
+\left |S_x=+\frac{\hbar }{2} \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\1\end{matrix}\right)\\
+\left |S_x=-\frac{\hbar }{2} \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\-1\end{matrix}\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+S_y=\frac{\hbar }{2}\left(\begin{matrix}0&-i\\i&0\end{matrix}\right)\\
+\left |S_y=+\frac{\hbar }{2} \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\i\end{matrix}\right)\\
+\left |S_y=-\frac{\hbar }{2} \right\rangle=\frac{1}{\sqrt{2}}\left(\begin{matrix}1\\-i\end{matrix}\right)
+\end{split}\end{equation}
+
+%MANCA UNA PARTE

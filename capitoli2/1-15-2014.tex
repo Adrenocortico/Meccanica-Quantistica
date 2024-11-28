@@ -1,0 +1,83 @@
+\section{Teorema di Bell} %Teorema di Bell
+Ci si pone nella situazione precedente, cioè lo stato del singoletto del pione. Si indica con $P\left(\bar a,\bar b\right)$ la probabilità:
+\begin{equation}\begin{split}
+P\left(\bar a,\bar b\right)=-\bar a\cdot \bar b.
+\end{split}\end{equation}
+con a e b direzioni di correlazione.
+
+Lo stato di singoletto è:
+\begin{equation}\begin{split}
+\left |\psi  \right\rangle=\frac{1}{\sqrt{2}}\left[\left |+ \right\rangle^{\left(-\right)}\left |- \right\rangle^{\left(+\right)}-\left |- \right\rangle^{\left(-\right)}\left |+ \right\rangle^{\left(+\right)}\right]
+\end{split}\end{equation}
+
+Il valore di aspettazione è:
+\begin{equation}\begin{split}
+\left\langle \psi \right |\bar S^{\left(-\right)}\bar a\bar S^{\left(+\right)}\bar b\left |\psi  \right\rangle=\\
+=\left\langle \psi \right |S_z^{\left(-\right)}\left(S_x^{\left(+\right)}\sin{\left(\theta\right)}+S_z^{\left(+\right)}\cos{\left(\theta\right)}\right)\left |\psi  \right\rangle=\\
+=-\bar a\cdot \bar b
+\end{split}\end{equation}
+avendo considerato:
+\begin{equation}\begin{split}
+\left\langle \psi \right |S_z^{\left(-\right)}S_x^{\left(+\right)}\left |\psi  \right\rangle=\\
+=\frac{1}{\sqrt{2}}\left\langle \psi \right |S_z^{\left(-\right)}S_x^{\left(+\right)}\left[\left |+ \right\rangle^{\left(-\right)}\left |- \right\rangle^{\left(+\right)}-\left |- \right\rangle^{\left(-\right)}\left |+ \right\rangle^{\left(+\right)}\right]=\\
+=\frac{1}{2}\left[\right]S_z^{\left(-\right)}S_x^{\left(+\right)}\left[\left |+ \right\rangle^{\left(-\right)}\left |- \right\rangle^{\left(+\right)}-\left |- \right\rangle^{\left(-\right)}\left |+ \right\rangle^{\left(+\right)}\right]=\\
+=\frac{1}{2}\left[_z^{\left(+\right)}\left\langle -\right |S_x^{\left(+\right)}\left |- \right\rangle_z^{\left(+\right)}-_z^{\left(+\right)}\left\langle +\right |S_x^{\left(+\right)}\left |+ \right\rangle_z^{\left(+\right)}\right]=\\
+=\frac{1}{2}\left[0\right]
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle \psi \right |S_z^{\left(-\right)}S_z^{\left(+\right)}\left |\psi  \right\rangle=\\
+=\frac{1}{2}\left[-1-1\right]=-1
+\end{split}\end{equation}
+
+\subsection{Località alla Bell} %Località alla Bell
+\emph{L'esito di una misurazione su un elettrone non risente di come sia fatto l'apparato di misurazione sul positrone.}
+
+Siano quindi lo stato di singoletto $\left |\psi  \right\rangle$ e $\lambda$ variabile nascosta con:
+\begin{equation}\begin{split}
+\begin{cases}
+A\left(\bar a,\lambda\right)=\pm 1, & \textrm{}\\
+B\left(\bar b,\lambda\right)=\pm 1, & \textrm{}
+\end{cases}
+\end{split}\end{equation}
+
+Sia anche che:
+\begin{equation}\begin{split}
+B\left(\bar a,\lambda\right)=-A\left(\bar a,\lambda\right) \quad \forall \lambda
+\end{split}\end{equation}
+
+Si ha dunque:
+\begin{equation}\begin{split}
+P\left(\bar a,\bar b\right)=\\
+=\int{\rho\left(\lambda\right)A\left(\bar a,\lambda\right)B\left(\bar b,\lambda\right)\textrm{d}\lambda}=\\
+=-\int{\rho\left(\lambda\right)A\left(\bar a,\lambda\right)B\left(\bar b,\lambda\right)\textrm{d}\lambda}\\
+\Longrightarrow P=P\left(\bar a,\bar b\right)-P\left(\bar a,\bar c\right)=\int{\rho\left(\lambda\right)\left[A\left(\bar a,\lambda\right)A\left(\bar b,\lambda\right)-A\left(\bar a,\lambda\right)A\left(\bar c,\lambda\right)\right]\textrm{d}\lambda}=\\
+==\\
+=-\int{\rho\left(\lambda\right)A\left(\bar a,\lambda\right)A\left(\bar b,\lambda\right)\left[1-A\left(\bar b,\lambda\right)A\left(\bar c,\lambda\right)\right]\textrm{d}\lambda}=\\
+\Longrightarrow -\int{\rho\left(\lambda\right)\left[1-A\left(\bar b,\lambda\right)A\left(\bar c,\lambda\right)\right]\textrm{d}\lambda}\le P\left(\bar a,\bar b\right)-P\left(\bar a,\bar c\right)\le \int{\rho\left(\lambda\right)\left[1-A\left(\bar b,\lambda\right)A\left(\bar c,\lambda\right)\right]\textrm{d}\lambda}\\
+\Longrightarrow \left|P\left(\bar a,\bar b\right)-P\left(\bar a,\bar c\right)\right|\le 1-\int{\rho\left(\lambda\right)\left[A\left(\bar b,\lambda\right)A\left(\bar c,\lambda\right)\right]\textrm{d}\lambda}=1+P\left(\bar b,\bar c\right)
+\end{split}\end{equation}
+richedendo che $\rho\left(\lambda\right)>0$ e normalizzata e avendo introdotto una terza direzione.
+
+Si usano ora delle direzioni particolari:
+
+%MANCA UNA PARTE
+
+La meccanica quantistica quindi non può essere completata con teorie alle variabili nascoste locali. (Si possono costruire teorie a variabili nascoste ma queste sono valite per la quantistica se non viene considerata la località di Bell).
+
+Si guarda ora se vale la quantistica o la teoria alle variabili nascoste. Per fare ciò si utilizza la disuguaglianza CHSH.
+
+Si utilizzano 4 direzioni:
+\begin{equation}\begin{split}
+S=A\left(\bar a,\lambda\right)\left[B\left(\bar b,\lambda\right)-B\left(\bar b',\lambda\right)\right]+A\left(\bar a',\lambda\right)\left[B\left(\bar b,\lambda\right)-B\left(\bar b',\lambda\right)\right]=\pm 2
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+-2\le S=\int{\rho\left(\lambda\right)S\left(\lambda\right)\textrm{d}\lambda}\le 2\\
+-2\le S=P\left(\bar a,\bar b\right)-P\left(\bar a,\bar b'\right)+P\left(\bar a',\bar b\right)+P\left(\bar a',\bar b'\right)\le 2
+\end{split}\end{equation}
+Se vengono considerati gli angoli tra le direzioni di $\frac{\pi}{8}$ si ottiene che $S_{\textrm{MQ}}=2\sqrt{2}$.
+
+%MANCA UNA PARTE
+
+La teoria rispetto questo apparato sperimentale è $S=2.7\pm 0.05$, mentre quello ricavato è $S=2.69\pm 0.025$.
+
+È GIUSTA LA MECCANICA QUANTISTICA!!!

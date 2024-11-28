@@ -1,0 +1,323 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+
+%\renewcommand{\vec}{\bm}
+
+%\author{Francesco~Tacchino}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{17 Ottobre 2013}
+
+%\begin{document}
+%\maketitle
+
+\section{Formula di Baker-Campbell-Hausdorff} %Formula di Baker-Campbell-Hausdorff
+\begin{equation*}\begin{split}
+e^{A}e^{B}=e^{A+B+\frac{1}{2}\left[A,B\right]+...}
+\end{split}\end{equation*}
+Per dimostrare la formula di Baker-Campbell-Hausdorff si utilizzano due lemmi e un teorema.
+
+\begin{lemma} %Lemma 1
+Sia $f\left(t\right) \in lin\left(\mathcal{H}\right)$ una funzione operatoriale lineare. Allora:
+\begin{equation*}\begin{split}
+\frac{df^{-1}}{dt}=-f^{-1}\frac{df}{dt}f^{-1}
+\end{split}\end{equation*}
+\end{lemma}
+\begin{proof}
+\begin{equation*}\begin{split}
+ff^{-1}=\mathbb{I}
+\end{split}\end{equation*}
+Generalmente
+\begin{equation*}\begin{split}
+\left[\frac{df}{dt},f\right]\neq 0
+\end{split}\end{equation*}
+Usando dunque la formula di derivazione di un prodotto:
+\begin{equation*}\begin{split}
+\frac{df^{-1}}{dt}=-f^{-1}\frac{df}{dt}f^{-1}
+\end{split}\end{equation*}
+\end{proof}
+
+\begin{lemma} %Lemma 2
+\begin{equation*}\begin{split}
+e^{-X\left(t\right)}\frac{d}{dt}e^{X\left(t\right)}=\phi\left(-\textrm{ad}X\left(t\right)\right)X'\left(t\right)
+\end{split}\end{equation*}
+con $X'\left(t\right)=\frac{dX\left(t\right)}{dt}$ e $\phi\left(z\right)=\frac{e^z-1}{z}$.
+\end{lemma}
+\begin{proof} Definiamo
+\begin{equation*}\begin{split}
+G\left(s,t\right)=e^{sX\left(t\right)}
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+A\left(s,t\right):=G\left(s,t\right)^{-1}\frac{\partial }{\partial s}G\left(s,t\right)=X\left(t\right)
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+B\left(s,t\right):=G\left(s,t\right)^{-1}\frac{\partial }{\partial t}G\left(s,t\right)=e^{-sX\left(t\right)}\frac{\partial }{\partial t}e^{sX\left(t\right)}
+\end{split}\end{equation*}
+Possiamo adesso calcolare il commutatore seguente:
+\begin{equation*}\begin{split}
+\left[A,B\right]=G^{-1}\frac{\partial G}{\partial s}G^{-1}\frac{\partial G}{\partial t}-G^{-1}\frac{\partial G}{\partial t}G^{-1}\frac{\partial G}{\partial s}=
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+=-\frac{\partial G^{-1}}{\partial s}\frac{\partial G}{\partial t}+\frac{\partial G^{-1}}{\partial t}\frac{\partial G}{\partial s}
+\end{split}\end{equation*}
+dove si è usato il lemma 1 nell'ultimo passaggio. Dalle definizioni possiamo calcolare le seguenti espressioni delle derivate:
+\begin{equation*}\begin{split}
+\frac{\partial A}{\partial t}=\frac{\partial G^{-1}}{\partial t}\frac{\partial G}{\partial s}+G^{-1}\frac{\partial ^2G}{\partial t\partial s}
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+\frac{\partial B}{\partial s}=\frac{\partial G^{-1}}{\partial s}\frac{\partial s}{\partial t}+G^{-1}\frac{\partial ^2G}{\partial s\partial t}
+\end{split}\end{equation*}
+Otteniamo il seguente risultato:
+\begin{equation*}\begin{split}
+\frac{\partial B}{\partial s}-\frac{\partial A}{\partial t}+\left[A,B\right]=0 \Longleftrightarrow \frac{\partial B}{\partial s}-X'\left(t\right)+\left[X\left(t\right),B\right]=0
+\end{split}\end{equation*}
+Dobbiamo dunque risolvere l'equazione differenziale
+\begin{equation*}
+\left\{
+\begin{aligned}
+&\frac{\partial B}{\partial s}=X'\left(t\right)-\left(\textrm{ad}X\left(t\right)\right)B \\
+& B\left(0,t\right)=0
+\end{aligned}
+\right.
+\end{equation*}
+Dalla teoria delle equazioni differenziali si ha
+\begin{equation*}\begin{split}
+\frac{\textrm{d}f}{\textrm{d}t}=kf+g \Longrightarrow f\left(t\right)=\int_{t_0}^{t}{e^{k\left(t-r\right)}g\left(r\right)\textrm{d}r}
+\end{split}\end{equation*}
+Se g è costante
+\begin{equation*}\begin{split}
+f\left(t\right)=\frac{e^{kt}-1}{k}g
+\end{split}\end{equation*}
+La tesi segue prendendo con le opportune sostituzioni $B\left(1,t\right)$.
+\end{proof}
+
+\begin{teorema}[Teorema di Baker-Campbell-Hausdorff] %Teorema di Baker-Campbell-Hausdorff
+Passiamo ora a calcolare in generale
+\begin{equation*}\begin{split}
+e^Xe^Y ,\quad \left[X,Y\right] \neq 0
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+\ln{\left(e^Xe^Y\right)}=X+\int_{0}^{1}{\psi\left[e^{\textrm{ad}X}e^{t\textrm{ad}Y}\right]Y \textrm{d}t}
+\end{split}\end{equation*}
+dove  $\psi\left(z\right)=\frac{z\ln{z}}{z-1}$.
+\end{teorema}
+\begin{proof}
+Definiamo
+\begin{equation*}\begin{split}
+L\left(t\right):=\ln{\left(e^Xe^{tY}\right)}
+\end{split}\end{equation*}
+Da cui si vede subito
+\begin{equation*}\begin{split}
+e^Xe^{tY}=e^{L\left(t\right)}
+\end{split}\end{equation*}
+Inoltre
+\begin{equation*}\begin{split}
+e^{\textrm{ad}L\left(t\right)}=e^{\textrm{ad}X}e^{t\textrm{ad}Y}
+\end{split}\end{equation*}
+Infatti
+\begin{equation*}\begin{split}
+e^{\textrm{ad}L\left(t\right)}N=e^{L\left(t\right)}Ne^{-L\left(t\right)}=e^Xe^{tY}Ne^{-tY}e^{-X}=e^{\textrm{ad}X}e^{t\textrm{ad}Y}N \quad \forall N
+\end{split}\end{equation*}
+Dall'ultima eguaglianza mostrata segue che
+\begin{equation*}\begin{split}
+\textrm{ad}L\left(t\right)=\ln{\left(e^{\textrm{ad}X}e^{t\textrm{ad}Y}\right)}
+\end{split}\end{equation*}
+a patto che la norma di $e^{\textrm{ad}X}e^{t\textrm{ad}Y}-\mathbb{I}$ sia inferiore o uguale a 1.
+Osseviamo che:
+\begin{equation*}\begin{split}
+\frac{\textrm{d}}{\textrm{d}t}e^{L\left(t\right)}=e^Xe^{tY}Y=e^{L\left(t\right)}Y
+\end{split}\end{equation*}
+Questo ci permette di dire che:
+\begin{equation*}\begin{split}
+e^{-L\left(t\right)}\frac{\textrm{d}}{\textrm{d}t}e^{L\left(t\right)}=Y=\phi\left(-\textrm{ad}L\left(t\right)\right)L'\left(t\right)
+\end{split}\end{equation*}
+grazie anche al Lemma 2.
+All'interno del cerchio $|z-1|<1$
+\begin{equation*}\begin{split}
+\phi\left(-\ln{z}\right)=\frac{e^{-\ln{z}}-1}{-\ln{z}}=\frac{\frac{1}{z}-1}{-\ln{z}}=\frac{z-1}{z\ln{z}}=\frac{1}{\psi\left(z\right)}
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+\Longrightarrow \phi\left(-\ln{z}\right)\psi \left(z\right)=1 \\
+\end{split}\end{equation*}
+Ricordando che per definizione un operatore commuta con una sua funzione si può sfruttare questo risultato come segue:
+\begin{equation*}\begin{split}
+L'\left(t\right)=\psi\left(e^{\textrm{ad}X}e^{t\textrm{ad}Y}\right)\phi \left(-\textrm{ad}L\left(t\right)\right)L'\left(t\right)= \\
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+=\psi\left(e^{\textrm{ad}X}e^{t\textrm{ad}Y}\right)Y \\
+\end{split}\end{equation*}
+Integrando entrambi i membri tra 0 e 1
+\begin{equation*}\begin{split}
+\ln{\left(e^Xe^Y\right)}=X+\int_{0}^{1}{\psi\left(e^{\textrm{ad}X}e^{t\textrm{ad}Y}\right)Y  \textrm{d}t}
+\end{split}\end{equation*}
+dove $X=L(0)$ e $\ln(e^Xe^Y)=L(1).$
+Il calcolo completo è piuttosto complicato. Forniamo a titolo di esempio i primi termini:
+\begin{equation*}\begin{split}
+\ln\left(e^Xe^Y\right)=X+Y+\frac{1}{2}\left[X,Y\right]+\frac{1}{12}\left[X,\left[X,Y\right]\right]+...
+\end{split}\end{equation*}
+\end{proof}
+
+In particolare, è interessante il caso più semplice in cui $$\left[A,B\right]=C, \quad \left[A,C\right]=\left[B,C\right]=0$$
+Definiamo ad esempio in tale circostanza
+\begin{equation*}\begin{split}
+\mathcal{A}\left(t\right):=e^{\textrm{ad}A}e^{t\textrm{ad}B} \\
+\mathcal{A}\left(t\right)B=e^{\textrm{ad}A}B=B+C \\
+\mathcal{A}\left(t\right)C=C
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+\left[\mathcal{A}\left(t\right)-\mathbb{I}\right]^nB=\begin{cases}
+n=0, & B \\
+n=1, & C \\
+n=2, & 0
+\end{cases}
+\end{split}\end{equation*}
+Otteniamo la formula semplificata di Baker-Campbell-Hausdorff (\textbf{BCH})
+\begin{equation*}\begin{split}
+\ln{\left(e^Ae^B\right)}=\frac{1}{2}\left[A,B\right]+A+B. \Longleftrightarrow e^{A}e^{B}=e^{A+B+\frac{1}{2}\left[A,B\right]}
+\end{split}\end{equation*}
+
+\section{$\mathbb{C} ^*$ Algebra} %Algebra C*
+Ricordiamo la definizione di norma di un operatore:
+$$||A||=\sup_{||x||\le 1}{||Ax||}$$
+Una $\mathbb{C}^*$ algebra è un'algebra complessa di operatori lineari continui su uno spazio di Hilbert con due proprietà addizionali:
+\begin{itemize}
+\item è chiusa in norma (Algebra di Banach)
+\item è chiusa sotto l'operazione di \textbf{aggiunto} (\dag)
+\end{itemize}
+L'operazione di aggiunto è definita con le seguenti proprietà:
+\begin{itemize}
+\item $ (aA+bB)^\dag=a^*A^\dag+b^*B^\dag$ (antilinearità)
+\item $ (A^\dag)^\dag=A$
+\item $\left(AB\right)^\dag= B^\dag A^\dag$
+\item $||T^\dag T||=||T^\dag|| ||T||$
+\end{itemize}
+Controlliamo come esempio la validità dell'ultima proprietà nel caso noto degli operatori limitati.
+Innanzi tutto, poiché siamo in un'algebra di Banach vale
+\begin{equation*}\begin{split}
+||AB||\le ||A||||B||
+\end{split}\end{equation*}
+Prendiamo ora $T \in B(\mathcal{H})$
+\begin{equation*}\begin{split}
+||T||^2 &=\sup_{||x||\le 1}{\left\langle Tx|Tx \right\rangle}=\sup_{||x||\le 1}{\langle x|T^\dag T|x\rangle} \overset{Schwarz}{\le}\sup_{||x||\le 1}{||x||||T^\dag Tx||} \le \\
+&\le \sup_{||x||\le 1}{||T^\dag Tx||}=||T^\dag T||\le ||T^\dag||||T|| \\
+\end{split}\end{equation*}
+Semplificando un $||T||$ da entrambe le parti
+\begin{equation*}\begin{split}
+||T||\le ||T^\dag||
+\end{split}\end{equation*}
+Similmente si ottiene
+\begin{equation*}\begin{split}
+||T^\dag||\le ||T||
+\end{split}\end{equation*}
+e quindi
+\begin{equation*}\begin{split}
+||T||=||T^\dag||
+\end{split}\end{equation*}
+Si può concludere con la catena seguente
+\begin{equation*}\begin{split}
+||T^\dag||||T||= ||T||^2 \le||T^\dag T||\le||T^\dag||||T||
+\end{split}\end{equation*}
+che ovviamente porta a
+\begin{equation*}\begin{split}
+||T^\dag T||=||T^\dag||||T||
+\end{split}\end{equation*}
+Quindi $B(\mathcal{H})$ è una $\mathbb{C}^*$ algebra.
+
+\section{Osservabili, autostati, dispersione}
+Per una osservabile $Q$ a spettro discreto si definisce, per $||\psi||=1$:
+\begin{equation*}\begin{split}
+\sigma_\psi \left(Q\right):=\langle \psi|\left(Q-\left\langle \psi |Q|\psi  \right\rangle\right)^2  |\psi \rangle
+\end{split}\end{equation*}
+Se imponiamo $ \sigma_\psi \left(Q\right)=0$ otteniamo
+\begin{equation*}\begin{split}
+\sigma_\psi \left(Q\right)=0
+\Longrightarrow ||\left(Q-\left\langle \psi |Q|\psi  \right\rangle\right)\psi ||=0
+\Longrightarrow \left(Q-\left\langle \psi |Q|\psi  \right\rangle\right)\left |\psi  \right\rangle=0
+\end{split}\end{equation*}
+e quindi
+\begin{equation*}\begin{split}
+Q\left |\psi  \right\rangle=q\left |\psi  \right\rangle \quad \textrm{con} \quad q=\left\langle Q \right\rangle=\left\langle \psi |Q|\psi  \right\rangle
+\end{split}\end{equation*}
+Se $X$ è una generica osservabile e $|x_n\rangle$ i suoi autostati con autovalore $x_n$ possiamo porre:
+\begin{equation*}\begin{split}
+X=\sum_n{x_n|x_n\rangle\langle x_n|}
+\end{split}\end{equation*}
+Se $|\psi\rangle$ è normalizzato
+\begin{equation*}\begin{split}
+p_n=|\langle x_n | \psi \rangle |^2
+\end{split}\end{equation*}
+
+\section{Postulato di Von Neumann} %Postulato di Von Neumann
+Per una osservabile con spettro discreto $X=\sum_n{x_n\left |x_n \right\rangle\left\langle x_n\right |}$ una misura ideale ha le seguenti caratteristiche:
+\begin{itemize}
+\item la probabilità di ottenere il valore $x_n$ è data dalla regola Born generalizzata: $p_n=|\left\langle x_n|\psi  \right\rangle|^2$
+\item lo stato dopo la misurazione è dato dall'autostato corrispondente al valore misurato: $\left |\psi _n \right\rangle=\left |x_n \right\rangle$
+\end{itemize}
+Questa impostazione presenta alcuni difetti:
+\begin{itemize}
+\item non tiene conto del caso degli spettri continui
+\item non dà indicazioni ben definite in presenza di degenerazione per l'autospazio corrispondente a $x_n$
+\end{itemize}
+C'è dunque bisogno di una generalizzazione.
+
+\subsection{Postulato di Lüders} %Postulato di Lüders
+Il postulato di Von Neumann intende la misura come un disturbo piuttosto importante. La generalizzazione di Lüders reinterpreta tale postulato con il concetto di proiezione e segue il principio del minimo disturbo.
+A seguito di una misura quello che accade allo stato $|\psi \rangle $ è la trasformazione seguente:
+\begin{equation*}\begin{split}
+\left |\psi  \right\rangle \rightarrow \frac{\left |x_n \right\rangle\left\langle x_n|\psi  \right\rangle}{||\left |x_n \right\rangle\left\langle x_n|\psi  \right\rangle||}=\left |x_n \right\rangle
+\end{split}\end{equation*}
+Ovvero in pratica lo stato iniziale viene proiettato sull'autospazio $\mathcal{H}_n$ e poi rinormalizzato opportunamente
+\begin{equation*}\begin{split}
+\left |\psi  \right\rangle \rightarrow \frac{P_n\left |\psi  \right\rangle}{||P_n\psi ||}
+\end{split}\end{equation*}
+con $P_n$ il proiettore ortogonale sull'autospazio dell'autovalore $x_n$. Il disturbo è minimo in quanto all'interno dell'autospazio non si richiede di selezionare nulla in particolare.
+Nel caso a spettro continuo:
+\begin{equation*}\begin{split}
+X=\int_{\mathbb{R} }{E\left(\textrm{d}\lambda\right)\lambda}
+\end{split}\end{equation*}
+\begin{equation*}\begin{split}
+E\left(\mathbb{R} \right)&=\mathbb{I}=\int_{\mathbb{R} }{E\left(\textrm{d}\lambda\right)}
+\end{split}\end{equation*}
+Il proiettore su un intervallo $\Delta$ è
+\begin{equation*}\begin{split}
+E\left(\Delta\right)&=P_{\Delta}=\int_{\Delta}{E\left(\textrm{d}\lambda\right)}
+\end{split}\end{equation*}
+Si ha che
+\begin{equation*}\begin{split}
+\int_{\Delta}{E\left(\textrm{d}\lambda\right)f\left(\lambda\right)}=\int_{\mathbb{R} }{E\left(\textrm{d}\lambda\right)f_\Delta\left(\lambda\right)}
+\end{split}\end{equation*}
+dove
+\begin{equation*}\begin{split}f_\Delta=
+\begin{cases}
+f, & \lambda\in\Delta \\
+0, & \textrm{altrimenti}
+\end{cases}
+\end{split}\end{equation*}
+
+Si misura la posizione $x$ e il risultato cade nell'intervallo $\Delta$ allora lo stato diventa $\left |\psi  \right\rangle \rightarrow \frac{P_\Delta\left |\psi  \right\rangle}{||P_\Delta\psi ||}$. Nella rappresentazione posizione si ha:
+\begin{equation*}\begin{split}
+\left\langle x|\psi  \right\rangle=\psi \left(x\right) \rightarrow \frac{\psi _\Delta\left(x\right)}{\sqrt{\int_{\Delta}{|\psi \left(x\right)^2\textrm{d}x|}}}
+\end{split}\end{equation*}
+ovvero la funzione d'onda viene tagliata lasciandola non nulla solo su $\Delta$ e poi rinormalizzata.
+
+
+Se si descrive la misurazione come indiretta il sistema entra in una scatola e interagisce con un apparato che è anch'esso un sistema quantistico. Lo stato di uscita non necessariamente soddisfa il postulato di Von Neumann. Lo si può ricavare applicando solo la regola di Born e calcolando la probabilità congiunta con il risultato di una seconda misura. Il postulato di Von Neumann serve soltanto a dire in che stato va l'apparato, la ''lancetta'' (pointer). Il disturbo dello stato è dato dall'interazione con l'apparato, non dalla lettura dell'apparato, come concettualmente direbbe Von Neumann.
+
+%Esiste un secondo postulato di Von Neuemann: \textbf{l'osservabile è descritta da un valore autoaggiunto}.
+
+%\end{document}

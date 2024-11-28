@@ -1,0 +1,170 @@
+\chapter[Non località quantistica]{Non località quantistica - Disuguaglianza di Bell} %Non località quantistica - Disuguaglianza di Bell
+\section{Macchinette di Popescu} %Macchinette di Popescu
+Ci sono Alice $A$ e Bob $B$, fidanzati, che devono separarsi. Lei rimane sulla Terra e lui va in un pianeta lontanissimo. Vogliono comunicare simultaneamente e si rivolgono a Popescu. Egli fornisce loro due macchinette che comunicano in binario:
+\begin{itemize}
+\item Alice: pulsante $x=0,1$ lampadina $a=0,1$
+\item Bob: pulsante $y=0,1$ lampadina $b=0,1$
+\end{itemize}
+
+Tornando a casa le provano. Le variabili $x$ e $y$ però non sono variabili e rimangono fisse su $0$. In compenso $a$ e $b$ funzionano perfettamente: \\
+\begin{tabularx}{\textwidth}{XXXXX}
+\toprule
+$x$ & $y$ & $a$ & $b$ & $P\left(a,b|x,y\right)$ \\
+\midrule
+$0$ & $0$ & $0$ & $0$ & $\frac{1}{2}$ \\
+$0$ & $0$ & $1$ & $1$ & $\frac{1}{2}$ \\
+\bottomrule
+\end{tabularx}
+Si nota che si potrebbe costruire entrambe le macchinette con una memoria interna condivisa:
+Mem$_a=011001110110001$ Mem$_b=011001110110001$.
+
+Tornando da Popescu, egli da loro due macchinette con i pulsanti funzionanti: \\
+\begin{tabularx}{\textwidth}{XXXXX}
+\toprule
+$x$ & $y$ & $a$ & $b$ & $P\left(a,b|x,y\right)$ \\
+\midrule
+$0$ & $0$ & $0$ & $0$ & $\frac{1}{2}$ \\
+$0$ & $0$ & $1$ & $1$ & $\frac{1}{2}$ \\
+$1$ & $0$ & $0$ & $1$ & $\frac{1}{2}$ \\
+$1$ & $0$ & $1$ & $0$ & $\frac{1}{2}$ \\
+$0$ & $1$ & $0$ & $1$ & $\frac{1}{2}$ \\
+$0$ & $1$ & $1$ & $0$ & $\frac{1}{2}$ \\
+$1$ & $1$ & $0$ & $0$ & $\frac{1}{2}$ \\
+$1$ & $1$ & $1$ & $1$ & $\frac{1}{2}$ \\
+\bottomrule
+\end{tabularx}
+Si nota la presenza ancora di memorie interne condivise.
+
+Tornando ancora da Popescu, egli da una versione migliorata delle macchinette: \\
+\begin{tabularx}{\textwidth}{XXXXX}
+\toprule
+$x$ & $y$ & $a$ & $b$ & $P\left(a,b|x,y\right)$ \\
+\midrule
+$0$ & $0$ & $0$ & $0$ & $\frac{1}{2}$ \\
+$0$ & $0$ & $1$ & $1$ & $\frac{1}{2}$ \\
+$1$ & $0$ & $0$ & $0$ & $\frac{1}{2}$ \\
+$1$ & $0$ & $1$ & $1$ & $\frac{1}{2}$ \\
+$0$ & $1$ & $0$ & $0$ & $\frac{1}{2}$ \\
+$0$ & $1$ & $1$ & $1$ & $\frac{1}{2}$ \\
+$1$ & $1$ & $0$ & $1$ & $\frac{1}{2}$ \\
+$1$ & $1$ & $1$ & $0$ & $\frac{1}{2}$ \\
+\bottomrule
+\end{tabularx}
+Questa volta non si nota la memoria condivisa, ma non sono ancora perfette.
+
+Vanno per l'ultima volta da Popescu: \\
+\begin{tabularx}{\textwidth}{XXXXX}
+\toprule
+$x$ & $y$ & $a$ & $b$ & $P\left(a,b|x,y\right)$ \\
+\midrule
+$0$ & $0$ & $0$ & $0$ & $\frac{3}{4}$ \\
+$0$ & $0$ & $1$ & $1$ & $\frac{1}{4}$ \\
+$1$ & $0$ & $0$ & $1$ & $\frac{3}{4}$ \\
+$1$ & $0$ & $1$ & $0$ & $\frac{1}{4}$ \\
+$0$ & $1$ & $0$ & $1$ & $\frac{1}{4}$ \\
+$0$ & $1$ & $1$ & $0$ & $\frac{3}{4}$ \\
+$1$ & $1$ & $0$ & $0$ & $\frac{1}{4}$ \\
+$1$ & $1$ & $1$ & $1$ & $\frac{3}{4}$ \\
+\bottomrule
+\end{tabularx}
+Con questa finalmente si ha comunicazione.
+
+%MANCA UNA PARTE
+
+Tornano da Popescu e chiedono come funzioni l'ultima macchinetta. Egli non rivela come costruirla ma permette di conoscere il metodo per la terza. Il metodo è molto simile alla meccanica quantistica...
+
+Pensando al singoletto $\frac{i}{\sqrt{2}}\left |\sigma_y \right\rangle\rangle=\frac{i}{\sqrt{2}}\left(\left |-1 \right\rangle\otimes\left |1 \right\rangle-\left |1 \right\rangle\otimes\left |-1 \right\rangle\right)$ si ha:
+\begin{equation}\begin{split}
+U\otimes U^{\dag}\frac{i}{\sqrt{2}}\left |\sigma_y \right\rangle\rangle=\\
+=\frac{i}{\sqrt{2}}\left.\left |U\sigma_y U^{\dag}\sigma_y\sigma_y \right\rangle\right\rangle=\\
+=\frac{i}{\sqrt{2}}\left.\left |UU^{\dag}\sigma_y \right\rangle\right\rangle=\\
+=\frac{i}{\sqrt{2}}\left |\sigma_y \right\rangle\rangle
+\end{split}\end{equation}
+e si nota che esso è invariante per rotazioni.
+
+%MANCA UNA PARTE
+
+Questa si può descrivere con variabili condivise. Ci si trova nella strssa condizione della seconda tabella.
+
+C'è però un caso che non rientra in quelli precedenti: la misura viene fatta a 45º.
+
+\section{Disuguaglianza di CHSH (Clauser, Horn, Shimmony, Holt)} %Disuguaglianza di CHSH (Clauser, Horn, Shimmony, Holt)
+Si hanno variabili random per Alice $\sigma_z=z_A$, $\sigma_x=x_A$ e per Bob $\frac{1}{\sqrt{2}}\left(\sigma_x+\sigma_z\right)=w_B$, $\frac{1}{\sqrt{2}}\left(\sigma_x-\sigma_z\right)u_B$.
+\begin{equation}\begin{split}
+z_Aw_B+x_Aw_B+x_Au_B-z_Au_B=\left(z_A+x_A\right)w_B+\left(x_A-z_A\right)u_B= \pm 2
+\end{split}\end{equation}
+Si ricava il bound CHSH:
+\begin{equation}\begin{split}
+\left | \mathbb{E}\left[\left(z_A+x_A\right)w_B+\left(x_A-z_A\right)u_B\right] \right |\le 2
+\end{split}\end{equation}
+
+\subsection{Disuguaglianza nella meccanica quantistica} %Disuguaglianza nella meccanica quantistica
+Nella meccanica quantistica si hanno le aspettazioni:
+\begin{equation}\begin{split}
+\mathbb{E}\left(z_A,w_B\right)=\\
+=\frac{1}{2}\left\langle\langle \sigma_y\right |\sigma_z\otimes\frac{1}{\sqrt{2}}\left(\sigma_x+\sigma_z\right)\left |\sigma_y \right\rangle\rangle=\\
+\frac{1}{2\sqrt{2}}\left\langle\left\langle \sigma_y|\sigma_z\sigma_y\left(\sigma_x+\sigma_z\right) \right\rangle\right\rangle=\\
+\frac{1}{2\sqrt{2}}Tr\left[\sigma_y\sigma_z\sigma_y\sigma_z\right]=\\
+=-\frac{1}{\sqrt{2}}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\mathbb{E}\left(z_A,u_B\right)=\frac{1}{\sqrt{2}}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\mathbb{E}\left(x_A,w_B\right)=\\
+=\frac{1}{2}\left\langle\left\langle \sigma_y|\sigma_x\otimes\frac{1}{\sqrt{2}}\left(\sigma_x+\sigma_z\right)\sigma_y \right\rangle\right\rangle=\\
+=\frac{1}{2\sqrt{2}}Tr\left[\sigma_y\sigma_x\sigma_y\sigma_x\right]=\\
+=-\frac{1}{\sqrt{2}}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\mathbb{E}\left(x_A,u_B\right)=\\
+=\frac{1}{2}\left\langle\left\langle \sigma_y|\sigma_x\otimes\frac{1}{\sqrt{2}}\left(\sigma_x-\sigma_z\right)\sigma_y \right\rangle\right\rangle=\\
+=\frac{1}{2\sqrt{2}}Tr\left[\sigma_y\sigma_x\sigma_y\sigma_x\right]=\\
+=-\frac{1}{\sqrt{2}}
+\end{split}\end{equation}
+usando le regole $\left.\left\langle A|B \right\rangle\right\rangle=Tr\left[A^{\dag}B\right]$ e $\left(A\otimes B\right)\left.\left |C \right\rangle\right\rangle=\left.\left |ACB^{t} \right\rangle\right\rangle$
+
+Si ricava infine
+\begin{equation}\begin{split}
+\mathbb{E}\left(z_Aw_B+x_Aw_B+x_Au_B-z_Au_B\right)=-\frac{1}{\sqrt{2}}-\frac{1}{\sqrt{2}}-\frac{1}{\sqrt{2}}-\frac{1}{\sqrt{2}}=-2\sqrt{2}
+\end{split}\end{equation}
+che víola il bound di CHSH (si ricordi che il bound prevede che venga considerato il modulo dell'aspettazione). Questo dimostra che la visione realista della meccanica quantistica è totalmente sbagliata.
+
+\section{Correlazioni EPR (Einstein, Podoloski, Rosen)} %Correlazioni EPR (Einstein, Podoloski, Rosen)
+
+%MANCA TUTTO
+
+\section{Caso GHZ (Greenberger, Horn, Zeilinger)} %Caso GHZ (Greenberger, Horn, Zeilinger)
+Sia $\left |\psi  \right\rangle=\frac{1}{\sqrt{2}}\left(\left |000 \right\rangle-\left |111 \right\rangle\right)$.
+\begin{equation}\begin{split}
+\sigma_{1x}\sigma_{2y}\sigma_{3y}\left |\psi  \right\rangle=\left |\psi  \right\rangle \\
+\sigma_{1y}\sigma_{2x}\sigma_{3y}\left |\psi  \right\rangle=\left |\psi  \right\rangle \\
+\sigma_{1y}\sigma_{2y}\sigma_{3x}\left |\psi  \right\rangle=\left |\psi  \right\rangle \\
+\sigma_{1x}\sigma_{2x}\sigma_{3x}\left |\psi  \right\rangle=-\left |\psi  \right\rangle
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+m_{1x}m_{2y}m_{3y}=+1 \\
+m_{1y}m_{2x}m_{3y}=+1 \\
+m_{1y}m_{2y}m_{3x}=-1 \\
+m_{1x}m_{2x}m_{3x}=+1
+\end{split}\end{equation}
+Si ha quindi una contraddizione.
+
+\section{Variabili locali non osservabili} %Variabili locali non osservabili
+Si prenda $\left\{\left |n \right\rangle\right\}$:
+\begin{equation}\begin{split}
+\sum{\left |n \right\rangle\left\langle n\right |a_n}=A
+\end{split}\end{equation}
+Si prende un'osservabile e si fa:
+\begin{equation}\begin{split}
+\frac{1}{2}\left.\left |\sigma_{x} \right\rangle\right\rangle\left\langle\left\langle \sigma_{x} \right.\right |+\\
+\frac{1}{2}\left.\left |\sigma_{y} \right\rangle\right\rangle\left\langle\left\langle \sigma_{y} \right.\right |+\\
+\frac{1}{2}\left.\left |\sigma_{z} \right\rangle\right\rangle\left\langle\left\langle \sigma_{z} \right.\right |+\\
+\frac{1}{2}\left.\left |\mathbb{I}\right\rangle\right\rangle\left\langle\left\langle \mathbb{I} \right.\right |=\\
+\mathbb{I}\otimes\mathbb{I}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left[\frac{1}{2}\left.\left |\sigma_{\alpha} \right\rangle\right\rangle\left\langle\left\langle \sigma_{\alpha } \right.\right |, \bar \sigma\cdot \bar n\otimes\mathbb{I}\right]\neq 0 \quad \forall \bar n
+\end{split}\end{equation}

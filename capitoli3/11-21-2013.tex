@@ -1,0 +1,212 @@
+\item Nel caso di $E>0$ si ha:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}w\left(x\right)=\left(E+V_0\right)w\left(x\right) \quad -b\le x \le b \\
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}w\left(x\right)=Ew\left(x\right) \quad x\ge b, \quad x\le -b
+\end{split}\end{equation}
+ponendo $k=\frac{1}{\hbar }\sqrt{2mE}$ e $\bar k=\frac{1}{\hbar }\sqrt{2m\left(E+V_0\right)}$
+\begin{equation}\begin{split}
+w_<\left(x\right)=\alpha\exp{\left(ikx\right)}+\beta\exp{\left(-ikx\right)} \\
+w_u\left(x\right)=\gamma\exp{\left(i\bar kx\right)}+\delta\exp{\left(-i\bar kx\right)} \\
+w_>\left(x\right)=\epsilon\exp{\left(ikx\right)}+\theta\exp{\left(-ikx\right)}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+w_<\left(-b\right)=w_u\left(-b\right) \\
+w'_<\left(-b\right)=w'_u\left(-b\right) \\
+w_>\left(b\right)=w_u\left(b\right) \\
+w'_u\left(b\right)=w'_u\left(b\right)
+\end{cases}
+\end{split}\end{equation}
+Ci sono quindi $6$ incognite e $4$ equazioni linearmente indipendenti perciò si hanno $2$ incognite dipendenti e quindi si è in uno stato doppiamente degenere.
+
+Si impongono le comdizioni al contorno:
+\begin{itemize}
+\item $\theta=0$ per la diffusione da sinistra;
+\item $\alpha=0$ per la diffusione da destra.
+\end{itemize}
+
+Vengono definite ora le probabilità di diffusione da destra e da sinistra:
+\begin{itemize}
+\item \textbf{coefficiente di riflessione}:
+\begin{equation}\begin{split}
+R=\frac{|\beta|^2}{|\alpha|^2};
+\end{split}\end{equation}
+\item \textbf{coefficiente di trasmissione}:
+\begin{equation}\begin{split}
+T=\frac{|\epsilon|^2}{|\alpha|^2}.
+\end{split}\end{equation}
+\end{itemize}
+\end{itemize}
+
+\chapter{Potenziale a gradino} %Potenziale a gradino
+Si ha il potenziale
+\begin{equation}\begin{split}
+V\left(x\right)=\begin{cases}
+V_0 & x<|b| \\
+0 & x>|b|
+\end{cases}
+\end{split}\end{equation}
+
+Nel \textbf{caso classico} si ha:
+\begin{equation}\begin{split}
+\begin{cases}
+E<0 & \textrm{impossibile} \\
+0<E<V_0 & \textrm{rimbalza contro le pareti del gradino da fuori e non entra mai}\\
+E>V_0
+\end{cases}
+\end{split}\end{equation}
+L'ultimo caso avrà:
+\begin{equation}\begin{split}
+\begin{cases}
+p=\sqrt{2mE} & -\infty \le x\-b \\
+p=\sqrt{2m\left(E-V_0\right)} & -b\le x\le b\\
+p=\sqrt{2mE} & b\le x\infty
+\end{cases}
+\end{split}\end{equation}
+
+Nel \textbf{caso quantistico} si ha:
+\begin{equation}\begin{split}
+\begin{cases}
+E<0 & \textrm{nessun autovalore di }H\\
+0<E<V_0 & \textrm{spettro continuo, degenerazione }2 \\
+E>V_0 & \textrm{spettro continuo, degenerazione }2 
+\end{cases}
+\end{split}\end{equation}
+
+\begin{itemize}
+\item Per $E<0$ si ha:
+\begin{equation}\begin{split}
+\bar k=\frac{1}{\hbar }\sqrt{2m\left(V_0-E\right)}\\
+k=\frac{1}{\hbar }\sqrt{-2mE}
+\end{split}\end{equation}
+come nel caso della buca di potenziale. Non si hanno quindi soluzioni accettabili.
+
+\item Per $E>V_0$ si ha:
+\begin{equation}\begin{split}
+\bar k=\frac{1}{\hbar }\sqrt{2m\left(E-V_0\right)}\\
+k=\frac{1}{\hbar }\sqrt{2mE}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+w_<\left(x\right)=\alpha\exp{\left(ikx\right)}+\beta\exp{\left(-ikx\right)} \\
+w_u\left(x\right)=\gamma\exp{\left(i\bar kx\right)}+\delta\exp{\left(-i\bar kx\right)} \\
+w_>\left(x\right)=\epsilon\exp{\left(ikx\right)}+\theta\exp{\left(-ikx\right)}
+\end{split}\end{equation}
+Si hanno $6$ incognite con $2$ incognite sono linearmente dipendenti e quindi si hanno delle soluzioni doppiamente degeneri.
+
+\item Per $0<E<V_0$ si ha:
+\begin{equation}\begin{split}
+\bar k=\frac{1}{\hbar }\sqrt{-2m\left(E-V_0\right)}\\
+k=\frac{1}{\hbar }\sqrt{2mE}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+w_<\left(x\right)=\alpha\exp{\left(ikx\right)}+\beta\exp{\left(-ikx\right)} \\
+w_u\left(x\right)=\gamma\exp{\left(\bar kx\right)}+\delta\exp{\left(\bar kx\right)} \\
+w_>\left(x\right)=\epsilon\exp{\left(ikx\right)}+\theta\exp{\left(-ikx\right)}
+\end{split}\end{equation}
+Si hanno $6$ incognite con $2$ incognite sono linearmente dipendenti e quindi si hanno delle soluzioni doppiamente degeneri.
+\end{itemize}
+
+\chapter{Particella libera in 3D} %Particella libera in 3D
+Si hanno le soluzioni improprie:
+\begin{equation}\begin{split}
+\psi \left(\bar x,t\right)=A\exp{\left[i\left(\bar k\cdot \bar x-\omega t\right)\right]}
+\end{split}\end{equation}
+con:
+\begin{equation}\begin{split}
+\omega =\frac{E}{k}=-\frac{\hbar k}{2m}
+\end{split}\end{equation}
+
+Definendo il \textbf{pacchetto d'onda}:
+\begin{equation}\begin{split}
+\psi \left(\bar x,t\right)=\frac{1}{\left(2\pi\right)^{\frac{3}{2}}}\int{g\left(\bar k\right)e^{i\left(\bar k\bar x-\omega t\right)}\textrm{d}\bar k}
+\end{split}\end{equation}
+si ha in una dimensione:
+\begin{equation}\begin{split}
+\psi \left(\bar x,t\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{+\infty }{g\left(k\right)e^{i\left(kx-\omega t\right)}\textrm{d}k}
+\end{split}\end{equation}
+
+La funzione a tempo indipendente è:
+\begin{equation}\begin{split}
+\psi \left(\bar x,0\right)=\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{+\infty }{g\left(k\right)e^{i\left(kx\right)}\textrm{d}k}
+\end{split}\end{equation}
+
+Imponendo la condizione di normalizzazione si ha:
+\begin{equation}\begin{split}
+1=\int{|\psi \left(\bar x,0\right)|^2\textrm{d}x}=\\
+\int{\textrm{d}x}\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{+\infty }{g^*\left(k\right)e^{-i\left(kx\right)}\textrm{d}k}\frac{1}{\sqrt{2\pi}}\int_{-\infty }^{+\infty }{g\left(k\right)e^{i\left(k'x\right)}\textrm{d}k'}=\\
+\dots \\
+\int{|g\left(k\right)|^2\textrm{d}k}
+\end{split}\end{equation}
+
+Si prende un pacchetto gaussiano:
+\begin{equation}\begin{split}
+g\left(k\right)=\frac{\sqrt{a}}{\left(2\pi\right)^\frac{3}{4}}e^{-\frac{a^2}{4}\left(k-k_0\right)^2}
+\end{split}\end{equation}
+e si risolve l'equazione di Schrödinger a tempo indipendente:
+\begin{equation}\begin{split}
+\psi \left(x,0\right)=\\
+=\frac{\sqrt{a}}{\left(2\pi\right)^\frac{3}{4}}\int{e^{-\frac{a^2}{4}\left(k-k_0\right)^2}e^{ikx}\textrm{d}k}=\\
+=\frac{\sqrt{a}}{\left(2\pi\right)^\frac{3}{4}}2\frac{\sqrt{\pi}}{a}e^{-\frac{x^2}{a^2}}e^{ixk_0}=\\
+=\left(\frac{\pi^216}{a^28\pi^3}\right)^{\frac{1}{4}}e^{-\frac{x^2}{a^2}}e^{ixk_0}=\\
+=\left(\frac{2}{\pi a^2}\right)e^{-\frac{x^2}{a^2}}e^{ixk_0}
+\end{split}\end{equation}
+sapendo che:
+\begin{equation}\begin{split}
+\int_{-\infty }^{+\infty }{e^{\alpha^2\left(x+\beta \right)^2}\textrm{d}x}=\frac{\sqrt{\pi}}{\alpha} \quad \textrm{integrale di Poisson}
+\end{split}\end{equation}
+e che:
+\begin{equation}\begin{split}
+-\alpha^2\left(x-x_0\right)^2+ibx=\\
+=-\alpha^2\left[\left(x-x_0\right)^2-\frac{ib\left(x-x_0\right)}{\alpha^2}-\frac{b^2}{4\alpha^2}\right]=\\
+=-\alpha^2\left[\left(x-x_0\right)^2-\frac{ib}{2\alpha}\right]^2+ibx_0-\frac{b^2}{4\alpha^2} \Longrightarrow 
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\int_{-\infty }^{+\infty }{e^{\alpha^2\left(x-x_0 \right)^2}e^{ibx}\textrm{d}x}=\\
+=e^{ibx_0}e^{-\frac{b^2}{4\alpha^2}}\int{e^{-\alpha^2\left[\left(x-x_0\right)^2-\frac{ib}{2\alpha}\right]^2}\textrm{d}x}=\\
+=\frac{\sqrt{\pi}}{\alpha}e^{ibx_0}e^{-\frac{b^2}{4\alpha^2}}
+\end{split}\end{equation}
+
+Si calcola la densità di probabilità:
+\begin{equation}\begin{split}
+|\psi \left(x,0\right)|^2=\sqrt{\frac{2}{\pi a}}e^{-2\frac{x^2}{a^2}}
+\end{split}\end{equation}
+che è una funzione gaussiana centrata nello $0$ di larghezza $\Delta x=\frac{b}{\sqrt{2}}\equiv \sqrt{\left\langle x-\left\langle x \right\rangle \right\rangle^2}=\frac{a}{2}$.
+
+La densità di probabilità in funIone dei momenti è:
+\begin{equation}\begin{split}
+|g\left(k\right)|^2=\frac{a}{\sqrt{2\pi}}e^{-\frac{a^2}{2}\left(k-k_0\right)^2}
+\end{split}\end{equation}
+che è una funzione gaussiana con larghezza $\Delta k=\frac{1}{a} \rightarrow p=\hbar k \rightarrow \Delta p=\frac{\hbar }{a}$.
+
+Si ricava quindi il primcipio di imderminazione:
+\begin{equation}\begin{split}
+\Delta p\Delta x=\frac{\hbar }{a}\frac{a}{2}=\frac{\hbar }{2}
+\end{split}\end{equation}
+e quindi il paccetto gaussiano è il pacchetto di minima indeterminazione.
+
+Se la funzione dipende dal tempo si ha:
+\begin{equation}\begin{split}
+\psi \left(x,t\right)=\\
+=\frac{1}{\sqrt{2\pi}}\int{g\left(k\right)e^{i\left(kx-\omega t\right)}\textrm{d}k}=\\
+\sqrt{\alpha\left(t\right)}\exp{\left[-\alpha\left(t\right)\left(\Delta k\right)^2\left(x-\frac{\hbar k}{m}t\right)^2\right]}\exp{\left[i\left(kk_0x-\omega _0t\right)\right]}
+\end{split}\end{equation}
+con $\alpha\left(t\right)=\left[1+\frac{i2\hbar \left(\Delta k\right)^2}{m}t\right]$.
+
+La densità di probabilità è:
+\begin{equation}\begin{split}
+|\psi \left(x,t\right)|^2=\\
+=\sqrt{\frac{2}{\pi a^2}}\frac{1}{\sqrt{1+\frac{4\hbar ^2t^2}{m^2a^4}}}\exp{\left[\frac{-2a^2\left(x-\frac{\hbar k_0}{m}t\right)}{a^4+\frac{4\hbar ^2t^2}{m^2}}\right]}
+\end{split}\end{equation}
+che è una funzione gaussiana di larghezza $\Delta x=\frac{a}{2}\sqrt{1+\frac{4\hbar ^2t^2}{m^2a^4}}$ e $V_0=\frac{\hbar k_0}{m}$.
+
+Nello spazio degli impulsi si ha:
+\begin{equation}\begin{split}
+g\left(k,t\right)=g\left(k,0\right)e^{-i\omega kt}\\
+|g\left(k,t\right)|^2=|g\left(k,0\right)|^2
+\end{split}\end{equation}
+
+Riassumendo:
+\begin{itemize}
+\item $t=0 \Longrightarrow \Delta p\Delta x=\frac{\hbar }{2}$;
+\item $t>0 \Longrightarrow \Delta p\Delta x>\frac{\hbar }{2}$ si ha sparpagliamento.
+\end{itemize}

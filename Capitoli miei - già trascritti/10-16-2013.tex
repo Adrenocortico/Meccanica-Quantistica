@@ -1,0 +1,107 @@
+\section{Operazioni su operatori hermitiani} %Operazioni su operatori hermitiani
+Si considerano gli operatori hermitiani $A$ e $B$.
+
+\textbf{Due operatori hermitiani sono congiuntamente diagonalizzabili se e solo se commutano.}
+
+Si prendono $A,B\in \mathcal{H}$, $\left[A,B\right]=0$. $Av=a_nv$, $Bv=b_nv$ con $v\in \mathcal{H}$ equaivale a:
+\begin{equation}\begin{split}
+A=UD_AU^+ \\
+B=UD_BU^+
+\end{split}\end{equation}
+con $D_A$ e $D_B$ diagonali (operatori moltiplicativi).
+
+Dimostrazione
+\begin{itemize}
+\item Dimostrazione $\leftarrow$
+\begin{equation}\begin{split}
+\left[A,B\right]=\left[UD_AU^+,UD_BU^+\right]=U\left[D_A,D_B\right]U^+=0
+\end{split}\end{equation}
+
+\item Dimostrazione $\rightarrow$
+\begin{equation}\begin{split}
+A\left |a,l \right\rangle=a\left |a,l \right\rangle \\
+AB\left |a,l \right\rangle=BA\left |a,l \right\rangle=aB\left |a,l \right\rangle \Longrightarrow B\left |a,l \right\rangle \in \mathcal{H}_A
+\end{split}\end{equation}
+con $\mathcal{H}_a=$ e definendo $P$ come prioettore ortogonale su $\mathcal{H}_a$ si ha:
+\begin{equation}\begin{split}
+B_a:=PBP \\
+B_a^+=B_a
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |a,b,j \right\rangle\in\mathcal{H}_a \\
+B_a\left |a,b,j \right\rangle=b\left |a,b,j \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+B\left |a,b,j \right\rangle=PB\left |a,b,j \right\rangle=PBP\left |a,b,j \right\rangle=B_a\left |a.b.j \right\rangle
+\end{split}\end{equation}
+si è costruito un set di autovettori sia di $A$ che di $B$:
+\begin{equation}\begin{split}
+A\left |a,b,j \right\rangle=a\left |a,b,j \right\rangle \\
+B\left |a,b,j \right\rangle=b\left |a,b,j \right\rangle
+\end{split}\end{equation}
+\end{itemize}
+
+Generalizzando, per iterazione, si ha:
+\begin{equation}\begin{split}
+A_1\dots A_n \quad \left[A_j,A_n\right]=0 \\
+\mathcal{H}=\mathcal{H}_n \\
+A_j\mathcal{H}_n=a_n^{\left(j\right)}=\mathcal{H}_n \\
+A_j=UD_AU^+
+\end{split}\end{equation}
+
+Chiamando $NN^+=N^+N$ l'operatore normale si ha:
+\begin{equation}\begin{split}
+N=X+iY \quad \left[X,Y\right]=0
+\end{split}\end{equation}
+
+Se si considera una funzione di due operatori $f\left(A,B\right)$ con $A$ e $B$ che commutano, è ben definita.
+
+Se si considera una funzione di due operatori $f\left(A,B\right)$ con $A$ e $B$ che non commutano, bisogna specificare l'ordinamento:
+\begin{equation}\begin{split}
+\begin{cases}
+\left[a,a^+\right]=1, & \textrm{ordinamento normale} \\
+a^{+n}a^m, & \textrm{ordinamento antinormale} \\
+& \textrm{ordinamento simmetrico}
+\end{cases}
+\end{split}\end{equation}
+
+Se si ha $e^{A+B}=\sum_{n=0}^{\infty }{\frac{1}{n!}\left(A+B\right)^n}$:
+\begin{equation}\begin{split}
+\begin{cases}
+e^Ae^B\neq e^{A+B}, & \textrm{se} \left[A,B\right]\neq 0\\
+e^{A}e^B=e^{A+B+\frac{1}{2}\left[A,B\right]+\dots}, & \textrm{formula di Boiken-Campbell-Hansdorff} \\
+e^Ae^B=e^{A+B+\frac{1}{2}\left[A,B\right]}, & \left[A,B\right]=C \quad \left[A,C\right]=0 \quad \left[B,C\right]=0 \\
+e^ABe^{-A}=e^{a\textrm{d}A}B=B+\left[A,B\right]+\frac{1}{2!}\left[A,\left[A,B\right]\right]+\dots
+\end{cases}
+\end{split}\end{equation}
+
+L'ultimo caso si dimostra:
+\begin{equation}\begin{split}
+A\left(x\right)=e^{xX}Ae^{-xX}
+\end{split}\end{equation}
+con $A,X$ operatori lineari su $\mathcal{H}$.
+\begin{equation}\begin{split}
+\frac{dA\left(x\right)}{dx}=Xe^{xX}Ae^{-xX}-e^{xX}Ae^{-xX}x=\\
+=\left[X,A\left(x\right)\right]=e^{xX}Ae^{-xX}
+\end{split}\end{equation}
+
+Considerando
+\begin{equation}\begin{split}
+\frac{dA\left(x\right)}{dx}=\left(adX\right)A\left(x\right) \quad A\left(0\right)=A
+\end{split}\end{equation}
+e
+\begin{equation}\begin{split}
+\frac{dM\left(x\right)}{dx}=NM\left(x\right)=e^{xN}M\left(0\right)
+\end{split}\end{equation}
+si ha:
+\begin{equation}\begin{split}
+A\left(x\right)=e^{xa\textrm{d}X}A \\
+\Longrightarrow e^ABe^{-A}=e^{a\textrm{d}A}B
+\end{split}\end{equation}
+essendo $N$ e $M$ qualsiasi cosa (vettore, matrice $\dots$).
+
+\begin{equation}\begin{split}
+e^ABe^{-A}=A\textrm{d}\left(e^A\right)B \\
+\left(a\textrm{d}A\right)B:=\left[A,B\right] \\
+\left(a\textrm{d}U\right)B=UBU^{-1}
+\end{split}\end{equation}

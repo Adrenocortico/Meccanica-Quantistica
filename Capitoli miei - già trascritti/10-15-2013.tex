@@ -1,0 +1,130 @@
+\section{Rappresentazioni} %Rappresentazioni
+Si vogliono rappresentare $\left |n \right\rangle$ e $\bar X$.
+
+$\left |n \right\rangle$ base ortonormale. $M\in B\left(\mathcal{H}\right)$ con $B$ operatore bounded.
+\begin{equation}\begin{split}
+\left\langle n|M|m \right\rangle=M_{n,m}
+\end{split}\end{equation}
+
+Ciò che gioca il ruolo di rappresentazione è il $\left\langle bra\right |$ e con $\bar X=\sum_{n}{x_n\left |n \right\rangle\left\langle n\right |}$.
+
+\begin{equation}\begin{split}
+\psi _n=\left\langle n|\psi  \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle n|M\psi  \right\rangle=\\
+=\left\langle n|M|\psi  \right\rangle=\left\langle n|M|\sum_{n}|m \right\rangle\left\langle m|\psi  \right\rangle=\\
+=\sum_{m}\left\langle n|M|m \right\rangle\left\langle m|\psi  \right\rangle \\
+\Longrightarrow \left(m\psi \right)=\sum_{n,m}{M_{n,m}\psi _m}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\left\langle n|L^+|m \right\rangle=\left\langle n|L^+m \right\rangle=\left\langle m|Ln \right\rangle^*=M^*_{n,m}
+\end{split}\end{equation}
+con $L$ autoaggiunto, $L_{n,m}$ hamiltoniana, $U$ matrice unitaria, $U_{n,m}$ matrice unitaria.
+
+\textbf{La funzione d'onda è la rappresentazione di uno stato}.
+\begin{equation}\begin{split}
+\left\langle x|\psi  \right\rangle=\psi \left(x\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle x|M\psi  \right\rangle=\int{\left\langle x|M|x' \right\rangle\left\langle x'|\psi  \right\rangle \textrm{d}x'}
+\end{split}\end{equation}
+con $\left\langle x|L|x' \right\rangle$ kernel.
+
+Si utilizza una notazione temporanea per chiarire $\int{M_{xx'}\psi _{x'}\textrm{d}x'}$.
+\begin{equation}\begin{split}
+\sum_n{u_n}^*\left(x\right)u_n\left(x'\right)=\delta\left(x-x'\right) \\
+\Longleftarrow \textrm{ completezza di } u_n\left(x\right) \textrm{ per } L^2\left(\mathbb{R} ,dx\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\sum_n{\left |u_n \right\rangle\left\langle u_n\right |}=\mathbb{I}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\sum_n{\left\langle x'|u_n \right\rangle\left\langle u_n|x \right\rangle}=\left\langle x'|x \right\rangle \\
+=\sum_n{u_n\left(x'\right)u_n\left(x\right)^*}=\delta\left(x-x'\right)
+\end{split}\end{equation}
+
+Si considera $x\left |u_y \right\rangle=y\left |u_y \right\rangle$
+\begin{equation}\begin{split}
+\left\langle x|u_y \right\rangle=\delta_x\left(x-y\right) \Longrightarrow u_y=\delta_y
+\end{split}\end{equation}
+è un set ortonormale. Si ha quindi:
+\begin{equation}\begin{split}
+\int{u^*_y\left(x\right)u_{y'}\left(x\right)\textrm{d}x'}=\delta\left(y-y'\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\int{u^*_y\left(x'\right)u_{y}\left(x\right)\textrm{d}x'}=\delta\left(x-x'\right)
+\end{split}\end{equation}
+
+\begin{itemize}
+\item $\left\langle x|\bar x|\psi  \right\rangle$ con $\bar x$ l'operatore moltiplicazione:
+\begin{equation}\begin{split}
+\left\langle x|\bar x|\psi  \right\rangle=x\psi \left(x\right) \\
+\Longrightarrow \left\langle x|\bar x|x' \right\rangle=x\delta\left(x-x'\right)
+\end{split}\end{equation}
+
+\item $\left\langle x|p|\psi  \right\rangle=-i\hbar \partial _x\psi \left(x\right)$ l'operatore momento $p$:
+\begin{equation}\begin{split}
+\left\langle x|p|x' \right\rangle=-i\hbar \partial _x\delta\left(x-x'\right)=i\hbar \partial _{x'}\delta\left(x-x'\right)
+\end{split}\end{equation}
+\end{itemize}
+
+\section{Spazi invarianti} %Spazi invarianti
+L'operatore $A$ ha uno spazio invariante $H_{inv}$. Si ha quindi $\forall v$ vettore, $Av\in H_{inv}$. Si definisce il proiettore ortonormale sullo spazio invariante: $P$. Si definisce il proiettore ortogonale: $Q$. 
+\begin{equation}\begin{split}
+Q+P=\mathbb{I}\\
+QP=0\\
+QAP=0 \Longrightarrow A=PAP+QAQ+PAQ \\
+AP= PAP\\
+PA=PAP+PAQ\\
+PAQ\neq 0
+\end{split}\end{equation}
+
+Considerando quindi:
+\begin{equation}\begin{split}
+\begin{cases}
+AP+PAQ=PA \\
+A=QAQ+PAP+PAQ \\
+PAP=0
+\end{cases}
+\end{split}\end{equation}
+si ha, con $A$ hermitiana:
+\begin{equation}\begin{split}
+0=\left(QAP\right)^+=PAQ \\
+\left(PAP\right)^+=PAP
+\end{split}\end{equation}
+e, con $A$ isometrica:
+\begin{equation}\begin{split}
+P=P\mathbb{I}P=PA^+AP=P
+\end{split}\end{equation}
+e si trova che $P$ è isometrico sul suo supporto (\emph{isometria parziale}).
+
+\section{Proiettori} %Proiettori
+\begin{equation}\begin{split}
+X=\sum_{n}x_n\left |x_n \right\rangle\left\langle x_n\right |=\sum_{l}x_lP_l
+\end{split}\end{equation}
+con $P_l$ proiettore ortonormale.
+\begin{equation}\begin{split}
+X=\int_{S_P\left(X\right)}{E\left(\textrm{d}\lambda\right)\lambda}
+\end{split}\end{equation}
+
+Prendendo uno spazio misurabile $\mathfrak{X}$ si ha:
+\begin{equation}\begin{split}
+\Delta < \sigma\left(\mathfrak{X}\right) \\
+E\left(\Delta\right)=\int_{\Delta}=E\left(d\lambda\right)
+\end{split}\end{equation}
+\begin{itemize}
+\item Con $E\left(\Delta\right)=P_\Delta$ proiettore ortonormale si ha:
+\begin{equation}\begin{split}
+\Delta_1\cap \Delta_2= \\
+=P_{\Delta_1}P_{\Delta_2}=0
+\end{split}\end{equation}
+\item Con $E\left(\Delta\right)=P_\Delta$ misura proiettiva di volume (\emph{PVM}) si ha:
+\begin{enumerate}
+\item $P_{\mathfrak{X}}=I_{\mathcal{H}}$
+\item $P_{}=0$
+\item $P_{\Delta_1}P_{\Delta_2}=0 \Longleftarrow \Delta_1\cap\Delta_2=$
+\item $P_{\left(\bigcup _n\Delta_n\right)}=\sum_n{P_{\Delta_n}} \Longleftarrow \Delta_n\cap\Delta_m=$
+\end{enumerate}
+\end{itemize}

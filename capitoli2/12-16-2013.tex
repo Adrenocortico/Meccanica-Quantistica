@@ -1,0 +1,120 @@
+\section{Sviluppo dello scattering per onde parziali} %Sviluppo dello scattering per onde parziali
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+\psi _E=R_{E,l}\left(r\right)Y_{l,m}\left(\theta,\phi\right)\\
+\Longrightarrow u_{E,l}\left(r\right)=rR_{E,l}\left(r\right)\\
+\Longrightarrow -\frac{\hbar ^2}{2m}\frac{d^2u}{dr^2}+\left[V\left(r\right)+\frac{\hbar ^2}{2m}\frac{l\left(l+1\right)}{r^2}\right]u=Eu\\
+\Longrightarrow -\frac{\hbar ^2}{2m}\frac{d^2u}{dr^2}+\left[\frac{\hbar ^2}{2m}\frac{l\left(l+1\right)}{r^2}\right]u=Eu
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\begin{cases}
+u''\left(r\right)-\frac{l\left(l+1\right)}{r^2}u\left(r\right)=-k^2u\left(r\right)\\
+k=\frac{2mE}{\hbar ^2}
+\end{cases}
+\end{split}\end{equation}
+
+Grazie alla fisica matematica si sanno risolvere:
+\begin{equation}\begin{split}
+u_{E,l}\left(r\right)=Arj_l\left(kx\right)+Brn_l\left(kx\right)\\
+R_{E,l}\left(r\right)=Aj_l\left(kx\right)+Bn_l\left(kx\right)
+\end{split}\end{equation}
+con Vessel $j_0=\frac{\sin{\left(x\right)}}{x}$, $j_1=\frac{\sin{\left(x\right)}}{x^2}-\frac{\cos{\left(x\right)}}{x}$ regolari nell'origine \\ e Neumann $n_0=-\frac{\cos{\left(x\right)}}{x}$, $n_1=\frac{\cos{\left(x\right)}}{x^2}-\frac{\sin{\left(x\right)}}{x}$ si golari nell'origine.
+
+Si utilizzano le funzioni di Hankel sferiche:
+\begin{equation}\begin{split}
+\begin{cases}
+h^n_l\left(x\right)=j_l\left(x\right)+in_l\left(x\right) & \textrm{prima specie}\\
+h^n_l\left(x\right)=j_l\left(x\right)-in_l\left(x\right) & \textrm{seconda specie}
+\end{cases}
+\end{split}\end{equation}
+e si ottiene:
+\begin{equation}\begin{split}
+R_{E,l}\left(r\right)=A'h^{\left(1\right)}_l\left(kx\right)+B'h^{\left(2\right)}_l\left(kx\right)\\
+\Longrightarrow \textrm{volendo solo onde uscenti} \Longrightarrow R_{E,l}\left(r\right)=A'h^{\left(1\right)}_l\left(kx\right)
+\end{split}\end{equation}
+L'equazione di Schrödinger diventa perciò:
+\begin{equation}\begin{split}
+\psi _{E,l}\left(r,\theta ,\phi \right)=A'h^{\left(1\right)}_l\left(kx\right)Y_{l,m}\left(\theta,\phi\right)\\
+\Longrightarrow \psi _E\left(r,\theta,\phi \right)=A\left[e^{ikx}+\sum_{l,m}{c_{l,m}h^{\left(1\right)}_l\left(kx\right)Y_{l,m}\left(\theta ,\phi \right)}\right]=\\
+=A\left[e^{ikx}+k\sum_{l=0}^{\infty }{i^{l+1}\left(2l+1\right)a_lh^{\left(1\right)}_l\left(kx\right)P_l\left(\cos{\left(\theta\right)}\right)}\right]
+\end{split}\end{equation}
+con $Y_{l,0}=\sqrt{\frac{2l+1}{4\pi}}P_l\left(\cos{\left(\theta\right)}\right)$. Il suo sviluppo asintotico è:
+\begin{equation}\begin{split}
+A\left[e^{ikz}+k\sum_{l=0}^{\infty }{i^{l+1}\left(2l+1\right)a_l\left(-i\right)^{l+1}\frac{e^{ikr}}{kr}P_l\left(\cos{\left(\theta\right)}\right)}\right]\\
+\Longrightarrow f\left(\theta\right)=\sum_{l=0}^{\infty }{\left(2l+1\right)a_lP_l\left(\cos{\left(\theta\right)}\right)}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+\frac{d\sigma}{d\Omega}=\left|f\right|^2=\sum_{l,l'=0}^{\infty }{\left(2l+1\right)\left(2l'+1\right)a_l^*a_{l'}P_l\left(\cos{\left(\theta\right)}\right)P_{l'}\left(\cos{\left(\theta\right)}\right)}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\sigma =\int{\frac{d\sigma}{d\Omega}\textrm{d}\Omega}=\\
+= =\\
+=2\pi\sum_{l=0}^{\infty }{\left(2l+1\right)^2|a_l|^2\frac{2}{2l+1}}=\\
+=4\pi\sum_{l=0}^{\infty }{\left(2l+1\right)\left|a_l\right|^2}
+\end{split}\end{equation}
+
+Considerando tutti i risultati ricavati, si ha:
+\begin{equation}\begin{split}
+e^{ikz}=e^{ikr\cos{\left(\theta\right)}}=\\
+=\sum_{l=0}^{\infty }{c_lj_l\left(kr\right)Y_{l,0}\left(0,\phi\right)}=\\
+=\sum_{l=0}^{\infty }{c_l\sqrt{\frac{2l+1}{4\pi}}j_l\left(l+1\right)P_l\left(\cos{\left(\theta\right)}\right)}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+P_n\left(x\right)=\\
+==\\
+==\\
+=\frac{1}{2^nn!}2n\left(2n-1\right)^{\dots}\left(n+1\right)\left[x^n\dots\right]=\\
+=\frac{1}{2^nn!}\frac{\left(2n\right)!}{n!}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+c_n=i^n\sqrt{4\pi\left(2n+1\right)}
+\end{split}\end{equation}
+e quindi si ha
+\begin{equation}\begin{split}
+e^{ikz}=\sum_{l=1}^{\infty }{i^l\left(2l+1\right)j_l\left(kr\right)P_l\left(\cos{\left(\theta\right)}\right)}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\section{Scattering di una sfera dura} %Scattering di una sfera dura
+\begin{equation}\begin{split}
+V\left(r\right)
+\begin{cases}
+0 & r>a\\
+\infty  & r\le a
+\end{cases}
+\end{split}\end{equation}
+
+Bisogna porre $\psi \left(a,\theta,\phi\right)=0$
+\begin{equation}\begin{split}
+\sum_{l=0}^{\infty }%MANCA
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+a_n=-\frac{i}{k}\frac{j_m\left(ka\right)}{h^{\left(1\right)}_n\left(ka\right)}
+\end{split}\end{equation}
+
+È interrssante notare dove $ka\to 0$:
+\begin{equation}\begin{split}
+\frac{j_m\left(ka\right)}{in_m\left(ka\right)}=id_l\left(ka\right)^{2n+1}\sim a_n
+\end{split}\end{equation}
+ci si può fermare alla sola onda $s$:
+\begin{equation}\begin{split}
+\sigma\simeq \frac{4\pi}{k^2}\left(ka\right)^2=4\pi a^2
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\frac{d\sigma}{d\Omega}=\textrm{const}
+\end{split}\end{equation}
+
+Man mano che si aumenta l'energia è più importante l'intervento dell'onda $p$ e quindi si distorce sempre più la forma dell'onda.

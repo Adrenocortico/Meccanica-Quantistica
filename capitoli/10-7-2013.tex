@@ -1,0 +1,284 @@
+\chapter{Soluzione dell'equazione di Schrödinger} %Soluzione dell'equazione di Schrödinger
+\section{Buca di potenziale} %Buca di potenziale
+Si consideri una buca di potenziale i finitamente profonda (\emph{esercizio 2.2 Griffiths}):
+\begin{itemize}
+\item $E>V_{min}$
+\item $\frac{\partial ^2\psi }{\partial x^2}=\frac{2m}{\hbar ^2}\left[V\left(x\right)-E\right]\psi \left(x\right)$ se $E<V_{min} \Longrightarrow \psi $ concava ovunque $\Longrightarrow $ non normalizzabile.
+\item $\langle T \rangle + V\left(x\right)=E$
+\end{itemize}
+
+Si ha qui di che $E>0$, $\psi \left(x\right)=0$ con $x\in \left[-\infty ,0\right]\left[a, +\infty \right]$.
+
+Nell'intervallo $\left[0,a\right]$ si ha:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2\partial x}{2m}\psi =E\psi \Longrightarrow \\
+\frac{d^2\psi }{dx^2}=-k^2\psi 
+\end{split}\end{equation}
+con $k=\frac{\sqrt{2mE}}{\hbar }$.
+
+Le soluzioni sono:
+\begin{equation}\begin{split}
+\psi \left(x\right)=c_1e^{ikx}+c_2e^{-ikx} \Longrightarrow \\
+\end{split}\end{equation}
+\begin{itemize}
+\item Per $x=0$:
+\begin{equation}\begin{split}
+0=\psi \left(0\right)=c_1+c_2 \Longrightarrow \\
+c_1=-c_2=\frac{c}{2i}
+\end{split}\end{equation}
+\item Per $x=a$:
+\begin{equation}\begin{split}
+\psi \left(a\right)=0 \Longrightarrow \\
+c\sin{\left(ka\right)}=0 \Longrightarrow \\
+k=k_n=\frac{n\pi }{a}
+\end{split}\end{equation}
+con {n=1,2,3 \dots} e $x\neq 0$ perché in $0$ non è normalizzabile.
+Normalizzando quindi si ottiene:
+\begin{equation}\begin{split}
+\int_{0}^{a}{\sin^2{\left(ka\right)} \textrm{d}x}=-\int_{0}^{a}{\left(\frac{e^{2ikx}}{4}+\frac{e^{-2ikx}}{4}-\frac{1}{2}\right) \textrm{d}x}=\frac{a}{2}
+\end{split}\end{equation}
+e perciò $c$ vale:
+\begin{equation}
+c=\sqrt{\frac{2}{a}}
+\end{equation}
+\end{itemize}
+
+La \textbf{funzione d'onda a tempo congelato} è quindi:
+\begin{equation}\begin{split}
+\psi \left(x\right)=\sqrt{\frac{2}{a}}\sin{\left(k_na\right)}
+\end{split}\end{equation}
+e i suoi autovalori sono:
+\begin{equation}\begin{split}
+E_n=\frac{\hbar ^2k^2_n}{2m}=\frac{\hbar ^2n^2\pi ^2}{2ma^2}
+\end{split}\end{equation}
+
+Utilizzando il teorema di Dirichelt per le serie di Fourier che permette la completezza di queste funzioni si ha:
+\begin{equation}\begin{split}
+\int_{0}^{a}{\psi ^*(x)\psi(x)  \textrm{d}x}=-\frac{1}{4}\int_{0}^{a}{\left(e^{ik_nx}-e^{-ik_nx}\right)\left(e^{ik_mx}-e^{-ik_mx}\right) \textrm{d}x}=\delta _{n,m}
+\end{split}\end{equation}
+con normalizzazione $\frac{2}{a}$.
+\\ $\psi_n$ è un set ortonormale completo $\Longrightarrow$ $\psi_n$ è una base ortonormale.
+
+Presa una funzione:
+\[
+f\left(x\right)=\sum_{n=1}^{\infty}c_m\psi_m \left(x\right)=\sqrt{\frac{2}{a}}\sum_{n=1}^{\infty }c_n\sin{\left(k_nx\right)}
+\]
+si ha:
+\begin{equation}\begin{split}
+\int_{0}^{a}{\psi_n ^*(x)f\left(x\right) \textrm{d}x}=\int_{0}^{a}{\psi_n ^*(x)\sum_{n=1}^{\infty}c_m\psi_m \left(x\right)\textrm{d}x}=\sum_{m}c_m\delta_{n,m}=c_n=\left \langle\psi _n | f \right\rangle
+\end{split}\end{equation}
+
+\subsection{Funzione d'onda} %Funzione d'onda
+La \textbf{funzione d'onda} è:
+\begin{equation}\begin{split}
+\psi \left(x,t\right)=\sum_{n=1}^{\infty }c_n\sqrt{\frac{2}{a}}\sin{\left(\frac{\pi n}{a}x\right)e^{-\frac{in^2 \pi ^2\hbar}{2ma^2}}}
+\end{split}\end{equation}
+\begin{itemize}
+\item Al tempo $0$ si ha:
+\begin{equation}\begin{split}
+\psi \left(x,0\right)=\sum_{n=1}^{\infty }c_n\sqrt{\frac{2}{a}}\sin{\left(\frac{\pi n}{a}x\right)}
+\end{split}\end{equation}
+con $c_n=\sqrt{\frac{2}{a}}\int_{0}^{a}{\sin{\left(\frac{\pi n}{a}x\right)}\psi \left(x,0\right) \textrm{d}x}$.
+\item Al tempo $t$ si ha:
+\begin{equation}\begin{split}
+\psi \left(x,t\right)=\sum_{n=1}^{\infty }\frac{2}{a}\sin{\left(\frac{\pi n}{a}x\right)}\int_{0}^{a}{\sin{\left(\frac{\pi n}{a}x\right)}\psi \left(x',t\right)e^{} \textrm{d}x'}=\int_{0}^{a}{U_t\left(x,x'\right)\psi \left(x',0\right) \textrm{d}x'}
+\end{split}\end{equation}
+considerando ${U_t\left(x,x'\right)}=\frac{2}{a}\sum_{}^{}\sin{\left(\frac{\pi n}{a}x\right)}\sin{\left(\frac{\pi n}{a}x'\right)}e^{-\frac{i\hbar \pi^2n^2}{2ma^2}t}$ come propagatore di kernel.
+\end{itemize}
+
+\section{Valore di aspettazione dell'Hamiltoniana} %Valore di aspettazione dell'Hamiltoniana
+\begin{equation}\begin{split}
+\langle\psi _n | H \psi _n\rangle =\int_{0}^{a}{\psi_n ^*H\psi_n  \textrm{d}x}=E_n
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\langle \psi | H\psi \rangle =\int_{}^{}{\psi ^*H\psi  \textrm{d}x}=\\
+=\sum_{n,m=1}^{\infty }c_n^*c_m\int_{0}^{a}{\psi ^*_nH\psi _m \textrm{d}x}=\sum_{n,m=1}^{\infty }c_n^*c_mE_m\delta _{n,m}=\\
+\sum_{n=1}^{\infty }|c_n|^2E_n
+\end{split}\end{equation}
+Il valore di aspettazione dell'identità è ovviamente:
+\begin{equation}\begin{split}
+\langle \psi | \psi \rangle=1
+\end{split}\end{equation}
+Da ciò si ricava il \textbf{valore di aspettazione dell'Hamiltoniana}:
+\begin{equation}\begin{split}
+\langle H \rangle = \sum_{n=1}^{\infty }|c_n|^2E_n
+\end{split}\end{equation}
+considerando $c_n$ l'ampiezza di probabilità.
+
+Si ha perciò una generalizzazione della regola di Born:
+\begin{equation}\begin{split}
+|c_n|^2=p\left(E_n\right)
+\end{split}\end{equation}
+che si può fare con qualunque osservabile. Si ha uno spettro discreto di valori. $E=E_n$ quantizzata dalla condizione al contorno.
+
+Se l'osservabile $W\psi _n=w_n\psi _n$ (con $W$ autoaggiunto, quindi diagonalizzabile) si ha $\langle W \rangle= \sum_{n}^{}|c_n|^2w_n$ con $|c_n|^2=p\left(w_n\right)$.
+
+Ad esempio, considerando $p=-i\hbar \partial _x$ si ha:
+\begin{equation}\begin{split}
+\langle \psi | p\psi \rangle = \\
+=\int_{a}^{b}{\left(-i\hbar \partial _x\psi \right)^*\psi \left(x\right) \textrm{d}x}=\\
+=\langle p\psi |\psi \rangle
+\end{split}\end{equation}
+
+\section{Oscillatore armonico - metodo algebrico} %Oscillatore armonico - metodo algebrico
+L'equazione dell'oscillatore armonico, nella meccanica classica, è:
+\begin{equation}\begin{split}
+m\frac{d^2x}{dt^2}=-kx
+\end{split}\end{equation}
+che ha soluzioni:
+\begin{equation}\begin{split}
+x\left(t\right)=A\cos{\left(\omega t\right)}+B\sin{\left(\omega t\right)}
+\end{split}\end{equation}
+ con $\omega=\sqrt{\frac{k}{m}}$.
+
+L'equazione di Schrödinger, agli stati stazionari, è:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2\partial _x}{2m}\psi \left(x\right)+\frac{1}{2}m\omega ^2x^2\psi \left(x\right)=E\psi \left(x\right)=i\hbar \psi \left(x\right).
+\end{split}\end{equation}
+
+Si consideri anche:
+\begin{equation}\begin{split}
+H\psi =E\psi 
+\end{split}\end{equation}
+con:
+\begin{equation}\begin{split}
+H=\frac{1}{m}\left(p^2+m^2\omega ^2x^2\right).
+\end{split}\end{equation}
+
+Si introducono l'operatore $a$:
+\begin{equation}\begin{split}
+a=\frac{1}{\sqrt{2m\hbar \omega }}\left(ip+m\omega x\right)=:a_-
+\end{split}\end{equation}
+e l'operatore $a^+$
+\begin{equation}\begin{split}
+a^+=\frac{1}{\sqrt{2m\hbar \omega }}\left(-ip+m\omega x\right)=:a_+
+\end{split}\end{equation}
+
+Si ha inoltre:
+\begin{equation}\begin{split}
+x=\sqrt{\frac{m\omega }{2\pi }}\left(a+a^+\right)\\
+p=i\sqrt{\frac{\hbar m\omega }{2}}\left(a^+-a\right)
+\end{split}\end{equation}
+notando che $Re (x):=\frac{1}{2}\left(x+x^+\right)$ $Im (x):=\frac{1}{2}\left(x^+-x\right)$.
+
+Operando:
+\begin{equation}\begin{split}
+aa^+=\frac{1}{2m\hbar \omega }\left(ip+m\omega x\right)\left(-ip+m\omega x\right)=\\
+=\frac{H}{\hbar \omega }+\frac{1}{2}
+\end{split}\end{equation}
+e analogamente:
+\begin{equation}\begin{split}
+a^+a=\frac{H}{\hbar \omega }-\frac{1}{2}
+\end{split}\end{equation}
+si ottengono le \textbf{relazioni fondamentali}:
+\begin{equation}\begin{split}
+\left[a,a^+\right]=1
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+H=\hbar \omega \left(a^+a+\frac{1}{2}\right)
+\end{split}\end{equation}
+(si ricordi $\left[x,p\right]=i\hbar $).
+
+Il commutatore
+\begin{equation}
+\left[AB,C\right]=A\left[B,C\right]+\left[A,C\right]B
+\end{equation}
+nel caso di $a$ e $a^+$ è:
+\begin{equation}\begin{split}
+\left[a^+a,a\right]=-a
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left[a^+a,a^+\right]=a^+
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left[a^+a,a^{+n}\right]=na^{+n}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left[a^+a,a^n\right]=-na^n
+\end{split}\end{equation}
+
+\subsection{Significato fisico} %Significato fisico
+Presa $H\psi =E\psi $, essendo $\psi$ autovettore corrispondente all'autovalore $E$, si ha:
+\begin{equation}\begin{split}
+H\left(a^+\psi \right)=\\
+\hbar \omega \left(a^+a+\frac{1}{2}\right)a^+\psi =\\
+=a^+\hbar \omega \left(a^+a+\frac{1}{2}\right)\psi +\hbar \omega \left[a^+a,a^+\right]\psi =\\
+=\left[a^+\hbar \omega \left(a^+a+\frac{1}{2}\right)+\hbar \omega a^+\right]\psi =\\
+=\left(E+\hbar \omega \right)a^+\psi 
+\end{split}\end{equation}
+e perciò vengono definiti l'\textbf{operatore di innalzamento}:
+\begin{equation}\begin{split}
+Ha^+\psi =\left(E+\hbar \omega \right)a^+\psi 
+\end{split}\end{equation}
+e l'\textbf{operatore di abbassamento}:
+\begin{equation}\begin{split}
+Ha\psi =\left(E-\hbar \omega \right)a\psi .
+\end{split}\end{equation}
+
+L'energia deve però essere limitata inferiormente: $a\psi _0=0$. Deve esistere cioè uno stato $\psi _0$ per cui:
+\begin{equation}\begin{split}
+a\psi_0=\frac{1}{\sqrt{2m\hbar \omega }}\left(ip+m\omega x\right)\psi _0=0\\
+=\left(+\hbar \partial _x+m\omega x\right)\psi _0=\\
+=0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\frac{d\psi _0}{dx}=-\frac{m\omega x}{\hbar }
+\end{split}\end{equation}
+passando al logaritmo:
+\begin{equation}\begin{split}
+\ln{\left(\psi _0\right)}=-\frac{1}{2}\frac{m\omega x^2}{\hbar }+c
+\end{split}\end{equation}
+e integrando, si ottiene infine una gaussiana normalizzata:
+\begin{equation}\begin{split}
+\psi _0\left(x\right)=\left(\frac{m\omega }{\pi \hbar }\right)^{\frac{1}{4}}e^{-\frac{m\omega }{2\hbar }x^2}=Ae^{-\frac{m\omega }{2\hbar }x^2}
+\end{split}\end{equation}
+
+Passando all'energia:
+\begin{equation}\begin{split}
+\hbar \omega\left(a^+a+\frac{1}{2}\right)\psi_0\left(x\right)=E_0\psi_0\left(x\right) \Longrightarrow E_0=\hbar \omega.
+\end{split}\end{equation}
+Essendo $\psi_n\left(x\right)\propto a^{+n}\psi_0\left(x\right)$ si ha:
+\begin{equation}
+E_n=\hbar \omega \left(n+\frac{1}{2}\right).
+\end{equation}
+
+Considerando ora gli operatori di innalzamento, si ha:
+\begin{equation}\begin{split}
+a^+\psi _0\left(x\right) \propto xe^{-\frac{m\omega }{2\hbar }x^2}
+\end{split}\end{equation}
+e per $a^+$ elevato alla potenza di 2:
+\begin{equation}\begin{split}
+a^{+2}\psi _0\left(x\right)=\dots H_n
+\end{split}\end{equation}
+avendo introdotto $H_n$ come polinomio di Hermitte.
+
+Supponendo di trovarsi nello stato ad energia minima si ha:
+\begin{equation}\begin{split}
+a\psi _0\left(x\right)=0 \Longrightarrow \\
+a^+a\psi _0\left(x\right)=0 \Longrightarrow \\
+H\psi _0\left(x\right)=\frac{1}{2}\hbar \omega \Longrightarrow \\
+a^+aa^{+n}\psi _0\left(x\right)=a^{n+}a^+a\psi _0\left(x\right)+\left[a^+a,a^{+n}\right]=na^{+n}\psi _0\left(x\right)
+\end{split}\end{equation}
+con $\psi _n=\frac{a_n^n}{\sqrt{n!}}\psi _0(x)=A_na^{n+}\psi _0(x)$.
+
+%MANCA UNA PARTE
+
+\subsection{Relazioni fondamentali operatori di innalzamento e abbassamento} %Relazioni fondamentali operatori di innalzamento e abbassamento
+Si hanno quindi le \textbf{relazioni fondamentali}:
+\begin{equation}\begin{split}
+a^+\psi _n\left(x\right)=\sqrt{n+1}\psi _{n+1}\left(x\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+a\psi _n\left(x\right)=\sqrt{n}\psi _{n-1}\left(x\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+a^{+n}\psi _0\left(x\right)=\sqrt{n!}\psi _n\left(x\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\int_{}^{}{\psi ^*_m\left(x\right)a^+a\psi _n\left(x\right) \textrm{d}x}=\int_{}^{}{\left(a^+a\psi _m\left(x\right)\right)^*\psi _n\left(x\right) \textrm{d}x}=0
+\end{split}\end{equation}
+Ciò provoca:
+\begin{equation}\begin{split}
+\int_{-\infty }^{+\infty }{\psi ^*_m\left(x\right)\psi _n\left(x\right) \textrm{d}x}=\delta _{n,m}
+\end{split}\end{equation}
+ricordando sempre che $\psi _n\left(x\right)=\frac{a^{+n}}{\sqrt{n!}}\psi _0\left(x\right)$.

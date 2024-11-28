@@ -1,0 +1,160 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[english]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%
+%\renewcommand{\vec}{\bm}
+%
+%\author{Alessandra~Lucini~Paioni}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{10-18-2013}
+%
+%\begin{document}
+
+
+\section{Relazione d'indeterminazione} %Relazioni di incertezza
+Abbiamo visto che uno stato con indeterminazione 0 è un autostato dell'osservabile con $\left\langle \psi |\Delta H^2|\psi  \right\rangle=0$ dove $H\left |\psi  \right\rangle=h\left |\psi  \right\rangle$ e $H$ osservabile.
+
+Usando la rappresentazione $H$ e considerando $ |h_n\rangle$ o.n.b. di $H$ si ha
+\begin{equation}\begin{split}
+|\left\langle h_n|\varphi  \right\rangle|^2=p_n
+\end{split}\end{equation}
+intendendo con $p_n$ la probabilità di vedere il valore misurato $h_n$.
+
+Prendendo due operatori autoaggiunti $A$ e $B$ si ha:
+\begin{equation}\begin{split}
+\left[A,B\right] =0 \Longleftrightarrow \textrm{congiuntamente diagonalizzabili}
+\end{split}\end{equation}
+Ha senso quindi la probabilità congiunta di avere autovalori $a_n$ e $b_m$:
+\begin{equation}\begin{split}
+|\left\langle a_n,b_m|\psi  \right\rangle|^2=p_{n,m}
+\end{split}\end{equation}
+dove $|\psi\rangle$ autostato con un valore preciso delle due osservabili.
+
+N.B. chiamo "stato sharp'' uno stato con un ben preciso valore dell'osservabile.
+
+Le due osservabili si possono misurare congiuntamente, ovvero noi descriviamo la misura (anche attraverso il postulato di von Neumann) dicendo che il sistema si troverà in un autostato congiunto dopo la misura delle due osservabili.
+
+Mentre non esiste un modo per misurare due osservabili che non commutano, $\nexists$ una rappresentazione; (in realtà, nella pratica si fa quotidianamente ad esempio con \emph{posizione} e \emph{momento}). Tuttavia in teoria della misura, pensando ad un' interazione apparato-sistema, si avranno due pointer che corrispondono alla lettura di due autovalori e questi non soddisfano von Neumann. \\
+Se misuro congiuntamente due osservabili che non commutano,in generale non avranno valori ben definiti; perché attraverso misure ripetute sullo stesso sistema, preparato nello stesso stato, otterrò risultati diversi. \\
+Quindi non avrò mai un set completo, non potrò parlare di \emph{rappresentazione} ed è difficile applicare la stessa regola di Born; dovrò scriverla in termini più generali.
+
+In conclusione, se due osservabili non commutano $\Longrightarrow$ $\nexists$ proprio la rappresentazione. \\
+Quindi non c'è un \emph{sharp-state} per ogni coppia di autovalori; sarebbe necessario definire una \emph{misura ideale} in modo più generale e non si avrà più un unico criterio di ottimalità.
+[Anche mettendo due apparati in cascata, i risultati delle misure si influenzano a vicenda].
+
+\subsection{Criterio di bontà della misura}%Criterio di bontà della misura
+Si ottiene la varianza dell'osservabile $A$ sullo stato $|\psi\rangle$ dopo molte misure, ripreparando la particella sempre nello stesso stato:
+\begin{equation}\begin{split}
+\sigma _A^2=\\
+=\left\langle \psi |\left(A-\left\langle A \right\rangle\right)^2|\psi  \right\rangle=\\
+=\left\langle A^2 \right\rangle-\left\langle A \right\rangle^2=\\
+=||\left(A-\left\langle A \right\rangle\right)\psi ||^2=||f_A||
+\end{split}\end{equation}
+
+Misurando la varianza dell'osservabile $A$ e della $B$ (che non commutano!), faccio il prodotto delle misurazioni:
+\begin{equation}
+\begin{split}
+\sigma_A^2\sigma_B^2=\\
+||f_A||^2||f_B||^2\ge \textrm{(usando Schwartz)}\\
+|\left\langle f_A|f_B \right\rangle|^2\ge \left(Im\left\langle f_A|f_B \right\rangle\right)^2\\
+\end{split}
+\end{equation}
+Seguendo il ragionamento di Heisenberg, prendiamo la parte immaginaria per ottenere il commutatore.
+Ora:
+\begin{equation}
+\begin{split}
+\left\langle f_A|f_B \right\rangle=\\
+\left\langle \psi|\left(A-\left\langle A \right\rangle\right)\left(B-\left\langle B \right\rangle\right)|\psi  \right\rangle=\\
+=\left\langle \psi |AB|\psi  \right\rangle-\left\langle A \right\rangle\left\langle B \right\rangle \\
+\textrm{(il primo termine è quello con componente immaginaria)} \\
+\end{split}
+\end{equation}
+Quindi:
+\begin{equation}
+\begin{split}
+Im\left\langle f_A|f_B \right\rangle=\frac{1}{2i}\left(\left\langle \psi |AB|\psi  \right\rangle - \left\langle \psi |BA|\psi  \right\rangle\right)=
+\frac{1}{2i}\left\langle \psi |\left[A,B\right]|\psi  \right\rangle
+\end{split}
+\end{equation}
+
+Si ha quindi la \textbf{relazione di indeterminazione di Heisenberg}:
+\begin{equation}\begin{split}
+\sigma_A^2\sigma_B^2\ge \frac{1}{4}|\left\langle \psi |\left[A,B\right]|\psi  \right\rangle|^2
+\end{split}\end{equation}
+Ovvero, preparando il sistema nello stesso stato e misurando una volta la prima e una volta la seconda variabile, ottengo una varianza tanto piccola per $A$ quanto grande per $B$, a seconda del grado di correlazione.
+
+\subsection{Caso posizione-momento} %Caso posizione-momento
+Nel caso ad esempio di \emph{posizione-momento}:
+il commutatore vale $\left[\hat{x},\hat{p}\right] = i\hslash$
+\begin{equation}\begin{split}
+\sigma_x^2\sigma_p^2\ge \frac{\hbar ^2}{4} \\
+\sigma_x\sigma_p \ge \frac{\hbar }{2}
+\end{split}\end{equation}
+Preparando la particella nello stato con posizione precisa, avrò una grande incertezza sul momento (questa è la cosiddetta \emph{complementarietà}).\\
+L'interpretazione corretta: \textbf{i due valori non esistono congiuntamente}.
+
+\subsection{Derivazione di Robertson} %Derivazione di Robertson
+Si ottiene una disuguaglianza più stretta:
+\begin{equation}\begin{split}
+\sigma_A^2\sigma_B^2= \\
+=||f_A||^2||f_B||^2\ge |\left\langle f_A|f_B \right\rangle |^2= \\
+=\left(Im\left\langle f_A|f_B \right\rangle\right)^2+\left(Re\left\langle f_A|f_B \right\rangle\right)^2= \\
+=\frac{1}{4}|\left\langle \psi |\left[A,B\right]|\psi  \right\rangle|^2+\left(Re\left\langle f_A|f_B \right\rangle\right)^2 \\
+\Longrightarrow \left(Re\left\langle f_A|f_B \right\rangle\right)^2=\left(Re\left\langle \psi |\left(A-\left\langle A \right\rangle\right)\left(B-\left\langle B \right\rangle\right)|\psi  \right\rangle\right)^2= \\
+=\left(\frac{1}{2}\left\langle \psi |\left[A,B\right]_+|\psi  \right\rangle-\left\langle A \right\rangle\left\langle B \right\rangle\right)^2
+\end{split}\end{equation}
+Quindi la \textbf{relazione di Robertson:}
+\begin{equation}\begin{split}
+\sigma_A^2\sigma_B^2\ge \frac{1}{4}|\left\langle \psi |\left[A,B\right]|\psi  \right\rangle|^2+\left(\frac{1}{2}\left\langle \psi |\left[A,B\right]_+|\psi  \right\rangle-\left\langle A \right\rangle\left\langle B \right\rangle\right)^2
+\end{split}\end{equation}
+con $\left[A,B\right]_+$ anticommutatore.
+
+\subsection{Stati di minima indeterminazione} %Stati di minima indeterminazione
+Prendiamo la relazione di Heisenberg per le variabili \emph{posizione} e \emph{momento}.
+Per ottenere l'uguaglianza in Schwartz devo avere $f_p \propto f_x$ e $Re\langle f_x | f_p \rangle = 0$\\
+Ovvero $f_p = iaf_x$ con $a\in\textbf{R},$ (nella rappresentazione-x):
+\begin{equation}
+ ia(x-\langle x \rangle)\psi(x)= (-i\hslash\partial_x - \langle p \rangle)\psi(x)
+\end{equation}
+Quindi integrando l'equazione differenziale:
+\begin{equation}
+\partial_x\psi = (-\frac{a}{\hslash}x + \frac{a}{\hslash}\langle x \rangle + i\frac{\langle p \rangle}{\hslash})\psi
+\end{equation}
+Ottengo:
+\begin{equation}
+\ln\psi(x) = -\frac{a}{2\hslash}x^2 + \frac{a}{\hslash}\langle x \rangle x + i\frac{\langle p \rangle}{\hslash}x
+\end{equation}
+Quindi:
+\begin{equation}
+\psi(x) = Ne^{-\frac{a}{2\hslash}(x-\langle x \rangle)^2}e^{i\frac{\langle p \rangle}{\hslash}x}
+\end{equation}
+Pacchetto \emph{gaussiano} che ha minima indeterminazione (dove N è il parametro che viene dalla normalizzazione).
+
+\subsection{Riassunto storico} %Riassunto storico
+\begin{itemize}
+ \item nel 1927 Heisenberg scrive i \emph{Gedanken Microscope Experiment} dove è contenuta la relazione di complementarietà eletta a "principio'' da Ruark
+ \item nel 1930 scrive la relazione d'indeterminazione nelle \emph{Chicago Lectures}
+ \item la relazione di Robertson è del 1929 (simile a quella scritta da Schr\"{o}dinger nello stesso periodo)
+\end{itemize}
+Nel frattempo:
+\begin{itemize}
+ \item Schr\"{o}dinger scrive la sua relazione nel 1925-1926 (che era la meccanica ondulatoria)
+ \item la meccanica delle matrici viene ricavata da Heisenberg, Born e Jordan
+ \item nel 1926 Dirac unisce la mecc.ondulatoria a quella delle matrici nella \emph{meccanica degli operatori}
+ \item infine von Neumann nel 1927 descrive la termodinamica con la meccanica quantistica, quindi pone le basi della meccanica statistica moderna.
+\end{itemize}

@@ -1,0 +1,112 @@
+\section{Delta di Dirac: $\delta \left(x\right)$} %Delta di Dirac
+Viene definita come:
+\begin{equation}\begin{split}
+\delta \left(x\right)=\begin{cases}
++\infty , & x=0 \\
+0, & \textrm{altrimenti}
+\end{cases}
+\end{split}\end{equation}
+Essa è una distribuzione temperata e appartiene allo spazio di Schwartz delle funzioni velocemente decrescenti.
+
+Se si ha la gaussiana:
+\begin{equation}\begin{split}
+\frac{1}{\sqrt{2\pi \Delta^2}}e^{-\frac{x^2}{2\Delta^2}}=G\left(x\right)_{\Delta}
+\end{split}\end{equation}
+passando al limite:
+\begin{equation}\begin{split}
+\lim_{\Delta\to 0}{G\left(x\right)}_{\Delta} \Longrightarrow \int_{-\infty }^{+\infty }{G\left(x\right)_{\Delta} \textrm{d}x}=1.
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\lim_{\Delta\to 0}{\int_{-\infty }^{+\infty }{G\left(x\right)_{\Delta}f\left(x\right) \textrm{d}x}}=f\left(x\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\int_{-\infty }^{+\infty }{\delta \left(x\right)f\left(x\right) \textrm{d}x}=f\left(0\right)
+\end{split}\end{equation}
+
+La $\delta$ deve essere usata sotto il segno di integrale. Essa associa alla funzione un valore, cioè un funzionale lineare.
+
+\begin{equation}\begin{split}
+\left\langle \delta, f \right\rangle =f\left(0\right)
+\end{split}\end{equation}
+$f$ è una funzione test, molto liscia, funzione di supporto compatta (tutte le derivate sono finite anche se moltiplicate per un polinomio). $f(x)\in L _1(\mathbb{B})$
+
+Usando le funzioni di Schwartz:
+\begin{equation}\begin{split}
+\lim_{x\to \pm \infty }{\left |f^{\left(u\right)}_{\left(x\right)}x^k\right |}<+\infty 
+\end{split}\end{equation}
+si calcola la $\delta$ su funzioni che a $\pm \infty \to 0$:
+\begin{equation}\begin{split}
+\int_{-\infty }^{+\infty }{\delta '\left(x\right) f\left(x\right)\textrm{d}x}=-\int_{-\infty }^{+\infty }{\delta \left(x\right) f'\left(x\right)\textrm{d}x} + f\left(x\right)\delta\left(x\right)|^{+\infty }_{-\infty }=-\int_{-\infty }^{+\infty }{\delta \left(x\right) f'\left(x\right)\textrm{d}x}\\
+\Longrightarrow \left\langle \delta ',f \right\rangle=-\left\langle \delta,f' \right\rangle
+\end{split}\end{equation}
+(integrando per parti).
+
+\section{Potenziale $\delta$} %Potenziale delta
+\begin{equation}\begin{split}
+V\left(x\right)=-\alpha \delta \left(x\right)
+\end{split}\end{equation}
+$\alpha >0$.
+
+L'equazione agli stati stazionari è, per $E<0$:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}\psi \left(x\right)-\alpha \delta\left(x\right)\psi \left(x\right)=E\psi \left(x\right)
+\end{split}\end{equation}
+con $k=\frac{\sqrt{-2mE}}{\hbar }$.
+
+Le soluzioni sono:
+\begin{itemize}
+\item $x<0$:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}\psi \left(x\right)=E\psi \left(x\right) \\
+\frac{d^2\psi \left(x\right)}{dx^2}=k^2\psi\left(x\right)
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\psi \left(x\right)=Ae^{-kx}+Be^{kx} \\
+\psi \left(x\right) \rightarrow 0 \Longrightarrow A=0\\
+\psi \left(x\right)=Be^{kx}
+\end{split}\end{equation}
+\item $x>0$:
+\begin{equation}\begin{split}
+\psi \left(x\right)=Fe^{-kx}+Ge^{kx} \\
+\psi \left(x\right) \rightarrow 0 \Longrightarrow G=0\\
+\psi \left(x\right)=Fe^{-kx}
+\end{split}\end{equation}
+\item $x=0$:
+\begin{equation}\begin{split}
+F=B \Longrightarrow \psi \left(x\right)
+\end{split}\end{equation}
+\end{itemize}
+
+Si richiede perciò che $\psi \left(x\right)$ sia continua per poter ricavare E:
+\begin{equation}\begin{split}
+\psi \left(x\right)=De^{-k|x|}
+\end{split}\end{equation}
+con una cuspide in 0.
+
+La derivata non è continua, cosa non brutta comunque.
+
+Si vuole ricavare il valore dell'energia integrando l'equazione di Schrödinger e si valuta la discontinuità:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\int_{-\epsilon}^{\epsilon}{\frac{d^2\psi }{dx^2} \textrm{d}x}-\alpha \int_{-\epsilon}^{\epsilon}{\delta\left(x\right)\psi \left(x\right) \textrm{d}x}=E\int_{-\epsilon}^{\epsilon}{\psi \left(x\right) \textrm{d}x} \Longrightarrow \\
+\left.  -\frac{\hbar ^2}{2m} \frac{d\psi }{dx} \right |_{-\epsilon}^{\epsilon}-\alpha \psi \left(0\right)=2E\psi \left(x\right)\epsilon=0
+\end{split}\end{equation}
+l'ultimo termine è $0$ per continuità.
+
+\begin{equation}\begin{split}
+\left. \Delta \frac{d\psi }{dx}\right|_{x=0}=-\frac{2m}{\hbar ^2}\alpha B=-2kB \Longrightarrow \\
+k=\frac{m}{\hbar ^2}\alpha \Longrightarrow \\
+E=-\frac{m\alpha ^2}{2\hbar ^2} \quad \textrm{stato legato}
+\end{split}\end{equation}
+
+Normalizzando:
+\begin{equation}\begin{split}
+\int_{-\infty }^{+\infty }{|\psi \left(x\right)|^2 \textrm{d}x}=2\int_{0}^{+\infty }{ \textrm{d}x}=2|B|^2\frac{1}{2k}
+\end{split}\end{equation}
+\begin{equation}
+B=e^{i\beta}\sqrt{k}=\sqrt{k}
+\end{equation}
+
+L'equazione di Schrödinger è quindi:
+\begin{equation}\begin{split}
+\psi \left(x\right)=\frac{\sqrt{m\alpha}}{\hbar }e^{-\frac{m\alpha}{\hbar ^2}|x|}
+\end{split}\end{equation}

@@ -1,0 +1,57 @@
+Si è ovviamente nell'ipotesi che $a$ sia ad un livello di energia inferiore a $b$.
+\begin{equation}\begin{split}
+\left[\bar x,H_0\right]=\frac{i\hbar }{m}\bar p
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left[z,H_0\right]=-p_z
+\end{split}\end{equation}
+
+Per avere la polarizzazione in direzione arbitraria
+
+%MANCA UNA PARTE
+
+Tipicamente $q,\bar x$ è il dipolo elettrico tra elettrone e protone. La transizione ci sarà se l'elemento di matrice del dipolo elettrico è diverso da $0$.
+
+\section{Visione fisica} %Visione fisica
+È stato assorbito un quanto di energia elettromagnetica, quindi un fotone dall'autostato di $A$.
+
+Se ci si pone in uni stato dove $b$ è minore di $a$, messa la perturbazione si trova che la probabilità di transire da $b$ ad $a$ è:
+\begin{equation}\begin{split}
+P_{b\to a} \left(t\right)= P_{a\to b}\left(t\right)
+\end{split}\end{equation}
+considerando l'ampiezza di transizione:
+\begin{equation}\begin{split}
+c_{a,b}\left(t\right)=-\frac{V_{b,a}}{2\hbar }\left[\frac{e^{i\left(-\omega _0+\omega \right)t}-1}{-\omega _0+\omega }+\frac{e^{i\left(-\omega _0-\omega \right)t}-1}{-\omega _0-\omega }\right]
+\end{split}\end{equation}
+con il primo addendo dominante e il secondo trascurabile. In questo caso il sistema ha ceduto un fotone: \textbf{emissione stimolata} (utilizzato nei maser).
+
+Esiste anche l'\textbf{emissione spontanea} (in realtà è comunque stimolata) dovuta al fatto che in realtà l'hamiltoniana è:
+\begin{equation}\begin{split}
+H=H_0+H_{int}+H_{l,m}^0
+\end{split}\end{equation}
+e non solo $H=H_0+H_{int}$. Questo provoca che una vibrazione del campo esterno è possibile solo a determinate energie, i cosiddetti quanti di radiazione. Il fenomeno del punto zero avviene, come nell'oscillatore armonico, anche nel campo: avvengono fluttuazioni quantistiche che provocano comparsa e scomparsa di fotoni. Quindi se si mette un atomo nello stato fondamentale basta aspettare un tot di tempo per il quale l'atomo si trova nel caso di fluttuazione quantistica per avere il decadimento ad uno stato piu stabile e quindi emettere "spontaneamente".
+
+\section{Passaggio alla densità} %Passaggio alla densità
+Considerando la densità di energia di un campo elettromagnetico:
+\begin{equation}\begin{split}
+\rho=\frac{1}{2}\varepsilon_0E^2+\frac{1}{2}\frac{1}{\mu_0}B^2\\
+\rightarrow \rho_{em}=\varepsilon_0E^2=\varepsilon_0E^2_0\cos{\left(\omega t\right)}
+\end{split}\end{equation}
+e $\frac{1}{T}\int_0^t{\rho_{em}\textrm{d}t}=\frac{1}{2}\varepsilon_0E^2$, si ha:
+\begin{equation}\begin{split}
+P_{a,b}\left(t\right)=\frac{|P_{b,a}|^2\rho\left(\omega \right)}{\varepsilon_0\hbar ^2}\pi t\hat\delta\left(\omega _0-\omega \right) \\
+\Longrightarrow \textrm{se si vuole sommare su tutte le onde}\\
+\Longrightarrow P_{a,b}\left(t\right)=\int{\frac{|P_{b,a}|^2\rho\left(\omega \right)}{\varepsilon_0\hbar ^2}\pi t\hat\delta\left(\omega _0-\omega \right)\textrm{d}\omega }= \\
+=\frac{|P_{b,a}|^2\rho\left(\omega_0 \right)}{\varepsilon_0\hbar ^2}\pi t
+\end{split}\end{equation}
+
+In un caso realistico il campo elettromagnetico non è polarizzato in un verso solo, ma è solitamente equiripartita nei vari gradi di polarizzazione. Bisogna perciò mediare nelle varie direzioni:
+\begin{equation}\begin{split}
+\left|P_{a,b}\right|^2=\\
+=\int{\left|\left\langle \psi _0|q\bar x|\psi _0 \right\rangle\right|^2\cos^2{\left(\theta\right)}\frac{1}{4\pi}\textrm{d}\cos{\left(\theta\right)}\textrm{d}\phi}=\\
+=\left|\left\langle \psi _0|q\bar x|\psi _0 \right\rangle\right|^2\frac{1}{2}\int_{-1}^1{\cos^2{\left(\theta\right)}\textrm{d}\cos{\left(\theta\right)}}=\\
+=\left|\left\langle \psi _0|q\bar x|\psi _0 \right\rangle\right|^2\frac{1}{2}\left.\frac{1}{3}\cos^3{\left(\theta\right)}\right|_{-1}^1=\\
+=\frac{1}{3}\left|\left\langle \psi _0|q\bar x|\psi _0 \right\rangle\right|^2
+\Longrightarrow P{a,b}\left(t\right)=\frac{\left|\left\langle \psi _0|q\bar x|\psi _0 \right\rangle\right|^2\rho\left(\omega _0\right)\pi t}{3\varepsilon_0\hbar ^2}
+\end{split}\end{equation}
+scegliendo il sistema di riferimento tale che $\bar p$ è diretto come l'asse $z$, $\bar n$ è diretto nell'ottante positivo di $y$ e $z$ con angoli $\theta$ tra $\bar p$ e $\bar n$ e $\phi$ tra il coniugato di $\bar n$ e $x$.

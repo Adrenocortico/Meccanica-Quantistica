@@ -1,0 +1,231 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%\usepackage{braket}
+%\usepackage{amsthm}
+
+%\renewcommand{\vec}{\bm}
+
+%\author{Francesca~Alberti}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{10-1-2013}
+
+%\begin{document}
+%\maketitle
+
+\chapter{Introduzione} %introduzione
+\textbf{Libri di testo:} 
+\begin{itemize}
+\item David J. Griffiths, Introduction to Quantum Mechanics
+\item Alberto Rimini, Appunti del corso 2010-2011
+\item J. J. Sakurai, Modern Quantum Mechanics
+\item How Lung Chang, Mathematical Structures of Quantum Mechanics
+\end{itemize}
+
+\section[Tappe fondamentali]{Tappe fondamentali per la meccanica quantistica} %Tappe fondamentali per la meccanica quantistica
+\label{sec:tappe_fondamentali} 
+
+La scienza non si induce sistematicamente dall'osservazione: sulla
+base di ragionamenti e dell'esperienza si propone una teoria, che
+deve poter essere falsificabile sulla base dell'esperimento. Essa
+può avere conferme sperimentali, che non significano che la teoria
+sia giusta. Il processo con cui si ricava la teoria non è solo deduttivo,
+ma c'è anche l'aspetto creativo.
+
+Nell'ultimo quarto di secolo del 1900 è iniziata la crisi della meccanica
+classica, a partire dall'invenzione della lampadina e dal successivo
+studio dello spettro di emissione, per cercare di renderla sempre
+più efficiente. Da qui sono iniziati gli studi sullo spettro di emissione
+del corpo nero (corpo che può assorbire completamente), che portarono
+alla catastrofe ultravioletta. La legge di Rayleigh-Jeans, basata sul
+principio di equipartizione dell'energia, per cui a ogni modo del
+campo elettromagnetico, descritto come un oscillatore armonico, corrispondeva
+un'energia media KT, con K costante di Boltzmann, non aveva conferme
+sperimentali nell'ultravioletto. Il problema fu risolto da Planck
+nel 1900, anno a cui si può far risalire la nascita della meccanica
+classica.
+\begin{enumerate}
+\item Planck (1900). La sua ipotesi era che l'energia veniva scambiata in
+modo discreto, sottoforma di quanti, ognuno dei quali aveva energia:
+\begin{equation}
+E=h\nu=\hbar\omega
+\end{equation}
+con {[}$\omega=2\pi\nu;\hbar=10^{-27}erg\cdot s$ (dimensione di un'azione){]} 
+\item Hertz (1887): effetto fotoelettrico.
+
+
+Prendendo due elettrodi che facevano una scintilla e irraggiandoli
+con luce ultravioletta è più facile produrre scintille. 
+
+\item Lenard (1900): ionizzazione dei gas (spiegato da J.J. Thompson come
+una sorta di effetto fotoelettrico per gas, anziché per metalli).
+
+
+Ci sono tre aspetti fondamentali: 
+\begin{itemize}
+\item la soglia di frequenza, al di sotto della quale non succede niente; 
+\item l'energia degli elettroni emessi non è proporzionale alla potenza
+della radiazione incidente, ma è proporzionale alla frequenza; 
+\item il numero degli elettroni emessi è proporzionale all'intensità della
+radiazione emessa.
+\end{itemize}
+\item Einstein (1905), nello stesso anno pubblica i lavori su relatività
+ristretta, effetto fotoelettrico, moto Browniano): esistono quanti
+di energia, chiamati fotoni. 
+\item Gli elettroni devono assorbire un intero fotone, che ha energia:
+
+$E=h\nu$ (relazione di Einstein-Planck) 
+
+e soltanto in pacchetti. Se gli elettroni assorbono energia minore
+della soglia, data da una certa frequenza, non possono essere estratti;
+altrimenti possono essere estratti e l'energia che resta è l'energia
+cinetica. Questo spiega perché più aumento la frequenza, più aumenta
+l'energia dell'elettrone e siccome ogni elettrone deve prendere un
+fotone, il numero di elettroni emessi è proporzionale all'intensità
+della radiazione. 
+
+\item Bohr (1913): basandosi sul modello nucleare di Rutherford, riuscì
+a ricostruire lo spettro di radiazione dell'atomo di idrogeno. 
+\item De Broglie (1924): la teoria più accreditata dell'elettromagnetismo
+era quella ondulatoria, mentre dagli ultimi sviluppi sembrava che
+la radiazione fosse fatta di particelle. De Broglie dà una relazione
+che lega lunghezza d'onda in termini di momento dell'onda, attraverso
+la costante di Planck: $\lambda=\frac{h}{p}$
+
+
+{[}$p=mv$; $\lambda=\frac{2\pi}{k}$ con k vettore d'onda{]} 
+\begin{equation}
+p=\hbar k
+\end{equation}
+
+
+
+la lunghezza d'onda è davvero piccolissima, motivo per cui si pensava
+si trattasse di particelle e non di onde
+
+
+(se ci fosse un'energia di 100 eV la lunghezza d'onda dell'elettrone
+sarebbe di 1 \AA{}).
+
+\item Davisson-Germer (1927): riflessione e G.P. Thompson (1927): trasmissione.
+Esperimenti che confermarono la legge di De Broglie.
+\end{enumerate}
+
+\section{Dualismo onda-corpuscolo} %Dualismo onda corpuscolo
+\label{sec:dualismo_onda_corpuscolo}
+
+Sembra che sia per la radiazione che per la materia ci siano entrambi
+gli aspetti: ondulatorio e corpuscolare. Questo è sintetizzato nell'esperimento
+della doppia fenditura 
+
+
+\subsection{Esperimento della doppia fenditura} %Esperimento della doppia fenditura
+\label{subsec:doppia_fenditura} (Spiegato bene nel 3º volume di Feynmann) 
+
+Si fanno due fenditure su un foglio nero, si illumina e si osserva
+su uno schermo al posizionato dopo le fenditure che la figura prodotta
+è una figura di interferenza: circa a metà fra le due fenditure vediamo
+un massimo di intensità. Interessante è quando l'intensità viene portata
+gradualmente a zero: sullo schermo si vedono scintillazioni. I punti
+che si illuminano si addensano secondo la figura di interferenza descritta
+prima. Il fatto interessante è che sembrerebbe che ogni puntino sapesse
+quello che ha fatto quello precedente. Se i puntini fossero particelle
+in realtà vedremmo che questi si addenserebbero soltanto davanti a
+entrambe le fenditure: dove c'era un massimo c'è ora un minimo. Questo
+è quello che succede nel problema del``which part'': se chiudo
+un buco, i puntini si comportano come particelle cioè si addensano
+come se fossero proiettili, davanti a ogni fenditura. Se lascio entrambe
+le fenditure aperte, ma metto un rilevatore fuori da entrambe che
+mi dice da dove passa la particella e la lascia passare senza interagire,
+posso conoscere da quale fenditura esce la particella, questa si comporta
+solo come una particella e la figura ottenuta ha due picchi di intensità
+fuori da ogni fenditura. Questo avviene indipendentemente dal tipo
+di particella, che sia radiazione, elettrone, fullereni e indipendentemente
+dal tipo di rilevatore: la complementarietà degli aspetti ondulatorio
+e corpuscolare è un aspetto universale. I due aspetti presi singolarmente
+non bastano, è importante che ci sia il dualismo.
+
+Altro aspetti fondamentali della meccanica quantistica sono l'entanglement
+e la non località (correlazioni istantanee a distanza che però non
+permettono comunicazione). L'entanglement non va in contraddizione
+con il principio della relatività, basato su una procedura operazionale
+nel quale si sincronizzano orologi con segnali luminosi e si costruisce
+un sistema di coordinate. Si può vedere che la simultaneità dipende
+dal sistema di riferimento. Nello stato entangled, se Alice e Bob
+hanno sistemi con spin up o down, la correlazione fra i due spin è
+istantanea, non causale. Non si può però comunicare, Alice e Bob dovrebbero
+decidere come codificare 0 e1; il risultato da Bob però è sempre casuale.
+Con la meccanica quantistica tutto questo viene previsto e non c'è
+una violazione del principio di relatività, però c'è una non località:
+esistono correlazioni che non si possono spiegare come una lettura
+di una realtà preesistente localmente.
+
+Gli aspetti fondamentali della meccanica quantistica sono:
+\begin{itemize}
+\item dualismo onda-corpuscolo; 
+\item L'entanglement; 
+\item Quantum non locality. 
+\end{itemize}
+
+\subsection[Principio di complementarietà]{Principio di complementarietà di Heisenberg} %Principio di complementarietà di Heisenberg
+\label{subsec:complementariet=0000E0_heisenberg} Gedankenen experiment
+microscope.
+ 
+Nel Gedanken experiment microscope ho una lente che illumino con radiazione
+e una particella che guardo attraverso la lente e cerco di determinarne
+la posizione trasversale x e il momento. L'apertura della lente è
+data dall'angolo \textbackslash{}epsilon. Con questo esperimento Heisenberg
+voleva spiegare in modo intuitivo perché momento e posizione non commutano.
+La precisione con la quale viene misurata la posizione è data dall'ottica
+geometrica (per la precisione prendo ad esempio la prima frangia di
+Fraunhoffer). 
+
+Precisione della posizione: 
+\begin{equation}
+\Delta x=\frac{\lambda}{\sin{\left(\epsilon\right)}}.
+\end{equation}
+
+
+La radiazione che illumina l'elettrone lo fa scatterare e questo acquisisce
+un momento. Il momento dell'elettrone dipende dal momento della radiazione,
+ma la direzione del momento della radiazione è indeterminata a causa
+dell'angolo \textbackslash{}epsilon e se p è il momento della radiazione,
+il momento scatterato ha un'imprecisione: 
+\begin{equation}
+\Delta p_{x}=p\sin{\left(\epsilon\right)}.
+\end{equation}
+ Utilizzando le relazioni di De Broglie si ricava perciò la celebre
+relazione di indeterminazione: 
+\begin{equation}
+\Delta x\Delta p\ge\hbar.
+\end{equation}
+
+
+Se misuro con molta precisione la posizione, ho grande indeterminazione
+sul momento. A chiamare questo principio fu Ruark, nel 1927. La vera
+legge è quello che fu contenuto nelle lezioni di Chicago di Heisenberg
+(1930) e Robertson nel 1929. 
+
+Per la prima volta nella storia si trovano due misure che non possono
+essere determinate simultaneamente (importanza della complementarietà).
+Ad esempio momento e posizione non possono essere conosciuti contemporaneamente,
+ma sono complementari (sono elementi entrambi necessari), come il
+dualismo onda-corpuscolo. Vedo o l'aspetto ondulatorio, o quello corpuscolare,
+ma non tutti e due insieme.
+
+%\end{document}

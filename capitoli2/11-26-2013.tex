@@ -1,0 +1,113 @@
+Sia:
+\begin{equation}\begin{split}
+\begin{cases}
+H_0\left |\psi _a \right\rangle=E_a\left |\psi _a \right\rangle \\
+H_0\left |\psi _b \right\rangle=E_b\left |\psi _b \right\rangle
+\end{cases} \\
+\left\langle \psi _a|\psi _b \right\rangle=\delta_{a,b}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si accende una perturbazione, avendo sempre $H=H_0+H'\left(t\right)$:
+\begin{equation}\begin{split}
+\left |\psi \left(t\right) \right\rangle=c_a\left(t\right)e^{-\frac{i}{\hbar }E_at}\left |\psi _a \right\rangle+c_b\left(t\right)e^{-\frac{i}{\hbar }E_bt}\left |\psi _b \right\rangle
+\end{split}\end{equation}
+
+Bisogna calcolare ora i coefficienti:
+\begin{equation}\begin{split}
+H\left |\psi  \right\rangle=i\hbar \frac{\partial H\left(t\right)}{\partial t}
+\end{split}\end{equation}
+Si consideri:
+\begin{equation}\begin{split}
+\left |\psi \left(t\right) \right\rangle=\sum_i{c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}\left |\psi _i \right\rangle}
+\end{split}\end{equation}
+e si risolve:
+\begin{equation}\begin{split}
+i\hbar \frac{\partial \psi }{\partial t}=\\
+=i\hbar \sum_i{\dot c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}\left |\psi _i \right\rangle+c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}\left(-\frac{i}{\hbar }E_i\right)\left |\psi _i \right\rangle}=\\
+=i\hbar \sum_i{\dot c_i\left(t\right)-\frac{i}{\hbar }E_iC_i\left(t\right)}e^{-\frac{i}{\hbar }E_it}\left |\psi _i \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+H\left |\psi  \right\rangle=\\
+=\left(H_0+H'\left(t\right)\right)\sum_i{c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}\left |\psi _i \right\rangle}=\\
+=\sum_i{c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}E_i\left |\psi _i \right\rangle}+\sum_i{c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}H'\left(t\right)\left |\psi _i \right\rangle}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+i\hbar \sum_i{\dot c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}\left |\psi _i \right\rangle}=\\
+=\sum_i{c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}H'\left(t\right)\left |\psi _i \right\rangle}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+i\hbar \sum_i{\dot c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}\left\langle \psi _a|\psi _i \right\rangle}=\\
+=\sum_i{c_i\left(t\right)e^{-\frac{i}{\hbar }E_it}\left\langle \psi _a|H'\left(t\right)|\psi _i \right\rangle}=\\
+=i\hbar \dot c_ae^{-\frac{i}{\hbar }E_at}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\dot c_a\left(t\right)=-\frac{i}{\hbar }\sum_i{c_i\left(t\right)e^{-\frac{i}{\hbar }\left(E_i-E_a\right)t}H_{a,i}'}
+\end{split}\end{equation}
+Si vogliono ora trasformare queste equazioni differenziali in equazioni integrali considerando $c_i\left(0\right)=c_i^{\left(0\right)}$:
+\begin{equation}\begin{split}
+c_a\left(t\right)=\\
+=c_a^{\left(0\right)}-\frac{i}{\hbar }\sum_i{\int_0^t{c_i\left(t'\right)e^{-\frac{i}{\hbar }\left(E_i-E_a\right)t}H'_{a,i}\left(t'\right)\textrm{d}t'}}=\\
+\Longrightarrow \textrm{si sostituisce }c_i\left(t'\right)=c_i^{\left(0\right)}+\sum_i{\int{\dots H'}}\\
+\Longrightarrow c_a\left(t\right)=c_a^{\left(0\right)}-\frac{i}{\hbar }\sum_i{\int_0^t{c_i^{\left(0\right)}e^{-\frac{i}{\hbar }\left(E_i-E_a\right)t}H'_{a,i}\left(t'\right)\textrm{d}t'}}+o\left(H'^2\right)
+\end{split}\end{equation}
+
+\subsection{Caso particolare} %Caso particolare
+Sia:
+\begin{equation}\begin{split}
+\begin{cases}
+c_a\left(0\right)=c_a^{\left(0\right)}=1 \\
+c_k\left(0\right)=0
+\end{cases}
+\end{split}\end{equation}
+Si ha quindi:
+\begin{equation}\begin{split}
+c_a\left(t\right)=1-\frac{i}{\hbar }\int_0^t{H'_{a,a}\left(t'\right)\textrm{d}t'}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+c_b\left(t\right)=0-\frac{i}{\hbar }\int_0^t{e^{-\frac{i}{\hbar }\left(E_b-E_a\right)t}H'_{b,a}\left(t'\right)\textrm{d}t'}
+\end{split}\end{equation}
+
+Si supponga $E_b>E_a$ quindi $\omega _0=\frac{E_b-E_a}{\hbar }>0$. Si ha $c_b$ ampiezza di transizione
+$\left|c_b\right|^2$ probabilità di transizione (inconsistente dal punto di vista perturbativo).
+
+\section{Particella colpita da onda elettromagnetica} %Particella colpita da onda elettromagnetica
+\begin{equation}\begin{split}
+H=\frac{p^2}{2m}-\frac{q}{m}\hat A\cdot \hat p+\frac{i\hbar q}{2m}\left(\bar \nabla \cdot \bar A\right)-\frac{q^2}{2m}\bar A^2+qV+u
+\end{split}\end{equation}
+ci si pone nel gauge di Lorentz e siccome $A^2\ll A$ si ha:
+\begin{equation}\begin{split}
+H=\frac{p^2}{2m}-\frac{q}{m}\hat A\cdot \hat p+u\\
+H'=-\frac{q}{m}\hat A\cdot \hat p
+\end{split}\end{equation}
+
+Si ha un'onda trasversale:
+\begin{equation}\begin{split}
+\bar A=\bar n A_0\omega \left(\bar k\cdot \bar x-\omega t\right)
+\end{split}\end{equation}
+con $\bar n$ direzione di polarizzazione, $\left(\bar k\cdot \bar x-\omega t\right)$ direzione di propagazione e si ricava l'hamiltoniana:
+\begin{equation}\begin{split}
+H'=-\frac{q}{m}A_0\frac{e^{i\left(\bar k\cdot \bar x-\omega t\right)}+e^{-i\left(\bar k\cdot \bar x-\omega t\right)}}{2}\bar n\cdot \bar p
+\end{split}\end{equation}
+
+Si ottiene quindi:
+\begin{equation}\begin{split}
+\left\langle \psi _a\left|\frac{e^{i\left(\bar k\cdot \bar x-\omega t\right)}+e^{-i\left(\bar k\cdot \bar x-\omega t\right)}}{2}\right|\psi _a \right\rangle
+\end{split}\end{equation}
+
+La lunghezza d'onda usata è di $4\cdot 10^{-7}$ m e le dimensioni dell'atomo di idrogeno sono $10^{-10}$ m:
+\begin{equation}\begin{split}
+\frac{\lambda}{d}=10^{-3}
+\end{split}\end{equation}
+
+Trovandosi in questo caso allora si possono non considerare le parti con $\bar x$:
+\begin{equation}\begin{split}
+e^{ik\cdot \bar x}=1
+\end{split}\end{equation}
+chiamata \textbf{approssimazione di dipolo elettrico}.
+
+Si ricava quindi l'hamiltoniana di perturbazione dovuta alla radiazione elettromagnetica è:
+\begin{equation}\begin{split}
+H'_{b,a}=\left\langle \psi _b|H'\left(t\right)|\psi _a \right\rangle=-\frac{q}{m}A_0\left\langle \psi _b\left|\bar n\cdot \bar p\right|\psi _a \right\rangle\cos{\left(\omega t\right)}=V_{b,a}\cos{\left(\omega t\right)}.
+\end{split}\end{equation}

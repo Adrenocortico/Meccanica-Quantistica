@@ -1,0 +1,95 @@
+\section[Metodo WKB]{Metodo WKB (Wentzel-Kramers-Brillouin)} %Metodo WKB (Wentzel-Kramers-Brillouin)
+Si prenda una buca di potenziale con un salto netto, come una funzione a gradino. Si prenda il potenziale $V$ all'interno della buca senza però essere al livello più basso. Si ha:
+\begin{equation}\begin{split}
+\begin{cases}
+p=\sqrt{2m\left(E-V\right)} & E>V \textrm{ regione classica}\\
+p=\sqrt{2m\left(V-E\right)} & E< V \textrm{ zona di tunneling}
+\end{cases}
+\end{split}\end{equation}
+
+L'equazione di Schrödinger è:
+\begin{equation}\begin{split}
+-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}\psi +V\left(x\right)\psi =E\psi \\
+\textrm{considerando la regione classica}\\
+\Longrightarrow \frac{d^2\psi }{dx^2}=-\frac{p^2\left(x\right)}{\hbar ^2}\psi 
+\end{split}\end{equation}
+Considerando $f\left(x\right)$ come funzione complessa, e pensandola come fase, si ha:
+\begin{equation}\begin{split}
+\psi =A\exp{\left(\frac{i}{\hbar }f\left(x\right)\right)}\\
+\Longrightarrow \psi '=\psi \frac{i}{\hbar }f'\left(x\right)\\
+\psi ''=\frac{i}{\hbar }\left[\psi 'f'+\psi f''\right]=\frac{i}{\hbar }\left[\frac{i}{\hbar }\psi \left(f'\right)^2+\psi f''\right]\\
+\Longrightarrow -\frac{i}{\hbar ^2}\psi \left(f'\right)^2+\frac{i}{\hbar }\hbar f''=-\frac{p^2\left(x\right)}{\hbar ^2}\psi \\
+\Longrightarrow -\left(f'\right)^2+i\hbar f''=-p^2\left(x\right)\\
+\Longrightarrow -\left(f'\right)^2+i\hbar f''+p^2\left(x\right)=0
+\end{split}\end{equation}
+Ora si fa intervenire l'approssimazione facendo espandere $f$ in $\hbar $:
+\begin{equation}\begin{split}
+f=f_0+\hbar f_1+o\left(\hbar ^2\right)\\
+f'=f'_0+\hbar f'_1 \quad f''=f''_0+\hbar f''_1
+\end{split}\end{equation}
+Sostituendo quindi:
+\begin{equation}\begin{split}
+i\hbar \left(f''_0+\hbar f''_1\right)-\left(f'_0+\hbar f'_1\right)^2+p^2\left(x\right)\\
+i\hbar f''_0-\left(f'^2_0+2\hbar f'_0f'_1\right)+p^2\left(x\right)=0
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\begin{cases}
+\hbar ^0: & f{'}_0^2+p^2\left(x\right)=0 \Longrightarrow f{'}_0=\pm p\left(x\right)\\
+\hbar ^1: & f''_0-2f'_0f'_1=0 \Longrightarrow f'_1=\frac{i}{2}\frac{f''_0}{f'_0}=\frac{1}{2}i\frac{d}{dx}\ln{\left(f'_0\right)}
+\end{cases}
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\begin{cases}
+f_0=\pm\int_*^x{p\left(x'\right)\textrm{d}x'}\\
+f_1=\frac{1}{2}i\int_*^x{\frac{d}{dx'}\ln{\left(\pm p\left(x\right)\right)}\textrm{d}x'}=\frac{1}{2}i\left[\ln{\left( p\left(x\right)\right)}+in\pi\right]
+\end{cases}
+\end{split}\end{equation}
+che vanno inserite nella formula di $f$:
+\begin{equation}\begin{split}
+f=\pm\int_*^x{p\left(x'\right)\textrm{d}x'}+\frac{1}{2}i\hbar \ln{\left(p\left(x\right)\right)}+\dots
+\end{split}\end{equation}
+
+Ritornando alla $\psi $ si ha infine:
+\begin{equation}\begin{split}
+\psi =\\
+A\exp{\left(\pm\frac{i}{\hbar }\int_*^x{p\left(x'\right)\textrm{d}x'}\right)}\exp{\left(\frac{i}{\hbar }\frac{1}{2}i\hbar \ln{\left(p\left(x\right)\right)}\right)}=\\
+=\frac{A}{\sqrt{p\left(x\right)}}\exp{\left(\pm\frac{i}{\hbar }\int_*^x{p\left(x'\right)\textrm{d}x'}\right)}
+\end{split}\end{equation}
+
+\subsection{Esempio Griffiths} %Esempio Griffiths
+Si ha un potenziale definito da:
+\begin{equation}\begin{split}
+V=\begin{cases}
+V\left(x\right) & 0\le x \le a\\
+\infty & \textrm{altrove}
+\end{cases}
+\end{split}\end{equation}
+
+La funzione d'onda è:
+\begin{equation}\begin{split}
+\psi \left(x\right)=\\
+\frac{1}{\sqrt{p\left(x\right)}}\left[c_+e^{i\phi\left(x\right)}+c_-e^{-i\phi}\right]=\\
+\frac{1}{\sqrt{p\left(x\right)}}\left[c_1\sin{\left(\phi\left(x\right)\right)}+c_2\cos{\left(\phi\left(x\right)\right)}\right]
+\end{split}\end{equation}
+Considerando
+\begin{equation}\begin{split}
+\phi\left(x\right)=\frac{1}{\hbar }\int_0^x{p\left(x'\right)\textrm{d}x'}
+\end{split}\end{equation}
+si pongono le condizioni al contorno:
+\begin{equation}\begin{split}
+\phi\left(a\right)=\frac{1}{\hbar }\int_0^a{p\left(x'\right)\textrm{d}x'}=n\pi\\
+\int_0^a{\sqrt{2m\left(E_n-V\left(x\right)\right)}\textrm{d}x'}=n\pi\hbar 
+\end{split}\end{equation}
+
+Nella regione di tunneling si ha che la funzione d'onda è:
+\begin{equation}\begin{split}
+\psi =\frac{A}{\sqrt{p\left(x\right)}}\exp{\left(\pm\frac{1}{\hbar }\int_*^x{\bar p\left(x'\right)\textrm{d}x'}\right)}
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si ottiene dunque il coeffieciente di trasmissione:
+\begin{equation}\begin{split}
+T=\exp{\left(-\frac{2}{\hbar }\int_0^L{p\left(x'\right)\textrm{d}x'}\right)}
+\end{split}\end{equation}

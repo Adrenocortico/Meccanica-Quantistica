@@ -1,0 +1,478 @@
+% \documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%
+%							N.B SERVONO ANCHE QUESTI DUE PACCHETTI:
+%								\usepackage{braket}
+%								\usepackage{amsthm}
+%
+%\renewcommand{\vec}{\bm}
+%
+%\author{Croce~Giancarlo}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{28/10/2013}
+
+%\begin{document}
+
+\chapter[Tensore prodotto di spazi di Hilbert]{Più sistemi: tensore prodotto di spazi di Hilbert} %Più sistemi: tensore prodotto di spazi di Hilbert
+Il formalismo sviluppato sinora non ci consente di descrivere congiuntamente più sistemi, dove per sistemi si intendono due particelle ma anche più gradi di libertà di una stessa particella (lo spin e la posizione, ad esempio).  
+Serve il concetto di \emph{prodotto tensore tra spazi di Hilbert.} \\
+
+\section{Trattazione matematica} %Trattazione matematica
+Si prendano due spazi di Hilbert, per semplicità finiti dimensionali, $\mathcal{H}_1$ e $\mathcal{H}_2$, un set di basi ortonormali per ogni spazio $\{ \ket{x_n} \}^N_{n=1} $ $\{ \ket{y_m} \}^M_{m=1} $. Si costruiscono delle terne $\left |z_{n,m} \right\rangle=\left |x_n \right\rangle\otimes \left |y_m \right\rangle$:
+
+\begin{equation} 
+\bar x \otimes \bar y = 
+\begin{pmatrix}
+x_1 & y_1 \\
+x_1 & y_2 \\
+\vdots & \vdots \\
+x_1 & y_M\\
+x_2 & y_1\\
+\vdots & \vdots \\
+x_N & y_M\\
+\end{pmatrix}
+\end{equation}
+
+\begin{equation}
+\ket{x} \otimes \ket{y} = \sum_{n=1}^N \sum_{m=1}^M {x_n}{y_m} \ket{x_n} \otimes \ket{y_m} =\sum_{n=1}^N \sum_{m=1}^M {x_n}{y_m} \left |z_{n,m} \right\rangle
+\end{equation}
+
+Quindi, avendo un set di basi ortonormali per ognuno degli spazi di partenza si ha che: $$\mathcal{H}_1 \otimes \mathcal{H}_2 =\textrm{span}_{\mathbb{C}}  \{ \ket{x_n} \otimes \ket{y_n} \} $$
+
+Cioè ogni vettore $\ket{\psi} \in \mathcal{H}_1 \otimes \mathcal{H}_2 $  è una combinazione lineare (con coefficienti in $ \mathbb{C} $) dei vettori di base $\ket{x_n} \otimes \ket{y_m} $:
+\begin{equation}\begin{split}
+\ket{\psi} = c_a\left |\bar x_a \right\rangle\otimes\left |\bar y_a \right\rangle+c_b\left |\bar x_b \right\rangle\otimes\left |\bar y_b \right\rangle
+\end{split}\end{equation}
+
+La dimensione di $\mathcal{H}_1 \otimes \mathcal{H}_2 $ è il \emph{ prodotto } delle dimensioni dei due spazi di partenza.
+
+Nello spazio $\mathcal{H}_1 \otimes \mathcal{H}_2$ definisco il prodotto scalare (che induce una norma):
+\begin{equation}
+\braket{\bar x' \otimes \bar y' | \bar x \otimes \bar y} := \braket{\bar x' | \bar x} \braket {\bar y' | \bar y }
+\end{equation}
+
+E lo spazio tensore, essendo di dimensione finita, è automaticamente chiuso in norma (è quindi uno spazio di Hilbert).
+
+In dimensione infinita la situazione cambia leggermente, non è possibile ripetere il procedimento svolto in (1.1) difatti, siccome i vettori di base di $\mathcal{H}_1 \textrm{ e } \mathcal{H}_2 $ sono infiniti, avrei una "matrice" $x_1$ seguito da una colonna di $y_i$ infinitamente lunga, $x_2$ seguito da una colonna di $y_i$ infinitamente lunga etc. \\
+Quello che si fa è considerare il \emph{tensore algebrico}:
+\begin{equation}
+\mathcal{H}_1 \otimes_{ \textrm{\textit{alg}}} \mathcal{H}_2 =  \textrm{span}_{\mathbb{C}}  \{ \ket{x_n} \otimes \ket{y_n} \} 
+\end{equation}
+
+Ma $\mathcal{H}_1 \otimes_{ \textrm{\textit{alg}}} \mathcal{H}_2 $ non è uno spazio di Hilbert: definisco il prodotto scalare come fatto in (1.4) ma ciò non mi assicura che sia soddisfatta la condizione di convergenza di Cauchy.
+Devo quindi considerare la sua chiusura in norma:
+\begin{equation}
+\mathcal{H}_1 \otimes \mathcal{H}_2 = \overline{ \mathcal{H}_1 \otimes_{ \textrm{\textit{alg}}} \mathcal{H }_2}
+\end{equation}
+
+\section{Prodotto tensore in Meccanica Quantistica} %Prodotto tensore in Mecanica Quantistica
+Vediamo ora perché gli spazi tensori sono utili in Meccanica Quantistica.\\
+Si considerino, ad esempio, due particelle, quindi due spazi di Hilbert $\mathcal{H}_1 \mbox{ e }\mathcal{H}_2$ e due Hamiltoniane:
+\begin{equation} \begin{split}
+H_1 = \mbox{Hamiltoniana in } \mathcal{H}_1 \mbox{ \;\emph{(particella 1)} } \\
+H_2 = \mbox{Hamiltoniana in } \mathcal{H}_2 \mbox{ \;\emph{(particella 2)} }
+ \end{split} \end{equation}
+
+Uso come basi ortonormali di $\mathcal{H}_1, \mathcal{H}_2$ gli autovettori delle rispettive Hamiltoniane, cioè $\ket{v_n} \mbox{ e } \ket{w_m} $ tali che:
+\begin{equation} \begin{split}
+{H}_1 \ket{v_n} = E^{(1)}_n \ket{v_n}\\
+{H}_2 \ket{v_m} = E^{(2)}_m \ket{v_m}
+ \end{split} \end{equation}
+
+Voglio ora descrivere i due sistemi congiuntamente, lo spazio di Hilbert è $ \mathcal{H}_1 \otimes \mathcal{H}_2$, ma qual è l'Hamiltoniana del sistema \emph{particella 1}  $+$ \emph{particella 2}? \\
+Si hanno 2 casi distinti:
+\begin{itemize}
+
+\item Le due particelle non interagiscono tra loro: \\
+ la regola di quantizzazione assicura che l'Hamiltoniana totale è la somma delle Hamiltoniane (se classicamente ${H} = {H}_1 + {H}_2$, anche quantisticamente ${H} = {H}_1 + {H}_2$ intendendo, però, la somma tra operatori), cioè :
+ \begin{equation}
+({H}_1 + {H}_2) \ket{v_n} \otimes \ket{w_m} =  (E^{(1)}_n + E^{(2)}_m) \ket{v_n} \otimes \ket{w_m}
+ \end{equation}
+
+\item Le due particelle interagiscono tra loro: \\
+ la situazione è più complicata perché devo considerare anche l'Hamiltoniana di interazione ${H}_{1,2} $. Posso continuare ad usare come basi $\ket{v_n} \otimes \ket{w_m}$ ma questi non sono più autovettori. Cerco i nuovi autovettori nello spazio $\mathcal{H}_1 \otimes \mathcal{H}_2 $, cioè vettori nella forma $ \sum_{n,m} c_{n,m} \ket{v_n} \otimes \ket{v_m} $.
+Il nuovo problema da risolvere è, quindi:
+ \begin{equation}
+\left(H_1+H_2+H_{1,2}\right)\sum_{n,m}{c_{n,m}\left |v_n \right\rangle \otimes \left |w_m \right\rangle}=E\sum_{n,m}{c_{n,m}\left |v_n \right\rangle \otimes \left |w_m \right\rangle}
+ \end{equation}
+Teoricamente ammette soluzione ma può essere molto difficile da determinare, quindi in genere si utilizzano metodi di approssimazione.
+\end{itemize}
+
+Naturalmente la trattazione teorica svolta sin qui non si limita al caso di due particelle, potrei avere $H_1=\mbox{ Hamiltoniana per i gradi di libertà orbitali}$, $H_2=\mbox{ Hamiltoniana per lo spin}$ e $H_{1,2}=\mbox{ Hamiltoniana che descrive l'interazione spin-orbita}$  
+
+\section{Operatori} %Operatori
+Siano $\mathcal{H}_1$ e $\mathcal{H}_2 $  due spazi di Hilbert dotati, rispettivamente, di $\{ \ket{x_n} \}$ e $\{ \ket{y_m} \}$ set ortonormali .
+Se ho due operatori $A\in\mathcal{B}(\mathcal{H}_1)$ e $B\in \mathcal{B}(\mathcal{H}_2)$, definisco l'azione dell'operatore  $A\otimes B$:
+
+$$
+\mbox{sia } \ket{\psi} \in \mathcal{H}_1 \otimes \mathcal{H}_2 \Rightarrow \ket{\psi} = \sum_{n,m} c_{n,m} \ket{x_n} \otimes \ket{y_m}
+$$
+\begin{equation} \begin{split}
+\mbox{quindi: } A\otimes B \ket{\psi} = (A \otimes B) \sum_{n,m} c_{n,m} \ket{x_n} \otimes \ket{y_m}:=\sum_{n,m} c_{n,m} A \ket{x_n} \otimes B\ket{y_m}
+ \end{split} \end{equation}
+
+A volte può essere utile ricondursi a una sommatoria con un solo indice:
+\begin{equation} \begin{split}
+\ket{\psi}=\sum_{n,m}{c_{n,m}}\ket{x_n} \otimes \ket{y_m} = \sum_{n,m} \ket{z_m} \otimes \ket{y_m}  \\
+\mbox{definendo: } \ket{z_m} = \sum_{n} {c_{n,m}} \ket{x_n}
+ \end{split} \end{equation}
+Sono quindi passato da 2 a 1 solo indice, rinunciando però all'ortonormalità: \\ $\braket{x_n|y_m} = \delta_{n,m} \not\Rightarrow \braket{z_n|z_m} = \delta_{n,m}$.
+
+Sono ben definiti:
+\begin{gather}
+A\otimes \mathbb{I}\\
+\mathbb{I}\otimes B \\
+(A\otimes\mathbb{I}) (\mathbb{I}\otimes B)=A\otimes B
+\end{gather}
+
+Controllo ora che la algebra sia di Banach:
+Voglio vedere cos'è $ \| A \otimes \mathbb{I} \|^{2}$ : 
+\begin{gather}
+ \mbox{prendo } \bar{z} \in \mathcal{H}_1 \otimes \mathcal{H}_2 \Rightarrow \bar{z}\,=\, \sum_{j} {z_j} \otimes {y_j}  \quad \{ y_i \} \mbox{: set o.n. di } \mathcal{H}_2 \nonumber \\ 
+ \|(A\otimes \mathbb{I}) \; \bar{z} \|^2 = \| (A\otimes \mathbb{I}) \,\sum_{j} {z_j} \otimes {y_j} \|^2 =  \| \sum_{j} A {z_j} \otimes {y_j} \|^2 =\braket{\sum_j Az_j \otimes y_j |\sum_i Az_i \otimes y_i}=\nonumber \\
+ \sum_i \sum_j \braket{Az_j\otimes {y_j}|Az_i \otimes y_i} = \sum_i \sum_j \braket{Az_j|Az_i} \braket {y_i|y_j} = \sum_i \sum_j \braket{Az_j|Az_i} \delta_{ij} = \nonumber \\
+ \sum_{j} \| A_j z_j \|^2 \leq \|A\|^2 \sum_{j} \|z_j\|^2 = \|A\|^2 \|\bar{z}\|^2 \quad \mbox{	\emph{per il Teo di Pitagora}}
+\end{gather}
+
+\begin{gather}
+\mbox{Quindi: } \|  A \otimes \mathbb{I} \|^2 \leq \| A \|^2 \\
+\mbox{Ripeto il procedimento per } B:\,   \|  \mathbb{I} \otimes B \|^2 \leq \| B \|^2 \\
+ \Longrightarrow \| A \otimes B \| = \| A \otimes \mathbb{I} \| \, \|\mathbb{I} \otimes B \| \leq \|A\| \, \|B\|   
+\end{gather}
+
+Quindi la norma del prodotto tensoriale  $A \otimes B $ è limitata in norma se i due operatori $A$ e $B$ sono limitati in norma.\\
+Lo spazio in cui vivono gli operatori tensore è:
+$$
+\mathcal{B({H}}_1 \otimes \mathcal{H}_2) =\overline{\textrm{span}_{\mathbb{C}} \, \left[ \mathcal{B}(\mathcal{H}_1) \otimes \mathcal{B}(\mathcal{H}_1) \right]} 
+\quad
+\text{(chiusura in norma)}
+$$
+
+\subsection{Rappresentazione di Krönecker} %Rappresentazione di Krönecker
+Naturalmente, fissate le basi, ogni operatore nello spazio tensore posso rappresentarlo con delle matrici, si parla di \emph{rappresentazione di Krönecker}.
+Il generico elemento di matrice:
+\begin{equation}
+(A\times B)_{nn',mm'}=A_{nn'} B_{mm'}
+\end{equation}
+
+Il che significa che la matrice complessiva è:
+\begin{equation}\begin{split}
+\left(\begin{matrix}
+A_{1,1}B & A_{1,2}B & \dots & A_{1,N}B\\
+A_{2,1}B & A_{2,2}B & \dots & A_{2,N}B\\
+\dots & \dots & \dots & \dots\\
+A_{N,1}B & A_{N,2}B & \dots & A_{N,N}B\\
+\end{matrix}\right)
+\end{split}\end{equation}
+
+Dove, in pratica, fisso l'elemento $A_{nn'}$ e lo moltiplico per il blocco $B$ (o, viceversa, posso moltiplicare il blocco $A$ all'elemento $B_{mm'}$.
+
+\subsection{Traccia parziale} %Traccia parziale
+Fisso una base $\{ \ket{n} \}$ di uno spazio di Hilbert $\mathcal{H}$ tale che:
+\begin{itemize}
+\item Sia completa: $\sum_n \ket{n} \bra{n} = \mathcal{I}$
+\item Sia ortonormale: $\braket{n|m} = \delta_{nm} $
+\end{itemize}
+
+e data una matrice $A \in \mathcal{B(\mathcal{H})}$ la sua traccia per definizione è:
+$$
+Tr[A] = \sum \bra{n}A\ket{n}
+$$
+Una proprietà particolarmente utile della traccia è che $Tr[AB]=Tr[BA]$ (anche per matrici rettangolari). \\
+%
+%\begin{proof}
+%\[ A=(a^j_i) \quad B =(b^j_i) \quad AB=(c^j_i) \quad BA=(d^j_i) \]
+%\[ c^j_i= \sum_k a^k_i \, b^j_k \quad d^j_i= \sum_k b^k_i \, a^j_k \]
+%\[ Tr[AB]= \sum_i c^i_i = \sum_i \sum_k a^k_i \, b^i_k = \sum_k \sum_i b^i_k \, a^k_i = \sum_k d^k_k = Tr[BA] \qedhere \]
+%\end{proof}
+%
+Usando questa proprietà ne deduco l'invarianza per permutazioni cicliche:
+\begin{equation}
+Tr[ABC]=Tr[BCA]=Tr[CAB]
+\end{equation}
+
+E quindi che, perché la traccia sia ben definita, basta la completezza della base $\{ \ket{n} \}$ (non serve l'ortonormalità), difatti:
+ \begin{equation}
+ Tr[A]=Tr[A\mathcal{I}]=Tr[A \sum_n \ket{n} \bra{n}]= \sum_n Tr[A \ket{n} \bra{n}] =\sum_n Tr[\bra{n} A \ket{n}]
+ \end{equation}
+
+Si ha immediatamente che la traccia è anche invariante per similitudine:
+\begin{equation}\begin{split}
+A=U^{-1} B U \\
+Tr[A]=Tr[U^{-1}BU]=Tr[U^{-1}UB]=Tr[\mathcal{I}B]=Tr[B]
+\end{split} \end{equation}
+Dove $U$ è la matrice cambio di base (unitaria). \\
+Negli spazi tensori si definisce la \emph{traccia parziale}:
+\begin{gather}
+Tr_1\left[A\otimes B\right]:=Tr\left[A\right]B \\
+Tr_2\left[A\otimes B\right]:=ATr\left[B\right] \\
+Tr_1\left[\sum_n{A_n\otimes B_n}\right]:=\sum_n{Tr\left[A_n\right]B_n}
+\end{gather}
+
+Si introduce una nuova notazione:
+\begin{gather}
+Tr\left[\dots\right]=\sum_n{\left\langle n|\dots |n \right\rangle} \\
+Tr_1\left[\dots \right]=\sum_n{\left(\left\langle n\right |\otimes \mathbb{I}\right)\dots \left(\left |n \right\rangle\otimes \mathbb{I}\right)}
+\end{gather}
+
+Usando ciò:
+\begin{gather}
+\sum_n \left ( \bra{n} \otimes \mathcal{I} \right) A \otimes B \left( \ket{n} \otimes \mathcal{I} \right) = \sum_n \bra{n}A\ket{n}B = Tr[A]B
+\end{gather}
+
+Se prendo:
+\begin{gather}
+\Lambda \in \mathcal{B}({\mathcal{H}}_1) \quad \ket{\psi} \in {\mathcal{H}}_2 
+\end{gather}
+
+considero: 
+\begin{gather}
+\Lambda \otimes \ket{\psi} \in \mathcal{B}({\mathcal{H}}_1,{\mathcal{H}}_1 \otimes {\mathcal{H}}_2 ) \nonumber 
+\end{gather}
+
+e vedo come agisce: 
+\begin{gather}
+(\Lambda \otimes \ket{n}) \ket{\psi} := \Lambda  \ket{\psi} \otimes \ket{n} 
+\end{gather}
+
+in modo analogo, posso considerare e definire: 
+\begin{gather}
+\bra{\psi} \otimes \Lambda \in \mathcal{B}({\mathcal{H}}_2   \otimes {\mathcal{H}}_1,{\mathcal{H}}_1 ) 
+\end{gather}
+Tutto è ben definito se $\ket{n}$ è normalizzato.
+
+%\author{Alberto~Beretta}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{28 ottobre 2013}
+
+%\begin{document}
+
+\chapter[Stati con la matrice densità]{Descrizione degli stati con l'operatore matrice densità} %Descrizione degli stati con l'operatore matrice densità
+
+Si ipotizzi di avere un sistema descritto dal vettore normalizzato $\psi$ nello spazio di Hilbert $\mathcal{H}$. Data un'osservabile A, con A autoaggiunto, l'aspettazione è 
+\begin{equation}\begin{split}
+\left\langle A \right\rangle=\left\langle \psi |A\psi  \right\rangle \quad \text{con $||\psi || = 1$}
+\end{split}\end{equation}
+
+In questo caso, sebbene non si conosca esattamente lo stato del sistema,ovvero $\psi$, misurando A si ottengono valori casuali: per esempio l'autostato dell'energia nel caso dell'oscillatore armonico porta a una distribuzione gaussiana della misura della posizione, di media nulla.
+
+Tuttavia, ci possono essere casi in cui non si conosce lo stato. In tali condizioni, se si ha a disposizione una teoria statistica, si può fissare a priori la probabilità che il sistema si trovi in uno stato $\psi$, detto microstato.
+La probabilità di $\psi$ può essere data dai pesi di Boltzmann, che per un sistema a temperatura ben definita, sono descritti, a meno di una costante data dalla funzione di partizione, dalla formula
+\begin{equation}\begin{split}
+p_n (\psi_n) \propto e^{-E_n/k_b T}
+\end{split}\end{equation}
+con $E_n$ autovalore dell'energia relativo all'autostato $\psi_n$.
+Quindi sebbene il sistema non sia in un autostato dell'energia, però si può affermare con una certa probabilità data dal peso di Boltzmann che il sistema si trovi nello stato \emph{n}-esimo. Si cerca l'aspettazione di $A$: se lo stato fosse $\psi _n$ sarebbe \[\left\langle A \right\rangle=\left\langle \psi _n|A|\psi _n \right\rangle\] ma avendo $\psi _n$ la probabilità di $p_n$ si ha:
+\begin{equation}\begin{split}
+\left\langle A \right\rangle=\sum_n{p_n\left\langle \psi _n|A|\psi _n \right\rangle}=\\
+=\sum_n{p_nTr\left[A\left |\psi _n \right\rangle\left\langle \psi _n\right |\right]} = Tr\left[A\rho\right]
+\end{split}\end{equation}
+avendo definito $\rho=\sum{p_n\left |\psi _n \right\rangle\left\langle \psi _n\right |}$.
+
+Pertanto si ha a disposizione un insieme $\mathcal{E} = \left\{\left |\psi _n \right\rangle,p_n\right\}$ detto ensemble di stati. La combinazione di tali proiettori di rango 1 non necessariamente ortogonali, con coefficienti coincidenti con le probabilità, permette di definire \textbf{lo stato come una mistura (mixture).} 
+Non bisogna confondere il concetto di mistura con il concetto di sovrapposizione. Per esempio, per lo spin, si ha che 
+\begin{equation}\begin{split}
+\textrm{Mistura} \quad \frac{1}{2}\left(\left |\uparrow \right\rangle\left\langle \uparrow\right |+\left |\downarrow \right\rangle\left\langle \downarrow\right |\right)\\
+\textrm{Sovrapposizione} \quad \frac{1}{\sqrt{2}}\left(\left |\uparrow \right\rangle+\left |\downarrow \right\rangle\right)\\
+\end{split}\end{equation}
+
+dove la prima riga rappresenta una mistura, in cui non si ha uno stato ben definito ($\sigma_x, \sigma_y, \sigma_z$ hanno autovalori $\pm1$ con probabilità $\frac{1}{2}$), mentre la seconda riga è una sovrapposizione e descrive esattamente uno stato (infatti coincide con lo stato di $\sigma_x$ con autovalore +1). 
+
+\section{Proprietà dell'operatore $\rho$} %Proprietà dell'operatore
+
+\begin{itemize}
+
+\item La traccia di $\rho$ è unitaria:
+\begin{equation}\begin{split}
+Tr\left[\rho\right]=\sum_n{p_nTr\left[\left |\psi _n \right\rangle\left\langle \psi _n\right |\right]}= \sum_n{p_n} = 1
+\end{split}\end{equation}
+dato che $Tr\left[\left |\psi _n \right\rangle\left\langle \psi _n\right |\right] = ||\psi_n || $ con i $\psi_n$ normalizzati.
+
+\item L'operatore $\rho$ è positivo:
+\begin{equation}\begin{split}
+\left\langle \psi |\rho|\psi  \right\rangle=\sum_n{p_n |\left\langle \psi_n | \psi_n \right\rangle|^2}\ge 0
+\end{split}\end{equation}
+dato che ogni elemento della serie è positivo.
+
+Inoltre si può dimostrare che se un operatore è di classetraccia (traccia finita) su uno spazio di Hilbert separabile, allora ha sempre spettro discreto e, dunque, è diagonalizzabile. Infatti, essendo positivo e autoaggiunto, vale
+\begin{equation}\begin{split}
+\rho=\sum_n{\lambda_n\left |\lambda_n \right\rangle\left\langle \lambda_n\right |}
+\end{split}\end{equation}
+dove i $|\lambda_n\rangle$ sono ortogonali tra loro.
+Dato che $\rho$ è positivo, allora vale
+\begin{equation}\begin{split}
+\Longrightarrow \lambda _n\ge 0 \\
+\end{split}\end{equation}
+e, essendo $\rho$ di traccia 1 e gli autovettori normalizzati, si ha che
+\begin{equation}\begin{split}
+\sum_n{\lambda_n}=1
+\end{split}\end{equation}
+
+Dunque, gli autovalori stessi $\lambda_n$ possono funzionare come probabilità, sebbene diverse dai $p_n$.
+\end{itemize}
+
+\section{Osservazione} %Osservazione
+Tutte le medie di ensemble sono indipendenti da una fase globale davanti allo stato. Infatti, se  $\rho$ è descritto da stati del tipo $|\psi\rangle e^{i\phi}$, svolgendo la media si ha
+\begin{equation}\begin{split}
+e^{i\phi}|\psi\rangle \langle\psi|e^{-i\phi} = |\psi\rangle \langle\psi|
+\end{split}\end{equation}
+Pertanto l'operatore densità $\rho$ rappresenta lo stato meglio del vettore nello spazio di Hilbert, in quanto indipendente dalla fase. Infatti $\rho$ non corrisponde a un singolo vettore, ma corrisponde ad un \textbf{raggio vettore} dello spazio di Hilbert, ovvero a tutti i possibili vettori a meno di una fase.
+
+\section{Esempi} %Esempi
+\begin{itemize}
+\item Se  $p_n=\delta_{n,n0}$ allora $\rho$ è dato da un solo elemento della mistura si ha:
+\begin{equation}\begin{split}
+\rho=\left |\psi _{n0} \right\rangle\left\langle \psi _{n0}\right |
+\end{split}\end{equation}
+In questo caso, la media di ensemble di un'osservabile A coincide con la media sul singolo stato,
+\begin{equation}\begin{split}
+\left\langle A \right\rangle=\left\langle \psi_{n0} |A|\psi_{n0} \right\rangle
+\end{split}\end{equation}
+Questo è il caso di uno stato ben preciso, con probabilità 1.
+
+\item Si hanno due miscele, $\rho_1$ e $\rho_2$
+\begin{equation}\begin{split}
+\mathcal{E}=\left\{p_n\left |\psi _n \right\rangle\left\langle \psi _n\right |\right\} \quad \text{con} \quad \rho_1=\sum{p_n\left |\psi _n \right\rangle\left\langle \psi _n\right |} \\
+\mathcal{F} = \left\{p_m\left |\psi _m \right\rangle\left\langle \psi _m\right |\right\} \quad \text{con} \quad \rho_2=\sum{p_m\left |\psi _m \right\rangle\left\langle \psi _m\right |}
+\end{split}\end{equation}
+Le cardinalità N e M dei due insiemi $\mathcal{E}$ e $\mathcal{F}$ possono essere diverse.
+A priori si può ipotizzare di essere nella miscela $\rho_1$ con probabilità \emph{p} e nella miscela $\rho_2$ con probabilità $(1 - p)$. Pertanto, la loro combinazione
+\begin{equation}\begin{split}
+p\rho_1+(1-p)\rho_2=\rho
+\end{split}\end{equation}
+defnisce una nuova matrice densità $\rho$. Pertanto, l'aspettazione dell'osservabile A è data dalla media pesata dell'aspettazione della miscela $\rho_1$ e dell'aspettazione della miscela $\rho_2$, ovvero
+\begin{equation}\begin{split}
+\langle A \rangle = p\langle A_1 \rangle + (1-p)\langle A_2 \rangle
+\end{split}\end{equation}
+
+Questa combinazione così definita è detta \emph{combinazione convessa}, ovvero è una combinazione lineare che ha come coefficienti delle probabilità. Essa definisce un segmento che rappresenta un insieme di possibili matrici densità $\rho$ ottenute al variare del coefficiente p. Ovviamente, se $p=0$ si ha $\rho = \rho_2$, mentre per $p=1$ si ha $\rho=\rho_1$. L'insieme così definito è un insieme di operatori autoaggiunti, che, in dimensione finita, vivono in uno spazio lineare reale con dimensione pari al quadrato della dimensione dello spazio di Hilbert (gli elementi sopra diagonale sono uguali a quelli sotto diagonali, mentre sulla diagonale abbiamo valori reali). Inoltre, tale insieme è convesso, ovvero scelti due punti qualunque, il segmento che li unisce è costituito da punti che rappresentano tutti delle possibili $\rho$. Sono presenti anche gli stati ben precisi, detti \emph{stati puri}, ovvero stati le cui probabilità sono delle delta di Dirac $\delta$, e sono i \emph{punti estremali} del convesso, cioè sono quegli stati che non possono essere descritti tramite combinazioni convesse non banali. Sebbene i punti estremali si trovano sul bordo, tuttavia è errato affermare che tutti i punti del bordo siano tutti punti estremali (basti pensare ai punti del diametro di una semicirconferenza). \\
+Per riassumere, 
+\begin{equation}\begin{split}
+\textrm{stato puro} \quad \rho = |\psi \rangle \langle \psi|  \\
+\textrm{stato miscela} \quad \rho = \sum_n{p_n |\psi_n \rangle \langle \psi_n |}
+\end{split}\end{equation}
+Gli stati puri sono estremali del convesso, e, poiché il supporto di $\rho$ coincide con lo spazio generato dalle $|\psi_n\rangle$, ovvero
+\begin{equation}\begin{split}
+\ker{\left(\rho\right)^{\perp}}=\textrm{supp}\left(\rho\right)=\textrm{span}_\mathbb{C} \left\{\left |\psi _n \right\rangle\right\}
+\end{split}\end{equation}
+per lo stato puro si ha
+\begin{equation}\begin{split}
+\textrm{dim}(\textrm{span}_\mathbb{C}\{\psi\}) = \textrm{dim(supp}(\rho)) = \textrm{rank}(\rho) = 1
+\end{split}\end{equation}
+Allo stesso modo, se si ha
+\begin{equation}\begin{split}
+\rho = |\psi_1\rangle\langle\psi_1| +  |\psi_2\rangle\langle\psi_2| \quad \text{con} \quad |\psi_1\rangle \propto |\psi_2 \rangle
+\end{split}\end{equation}
+ancora una volta l'operatore è di rango 1.
+Se invece $\psi_1$ e $\psi_2$ non sono proporzionali tra loro, il rango dell'operatore diventa 2.
+\end{itemize}
+
+\section{Misture diverse corrispondenti alla stessa $\rho$}
+
+Da quanto si è visto in precedenza, dato un insieme di stati, si è in grado di determinare l'aspettazione di un'osservabile tramite il calcolo della traccia dell'osservabile stessa con $\rho$. Questa non è nient'altro che una generalizzazione della regola di Born, poiché si riesce a stabilire, anche quando non si conosce con precisione il vettore d'onda $\psi$, la distribuzione di probabilità di una qualunque osservabile. Si osserva dunque che gli stati sono in corrispondenza biunivoca con $\rho$, dove per stato non si intende una qualsiasi miscela, in quanto ci possono essere miscele corrispondenti alla stessa $\rho$, ma tali miscele saranno indistinguibili. Pertanto, ci riferiamo solo a stati corrispondenti a miscele distinguibili tra loro.
+
+Infatti, si può ipotizzare di avere due miscele diverse, $\rho_1$ e $\rho_2$ che corrispondono allo stesso stato $\rho$:
+\begin{equation}\begin{split}
+\mathcal{E}\left\{p_n,\left|\psi _n \right\rangle\left\langle \psi _n\right |\right\} \\
+\mathcal{F}\left\{p'_m,\left |\psi _m \right\rangle\left\langle \psi _m\right |\right\}
+\end{split}\end{equation}
+dove $\rho$ sarà definita da
+\begin{equation}\begin{split}
+\rho=\sum_n{p_n\left |\psi _n \right\rangle\left\langle \psi _n\right |}=\sum_n{p'_m\left |\psi _m \right\rangle\left\langle \psi _m\right |}
+\end{split}\end{equation}
+Dunque, a livello di preparazione, le miscele sono diverse. Però, scelta un'osservabile A qualsiasi, l'aspettazione $\left\langle A \right\rangle$ sarà la stessa, indipendentemente dalla miscela considerata. Se ne deduce che le due miscele sono \emph{indistinguibili}.
+
+\subsection{Teorema di Nielsen-Chang} %Teorema di Nielsen-Chang
+
+Due miscele corrispondo allo stesso stato se i vettori normalizzati con la radice della probabilità dell'una sono combinazioni lineari dell'altra con matrici a colonne ortogonali come coefficienti. Questo significa che i due ensemble sono isometricamente connessi.
+\\
+
+Si prendano in considerazione le due miscele precedenti, $\rho_1$ e $\rho_2$, che corrispondono allo stesso stato $\rho$ e definite dai due ensemble
+\begin{equation}\begin{split}
+\mathcal{E}\left\{p_n,\left|\psi _n \right\rangle\left\langle \psi _n\right |\right\} \\
+\mathcal{F}\left\{p'_m,\left |\phi _m \right\rangle\left\langle \phi _m\right |\right\}
+\end{split}\end{equation}
+che possono avere cardinalità diversa.
+
+Presi gli stati $|\psi_n\rangle$, definiamo gli stati normalizzati con la probabilità
+\begin{equation}\begin{split}
+|\widetilde{\psi_n}\rangle = \sqrt{p_n} |\psi_n\rangle \qquad \textrm{e} \quad |\widetilde{\phi_m}\rangle = \sqrt{p'_m} |\phi_n\rangle
+\end{split}\end{equation}
+Pertanto, $\rho$ è data da
+\begin{equation}\begin{split}
+\rho = \sum_n{p_n|\psi_n\rangle \langle \psi_n|} = \sum_n{|\widetilde{\psi_n}\rangle\langle\widetilde{\psi_n}|} \\
+\textrm{e} \quad \rho = \sum_m{p'_m|\phi_m\rangle \langle \phi_m|} = \sum_m{|\widetilde{\phi_m}\rangle\langle\widetilde{\phi_m}|}
+\end{split}\end{equation}
+Dato che sia $|\psi_n\rangle$ sia $|\phi_m\rangle$ sono basi del supp($\rho$), allora è possibile scrivere le $|\widetilde{\psi_n}\rangle$ come combinazioni lineari delle $|\widetilde{\phi_m}\rangle$ con coefficienti $U_{nm}$, cioè
+\begin{equation}\begin{split}
+|\widetilde{\psi_n}\rangle = \sum{U_{nm}|\widetilde{\phi_m}\rangle}
+\end{split}\end{equation}
+dove i coefficienti $U_{nm}$ sono unici solo se le $|\phi_m\rangle$ sono linearmente indipendenti.\\
+Da ciò,segue
+\begin{equation}\begin{split}
+\sum_n{|\widetilde{\psi_n}\rangle\langle\widetilde{\psi_n}|} = \sum_{n,k,l}{U_{nk} U^*_{nl}|\widetilde{\phi_m}\rangle\langle\widetilde{\phi_m}|} = \sum_{l,k}{(U^\dag U)_{lk}|\widetilde{\phi_l}\rangle\langle\widetilde{\phi_l}|} = \sum_l{|\widetilde{\phi_l}\rangle\langle\widetilde{\phi_l}|}
+\end{split}\end{equation}
+dove l'ultimo passaggio è possibile solo se
+\begin{equation}\begin{split}
+\left(U^\dag U\right)_{n,m}=\delta_{n.m}
+\end{split}\end{equation}
+Questo significa che le matrici rettangolari $U_{nm}$ sono matrici con le colonne ortogonali.
+
+
+Pertanto si verifica che, dati due ensemble $\rho_{\mathcal{E}}$ e $\rho_{\mathcal{F}}$ , si ha
+\begin{equation}\begin{split}
+\rho_{\mathcal{E}} = \rho_{\mathcal{F}}
+\end{split}\end{equation}
+se gli ensemble $\mathcal{E}$ e $\mathcal{F}$ sono isometricamente equivalenti.
+
+
+\subsection{Esempio di misture indistinguibili} %Misture indistinguibili
+Se si prendono le due matrici densità del tipo
+\begin{equation}\begin{split}
+\rho=\frac{1}{2}\left(\left |\uparrow \right\rangle\left\langle \uparrow\right |+\left |\downarrow \right\rangle\left\langle \downarrow\right |\right)=\frac{1}{2}\mathbb{I} \\
+\rho=\frac{1}{2}\left(\left |\rightarrow \right\rangle\left\langle \rightarrow\right |+\left |\leftarrow \right\rangle\left\langle \leftarrow\right |\right)=\frac{1}{2}\mathbb{I}
+\end{split}\end{equation}
+Abbiamo quindi due set ortogonali in entrambi i casi. Sebbene siano due rappresentazioni diverse, danno la stessa matrice (l'operatore $\mathbb{I}$ diviso per 2). Dunque, le due miscele diverse non possono essere distinte, perché tutte le medie di ensemble sono uguali in quanto lo stato è lo stesso. 
+
+In meccanica quantistica esistono miscele indistinguibili (non presenti invece in meccanica classica).
+
+
+\section{Considerazioni sulla traccia} %Considerazioni sulla traccia
+
+Calcolando il rango dell'operatore densità $\rho$ si può verificare se uno stato sia uno stato puro (rank ($\rho$) = 1) o una miscela (altrimenti).
+Tuttavia si può osservare che si ha sempre
+\begin{equation}\begin{split}
+Tr\left[\rho^2\right]=\sum_n{\lambda_n^2}\le 1
+\end{split}\end{equation}
+In particolare si hanno i due casi:
+\begin{itemize}
+\item Stato puro:
+\begin{equation}\begin{split}
+Tr\left[\rho^2\right]=\sum_n{\lambda_n^2}= 1
+\end{split}\end{equation}
+\item Stato miscela:
+\begin{equation}\begin{split}
+Tr\left[\rho^2\right]=\sum_n{\lambda_n^2}< 1
+\end{split}\end{equation}
+\end{itemize}
+Dunque, dal calcolo di $Tr\left[\rho^2\right]$ si è in grado di stabilire se lo stato sia puro o misto.
+
+
+%\end{document}
+% \end{document}

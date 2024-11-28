@@ -1,0 +1,257 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[english]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+%
+%\renewcommand{\vec}{\bm}
+%
+%\author{Giovanni~Canepa}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{11-4-2013}
+%
+%\begin{document}
+
+\section{Particelle indistinguibili} %Due particelle
+Considerando due particelle, la funzione d'onda sarà nella rappresentazione della posizione:
+\begin{equation}
+\begin{split}
+\psi \left(\bar r_1,r_2\right)=\left\langle \bar r_1\right |\otimes\left\langle \bar r_1|\psi  \right\rangle\left |\psi  \right\rangle\in \mathcal{H}_1\otimes\mathcal{H}_2
+\end{split}
+\end{equation}
+
+Si scelgono due particelle indistinguibili in linea di principio (hanno tutte le stesse proprietà fisiche e non c'è nessun possibile esperimento mediante il quale posso sostenere di osservare la particella 1 o la particella 2). Se lo stato che si ottiene scambiando le due particelle (in questo caso gli argomenti della funzione d'onda) è tale che
+\begin{equation}\begin{split}
+\psi \left(\bar r_1,\bar r_2\right)\rightarrow \psi \left(\bar r_2,\bar r_1\right)=\lambda\psi \left(\bar r_1,\bar r_2\right)
+\end{split}\end{equation}
+con $|\lambda |=1$ (fattore di fase). In questo caso tutte le probabilità sono uguali e quindi lo stato rimane ancora lo stesso. Se si scambiano ancora:
+\begin{equation}\begin{split}
+\psi \left(\bar r_1,\bar r_2\right)= \lambda\psi \left(\bar r_1,\bar r_2\right)=\lambda^2 \psi \left(\bar r_1,\bar r_2\right) 
+\end{split}\end{equation}
+Quindi si ha $\lambda^2=1$ perciò le fasi devono essere $\lambda=\pm 1$.
+
+Si considerino ora $n$ particelle. Si ha:
+ \begin{equation*}
+ \psi \left(\bar r_1,\dots,\bar r_n\right)=\lambda\left(\pi\right)\psi \left(\bar r_{\pi\left(1\right)},\dots,\bar r_{\pi\left(n\right)}\right)
+ \end{equation*}
+ Se ho due permutazioni successive $\pi$ e $\sigma$:
+\begin{equation*}
+\lambda\left(\pi\sigma\right)=\lambda\left(\pi\right)\lambda\left(\sigma\right) 
+\end{equation*}
+Cioè ad ogni permutazione acquisto un fattore di fase. Facendo delle permutazioni successive si può concludere che 
+\begin{equation*}
+\lambda\left(\sigma\pi\sigma^{-1}\right)=\lambda\left(\sigma\right)\lambda\left(\pi\right)\lambda\left(\sigma^{-1}\right)=\lambda\left(\pi\right)
+\end{equation*} 
+Ogni scambio di due particelle equivale quindi dal punto di vista dei fattori di fase a scambiare le particelle 1 e 2 infatti
+\begin{equation*}
+\left(r,s\right)=\left(1,r\right)\left(2,s\right)\left(1,2\right)\left(2,s\right)^{-1}\left(1,r\right)^{-1} \rightarrow \lambda_{(r,s)}=\lambda_{(1,2)}
+\end{equation*}
+Quindi ci sono due casi in base al segno dei fattori di fase di tutte le permutazioni (che hanno lo stesso segno). Distinguiamo quindi due tipi di particelle a seconda del comportamento per permutazione: 
+
+\begin{itemize}
+\item bosoni: $\lambda=+1$
+\item fermioni: $\lambda=-1$
+\end{itemize}
+
+Data un'Hamiltoniana $H=H\left(\bar r_1,\dots,\bar r_n,\bar p_1,\dots,\bar p_n,\bar s_1,\dots,\bar s_n \dots\right)$ ha senso scambiarne le particelle all'interno, definisco un operatore $P$ che attua questo scambio. Si ha:
+\begin{equation}\begin{split}
+P_\pi H=HP_\pi
+\end{split}\end{equation}
+
+Applicando l'Hamiltoniana ad uno stato si ha
+\begin{equation}\begin{split}
+P_\pi H\psi \left(\bar r_1,\dots,\bar r_n\right)=HP_\pi \psi \left(\bar r_1,\dots,\bar r_n\right)=\lambda\left(\pi\right)H\psi \left(\bar r_1,\dots,\bar r_n\right)
+\end{split}\end{equation}
+cioè non cambia il segno della permutazione. Siccome le interazioni e le trasformazioni tra particelle in natura sono descritte da Hamiltoniane, non è possibile scambiare fermioni e bosoni
+
+\paragraph{Regola di superselezione} %Regola di superselezione
+Quando considero le funzioni d'onda di particelle indistinguibili in linea di principio possono essere soltanto autofunzioni dell'operatore che permuta le particelle con l'autovalore ($\pm1$) dipendente dal tipo di particella.
+Quindi non posso considerare tutto lo spazio di Hilbert ($\mathcal{H}=\mathcal{H}_1\otimes \dots \otimes \mathcal{H}_n$). Ad esempio, nel caso $n=2$ non posso 
+%Si considerano solo sovrapposizioni simmetrizzate (\emph{bosoni}) o antisimmetrizzate (\emph{fermioni}).
+
+
+\begin{equation}
+\psi _1\left(\bar r_1\right)\psi _2\left(\bar r_2\right)=\psi \left(\bar r_1,\bar r_2\right)
+\end{equation}
+
+con $\psi_1$ e $\psi_2$ diverse (ad esempio nei numeri quantici). Permutando abbiamo che:
+\begin{equation}
+\psi _1\left(\bar r_2\right)\psi _2\left(\bar r_1\right)\neq \lambda \psi _1\left(\bar r_1\right)\psi _2\left(\bar r_2\right)
+\end{equation}
+
+Possiamo quindi solo considerare sovrapposizioni simmetrizzate o antisimmetrizzate (in $\mathcal{H}=\mathcal{H}_1\otimes_f \mathcal{H}_2$ o $\mathcal{H}=\mathcal{H}_1\otimes_b \mathcal{H}_2$ (a meno della normalizzazione):
+\begin{equation}
+\psi _1\left(\bar r_1\right)\psi _2\left(\bar r_2\right) \pm \psi _1\left(\bar r_2\right)\psi _2\left(\bar r_1\right) 
+\end{equation}
+
+Nel caso generale a $n$ particelle si ottengono sovrapposizioni simmetrizzate considerando la somma:
+\begin{equation}
+\psi \left(\bar r_1,\dots,\bar r_n\right)=\frac{1}{N!}\sum_{\pi} \lambda_{\pi} \psi_{\pi(1)} \left(\bar r_1\right) \dots \psi_{\pi(n)} \left(\bar r_n\right)
+\end{equation}
+Nel caso dei fermioni possiamo riscrivere questa sovrapposizione come il determinante di Slater:
+\begin{equation}
+\psi \left(\bar r_1,\dots,\bar r_n\right)=\det{\left[\psi _i\left(\bar r_j\right)\right]}=\det{\left(\begin{matrix}\psi _1\left(\bar r_1\right) & \dots & \psi _1\left(\bar r_n\right) \\ \dots & \dots & \dots \\ \psi _n\left(\bar r_1\right) & \dots & \psi _n\left(\bar r_n\right) \end{matrix}\right)}
+\end{equation}
+Questo implica che se ho due funzioni con gli stessi numeri quantici, scambiandole ottengo un segno meno ma in tale caso $\psi=-\psi$ e quindi lo stato non esiste $\psi=0$. Nella matrice questo corrisponde a due righe uguali. Vale quindi il principio di esclusione di Pauli che afferma che due fermioni non possono avere lo stesso set di numeri quantici.
+
+Consideriamo una particella con $S=\frac{1}{2}$: L'operatore di rotazione è
+\begin{equation*}
+U_{\bar n}\left(\theta\right)=e^{-\frac{i}{\hbar }\bar n\cdot \bar S} 
+\end{equation*}
+\begin{equation*}
+\bar S=\frac{\hbar }{2}\bar \sigma
+\end{equation*}
+Si ha
+\begin{equation*}
+U_{\bar n}\left(2\pi\right)=-\mathbb{I}
+\end{equation*}
+cioè con una rotazione di 2$\pi$ la funzione d'onda prende un segno meno.
+Questo si può scrivere in generale:
+\begin{equation*}
+U_{\bar n}^{2j+1}\left(\theta\right)=e^{-\frac{i}{\hbar }\theta \bar n\cdot \bar J}
+\end{equation*}
+Per una rotazione lungo z si ha: 
+\begin{equation*}
+U_z^{2j+1}\left(\theta\right)=e^{-\frac{i}{\hbar }\theta J_z}=\exp{\left[-i\theta\left(\begin{matrix}j & & 0 \\ & \dots & \\ 0 & & -j\end{matrix}\right)\right]} 
+\end{equation*}
+Se prendiamo $j$ intero:
+\begin{equation*}
+U_z^{2j+1}\left(2\pi\right)= \mathbb{I}
+\end{equation*}
+
+Se invece $j=\frac{n}{2}$ con $n$ dispari:
+\begin{equation*}
+U_z^{2j+1}\left(2\pi\right)=\exp{\left[-i\pi\left(\begin{matrix}n & & 0 \\ & \dots & \\ 0 & & -n\end{matrix}\right)\right]}= - \mathbb{I}
+\end{equation*}
+Se ruoto di $2\pi$ una funzione d'onda con momento angolare semidispari ottengo sempre un segno meno. Quindi, secondo l'argomento di Filkestein c'è un legame tra questo segno meno e quello nella permutazione di due fermioni: scambiare due particelle è equivalente a ruotare di 2$\pi$ una delle due (esempio del nastro). Ne concludiamo che i fermioni sono le particelle che hanno spin semidispari. Riassumendo
+\begin{itemize}
+\item $S=\frac{n}{2}$ con $n$ dispari: fermioni
+\item $S=n$: bosoni
+\end{itemize}
+Le conseguenze di questo dal punto di vista termodinamico sono enormi, infatti cambia enormemente il numero di conteggi degli stati, bisogna ridurre le permutazioni alle sole con una parità definite.
+
+\section{Meccanica quantistica dei gas perfetti} %Meccanica quantistica dei gas perfetti
+Consideriamo un gas perfetto, non ci sono interazioni, l'Hamiltoniana è puramente cinetica e le particelle sono indistinguibili.
+Possiamo descrivere uno stato termodinamico a partire dall'entropia e dall'energia (e dai potenziali chimici):
+\begin{equation}
+U=U\left(S,V,N\right)
+\end{equation}
+\begin{equation}
+S=S\left(U,V,N\right)
+\end{equation}
+Se abbiamo la descrizione di queste quantità in funzione di queste variabili permettono di calcolare qualsiasi quantità termodinamica. Altrimenti bisogna ricorrere alla trasformata di Legendre.
+Ricordiamo qualche definizione:
+\begin{itemize}
+\item variabili intensive (proporzionali a V) e estensive (indipendenti da V).
+\item $ \frac{\partial U}{\partial S}=T \quad \frac{\partial U}{\partial T}=-P \quad \frac{\partial U}{\partial N}=\mu$
+\item relazione di Gibbs-Duhem: $$U=\frac{\partial U}{\partial V}V+\frac{\partial U}{\partial N}N+\frac{\partial U}{\partial S}S=-PV+\mu N+TS$$
+					$$ S=\frac{\partial S}{\partial V}V+\frac{\partial S}{\partial N}N+\frac{\partial S}{\partial U}U=\frac{U}{T}+\frac{PV}{T}-\frac{\mu N}{T}$$
+\end{itemize}
+Vogliamo calcolare la termodinamica con la meccanica quantistica, utilizzeremo la descrizione entropica. 
+Si vuole ricavare l'Hamiltoniana:
+\begin{equation}
+H=\sum_{j=1}^{N}{h_j}
+\end{equation}
+con $h=\frac{p^2}{2m}$ Hamiltoniana della particella singola (libera).
+
+Si risolve l'equazione di Schrödinger in una scatola di volume $V$ (al variare del volume cambia lo spettro degli autovalori dell'energia e quindi l'entropia). La scatola da le condizioni al contorno: nel caso della barriera infinita di potenziale questo si traduceva nella discretizzazione di $k= \frac{n}{L}$, ora in tre dimensioni avremo $\bar k = \left(\frac{n_x}{L_x},\frac{n_y}{L_y}, \frac{n_z}{L_z}\right)$. Per l'interno della scatola (ciò che ci interessa in termodinamica) bastano le condizioni periodiche di Born-von Karman: anziché seni (che si annullano sul bordo) si considerano onde viaggianti $e^{i\bar k \dot \bar r}$.
+\begin{equation*}
+\bar k=2\pi\left(\frac{n_x}{L_x},\frac{n_y}{L_y},\frac{n_z}{L_z}\right)
+\end{equation*}
+con $n_{\alpha}\in \mathbb{Z}$.
+Siccome si considerano dimensioni macroscopiche, i valori al variare di $n$ sono molto piccoli, al posto di fare una somma farò un integrale. La distanza tra 2 $k$ vicini va come $\sqrt{\frac{2 \pi }{L}}$. Devo per ogni volumetto $ \bar k $ calcolare quante onde ci sono e trovare una densità $ D(k) $ per fare l'integrale $\int d \bar k D(k)$. Risulta $D(k)=\frac{V}{(2\pi)^3}$. Inoltre si considera anche lo spin quindi $D(k)=\frac{V}{4\pi^3}$
+
+
+\begin{equation}
+H=\sum_{j=1}^{N}{\frac{\hbar ^2k_j^2}{2m}}\rightarrow\int{D\left(k\right)\textrm{d} \bar k}
+\end{equation}
+dove $\frac{\hbar ^2k_j^2}{2m}$ sono gli autovalori che dipendono dallo stato $\psi $.
+
+\section{Stato delle particelle} %Stato delle particelle
+Sia $U$ l'autovalore dell'Hamiltoniana dello stato delle particelle (tale autovalore è degenere perché scambiando le particelle si ottiene sempre lo stesso autovalore).Lo stato del gas sarà la matrice densità, mistura di stati puri tutti con energia $E_{\psi}=U$ tutti equiprobabili:
+\begin{equation}
+\rho=\frac{1}{N\left(U\right)}\sum_{E_{\psi}=U}{\left |\psi  \right\rangle\left\langle \psi \right |}
+\end{equation} 
+dove $N(U)$ è la degenerazione di $U$. $\rho$ è lo stato microscopico che descrive il gas.
+L'entropia è:
+\begin{equation*}
+S\left(U\right)=k_B\ln{\left(N\left(U\right)\right)}
+\end{equation*}
+con $k_B$ costante di Boltzmann.
+Il nostro obiettivo è ora calcolare quanti sono i microstati. Se il sistema è isolato $U$ è data e il problema si risolve calcolando il numero di possibili permutazioni. Se invece il sistema è in contatto con una riserva di energia, posso definire la temperatura $T$ (la riserva deve comportarsi come un termostato) e in questo caso l'entropia si massimizza quando il sistema e la riserva sono alla stessa temperatura (equilibrio termodinamico). 
+Si vuole quindi trovare $\rho$ ad una data temperatura:
+\begin{equation*}
+\rho=\sum{p_\psi \left |\psi  \right\rangle\left\langle \psi \right |}
+\end{equation*}
+dove $\left |\psi  \right\rangle$ sono gli autostati dell'energia e $p_\psi =p\left(E_\psi ,T\right)$ è la probabilità dello stato $\psi $. Per calcolare la probabilità considero il sistema isolato composto da sistema e riserva con energia $E_0=E+E_R$ ($E\ll E_R$). Si trascurano le interazioni per scambiare energia tra sistema e riserva che in realtà sono importanti solo per il raggiungimento dell'equilibrio termico e non per lo stato di equilibrio. Si ha 
+\begin{equation*}
+p_\psi \left(E\right)\propto N_R\left(E_0-E\right)
+\end{equation*}
+\begin{equation*}
+\sum_{E}{p_\psi \left(E\right)}=1 \quad \sum{N_R\left(E_0-E\right)}=N_{tot}
+\end{equation*}
+infatti $N_{S+R}(E_0)= \sum_E N_S (E) N_R(E_0-E)= \sum_{\psi} N_R(E_0-E)$.
+
+Essendo $E\ll E_0$ quindi si può espandere l'entropia:
+\begin{equation}
+\ln{\left(N_R\left(E_0-E\right)\right)}=
+\end{equation}
+\begin{equation}
+=\ln{\left(N_R\left(E_0\right)\right)}-\left.\frac{\partial \ln{\left(N_R\left(x\right)\right)}}{\partial x}\right|_{x=E_0}E+O\left(E^2\right)=
+\end{equation}
+\begin{equation}
+=\ln{\left(N_R\left(E_0\right)\right)}-\frac{1}{k_BT}E
+\end{equation}
+in quanto $\frac{\partial S}{\partial E}= \frac{1}{T}$.
+
+\begin{equation*}
+\frac{\partial \ln{\left(N_S\left(E\right)N_R\left(E_0-E\right)\right)}}{\partial E}
+=\frac{\partial \ln{\left(N_S\right)}}{\partial E}-\frac{\partial \ln{\left(N_R\right)}}{\partial E}
+=\frac{1}{k_BT_S}-\frac{1}{k_BT_R}=0
+\end{equation*}
+Si impone che la derivata sia zero per trovare l'equilibrio e si ritrova che la temperatura deve essere uguale in $R$ e in $S$.
+Si ricava la probabilità:
+\begin{equation}
+p_\psi \propto e^{-\frac{E_\psi }{k_BT}}=e^{-\beta E_\psi }
+\end{equation}
+con $\beta=\frac{1}{k_BT}$.
+Quando ho una relazione termodinamica data in funzione della temperatura avrò che lo stato termodinamico è dato da una mistura con questa probabilità (normalizzata)
+
+\begin{equation}
+\rho=\frac{\sum_{\psi }{e^{-\beta E_\psi }\left |\psi  \right\rangle\left\langle \psi \right |}}{Z\left(T,V,N\right)}=\sum{p_\psi \left |\psi  \right\rangle\left\langle \psi \right |}
+\end{equation}
+con $Z\left(T,V,N\right)=\sum_{\psi }{e^{-\beta E_\psi }}$ funzione di partizione.
+Ho un ulteriore grado di libertà, la variabilità del numero di particelle: devo fare la stessa cosa fatta sopra (riserva come riserva di energia e particelle) sviluppando l'entropia anche per il numero di particelle. La derivata corrispondente dà il potenziale chimico quindi svolti i calcoli si ottiene
+$$ p_{\psi}=e^{-\beta(E-\mu N)}.$$
+In conclusione si hanno diversi ensemble (insieme di stati puri):
+\begin{itemize}
+\item Ensemble microcanonico, stati equiprobabili
+\begin{equation*}
+p_\psi =\frac{1}{N\left(E_\psi =U\right)}
+\end{equation*}
+\item Ensemble canonico:
+\begin{equation*}
+p_\psi =\frac{e^{-\beta E_\psi }}{Z\left(T,V,N\right)}
+\end{equation*}
+con $Z=Z\left(T,V,N\right)$ funzione di partizione.
+\item Ensemble grancanonico:
+\begin{equation*}
+p_\psi =\frac{e^{-\beta \left(E_\psi -\mu N_\psi \right)}}{\mathcal{Z}}
+\end{equation*}
+con $\mathcal{Z}=\mathcal{Z}\left(T,V,\mu\right)$ funzione di gran partizione.
+\end{itemize}
+
+%\end{document}

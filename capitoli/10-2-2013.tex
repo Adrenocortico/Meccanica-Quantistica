@@ -1,0 +1,130 @@
+%\documentclass[a4paper,11pt,twoside]{report}
+%\usepackage[italian]{babel}
+%\usepackage{lmodern}
+%\usepackage[utf8]{inputenc}
+%\usepackage{microtype}
+%\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage[binding=5mm]{layaureo}
+%\usepackage[T1]{fontenc}
+%\usepackage{amssymb}
+%\usepackage{amsmath}
+%\usepackage{graphicx}
+%\usepackage{booktabs}
+%\usepackage{array}
+%\usepackage{tabularx}
+%\usepackage{caption}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{eufrak}
+
+%\author{Beniamino~Nobile}
+%\title{Appunti di \\Meccanica Quantistica}
+%\date{10-2-2013}
+
+%\begin{document}
+%\maketitle
+\chapter[Derivazione euristica]{Derivazione euristica dell'equazione di Schrödinger} %Derivazione euristica dell'Equazione di Schrödinger
+\section[Confronto ondulatoria-particellare]{Confronto della meccanica ondulatoria con quella particellare} %Confronto della meccanica ondulatoria con quella particellare
+Vogliamo descrivere un'onda e farne una decomposizione in frequenza
+
+\[
+A\left(\bar x, t\right)=\int_{-\infty }^{+\infty }{a_{\omega}(\bar x)e^{-i\omega t} \textrm{d}\omega}=\int_{-\infty}^{+\infty}{A_\omega(\bar x,t) \textrm{d}\omega}
+\]
+
+A noi interessano pacchetti concentrati attorno a una certa frequenza, quindi per $\omega\sim\omega_0$ abbiamo $A_\omega\neq0$
+
+
+Scriviamo ora l'equazione d'onda per una componente monocromatica:
+
+\begin{equation}
+\nabla ^2A_{\omega }\left(\bar x, t\right)-\frac{1}{v^2_p (\omega,\bar x)}\frac{\partial ^2A_{\omega }\left(\bar x, t\right)}{\partial t^2}=0
+\end{equation}
+
+Ogni componente si muove a velocità diversa producendo la dispersione del pacchetto.
+
+\subsection{Principio di Fermat} %Principio di Fermat
+Utilizziamo l'approssimazione dell'ottica geometrica e diciamo che il pacchetto si muove lungo il raggio.
+Possiamo ottenere la forma del raggio (ovvero la traiettoria del pacchetto) da un principio variazionale, che è il Principio di Fermat:
+\begin{equation}
+\delta \int_{A}^{B}{\frac{1}{v_p(\bar x,\omega)} \textrm{d}s=0}
+\end{equation}
+I pacchetti d'onda si muovono lungo il raggio a velocità $v_g$. Essa è la velocità di gruppo: $v_g=\frac{d\omega}{dk}$.
+
+\subsection{Principio di Maupertuis} %Principio di Maupertuis
+Per le particelle meccaniche, con traiettoria classica:
+\begin{equation}
+\delta \int_{A}^{B}{\sqrt{E-V(\bar x)} \textrm{d}s}=0
+\end{equation}
+\begin{equation}
+\delta \int_{A}^{B}{\bar p \textrm{d}\bar q}=0
+\end{equation}
+
+La velocità della particella classica, eguale alla velocità di gruppo, è:
+\begin{equation}
+v_c\left(E, \bar x\right)=\sqrt[]{\frac{2}{m}(E-V(\bar x))}\equiv v_g=\frac{d\omega}{dk}
+\end{equation}
+
+Valutiamo ora l'inverso della velocità di gruppo:
+\begin{equation}
+\label{eq:inversa_vel_gruppo}
+\frac{1}{v_g}=\frac{dk}{d\omega}=\frac{d}{d\omega}\left(\frac{\omega}{v_p}\right)=\frac{1}{v_p}+\omega\frac{d}{d\omega}\left(\frac{1}{v_p}\right)=\left(\sqrt{\frac{2}{m}(E-V(\bar x))}\right)^{-1}.
+\end{equation}
+
+Considerando la traiettoria classica uguale al raggio otteniamo:
+\begin{equation}
+\label{eq:inversa_vel_fase_classica}
+\frac{1}{v_p(\bar x,\omega)}=f(\omega)\sqrt{E-V(\bar x)}
+\end{equation}
+
+Si ha quindi:
+\begin{equation}
+f\left(\omega \right)\sqrt{E-V\left(\bar x\right)}+\omega \left(\frac{df}{d\omega }\sqrt{E-V\left(\bar x\right)}+\frac{f}{2\sqrt{E-V\left(\bar x\right)}}\frac{dE}{d\omega }\right)=\frac{1}{\sqrt{\frac{2}{m}\left(E-V\left(\bar x\right)\right)}}
+\end{equation}
+
+
+Quest'ultima equazione deve valere $\forall \bar x$ (e quindi $\forall \bar v_x$), di conseguenza otteniamo due equazioni:
+
+\begin{equation}
+f+\omega \frac{df}{d\omega }=0 \Longrightarrow \frac{df\omega }{d\omega }\Longrightarrow f\omega =a (costante)
+\end{equation}
+\begin{equation}
+\omega f\frac{dE}{d\omega }=\sqrt[]{2m}\Longrightarrow \frac{dE}{d\omega }=\frac{\sqrt[]{2m}}{a}\Longrightarrow E=\frac{\sqrt[]{2m}}{a}\omega +b
+\end{equation}
+
+\subsection{Formula di Einstein-Planck} %Formula di Einstein-Planck
+Ponendo $\frac{\sqrt{2m}}{a}=\hbar $ (e quindi considerando la costante $\frac{\sqrt{2m}}{a}$ indipendente dalla massa della particella) otteniamo:
+\begin{equation}
+E=\hbar \omega 
+\end{equation}
+
+\subsection{Relazione di de Broglie} %Relazione di de Broglie
+La velocità di fase diventa allora:
+\begin{equation}
+v_p=\frac{\hbar \omega }{\sqrt{2m(E-V\left(\bar x\right))}}
+\end{equation}
+da cui otteniamo:
+\begin{equation}
+\lambda =\frac{2\pi}{k}=\frac{2\pi}{\omega}v_p=\frac{h}{\sqrt{2m(E-V\left(\bar x\right))}}=\frac{h}{p}
+\end{equation}
+
+\subsection{Onda viaggiante complessa} %Onda viaggiante complessa
+Sostituendo la velocità di fase nell'equazione d'onda monocromatica:
+\begin{equation}
+\nabla ^2\psi_{\omega} -\frac{2m}{\hbar ^2\omega ^2}\left(\hbar \omega -V\left(\bar x\right)\right)\frac{\partial  ^2}{\partial t^2}\psi_{\omega} =0.
+\end{equation}
+
+L'equazione ottenuta non descrive tutta l'onda, ma descrive ogni componente monocromatica.
+
+Vogliamo quindi eliminare la dipendenza da $\omega $ e per farlo consideriamo un'onda viaggiante complessa:
+\begin{equation}
+\psi_{\omega} \left(\bar x, t\right)=a_{\omega }\left(\bar x\right)e^{-i\omega t}
+\end{equation}
+Ricordando $\frac{\partial \psi_{\omega}}{\partial t}=i\omega \psi_{\omega}$; $\frac{\partial^2 \psi_{\omega}}{\partial t^2}=-\omega^2 \psi_{\omega}$
+otteniamo l'\textbf{equazione di Schrödinger}:
+\begin{equation}
+\label{eq:schrodinger}
+i\hbar \frac{\partial \psi \left(\bar x, t\right)}{\partial  t}=\left(-\frac{\hbar ^2\nabla ^2}{2m}+V\left(\bar x\right)\right)\psi \left(\bar x, t\right)
+\end{equation}
+
+%\end{document}

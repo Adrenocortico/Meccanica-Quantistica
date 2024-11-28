@@ -1,0 +1,89 @@
+\section{Metodo di Hartree-Fock} %Metodo di Hartree-Fock
+Si definisce il \textbf{determinante di Slater}:
+\begin{equation}\begin{split}
+\left |\psi  \right\rangle=\frac{1}{\sqrt{N!}}\left|\begin{matrix}
+\psi _{n_1}\left(1\right)&\psi _{n_1}\left(2\right)&\dots&\psi _{n_1}\left(N\right)\\
+\psi _{n_2}\left(1\right)&\psi _{n_2}\left(2\right)&\dots&\psi _{n_2}\left(N\right)\\
+&&\dots& \\
+\psi _{n_N}\left(1\right)&\psi _{n_N}\left(2\right)&\dots&\psi _{n_N}\left(N\right)
+\end{matrix}\right|
+\end{split}\end{equation}
+Si ha quindi che $\left\langle \psi _1|\psi _2 \right\rangle=\delta_{i,j}$.
+
+Si hanno le seguenti proprietà:
+\begin{itemize}
+\item Su 2 particelle vale:
+\begin{equation}\begin{split}
+\left\langle \psi '\right |F\left |\psi  \right\rangle=\\
+=\frac{1}{2!}\left[\left\langle \psi' _1\left(1\right)\right |\left\langle \psi'_2\left(2\right)\right |-\left\langle \psi'_2\left(1\right)\right |\left\langle \psi'_1\left(2\right)\right |\right]F\left[\left |\psi _1\left(1\right) \right\rangle\left |\psi _2\left(2\right) \right\rangle-\left |\psi _2\left(1\right) \right\rangle\left |\psi _1\left(2\right) \right\rangle\right]=\\
+=\dots=\\
+=\left\langle \psi' _1\left(1\right)\right |\left\langle \psi'_2\left(2\right)\right |F|\left[\left |\psi _1\left(1\right) \right\rangle\left |\psi _2\left(2\right) \right\rangle-\left |\psi _1\left(2\right) \right\rangle\left |\psi _2\left(1\right) \right\rangle\right]
+\end{split}\end{equation}
+
+\item Su $N$ particelle vale:
+\begin{equation}\begin{split}
+\left\langle \psi '\right |F\left |\psi  \right\rangle=\\
+=\frac{1}{N!}\left|\begin{matrix}
+\psi' _{n_1}\left(1\right)&\dots&\psi' _{n_1}\left(N\right)\\
+\psi' _{n_2}\left(1\right)&\dots&\psi' _{n_2}\left(N\right)\\
+&&\dots& \\
+\psi' _{n_N}\left(1\right)&\dots&\psi' _{n_N}\left(N\right)
+\end{matrix}\right|F\left|\begin{matrix}
+\psi _{n_1}\left(1\right)&\dots&\psi _{n_1}\left(N\right)\\
+\psi _{n_2}\left(1\right)&\dots&\psi _{n_2}\left(N\right)\\
+&&\dots& \\
+\psi _{n_N}\left(1\right)&\dots&\psi _{n_N}\left(N\right)
+\end{matrix}\right|=\\
+%MANCA UNA PARTE
+=\left\langle \psi '_1\left(1\right)\right |\left\langle\psi _2\left(2\right) \right |\dots\left\langle\psi _N\left(N\right) \right |F\left|\begin{matrix}
+\psi _{n_1}\left(1\right)&\dots&\psi _{n_1}\left(N\right)\\
+\psi _{n_2}\left(1\right)&\dots&\psi _{n_2}\left(N\right)\\
+&&\dots& \\
+\psi _{n_N}\left(1\right)&\dots&\psi _{n_N}\left(N\right)
+\end{matrix}\right|
+\end{split}\end{equation}
+\end{itemize}
+
+Prendendo il determinante di Slater su due particelle:
+\begin{equation}\begin{split}
+\left |\psi  \right\rangle=\frac{1}{\sqrt{2}}\left|\begin{matrix}
+\psi _1\left(1\right)&\psi _1\left(2\right)\\
+\psi _2\left(1\right)&\psi _2\left(1\right)
+\end{matrix}\right|
+\end{split}\end{equation}
+Si cambia base con $\psi '=U\psi $:
+\begin{equation}\begin{split}
+\psi _1\to \psi '_1\\
+\psi _2\to \psi '_2
+\end{split}\end{equation}
+ottendendo:
+\begin{equation}\begin{split}
+\left |\psi ' \right\rangle=\\
+=\frac{1}{\sqrt{2}}\left|\begin{matrix}
+\psi' _1\left(1\right)&\psi' _1\left(2\right)\\
+\psi' _2\left(1\right)&\psi' _2\left(1\right)
+\end{matrix}\right|=\\
+=\frac{1}{\sqrt{2}}\left|U\left(\begin{matrix}
+\psi _1\left(1\right)&\psi _1\left(2\right)\\
+\psi _2\left(1\right)&\psi _2\left(1\right)
+\end{matrix}\right)\right|=\\
+=\frac{1}{\sqrt{2}}\det{\left(U\right)}\left|\begin{matrix}
+\psi _1\left(1\right)&\psi _1\left(2\right)\\
+\psi _2\left(1\right)&\psi _2\left(1\right)
+\end{matrix}\right|=\\
+=\det{\left(U\right)}\left |\psi  \right\rangle
+\end{split}\end{equation}
+
+Si ritorni ora al metodo di Hartree-Fock e si voglia calcolare $\left\langle \psi \right |H\left |\psi  \right\rangle=E\left[\psi \right]$ ricordando che $H=\frac{p_1^2}{2m}+V_1^{\left(1\right)}$:
+\begin{equation}\begin{split}
+\left\langle \psi \right |\frac{p_1^2}{2m}+V_1^{\left(1\right)}\left |\psi  \right\rangle=\\
+=\left\langle \psi _1\left(1\right)\right |\left\langle \psi _2\left(2\right)\right |\dots\left\langle \psi _N\left(N\right)\right |\frac{p_1^2}{2m}+V_1^{\left(1\right)}|\left|\begin{matrix}
+\psi _{n_1}\left(1\right)&\dots&\psi _{n_1}\left(N\right)\\
+\psi _{n_2}\left(1\right)&\dots&\psi _{n_2}\left(N\right)\\
+&&\dots& \\
+\psi _{n_N}\left(1\right)&\dots&\psi _{n_N}\left(N\right)
+\end{matrix}\right|=\\
+%MANCA UNA PARTE
+=\left\langle \psi _1\left(1\right)\right |H^{\left(1\right)}\left |\psi _1\left(1\right) \right\rangle
+\end{split}\end{equation}
+Tutti gli altri valori sono $0$ in quanto ortonormali.

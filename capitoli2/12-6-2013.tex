@@ -1,0 +1,156 @@
+\section{Metodo di Hartree} %Metodo di Hartree
+Si ha un sistema con $n$ particelle identitche. Si impone $n=3$. Ci si trova in una buca di potenziale dove si conoscono i livelli di particella singola e si vogliono mettere $n$ particelle identiche. La hamiltoniana è:
+\begin{equation}\begin{split}
+H=\\
+=\sum_{i=1}^3{\left(\frac{p_i^2}{2m}+V_1^{\left(i\right)}\right)}+\sum_{i,j}^{i<j}{V^{i,j}}=\\
+=\sum_{i=1}^3{\left(\frac{p_i^2}{2m}+V_1^{\left(i\right)}\right)}+\frac{1}{2}\sum_{i,j}^{i\neq j}{V^{i,j}}=\\
+=\frac{p_1^2}{2m}+V_1^{\left(1\right)}+\frac{p_2^2}{2m}+V_1^{\left(2\right)}+\frac{p_i^2}{2m}+V_3^{\left(3\right)}+V^{1,2}+V^{1,3}+V^{2,3}
+\end{split}\end{equation}
+
+Si definisce:
+\begin{equation}\begin{split}
+\left |\psi _{n_1}\left(x_1,y_1,\dots\right) \right\rangle\equiv \left |\psi _{n_1}\left(1\right) \right\rangle\\
+\left\langle \psi _{n_i}|\psi _{n_j} \right\rangle=\delta_{n_i,n_j}
+\end{split}\end{equation}
+considerando anche che:
+\begin{equation}\begin{split}
+\left |\psi  \right\rangle=\left |\phi_{n_1}\left(1\right) \right\rangle\left |\phi_{n_2}\left(2\right) \right\rangle\left |\phi_{n_3}\left(3\right) \right\rangle
+\end{split}\end{equation}
+
+Il metodo di Hartree non considera lo spin statistico.
+
+Ricordando il metodo variazionale si ha:
+\begin{equation}\begin{split}
+\begin{cases}
+\left\langle \delta\psi |H|\psi  \right\rangle=0\\
+\left\langle \delta\psi |\psi  \right\rangle=0
+\end{cases}
+\end{split}\end{equation}
+si ricarca il funzionale energia:
+\begin{equation}\begin{split}
+\left\langle \psi |H|\psi  \right\rangle=\\
+=\left\langle \psi |\frac{p^2}{2m}+V_1^{\left(1\right)}|\psi  \right\rangle+\left(2\right)+\left(3\right)+\left\langle \psi |V^{1,2}|\psi  \right\rangle+\dots
+\end{split}\end{equation}
+Dividendo in due parti si ha:
+\begin{equation}\begin{split}
+\left\langle \phi\left(1\right)\right |\left\langle \phi\left(2\right) \right |\left\langle \phi\left(2\right)\right |\left(\frac{p^2_i}{2m}+V_1^{\left(1\right)}\right)\left |\phi_{n_1}\left(1\right) \right\rangle\left |\phi_{n_2}\left(2\right) \right\rangle\left |\phi_{n_3}\left(3\right) \right\rangle=\\
+=\dots=\\
+=\left\langle \phi_{n_1}\left(1\right)|\frac{p^2_i}{2m}+V_1^{\left(1\right)}|\phi_{n_1}\left(1\right) \right\rangle
+\end{split}\end{equation}
+e analogamente per $V^{1,2}$:
+\begin{equation}\begin{split}
+\left\langle \phi\left(1\right)\right |\left\langle \phi\left(2\right)\right |V^{1,2}\left |\phi\left(1\right) \right\rangle\left |\phi\left(2\right) \right\rangle
+\end{split}\end{equation}
+Si può qui di riscrivere il funzionale energia (il valore dell'aspettazione dell'hamiltoniana):
+\begin{equation}\begin{split}
+\left\langle \psi |H|\psi  \right\rangle=\\
+=\sum_{i=1}^{3}{\left\langle \phi_{n_i}|\frac{p^2_i}{2m}+V_1^{\left(1\right)}|\phi_{n_i} \right\rangle}+\\
++\left\langle \phi_{n_1}\phi_{n_2}|V^{1,2}|\phi_{n_1}\phi_{n_2} \right\rangle+\\
++\left\langle \phi_{n_1}\phi_{n_3}|V^{1,3}|\phi_{n_1}\phi_{n_3} \right\rangle+\\
++\left\langle \phi_{n_2}\phi_{n_3}|V^{2,3}|\phi_{n_2}\phi_{n_3} \right\rangle
+\end{split}\end{equation}
+
+Si osserva ora:
+\begin{equation}\begin{split}
+\left |\psi ' \right\rangle=\\
+=\left(\left |\phi _{n_1} \right\rangle+\left |\delta\phi _{n_1} \right\rangle\right)\left |\phi_{n_1}  \right\rangle\left |\phi_{n_3} \right\rangle=\\
+=\left |\psi  \right\rangle+\left |\delta_1\psi  \right\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left |\delta\psi  \right\rangle=\left |\delta\phi_{n_1} \right\rangle\left |\phi_{n_2} \right\rangle\left |\phi_{n_3} \right\rangle
+\end{split}\end{equation}
+
+Ricordando il metodo variazionale si ha la struttura ad un corpo:
+\begin{equation}\begin{split}
+\left\langle \delta\phi_{n_1}|\frac{p_1^2}{2m}+V_1^{\left(1\right)}|\phi_{n_1} \right\rangle+\left\langle \delta\phi_{n_1}|\phi_{n_1} \right\rangle\left\langle \phi_{n_2}|\frac{p_2^2}{2m}+V_2^{\left(2\right)}|\phi_{n_2} \right\rangle+\left\langle \delta\phi_{n_1}|\phi_{n_1} \right\rangle\left\langle \phi_{n_3}|\frac{p_3^2}{2m}+V_3^{\left(3\right)}|\phi_{n_3} \right\rangle
+\end{split}\end{equation}
+e quella a due corpi:
+\begin{equation}\begin{split}
+\left\langle \delta\phi_{n_1}\phi_{n_2}|V^{1,2}|\phi_{n_1}\phi_{n_2} \right\rangle+\left\langle \delta\phi_{n_1}\phi_{n_3}|V^{1,3}|\phi_{n_1}\phi_{n_3} \right\rangle+\left\langle \delta\phi_{n_1}|\phi_{n_1} \right\rangle\left\langle \phi_{n_2}\phi_{n_3}|V^{2,3}|\phi_{n_2}\phi_{n_3} \right\rangle
+\end{split}\end{equation}
+che vanno sommate ottenendo:
+\begin{equation}\begin{split}
+\left\langle \delta_1\psi |H|\psi  \right\rangle=\\
+\left\langle \delta\phi_{n_1}|\frac{p_1^2}{2m}+V_1^{\left(1\right)}|\phi_{n_1} \right\rangle+\\
++\left\langle \delta\phi_{n_1}|\phi_{n_1} \right\rangle\left\langle \phi_{n_2}|\frac{p_2^2}{2m}+V_2^{\left(2\right)}|\phi_{n_2} \right\rangle+\\
++\left\langle \delta\phi_{n_1}|\phi_{n_1} \right\rangle\left\langle \phi_{n_3}|\frac{p_3^2}{2m}+V_3^{\left(3\right)}|\phi_{n_3} \right\rangle+\\
++\left\langle \delta\phi_{n_1}\phi_{n_2}|V^{1,2}|\phi_{n_1}\phi_{n_2} \right\rangle+\\
++\left\langle \delta\phi_{n_1}\phi_{n_3}|V^{1,3}|\phi_{n_1}\phi_{n_3} \right\rangle+\\
++\left\langle \delta\phi_{n_1}|\phi_{n_1} \right\rangle\left\langle \phi_{n_2}\phi_{n_3}|V^{2,3}|\phi_{n_2}\phi_{n_3} \right\rangle
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+\left\langle \delta\phi_{n_1}\right |\frac{p_1^2}{2m}+V_1^{\left(1\right)}\left |\phi_{n_1} \right\rangle+\sum_{i\neq 1}{\left\langle \delta\phi_{n_1}\right |\left\langle \phi_{n_i}\right |V^{1,2}\left |\phi_{n_1} \right\rangle\left |\phi_{n_i} \right\rangle}=\epsilon_1\left\langle \delta\phi_{n_1}|\phi_{n_1} \right\rangle\\
+\Longrightarrow \left[\left(\frac{p_1^2}{2m}+V_1^{\left(1\right)}\right)+\sum_{i\neq 1}{\left\langle \phi_{n_i}\right |V^{1,i}\left |\phi_{n_i} \right\rangle}\right]\left |\phi_{n_1} \right\rangle=\epsilon_1\left |\phi_{n_1} \right\rangle
+\end{split}\end{equation}
+Si toglie il prodotto scalare per farlo valere su ogni $\delta\phi_{n_1}$.
+
+In generale si ha:
+\begin{equation}\begin{split}
+\left[\left(\frac{p_k^2}{2m}+V_k^{\left(1\right)}\right)+\sum_{i\neq k}{\left\langle \phi_{n_i}\right |V^{k,i}\left |\phi_{n_i} \right\rangle}\right]\left |\phi_{n_k} \right\rangle=\epsilon_k\left |\phi_{n_k} \right\rangle
+\end{split}\end{equation}
+chiamando il \textbf{potenziale di Hartree} il valore $V^{k,i}$.
+
+\begin{equation}\begin{split}
+\left[\left(-\frac{\hbar ^2}{2m}\nabla _k^2+V_1\left(\bar r_k\right)\right)+\sum_{i\neq k}{\int{\left|\phi_{n_i}\right|^2V\left(r_k,r_i\right)\textrm{d}r_i}}\right]\phi_{n_k}\left(r_k\right)=\epsilon_k\phi_{n_k}\left(r_k\right)
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si considera lo stato fattorizzato. Si definisce
+\begin{equation}\begin{split}
+h_H^{k}=\frac{p ^2}{2m}+V_1^{\left(k\right)}+\sum_{i\neq k}{\left\langle \phi_{n_i}\right |V^{k,i}\left |\phi_{n_i} \right\rangle}
+\end{split}\end{equation}
+e l'hamiltoniana di Hartree:
+\begin{equation}\begin{split}
+H_H=\sum_k{h_H^{k}}
+\end{split}\end{equation}
+Si ha quindi:
+\begin{equation}\begin{split}
+H_H\left |\psi  \right\rangle=\\
+= =\\
+= =\\
+=\left(\sum_i{\epsilon_i}\right)\left |\psi  \right\rangle
+\end{split}\end{equation}
+
+Si definisce una hamiltoniana residua e perciò si ha l'hamiltoniana del sistema:
+\begin{equation}\begin{split}
+H=H_H+H_{res}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+H_{res}=H-H_H=\\
+=\sum_{k}{\left(\frac{p_k^2}{2m}+V_1^{\left(k\right)}\right)}+\frac{1}{2}\sum_{i,j}^{i\neq j}{V^{i,j}}-\sum_k{\frac{p ^2}{2m}+V_1^{\left(k\right)}}-\sum_{k,i\neq k}{\left\langle \phi_{n_i}\right |V^{k,i}\left |\phi_{n_i} \right\rangle}=\\
+=\frac{1}{2}\sum_{i,j}^{i\neq j}{V^{i,j}}-\sum_{i,j\neq k}{\left\langle \phi_{n_j}\right |V^{i,j}\left |\phi_{n_j} \right\rangle}
+\end{split}\end{equation}
+Il suo valore di aspettazione è:
+\begin{equation}\begin{split}
+\left\langle \psi \right |H_{res}\left |\psi  \right\rangle=\\
+=\frac{1}{2}\sum_{i,j}^{i\neq j}{\left\langle \phi_{n_i}\phi_{n_j}\right |V^{i,j}\left |\phi_{n_i}\phi_{n_j} \right\rangle}-\sum_{i,j\neq k}{\left\langle \phi_{n_i}\phi_{n_j}\right |V^{i,j}\left |\phi_{n_i}\phi_{n_j} \right\rangle}=\\
+=-\frac{1}{2}\sum_{i,j}^{i\neq j}{\left\langle \phi_{n_i}\phi_{n_j}\right |V^{i,j}\left |\phi_{n_i}\phi_{n_j} \right\rangle}
+\end{split}\end{equation}
+
+Si ricava perciò il valore di aspettazione dell'hamiltoniana:
+\begin{equation}\begin{split}
+\left\langle \psi \right |H\left |\psi  \right\rangle=\left\langle H \right\rangle+\left\langle H_{res} \right\rangle=\\
+=\sum_i{\epsilon_i}-\frac{1}{2}\sum_{i,j}^{i\neq j}{\left\langle \phi_{n_i}\phi_{n_j}\right |V^{i,j}\left |\phi_{n_i}\phi_{n_j} \right\rangle}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle H \right\rangle=\sum_i{\left\langle \phi_i\right |\frac{p_i^2}{2m}+V_1^{i}\left |\phi_i \right\rangle}+\frac{1}{2}\sum_{i,j}^{i\neq j}{\left\langle \phi_{n_i}\phi_{n_j}\right |V^{i,j}\left |\phi_{n_i}\phi_{n_j} \right\rangle}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\frac{1}{2}\sum_{i,j}^{i\neq j}{\left\langle \phi_{n_i}\phi_{n_j}\right |V^{i,j}\left |\phi_{n_i}\phi_{n_j} \right\rangle}=\left\langle H \right\rangle-\sum_i{\left\langle \phi_i\right |\frac{p_i^2}{2m}+V_1^{\left(i\right)}\left |\phi_i \right\rangle}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\left\langle H \right\rangle\sum_i{\epsilon_i}-\left\langle H \right\rangle+\sum_i{\left\langle \phi_i\right |\frac{p_i^2}{2m}+V_1^{\left(i\right)}\left |\phi_i \right\rangle}
+\end{split}\end{equation}
+
+Si ottiene finalmente il valore di aspettazione da utilizzare:
+\begin{equation}\begin{split}
+\left\langle \psi \right |H\left |\psi  \right\rangle=\frac{1}{2}\sum_i{\epsilon_i+\left\langle \phi_i\right |\frac{p_k^2}{2m}+V_1^{\left(i\right)}\left |\phi_i \right\rangle}
+\end{split}\end{equation}
+
+\subsection{Moltiplicatori di Lagrange} %Moltiplicatori di Lagrange
+
+%MANCA TUTTO

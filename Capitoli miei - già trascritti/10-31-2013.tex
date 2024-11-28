@@ -1,0 +1,176 @@
+\chapter[Gruppi unitari e speciali]{Gruppi unitari $U\left(n\right)$ e gruppi speciali $SU\left(n\right)$} %Gruppi unitari e speciali
+Per $n=2$ si ha $U=e^{-iH}$ con $H$ autoaggiunto e $U$ matrice unitaria.
+
+In modo più generale si ha
+\begin{equation}\begin{split}
+H=\\
+=\alpha \mathbb{I}+\beta_x\sigma_x+\beta_y\sigma_y+\beta_z\sigma_z=\\
+=\alpha\mathbb{I}+\frac{1}{2}\Theta\bar n\cdot \bar \sigma=\\
+=\alpha\mathbb{I} +\frac{2\Theta}{\hbar }\bar n\cdot \bar j
+\end{split}\end{equation}
+con $\bar j=\frac{\hbar }{2}\bar \sigma$ e quindi:
+\begin{equation}\begin{split}
+U=e^{-i\alpha}e^{-\frac{i}{\hbar }{\Theta}\bar n\cdot \bar \sigma}=e^{-i\alpha}e^{-i\frac{\Theta}{2}\bar n\cdot \bar \sigma}
+\end{split}\end{equation}
+che è composta da una fase e una matrice unitaria con $\det=1$.
+
+Ci si concentra sul gruppo $SU\left(2\right)$ con $U_{\bar n}\left(\Theta\right)=e^{-i\frac{\Theta}{2}\bar n\cdot \bar \sigma}$.
+\begin{equation}\begin{split}
+U_{\bar n}\left(\Theta\right)\bar \sigma U_{\bar n}^{\dag}\left(\Theta\right)\\
+\Longrightarrow \textrm{usando BCH} \Longrightarrow \\
+U_{\bar n}\left(\Theta\right)=1-i\frac{\Theta}{2}\bar n\cdot \bar \sigma -\frac{1}{2!}\left(-i\frac{\Theta}{2}\right)^2\left(\bar n\cdot \bar \sigma\right)^2=\\
+=\mathbb{I} \cos{\left(\frac{\Theta}{2}\right)}-i\bar n\cdot \bar \sigma\mathbb{I}\sin{\left(\frac{\Theta}{2}\right)} \\
+\Longrightarrow U_{\bar n}\left(\Theta\right)\bar \sigma U_{\bar n}^{\dag}\left(\Theta\right)=R_{\bar n}\left(\Theta\right)\bar \sigma
+\end{split}\end{equation}
+che è una matrice di rotazione.
+
+Un esempio è:
+\begin{equation}\begin{split}
+U_z\left(\Theta\right)\sigma_xU_z^{\dag}\left(\Theta\right)=\sigma_x-\frac{i}{2}\Theta\left[\sigma_z,\sigma_x\right]+\frac{1}{2}\left(\frac{i}{2}\Theta\right)^2=\sigma_x\cos{\left(\Theta\right)}+\sigma_y\sin{\left(\Theta\right)}
+\end{split}\end{equation}
+
+Se si compiono rotazioni successive si ha:
+\begin{equation}\begin{split}
+U_{\bar n2}\left(\theta_2\right)U_{\bar n1}\left(\theta_1\right)\bar \sigma U_{\bar n1}^{\dag}\left(\theta_1\right)U_{\bar n2}^{\dag}\left(\theta_2\right)=\\
+= =\\
+= =\\
+=R_{\bar n1}\left(\theta_1\right)R_{\bar n2}\left(\theta_2\right)\bar \sigma
+\end{split}\end{equation}
+
+Si sceglie un set ortonormale di autovettori $\sigma_z\left |k \right\rangle=k\left |k \right\rangle$ con $k=\pm 1$ e si ha:
+\begin{equation}\begin{split}
+U_{\bar n}\left(\theta\right)\sigma_z\left |k \right\rangle=\\
+=U_{\bar n}\left(\theta\right)\sigma_z U_{\bar n}^{\dag}\left(\theta\right)U_{\bar n}\left(\theta\right)\left |k \right\rangle=\\
+=R_{\bar n}\left(\theta\right)\left(\begin{matrix}0\\0\\ \sigma_z\end{matrix}\right)U_{\bar n}\left(\theta\right)\left |k \right\rangle=\\
+=kU_{\bar n}\left(\theta\right)\left |k \right\rangle
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\bar \sigma_x\left |\pm \right\rangle=\pm\left |\pm \right\rangle \\
+\left |\pm \right\rangle=\frac{1}{\sigma}\left(\begin{matrix}1\\ \pm 1\end{matrix}\right)
+\end{split}\end{equation}
+
+\section{Momento angolare} %Momento angolare
+Si indicano con $\bar L$ il \textbf{momento angolare}, con $\bar S$ lo \textbf{spin} e con $\bar J$ il \textbf{momento generico}.
+
+Sia $\left[J_x,J_y\right]=i\hbar J_z$. Si ha:
+\begin{equation}\begin{split}
+U_{\bar n}\left(\theta\right)=e^{-\frac{i}{\hbar }\theta \bar n\cdot \bar J}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+L_z=-i\hbar \left(x\partial _y-y\partial _x\right)
+\end{split}\end{equation}
+
+Sia ora
+\begin{equation}\begin{split}
+U_{\bar n}\left(\theta\right)=e^{-\frac{i}{\hbar }\bar n\cdot \bar L}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+e^{-\frac{i}{\hbar }\theta L_z}x=\\
+=x-\frac{i}{\hbar }\theta\left(-i\hbar \right)\left(-y\right)+\frac{1}{2!}\left(-\frac{i\theta}{\hbar }\right)^2\left(i\hbar \right)^2x=\\
+=x\cos{\left(\theta\right)}+y\sin{\left(\theta\right)}
+\end{split}\end{equation}
+
+Analogamente si ha:
+\begin{equation}\begin{split}
+e^{-\frac{i}{\hbar }\theta L_z}x^2=\left(x\cos{\left(\theta\right)}+y\sin{\left(\theta\right)}\right)^2
+\end{split}\end{equation}
+oppure in generale:
+\begin{equation}\begin{split}
+e^{-\frac{i}{\hbar }\theta \bar n\cdot \bar L}f\left(\bar r\right)=f\left(R_{\bar n}\left(\theta\right)\bar r\right)
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si prenda e si sviluppi l'operatore unitario nel caso dello spin:
+\begin{equation}\begin{split}
+U_{\bar n}\left(\theta\right)=e^{-i\frac{\theta}{2}\bar n\cdot \bar \sigma}=\cos{\left(\frac{\theta}{2}\right)}-i\bar n\cdot \bar \sigma \sin{\left(\frac{\theta}{2}\right)}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+U_{\bar n}\left(2\pi\right)=-\mathbb{I}=\left(\begin{matrix}-1 & 0\\0 & -1\end{matrix}\right)
+\end{split}\end{equation}
+la periodicità di questo operatore è $4\pi$.
+
+Si prenda ora la matrice autoaggiunta unitaria $\sigma_y=\left(\begin{matrix}0&-i\\i&0\end{matrix}\right)$:
+\begin{equation}\begin{split}
+\sigma_y\sigma_x\sigma_y=-\sigma_x \\
+\sigma_y\sigma_y\sigma_y=\sigma_y \\
+\sigma_y\sigma_z\sigma_y=-\sigma_z
+\end{split}\end{equation}
+quindi in generale:
+\begin{equation}\begin{split}
+\sigma_y\bar \sigma\sigma_y=-\bar \sigma^*
+\end{split}\end{equation}
+
+\begin{equation}\begin{split}
+\sigma_ye^{-i\frac{\theta}{2}\bar n\cdot \bar \sigma}\sigma_y=\left(e^{-i\frac{\theta}{2}\bar n\cdot \bar \sigma}\right)^*
+\end{split}\end{equation}
+
+\subsection{Singoletto} %Singoletto
+Prendendo lo stato di singoletto si ha:
+\begin{equation}\begin{split}
+\frac{1}{\sqrt{2}}\left(\left |\uparrow\downarrow \right\rangle-\left |\downarrow\uparrow \right\rangle\right)=\frac{i}{\sqrt{2}}\left |\sigma_y \right\rangle\rangle
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+U_{\bar n}\left(\theta\right)\otimes U_{\bar n}\left(\theta\right)\frac{i}{\sqrt{2}}\left |\sigma_y \right\rangle\rangle=\\
+=\frac{i}{\sqrt{2}}\left |U_{\bar n}\sigma_yU_{\bar n}^t \right\rangle\rangle=\\
+=\frac{i}{\sqrt{2}}\left |U_{\bar n}U_{\bar n}^{\dag}\sigma_y \right\rangle\rangle=\\
+=\frac{i}{\sqrt{2}}\left |\sigma_y \right\rangle
+\end{split}\end{equation}
+\textbf{Lo stato di singoletto è invariante per rotazioni}.
+
+\section{Somma di momenti angolari} %Somma di momenti angolari
+Sia $\bar J=\bar J_1+\bar J_2$, $J_z=J_{z,1}+J_{z,2}$, $J^2=J_z^2\frac{1}{2}\left(J_+J_-+J_-J_+\right)$ con $J_{\pm}=J_{\pm,1}+J_{\pm,2}$. Inoltre si ha:
+\begin{equation}\begin{split}
+\left[J_x,J_y\right]=\left[J_{x,1},J_{y,1}\right]+\left[J_{x,2},J_{y,2}\right]=i\hbar \left(J_{z,1}+J_{z,2}\right)=i\hbar J_z \\
+\left[J^2,J_1^2\right]=\left[J_1^2+J_2^2+2\bar J_1\cdot \bar J_2,J_1^2\right]=0 \\
+\left[J^2,J_2^2\right]=0
+\end{split}\end{equation}
+
+%MANCA UNA PARTE
+
+Si hanno due rappresentazioni:
+\begin{equation}\begin{split}
+\left |j_1,j_2,m_1,m_2 \right\rangle \\
+\left |j_1,j_2,j,m \right\rangle
+\end{split}\end{equation}
+
+Si ha quindi:
+\begin{equation}\begin{split}
+J_{1,2}^2\left |j_1,j_2,m_1,m_2 \right\rangle =\hbar ^2j_{1,2}\left(j_{1,2}+1\right)\left |j_1,j_2,m_1,m_2 \right\rangle \\
+J_{z;1,2}\left |j_1,j_2,m_1,m_2 \right\rangle =\hbar ^2m_{1,2}\left |j_1,j_2,m_1,m_2 \right\rangle 
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+J_{1,2}^2\left |j_1,j_2,j,m \right\rangle=\hbar ^2j\left(j+1\right)\left |j_1,j_2,j,m \right\rangle \\
+J_{z;1,2}\left |j_1,j_2,j,m \right\rangle=\hbar m\left |j_1,j_2,j,m \right\rangle
+\end{split}\end{equation}
+
+Si vuole espandere una base nell'altra:
+\begin{equation}\begin{split}
+\left |j_1,j_2,j,m \right\rangle=\sum_{m1,m2}{\left |j_1,j_2,m_1,m_2 \right\rangle\left\langle j_1,j_2,m_1m_2|j_1,j_2,j,m \right\rangle}
+\end{split}\end{equation}
+dove vengono definiti i \textbf{coefficienti di Clebsch-Gordan}, convenzionalmente scelti reali, cambiando le basi, i valori $\left\langle j_1,j_2,m_1m_2|j_1,j_2,j,m \right\rangle$
+
+%MANCA UNA PARTE
+
+\begin{equation}\begin{split}
+\dim\left(\mathcal{H}_1\otimes \mathcal{H}_2\right)=\left(2j_1+1\right)\left(2j_2+1\right)
+\end{split}\end{equation}
+
+Si hanno le \textbf{relazioni di ortogonalità}:
+\begin{equation}\begin{split}
+\sum_{j,m}{\left\langle j_1,j_2,m_1m_2|j_1,j_2,j,m \right\rangle\left\langle j_1,j_2,m'_1m'_2|j_1,j_2,j,m \right\rangle}=\delta _{m,m'1}\delta_{m2,m'2}
+\end{split}\end{equation}
+\begin{equation}\begin{split}
+\sum_{m1,m2}{\left\langle j_1,j_2,m_1m_2|j_1,j_2,j,m \right\rangle\left\langle j'_1,j'_2,m_1m_2|j_1,j_2,j,m \right\rangle}=\delta _{j,j'}\delta_{m,m'}
+\end{split}\end{equation}
+
+Si ha la \textbf{relazione di normalizzazione}:
+\begin{equation}\begin{split}
+\sum_{j,m}{\left\langle j_1,j_2,m_1m_2|j_1,j_2,j,m \right\rangle^2}=1 \quad \forall m_1,m_2
+\end{split}\end{equation}
+
+Si ha ora la \textbf{relazione di ricorrenza}:
+\begin{equation}\begin{split}
+J_{\pm}\left |j_1,j_2,j,m \right\rangle=\left(J_{1,\pm}+J_{2,\pm}\right)\sum_{m,m1}{\left |j_1,j_2,m_1,m_2 \right\rangle \left\langle j_1,j_2,m_1m_2|j_1,j_2,j,m \right\rangle}
+\end{split}\end{equation}
